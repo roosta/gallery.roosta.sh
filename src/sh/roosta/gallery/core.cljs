@@ -8,9 +8,6 @@
    [garden.stylesheet :as stylesheet]
    ))
 
-(def files
-  [{:id 1 :name "Sea of sand" :file ""}])
-
 (enable-console-print!)
 
 (def style
@@ -20,6 +17,7 @@
      :background-color (rgb 0 0 0)}]
 
    ))
+
 
 ;; define your app data so that it doesn't get over-written on reload
 (defonce app-state (atom {:text "Hello world!"}))
