@@ -4,6 +4,7 @@
    [reagent.core :as r :refer [atom]]
    [garden.units :as u]
    [goog.style :as gs]
+   [sh.roosta.gallery.resources :as resources]
    [garden.color :as color :refer [hsl rgb]]
    [garden.stylesheet :as stylesheet]
    ))
@@ -14,7 +15,12 @@
   (g/css
    [:body
     {:color (rgb 255 255 255)
-     :background-color (rgb 0 0 0)}]
+     :background-color (rgb 0 0 0)}
+    ]
+   [:.img-container {:width (u/px 50)
+                     :height (u/px 50)}
+    [:img {:max-height "100%"
+           :max-width "100%"}]]
 
    ))
 
@@ -29,13 +35,26 @@
     ]
    [:div.row.middle-xs.center-xs
     [:div.col-xs.4
-      "col 1"
+     (map
+      (fn [item]
+        ^{:key (:id item)}
+        [:span.row.end-xs (:title item)])
+      resources/items)
       ]
      [:div.col-xs.4
-      "col 2"
+      #_(map
+       (fn [item]
+         ^{:key (:id item)}
+         [:div.img-container [:img {:src (str "/img/" (:file item))}]])
+       resources/items)
       ]
      [:div.col-xs.4
-      "col 3"
+      #_(map
+       (fn [item]
+         ^{:key (:id item)}
+         [:span.row (:desc item)]
+         )
+       resources/items)
 
       ]]
 
