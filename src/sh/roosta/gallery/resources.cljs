@@ -1,6 +1,6 @@
 (ns sh.roosta.gallery.resources)
 
-(def files
+(def items
   [
    {:id 1 :name "Baby" :file "baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
    {:id 2 :name "Baptism" :file "baptism.jpg" :category :painting :desc "Watercolor baptism scene"}
@@ -24,9 +24,8 @@
    {:id 20 :name "Hufda" :file "hufda.jpg" :category :design :desc "Cover suggestion for a band, it that was never used"}
    {:id 21 :name "Selv Portrait with background" :file "inkdanfull.jpg" :category :painting :desc "Selv portrait with a superimposed background"}
    {:id 22 :name "Selv Portrait" :file "inkdans.jpg" :category :painting :desc "Selv portrait using ink on plastic"}
-   {:id 23 :name "Insectlike" :file "inksectlike.jpg" :category :drawing :desc "One of several inksect inspired mask drawings"}
+   {:id 23 :name "Insectlike" :file "insectlike.jpg" :category :drawing :desc "One of several inksect inspired mask drawings"}
    {:id 24 :name "Julie series nr 1" :file "js1.jpg" :category :photo :desc "First in a photo series taken during medieval festival and developed in a darkroom"}
-   {:id 25 :name "Julie series nr 2" :file "js2.jpg" :category :photo :desc "Second in a photo series taken during medieval festival and developed in a darkroom"}
    {:id 26 :name "Julie series nr 3" :file "js3.jpg" :category :photo :desc "Third in a photo series taken during medieval festival and developed in a darkroom"}
    {:id 27 :name "Julie series nr 4" :file "js4.jpg" :category :photo :desc "Forth in a photo series taken during medieval festival and developed in a darkroom"}
    {:id 28 :name "Julie series nr 5" :file "js5.jpg" :category :photo :desc "Fifth in a photo series taken during medieval festival and developed in a darkroom"}
@@ -39,8 +38,8 @@
    {:id 35 :name "Monoxieman Running" :file "monoxieman_running.gif" :category :game :desc "Running animation character sprite for unfinished game"}
    {:id 36 :name "More ink!" :file "moreink.jpg" :category :drawing :desc "Random sketch drawn with a rough hand"}
    {:id 37 :name "More mask!" :file "moremask.jpg" :category :drawing :desc "Random sketch drawn with a rough hand"}
-   {:id 38 :name "Nomad Angle" :file "nomadangle.jpg" :category :painting :desc "Titular nomad drawn from an angle. Comic book concept"}
-   {:id 39 :name "Nomad Equipped" :file "nomadeq.jpg" :category :drawing :desc "Nomad with equipment, comic book concept"}
+   {:id 38 :name "Nomad Angle" :file "nomad-ang.jpg" :category :painting :desc "Titular nomad drawn from an angle. Comic book concept"}
+   {:id 39 :name "Nomad Equipped" :file "nomad-eq.jpg" :category :drawing :desc "Nomad with equipment, comic book concept"}
    {:id 40 :name "Ouroboros" :file "ouroboros.jpg" :category :drawing :desc "Unfinished sketch of ouroboros"}
    {:id 41 :name "Pattern Composition" :file "pattern_comp.jpg" :category :drawing :desc "One of many patterns inspired loosely on the art nouveau style"}
    {:id 42 :name "Pray Pencil" :file "pray_pencil.jpg" :category :drawing :desc "Sketch of two praying figures"}
@@ -48,7 +47,7 @@
    {:id 44 :name "Runny ink portrait" :file "riportrait.jpg" :category :painting :desc "Self portrait with gratuitous use of ink"}
    {:id 45 :name "Salt" :file "salt.jpg" :category :painting :desc "Salt/sand dunes abstracted illustration"}
    {:id 46 :name "Sectered" :file "sectered.jpg" :category :painting :desc "Gass mask wearing kid in the series of insect inspired gass masks"}
-   {:id 47 :name "Shmup Screenshot" :file "shmup.jpg" :category :game :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
+   {:id 47 :name "Shmup Screenshot" :file "shmup.png" :category :game :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
    {:id 48 :name "Sea of sand" :file "sos.jpg" :category :painting :desc "Mountain surrounded by sand. Looks in hindsight more like water"}
    {:id 49 :name "Splotch" :file "splotch.jpg" :category :painting :desc "Watercolor and ink drawing of a gassmask wearing creature"}
    {:id 50 :name "Stones study" :file "stones.jpg" :category :painting :desc "Study of stone texture, watercolor"}
