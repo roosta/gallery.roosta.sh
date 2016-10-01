@@ -10,11 +10,12 @@
                  [org.clojure/clojurescript "1.9.227"]
                  [cljsjs/photoswipe "4.1.1-0"]
                  [secretary "1.2.3"]
+                 [garden "1.3.2"]
                  [org.clojure/core.async "0.2.385"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.5.1"]]
 
-  :plugins [[lein-figwheel "0.5.6"]
+  :plugins [[lein-figwheel "0.5.8"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
@@ -61,7 +62,7 @@
              :css-dirs ["resources/public/css"] ;; watch and update CSS
 
              ;; Start an nREPL server into the running figwheel process
-             ;; :nrepl-port 7888
+             ; :nrepl-port 7888
 
              ;; Server Ring Handler (optional)
              ;; if you want to embed a ring handler into the figwheel http-kit
@@ -97,7 +98,7 @@
 
 
   :profiles {:dev {:dependencies [[binaryage/devtools "0.8.1"]
-                                  [figwheel-sidecar "0.5.6"]
+                                  [figwheel-sidecar "0.5.8"]
                                   [com.cemerick/piggieback "0.2.1"]]
                    ;; need to add dev source path here to get user.clj loaded
                    :source-paths ["src" "dev"]
