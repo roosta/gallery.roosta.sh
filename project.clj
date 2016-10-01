@@ -8,6 +8,8 @@
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.227"]
+                 [cljsjs/photoswipe "4.1.1-0"]
+                 [secretary "1.2.3"]
                  [org.clojure/core.async "0.2.385"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.5.1"]]

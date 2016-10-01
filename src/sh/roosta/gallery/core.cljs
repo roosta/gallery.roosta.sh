@@ -1,68 +1,54 @@
 (ns sh.roosta.gallery.core
+  (:import goog.history.Html5History)
   (:require
-   [garden.core :as g]
-   [reagent.core :as r :refer [atom]]
-   [garden.units :as u]
-   [goog.style :as gs]
-   [sh.roosta.gallery.resources :as resources]
+   [reagent.core :as r]
+   [sh.roosta.gallery.styles :as styles]
    [garden.color :as color :refer [hsl rgb]]
    [garden.stylesheet :as stylesheet]
-   ))
+   [sh.roosta.gallery.home :as home]
+   [goog.events :as events]
+   [secretary.core :as secretary :refer-macros [defroute]]
+   [goog.object :as gobj]
+   [goog.history.EventType :as EventType]))
 
 (enable-console-print!)
 
-(def style
-  (g/css
-   [:body
-    {:color (rgb 255 255 255)
-     :background-color (rgb 0 0 0)}
-    ]
-   [:.img-container {:width (u/px 50)
-                     :height (u/px 50)}
-    [:img {:max-height "100%"
-           :max-width "100%"}]]
+(defonce app-state (atom {:page :home}))
 
-   ))
+(defroute "/" []
+  (swap! app-state assoc :page :home))
 
+(defmulti current-page #(@app-state :page))
 
-;; define your app data so that it doesn't get over-written on reload
-(defonce app-state (atom {:text "Hello world!"}))
+(defmethod current-page :home
+  []
+  [home/Main app-state])
 
-(defn App []
-  [:div.container
-   [:div.row.center-xs
-    [:h4 "Gallery"]
-    ]
-   [:div.row.middle-xs.center-xs
-    [:div.col-xs.4
-     (map
-      (fn [item]
-        ^{:key (:id item)}
-        [:span.row.end-xs (:title item)])
-      resources/items)
-      ]
-     [:div.col-xs.4
-      #_(map
-       (fn [item]
-         ^{:key (:id item)}
-         [:div.img-container [:img {:src (str "/img/" (:file item))}]])
-       resources/items)
-      ]
-     [:div.col-xs.4
-      #_(map
-       (fn [item]
-         ^{:key (:id item)}
-         [:span.row (:desc item)]
-         )
-       resources/items)
+(defmethod current-page :not-found
+  []
+  [:div "Not found"])
 
-      ]]
+(defonce history
+  (doto (Html5History.)
+    (.setUseFragment true)
+    (events/listen EventType/NAVIGATE
+                   (fn [x]
+                     (secretary/dispatch! (.-token x))
+                     (.log js/console "Navigate! " (.-token x))))
+    (.setEnabled true)))
 
-   ]
-  )
+(defn App
+  []
+  (r/create-class
+   {:reagent-render
+    (fn []
+      [:div.container
+       [:style (styles/get-all)]
+       [current-page]
+       ]
+      )}))
 
 (r/render-component [App] (. js/document (getElementById "app")))
-(gs/installStyles style)
 
 (defn on-js-reload []
   ;; optionally touch your app-state to force rerendering depending on
