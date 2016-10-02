@@ -10,21 +10,35 @@
                  [org.clojure/clojurescript "1.9.227"]
                  [cljsjs/photoswipe "4.1.1-0"]
                  [secretary "1.2.3"]
-                 [garden "1.3.2"]
+                 ; [garden "1.3.2"]
                  [org.clojure/core.async "0.2.385"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.5.1"]]
 
-  :plugins [[lein-figwheel "0.5.8"]
+  :plugins [[lein-garden "0.3.0"]
+            [lein-figwheel "0.5.8"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
 
-  :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
+  :clean-targets ^{:protect false} ["resources/public/js/compiled" 
+                                    "resources/public/css/compiled"
+                                    "target"]
 
+  :garden {:builds [{;; Optional name of the build:
+                     :id "screen"
+                     ;; Source paths where the stylesheet source code is
+                     :source-paths ["src/styles"]
+                     ;; The var containing your stylesheet:
+                     :stylesheet sh.roosta.gallery.core/screen
+                     ;; Compiler flags passed to `garden.core/css`:
+                     :compiler {;; Where to save the file:
+                                :output-to "resources/public/css/compiled/screen.css"
+                                ;; Compress the output?
+                                :pretty-print? false}}]}
   :cljsbuild {:builds
               [{:id "dev"
-                :source-paths ["src"]
+                :source-paths ["src/cljs"]
 
                 ;; the presence of a :figwheel configuration here
                 ;; will cause figwheel to inject the figwheel client
@@ -49,7 +63,7 @@
                ;; production. You can build this with:
                ;; lein cljsbuild once min
                {:id "min"
-                :source-paths ["src"]
+                :source-paths ["src/cljs"]
                 :compiler {:output-to "resources/public/js/compiled/sh/roosta/gallery.js"
                            :main sh.roosta.gallery.core
                            :optimizations :advanced
@@ -101,7 +115,7 @@
                                   [figwheel-sidecar "0.5.8"]
                                   [com.cemerick/piggieback "0.2.1"]]
                    ;; need to add dev source path here to get user.clj loaded
-                   :source-paths ["src" "dev"]
+                   :source-paths ["src/cljs" "dev"]
                    ;; for CIDER
                    ;; :plugins [[cider/cider-nrepl "0.12.0"]]
                    :repl-options {; for nREPL dev you really need to limit output

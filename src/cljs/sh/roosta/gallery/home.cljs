@@ -1,5 +1,7 @@
 (ns sh.roosta.gallery.home
-  (:require [reagent.core :as r]))
+  (:require
+   [cljsjs.photoswipe]
+   [reagent.core :as r]))
 
 (defn Main
   [app-state]

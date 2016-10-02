@@ -2,7 +2,6 @@
   (:import goog.history.Html5History)
   (:require
    [reagent.core :as r]
-   [sh.roosta.gallery.styles :as styles]
    [garden.color :as color :refer [hsl rgb]]
    [garden.stylesheet :as stylesheet]
    [sh.roosta.gallery.home :as home]
@@ -43,9 +42,7 @@
    {:reagent-render
     (fn []
       [:div.container
-       [:style (styles/get-all)]
-       [current-page]
-       ]
+       [current-page]]
       )}))
 
 (r/render-component [App] (. js/document (getElementById "app")))
