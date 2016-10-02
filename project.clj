@@ -42,8 +42,11 @@
                                 ;; Compress the output?
                                 :pretty-print? true}}]}
 
-  :aliases {"prod"
-            ^{:doc "Clean, minify and recompile"}
+  :aliases {"dev" ^{:doc "Clean and auto compile garden style"}
+            ["do"
+             ["clean"]
+             ["garden" "auto"]]
+            "prod" ^{:doc "Clean, minify and recompile"}
             ["do"
              ["clean"]
              ["garden" "once"]
