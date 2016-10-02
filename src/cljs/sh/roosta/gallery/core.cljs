@@ -2,8 +2,6 @@
   (:import goog.history.Html5History)
   (:require
    [reagent.core :as r]
-   [garden.color :as color :refer [hsl rgb]]
-   [garden.stylesheet :as stylesheet]
    [sh.roosta.gallery.home :as home]
    [goog.events :as events]
    [secretary.core :as secretary :refer-macros [defroute]]
