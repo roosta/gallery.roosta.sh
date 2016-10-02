@@ -4,30 +4,26 @@
    [cljsjs.photoswipe-ui-default]
    [goog.dom :as dom]
    [sh.roosta.gallery.resources :as resources]
-
    [reagent.debug :as d]
    [reagent.core :as r]))
 
-(defn init-home!
-  []
-  (let [pswp-el (dom/getElementByClass "pswp")
-        items (clj->js (reduce (fn [acc item]
-                        (conj acc {:src (:src item)
-                                   :w (:w item)
-                                   :h (:h item)})
-                        ) [] resources/items))
-        gallery (js/PhotoSwipe.
-                 pswp-el
-                 js/PhotoSwipeUI_Default
-                 items
-                 #js {:index 0})]
-    (.init gallery)
-    ))
-
 (defn Main
   []
+  (let [items (clj->js (reduce (fn [acc item]
+                                 (conj acc {:src (:src item)
+                                            :w (:w item)
+                                            :h (:h item)}))
+                               []
+                               resources/items))
+
+        gallery (js/PhotoSwipe.
+                 (dom/getElementByClass "pswp")
+                 js/PhotoSwipeUI_Default
+                 items
+                 #js {:index 0})])
   (r/create-class
-   {:component-did-mount #'init-home!
+   {:component-did-mount #(.init gallery)
+    :component-will-unmount #(.close gallery)
     :reagent-render
     (fn []
       [:div]
