@@ -20,14 +20,14 @@
                  (dom/getElementByClass "pswp")
                  js/PhotoSwipeUI_Default
                  items
-                 #js {:index 0})])
-  (r/create-class
-   {:component-did-mount #(.init gallery)
-    :component-will-unmount #(.close gallery)
-    :reagent-render
-    (fn []
-      [:div]
-      )}))
+                 #js {:index 0})]
+    (r/create-class
+     {:component-did-mount #(.init gallery)
+      :component-will-unmount #(.close gallery)
+      :reagent-render
+      (fn []
+        [:div]
+        )})))
 
 #_(defn Main
   [app-state]
