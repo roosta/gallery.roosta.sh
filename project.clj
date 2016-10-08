@@ -10,7 +10,10 @@
                  [org.clojure/clojurescript "1.9.227"]
                  [cljsjs/photoswipe "4.1.1-0"]
                  [secretary "1.2.3"]
-                 ; [garden "1.3.2"]
+                 [garden "1.3.2"]
+                 [cljsjs/react-grid-layout "0.13.7-0"
+                  :exclusions [cljsjs/react
+                               cljsjs/react-dom]]
                  [org.clojure/core.async "0.2.385"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.5.1"]]
