@@ -1,8 +1,6 @@
 (ns sh.roosta.gallery.resources)
-
 (def items
-  [
-   {:id 1 :w 411 :h 664 :title "Baby" :src "img/baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
+  [{:id 1 :w 411 :h 664 :title "Baby" :src "img/baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
    {:id 2 :w 993 :h 715 :title "Baptism" :src "img/baptism.jpg" :category :painting :desc "Watercolor baptism scene"}
    {:id 3 :w 1280 :h 562 :title "Cake" :src "img/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
    {:id 4 :w 466 :h 475 :title "Capucha" :src "img/capucha.jpg" :category :vector :desc "Inspired by anime ghost figures, early vector attempt"}
@@ -58,5 +56,4 @@
    {:id 56 :w 586 :h 500 :title "Head" :src "img/head.png" :category :design :desc "Messing around"}
    {:id 57 :w 1228 :h 1332 :title "Noir Webpage Splash" :src "img/inkdannoir.jpg" :category :painting :desc "Part of an older web page gallery"}
    {:id 57 :w 1870 :h 1384 :title "Pipes" :src "img/pipes.jpg" :category :photo :desc "Dark room experiment"}
-   {:id 57 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}
-   ])
+   {:id 57 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}])
