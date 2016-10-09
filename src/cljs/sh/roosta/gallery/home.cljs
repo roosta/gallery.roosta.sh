@@ -6,7 +6,10 @@
    [goog.dom :as dom]
    [sh.roosta.gallery.resources :as resources]
    [reagent.debug :as d]
-   [reagent.core :as r]))
+   [goog.events :as events]
+   [reagent.core :as r])
+  (:import  [goog.dom ViewportSizeMonitor])
+  )
 
 (def GridLayout (r/adapt-react-class js/ReactGridLayout))
 (def Responsive js/ReactGridLayout.Responsive)
@@ -24,18 +27,19 @@
      []
      items)))
 
-(defn generate-grid-layout
-  []
-  (reduce
-   (fn [acc item]
-     (conj acc {:i (str (:id item) "n")}))
-   []
-   resources/items))
+(defn get-cols
+  [width]
+  (cond
+     (>= width 1200) 6
+     (and (< width 1200) (>= width 996)) 4
+     (and (< width 996) (>= width 768)) 2
+     (and (< width 768) (>= width 480)) 2
+     :else 1
+     ))
 
 (defn Grid
-  []
-  (let [layout [{:i "a" :x 0 :y 0 :w 1 :h 2}
-                {:i "b" :x 2 :y 0 :w 3 :h 2}]]
+  [state]
+  (let [cols (:cols @state)]
     [ResponsiveGridLayout
      {:className "layout"
       ;; :layout layout
@@ -52,10 +56,10 @@
      (map-indexed
       (fn [index item]
         ^{:key (str (:id item) "n")}
-        [:div.img-container {:data-grid {:x (mod index 6) :y 0 :w 1 :h (+ (rand-int 3) 2)}}
+        [:div.img-container {:data-grid {:x (mod index cols) :y 0 :w 1 :h (+ (rand-int 3) 2)}}
          [:img {:src (:src item)}]
          ])
-          resources/items)
+      resources/items)
      ;; [:div.img-container {:key "a" :data-grid {:x 0 :y 0 :w 1 :h 3}}
      ;;  [:img {:src "img/baby.jpg"}]]
      ;; [:div.img-container {:key "b" :data-grid {:x 1 :y 0 :w 1 :h 2}}
@@ -66,22 +70,35 @@
      ;;  [:img {:src "img/cloak.jpg"}]]
      ])
   )
+(defn init!
+  [vsm state]
+  (events/listen
+   vsm
+   (.-RESIZE events/EventType)
+   (fn [e]
+     (let [width (.-width (.getSize vsm))]
+       (do
+         (when (not= (:cols @state) (get-cols width))
+           (swap! state assoc :cols (get-cols width))
+           #_(d/log (:cols @state))
+           ))))))
 
 (defn Main
   []
-  (let [items (transform-map resources/items)
+  (let [
+        items (transform-map resources/items)
         gallery (js/PhotoSwipe.
                  (dom/getElementByClass "pswp")
                  js/PhotoSwipeUI_Default
                  items
-                 #js {:index 0})]
+                 #js {:index 0})
+        vsm (ViewportSizeMonitor.)
+        state (r/atom {:cols (get-cols (.-width (.getSize vsm)))})]
     (r/create-class
-     {
-      :component-did-mount #(d/log (generate-grid-layout))
-      ;; :component-did-mount #(.init gallery)
-      ;; :component-will-unmount #(.close gallery)
+     {:component-did-mount #(init! vsm state)
+      :component-will-unmount #(.dispose vsm)
       :reagent-render
       (fn []
         [:div
-         [Grid]]
+         [Grid state]]
         )})))
