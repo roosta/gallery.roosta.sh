@@ -39,7 +39,7 @@
   (r/create-class
    {:reagent-render
     (fn []
-      [:div.container
+      [:div
        [current-page]]
       )}))
 
