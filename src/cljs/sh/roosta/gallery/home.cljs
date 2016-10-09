@@ -2,58 +2,67 @@
   (:require
    [cljsjs.photoswipe]
    [cljsjs.photoswipe-ui-default]
+   [cljsjs.react-grid-layout]
    [goog.dom :as dom]
    [sh.roosta.gallery.resources :as resources]
    [reagent.debug :as d]
    [reagent.core :as r]))
 
+(def GridLayout (r/adapt-react-class js/ReactGridLayout))
+
+(defn transform-map
+  "Transform resource map to conform to photoswipe"
+  [items]
+   (clj->js
+    (reduce
+     (fn [acc item]
+       (conj acc {:src (:src item)
+                  :w (:w item)
+                  :h (:h item)}))
+     []
+     items)))
+
+(defn generate-grid-layout
+  []
+  (reduce
+   (fn [acc item]
+     (conj acc {:i (str (:id item) "n")}))
+   []
+   resources/items))
+
+(defn Grid
+  []
+  (let [layout [{:i "a" :x 0 :y 0 :w 1 :h 2}
+                {:i "b" :x 2 :y 0 :w 3 :h 2}]]
+    [GridLayout
+     {:className "layout"
+      ;; :layout layout
+      :width 1200
+      :margin [0 0]
+      :cols 1200
+      :rowHeight 1}
+     [:div {:key "a" :data-grid {:x 0 :y 0 :w 411 :h 664}}
+      [:img {:src "img/baby.jpg"}]]
+     [:div {:key "b" :data-grid {:x 411 :y 0 :w 466 :h 475}}
+      [:img {:src "img/capucha.jpg"}]]
+     ])
+  )
+
 (defn Main
   []
-  (let [items (clj->js (reduce (fn [acc item]
-                                 (conj acc {:src (:src item)
-                                            :w (:w item)
-                                            :h (:h item)}))
-                               []
-                               resources/items))
-
+  (let [items (transform-map resources/items)
         gallery (js/PhotoSwipe.
                  (dom/getElementByClass "pswp")
                  js/PhotoSwipeUI_Default
                  items
                  #js {:index 0})]
     (r/create-class
-     {:component-did-mount #(.init gallery)
-      :component-will-unmount #(.close gallery)
+     {
+      :component-did-mount #(d/log (generate-grid-layout))
+      ;; :component-did-mount #(.init gallery)
+      ;; :component-will-unmount #(.close gallery)
       :reagent-render
       (fn []
-        [:div]
+        [:div
+         [Grid]]
         )})))
-
-#_(defn Main
-  [app-state]
-
-  ;; Root element of PhotoSwipe. Must have class pswp.
-  [:div.pswp {:tabindex "-1" :role "dialog" :aria-hidden true}
-
-   ;; Background of PhotoSwipe.
-   ;; It's a separate element as animating opacity is faster than rgba().
-   [:div.pswp__bg]
-
-   ;; Slides wrapper with overflow:hidden.
-   [:div.pswp__scroll-wrap
-
-    ;; Container that holds slides.
-    ;; PhotoSwipe keeps only 3 of them in the DOM to save memory.
-    ;; Don't modify these 3 pswp__item elements, data is added later on.
-    [:div.pswp__container
-     [:div.pswp__item]
-     [:div.pswp__item]
-     [:div.pswp__item]]
-
-    ;;Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
-    [:div {:class "pswp__ui pswp__ui--hidden"}
-
-
-     [:div {:class "pswp__top-bar"}]]
-
-    ]])
