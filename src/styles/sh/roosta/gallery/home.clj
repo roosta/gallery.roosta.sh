@@ -7,13 +7,18 @@
 (defstyles screen
   [:.img-container
    {:text-align "center"
+    :display "flex"
+    :align-items "center"
+    :justify-content "center"
     :overflow "hidden"
     }
    [:img
-    {:position "relative"
-     :top "100%"
-     :left "100%"
-     :margin-top "-200%"
-     :margin-left "-200%"}]
+    {
+     ;; :position "relative"
+     ;; :top "100%"
+     ;; :left "100%"
+     ;; :margin-top "-200%"
+     ;; :margin-left "-200%"
+     }]
    ]
   )
