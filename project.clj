@@ -23,7 +23,7 @@
             [lein-asset-minifier "0.3.0"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
 
-  :source-paths ["src"]
+  :source-paths ["src/styles"]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled"
                                     "resources/public/css/compiled"
