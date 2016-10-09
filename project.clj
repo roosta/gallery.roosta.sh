@@ -7,16 +7,16 @@
   :min-lein-version "2.6.1"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.227"]
+                 [org.clojure/clojurescript "1.9.229"]
                  [cljsjs/photoswipe "4.1.1-0"]
                  [secretary "1.2.3"]
                  [garden "1.3.2"]
                  [cljsjs/react-grid-layout "0.13.7-0"
                   :exclusions [cljsjs/react
                                cljsjs/react-dom]]
-                 [org.clojure/core.async "0.2.385"
+                 [org.clojure/core.async "0.2.391"
                   :exclusions [org.clojure/tools.reader]]
-                 [reagent "0.5.1"]]
+                 [reagent "0.6.0"]]
 
   :plugins [[lein-garden "0.3.0"]
             [lein-figwheel "0.5.8"]
@@ -88,7 +88,7 @@
              :open-file-command "emacs-file-opener" }
 
 
-  :profiles {:dev {:dependencies [[binaryage/devtools "0.8.1"]
+  :profiles {:dev {:dependencies [[binaryage/devtools "0.8.2"]
                                   [figwheel-sidecar "0.5.8"]
                                   [com.cemerick/piggieback "0.2.1"]]
                    ;; need to add dev source path here to get user.clj loaded
