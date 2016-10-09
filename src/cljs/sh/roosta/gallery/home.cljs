@@ -40,9 +40,11 @@
      {:className "layout"
       ;; :layout layout
       ;; :width (.-innerWidth js/window)
+      :isDraggable false
+      :isResizable false
       :breakpoints {:lg 1200 :md 996 :sm 768 :xs 480 :xxs 0}
       :cols {:lg 6 :md 4 :sm 2 :xs 2 :xxs 1}
-      ;; :items 4
+      :items 57
       :margin [0 0]
       ;; :cols 4
       :rowHeight 100
@@ -50,7 +52,7 @@
      (map-indexed
       (fn [index item]
         ^{:key (str (:id item) "n")}
-        [:div.img-container {:data-grid {:x index :y 0 :w 1 :h (+ (rand-int 4) 2)}}
+        [:div.img-container {:data-grid {:x (mod index 6) :y 0 :w 1 :h (+ (rand-int 3) 2)}}
          [:img {:src (:src item)}]
          ])
           resources/items)
