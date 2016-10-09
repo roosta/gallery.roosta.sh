@@ -47,14 +47,21 @@
       ;; :cols 4
       :rowHeight 100
       }
-     [:div.img-container {:key "a" :data-grid {:x 0 :y 0 :w 1 :h 3}}
-      [:img {:src "img/baby.jpg"}]]
-     [:div.img-container {:key "b" :data-grid {:x 1 :y 0 :w 1 :h 2}}
-      [:img {:src "img/capucha.jpg"}]]
-     [:div.img-container {:key "c" :data-grid {:x 2 :y 0 :w 1 :h 3}}
-      [:img {:src "img/cake.jpg"}]]
-     [:div.img-container {:key "d" :data-grid {:x 3 :y 0 :w 1 :h 2}}
-      [:img {:src "img/cloak.jpg"}]]
+     (map-indexed
+      (fn [index item]
+        ^{:key (str (:id item) "n")}
+        [:div.img-container {:data-grid {:x index :y 0 :w 1 :h (+ (rand-int 4) 2)}}
+         [:img {:src (:src item)}]
+         ])
+          resources/items)
+     ;; [:div.img-container {:key "a" :data-grid {:x 0 :y 0 :w 1 :h 3}}
+     ;;  [:img {:src "img/baby.jpg"}]]
+     ;; [:div.img-container {:key "b" :data-grid {:x 1 :y 0 :w 1 :h 2}}
+     ;;  [:img {:src "img/capucha.jpg"}]]
+     ;; [:div.img-container {:key "c" :data-grid {:x 2 :y 0 :w 1 :h 3}}
+     ;;  [:img {:src "img/cake.jpg"}]]
+     ;; [:div.img-container {:key "d" :data-grid {:x 3 :y 0 :w 1 :h 2}}
+     ;;  [:img {:src "img/cloak.jpg"}]]
      ])
   )
 
