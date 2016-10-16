@@ -55,7 +55,7 @@
     (fn [index item]
       ^{:key (str (:id item) "n")}
       [:div.img-container {:on-click #(open-photoswipe index)}
-       [:img {:src (:src item)}]
+       [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
        [:div.info
         [:div (str (:title item))]]
        ])
