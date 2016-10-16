@@ -14,11 +14,6 @@
     }
    [:img
     {
-     ;; :position "relative"
-     ;; :top "100%"
-     ;; :left "100%"
-     ;; :margin-top "-200%"
-     ;; :margin-left "-200%"
      }]
    ]
   )
