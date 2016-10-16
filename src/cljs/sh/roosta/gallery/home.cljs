@@ -39,6 +39,13 @@
     (.init pswp)
     ))
 
+(defn Appbar
+  []
+  [:div.app-bar
+"alks;jdlkjads"
+   ]
+  )
+
 (defn Grid
   [layouts cols]
   [ResponsiveGridLayout
@@ -46,6 +53,7 @@
     :layouts (clj->js layouts)
     :isDraggable false
     :isResizable false
+    :container-padding [0 100]
     :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
     :items 57
@@ -54,9 +62,9 @@
    (map-indexed
     (fn [index item]
       ^{:key (str (:id item) "n")}
-      [:div.img-container {:on-click #(open-photoswipe index)}
+      [:div.img-container.flex-middle {:on-click #(open-photoswipe index)}
        [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
-       [:div.info
+       [:div.info.flex-middle
         [:div (str (:title item))]]
        ])
     resources/items)])
@@ -88,5 +96,6 @@
       :reagent-render
       (fn []
         [:div
+         [Appbar]
          [Grid layouts cols]]
         )})))

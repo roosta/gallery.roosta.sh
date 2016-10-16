@@ -6,23 +6,12 @@
 
 (defstyles screen
   [:.img-container
-   {:text-align "center"
-    :position "relative"
+   {:position "relative"
     :display "flex"
-    :align-items "center"
-    :justify-content "center"
     :overflow "hidden"
-    }
-   [:img
-    ]
-   ]
-  ;; [:.img-container:hover]
+    }]
   [:.info
-   {:display "flex"
-    :text-align "center"
-    :align-items "center"
-    :justify-content "center"
-    :color "white"
+   {:color "white"
     :background-color "black"
     :top 0
     :left 0
@@ -33,4 +22,18 @@
   [:.info:hover
    {:transition "opacity 200ms linear"
     :opacity 0.6}]
+  [:.app-bar
+   {:position "fixed"
+    :background-color "white"
+    :width "100%"
+    :display "flex"
+    :align-items "center"
+    :z-index 2
+    :height (px 100)
+    :left 0}]
+  [:.flex-middle
+   {:display "flex"
+    :text-align "center"
+    :align-items "center"
+    :justify-content "center"}]
   )
