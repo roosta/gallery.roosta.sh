@@ -27,6 +27,18 @@
      []
      items)))
 
+(def photoswipe-map (transform-map resources/items))
+
+(defn open-photoswipe
+  [index]
+  (let [pswp (js/PhotoSwipe.
+              (dom/getElementByClass "pswp")
+              js/PhotoSwipeUI_Default
+              photoswipe-map
+              #js {:index index})]
+    (.init pswp)
+    ))
+
 (defn Grid
   [layouts cols]
   [ResponsiveGridLayout
@@ -41,15 +53,10 @@
     :rowHeight 100}
    (map-indexed
     (fn [index item]
-      (let [pswp (js/PhotoSwipe.
-                (dom/getElementByClass "pswp")
-                js/PhotoSwipeUI_Default
-                (transform-map resources/items)
-                #js {:index index})]
-        ^{:key (str (:id item) "n")}
-        [:div.img-container {:on-click #(.init pswp)}
-         [:img {:src (:src item)}]
-         ]))
+      ^{:key (str (:id item) "n")}
+      [:div.img-container {:on-click #(open-photoswipe index)}
+       [:img {:src (:src item)}]
+       ])
     resources/items)])
 
 (defn Main
