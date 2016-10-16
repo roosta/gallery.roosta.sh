@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+}
+
+.img-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-container img {
+
+}
