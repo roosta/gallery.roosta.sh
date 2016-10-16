@@ -13,6 +13,7 @@ body {
 
 .info {
   width: 100%;
+  top: 0;
   justify-content: center;
   height: 100%;
   align-items: center;
@@ -22,6 +23,7 @@ body {
   display: flex;
   color: white;
   opacity: 0;
+  left: 0;
 }
 
 .info:hover {
