@@ -7,10 +7,26 @@
 (defstyles screen
   [:.img-container
    {:text-align "center"
+    :position "relative"
     :display "flex"
     :align-items "center"
     :justify-content "center"
     :overflow "hidden"
     }
    ]
+  ;; [:.img-container:hover]
+  [:.info
+   {:display "flex"
+    :text-align "center"
+    :align-items "center"
+    :justify-content "center"
+    :color "white"
+    :background-color "black"
+    :width "100%"
+    :height "100%"
+    :position "absolute"
+    :opacity 0}]
+  [:.info:hover
+   {:transition "opacity 200ms linear"
+    :opacity 0.6}]
   )

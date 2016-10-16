@@ -56,6 +56,8 @@
       ^{:key (str (:id item) "n")}
       [:div.img-container {:on-click #(open-photoswipe index)}
        [:img {:src (:src item)}]
+       [:div.info
+        [:div (str (:title item))]]
        ])
     resources/items)])
 
