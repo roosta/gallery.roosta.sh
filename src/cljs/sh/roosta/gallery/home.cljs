@@ -34,29 +34,29 @@
     :layouts (clj->js layouts)
     :isDraggable false
     :isResizable false
-    :breakpoints {:lg 1200 :md 996 :sm 768 :xs 480 :xxs 0}
+    :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
     :items 57
     :margin [0 0]
     :rowHeight 100}
    (map-indexed
     (fn [index item]
-      ^{:key (str (:id item) "n")}
-      [:div.img-container
-       [:img {:src (:src item)}]
-       ])
+      (let [pswp (js/PhotoSwipe.
+                (dom/getElementByClass "pswp")
+                js/PhotoSwipeUI_Default
+                (transform-map resources/items)
+                #js {:index index})]
+        ^{:key (str (:id item) "n")}
+        [:div.img-container {:on-click #(.init pswp)}
+         [:img {:src (:src item)}]
+         ]))
     resources/items)])
 
 (defn Main
   []
-  (let [gallery (js/PhotoSwipe.
-                 (dom/getElementByClass "pswp")
-                 js/PhotoSwipeUI_Default
-                 (transform-map resources/items)
-                 #js {:index 0})
-        cols {:lg 6 :md 4 :sm 2 :xs 2 :xxs 1}
+  (let [cols {:lg 6 :md 4 :sm 2}
         layouts (zipmap
-                 [:lg :md :sm :xs :xxs]
+                 [:lg :md :sm]
                  (mapv
                   (fn [[k v]]
                     (reduce
