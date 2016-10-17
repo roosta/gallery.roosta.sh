@@ -3,10 +3,9 @@
   [{:id 0 :w 411 :h 664 :title "Baby" :src "img/baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
    {:id 1 :w 993 :h 715 :title "Baptism" :src "img/baptism.jpg" :category :painting :desc "Watercolor baptism scene"}
    {:id 2 :w 1280 :h 562 :title "Cake" :src "img/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
-   ;; {:id 3 :w 466 :h 475 :title "Capucha" :src "img/capucha.jpg" :category :vector :desc "Inspired by anime ghost figures, early vector attempt"}
    {:id 3 :w 549 :h 908 :title "Charcoal Nomad" :src "img/charnom.jpg" :category :design :desc "Charcoal masked nomad figure"}
    {:id 4 :w 667 :h 975 :title "Cloak in Motion" :src "img/cloak.jpg" :category :photo :desc "One is a series of dark room photographs experimenting with various light exposure settings during development"}
-   {:id 5 :w 640 :h 82 :gif true :title "Conch" :src "img/conch.gif" :category :game :desc "Enemy design for an unfinished untitled shmup game"}
+   {:id 5 :w 270 :h 123 :gif true :title "Conch" :src "img/conch.gif" :category :game :desc "Enemy design for an unfinished untitled shmup game"}
    {:id 6 :w 819 :h 1386 :title "Post cover" :src "img/cover.jpg" :category :painting :desc "Conseptual cover for a comic book that was never finished"}
    {:id 7 :w 437 :h 736 :title "Kanal Session Design" :src "img/cs.jpg" :category :design :desc "One of several design suggestions for a skating event. Not used but I still like it"}
    {:id 8 :w 1164 :h 785 :title "Drainpipes" :src "img/drainpipes.jpg" :category :photo :desc "Dark room development"}
@@ -29,7 +28,6 @@
    {:id 25 :w 865 :h 571 :title "Julie series nr 6" :src "img/js6.jpg" :category :photo :desc "Sixth in a photo series taken during medieval festival and developed in a darkroom"}
    {:id 26 :w 952 :h 1332 :title "Kodak Ice" :src "img/kodak.jpg" :category :photo :desc "Failed to develop this macro image of some ice but the result I still like"}
    {:id 27 :w 549 :h 731 :title "Desert Lady" :src "img/lady.jpg" :category :painting :desc "Unfinished painting trying to depict a desert-like dress style"}
-   ;; {:id 28 :w 489 :h 741 :title "Candle lamp" :src "img/lamp.jpg" :category :diy :desc "Lamp made for christmas using laser cutter, paint and patience. See link for vector blueprint" :link "https://roosta.sh/gallery/img/lamp_vector.png"}
    {:id 28 :w 480 :h 480 :title "Monoxieman Idle" :src "img/monoxieman_idle.gif" :category :game :desc "Idle animation character sprite for unfinished game"}
    {:id 29 :w 480 :h 480 :title "Monoxieman Jump" :src "img/monoxieman_jump.gif" :category :game :desc "Jump animation character sprite for unfinished game"}
    {:id 30 :w 480 :h 480 :title "Monoxieman Running" :src "img/monoxieman_running.gif" :category :game :desc "Running animation character sprite for unfinished game"}
@@ -44,7 +42,7 @@
    {:id 39 :w 598 :h 877 :title "Runny ink portrait" :src "img/riportrait.jpg" :category :painting :desc "Self portrait with gratuitous use of ink"}
    {:id 40 :w 1237 :h 1748 :title "Salt" :src "img/salt.jpg" :category :painting :desc "Salt/sand dunes abstracted illustration"}
    {:id 41 :w 1184 :h 1600 :title "Sectered" :src "img/sectered.jpg" :category :painting :desc "Gass mask wearing kid in the series of insect inspired gass masks"}
-   {:id 42 :w 851 :h 315 :title "Shmup Screenshot" :src "img/shmup.png" :category :game :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
+   {:id 42 :w 1702 :h 630 :title "Shmup Screenshot" :src "img/shmup.png" :category :game :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
    {:id 43 :w 1527 :h 1084 :title "Sea of sand" :src "img/sos.jpg" :category :painting :desc "Mountain surrounded by sand. Looks in hindsight more like water"}
    {:id 44 :w 850 :h 1163 :title "Splotch" :src "img/splotch.jpg" :category :painting :desc "Watercolor and ink drawing of a gassmask wearing creature"}
    {:id 45 :w 779 :h 566 :title "Stones study" :src "img/stones.jpg" :category :painting :desc "Study of stone texture, watercolor"}
@@ -56,4 +54,7 @@
    {:id 51 :w 586 :h 500 :title "Head" :src "img/head.png" :category :design :desc "Messing around"}
    {:id 52 :w 1228 :h 1332 :title "Noir Webpage Splash" :src "img/inkdannoir.jpg" :category :painting :desc "Part of an older web page gallery"}
    {:id 53 :w 1870 :h 1384 :title "Pipes" :src "img/pipes.jpg" :category :photo :desc "Dark room experiment"}
-   {:id 54 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}])
+   {:id 54 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}
+   {:id 55 :w 192 :h 480 :title "Pixel cliff" :src "img/cliff.png" :category :painting :desc "Pixel Cliff"}
+
+   ])
