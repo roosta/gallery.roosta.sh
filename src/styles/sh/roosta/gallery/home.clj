@@ -25,26 +25,38 @@
    {:position "fixed"
     :background-color "#BF4D28"
     ;; :padding-left (px 20)
-    :padding-right (px 20)
+    :margin-right (px 20)
     :width "100%"
     :display "flex"
-    :align-items "center"
+    ;; :align-items "center"
     :z-index 2
-    :height (px 80)
+    :height (px 60)
     :left 0}
-   [:span
-    {:margin-left (px 20)
-     :font-family "Lato, sans-serif"
-     :color "white"}]
+
+
    [:.active
-    {:border-bottom "1px solid white"
-     :padding-bottom "3px"}]
-   [:.daniel
-    {:font-size (px 24)
-     :font-family "Lato Heavy, sans-serif"
-     :margin-right (px 20)
-     :margin-left "auto"
-     }]]
+    {
+     :color "black"
+     :height (px 60)
+     :background-color "#80BCA3"
+     ;; :border-bottom "1px solid white"
+     ;; :padding-bottom "5px"
+     }]
+   ]
+  [:.menu-item
+   {:padding-left (px 15)
+    :padding-right (px 15)
+    :font-family "Lato, sans-serif"
+    :color "white"}]
+  [:.menu-item:hover
+   {:background-color "#E6AC27"
+    :transition "all 200ms linear"}]
+  [:.title
+   {:font-size (px 24)
+    :font-family "Lato, sans-serif"
+    :margin-right (px 20)
+    :margin-left "auto"
+    }]
   [:.flex-middle
    {:display "flex"
     :text-align "center"

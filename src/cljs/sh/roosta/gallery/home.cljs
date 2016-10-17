@@ -42,11 +42,11 @@
 (defn Appbar
   []
   [:div.app-bar.z1
-   [:span.active "WORK"]
-   [:span "ABOUT"]
-   [:span "CONTACT"]
-   [:span "SORT"]
-   [:span.daniel "DANIEL BERG"]]
+   [:span.menu-item.flex-middle.active [:div "WORK"]]
+   [:span.menu-item.flex-middle [:div "ABOUT"]]
+   [:span.menu-item.flex-middle [:div "CONTACT"]]
+   [:span.menu-item.flex-middle [:div "SORT"]]
+   [:span.menu-item.flex-middle.title [:div "DANIEL BERG"]]]
   )
 
 (defn Grid
@@ -56,7 +56,7 @@
     :layouts (clj->js layouts)
     :isDraggable false
     :isResizable false
-    :container-padding [0 80]
+    :container-padding [0 60]
     :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
     :items 57
