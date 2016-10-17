@@ -1,5 +1,5 @@
 body {
-  background-color: #655643;
+  background-color: #2A2F33;
 }
 
 .img-container {
@@ -26,7 +26,7 @@ body {
 
 .app-bar {
   position: fixed;
-  background-color: #BF4D28;
+  background-color: #984E4F;
   margin-right: 20px;
   width: 100%;
   display: flex;
@@ -35,27 +35,33 @@ body {
   left: 0;
 }
 
-.app-bar .active {
-  color: black;
-  height: 60px;
-  background-color: #80BCA3;
-}
-
 .menu-item {
   padding-left: 15px;
   padding-right: 15px;
   font-family: Lato, sans-serif;
-  color: white;
+  color: #FFE4D2;
 }
 
 .menu-item:hover {
-  background-color: #E6AC27;
+  background-color: #DB9269;
   transition: all 200ms linear;
+}
+
+.active {
+  color: #2A2F33;
+  height: 60px;
+  background-color: #D6B596;
+}
+
+.active:hover {
+  height: 60px;
+  background-color: #DB9269;
 }
 
 .title {
   font-size: 24px;
-  font-family: Lato, sans-serif;
+  color: #FFE4D2;
+  font-family: Lato Light, sans-serif;
   margin-right: 20px;
   margin-left: auto;
 }

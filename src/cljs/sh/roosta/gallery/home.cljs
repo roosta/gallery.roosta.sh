@@ -46,7 +46,7 @@
    [:span.menu-item.flex-middle [:div "ABOUT"]]
    [:span.menu-item.flex-middle [:div "CONTACT"]]
    [:span.menu-item.flex-middle [:div "SORT"]]
-   [:span.menu-item.flex-middle.title [:div "DANIEL BERG"]]]
+   [:span.flex-middle.title [:div "DANIEL BERG"]]]
   )
 
 (defn Grid
