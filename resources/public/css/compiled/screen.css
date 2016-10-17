@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #655643;
 }
 
 .img-container {
@@ -25,14 +25,33 @@ body {
 }
 
 .app-bar {
-  position: fixed;
-  background-color: white;
-  width: 100%;
-  display: flex;
   align-items: center;
+  background-color: #BF4D28;
+  width: 100%;
+  padding-right: 20px;
   z-index: 2;
-  height: 100px;
+  display: flex;
+  position: fixed;
+  height: 80px;
   left: 0;
+}
+
+.app-bar span {
+  margin-left: 20px;
+  font-family: Lato, sans-serif;
+  color: white;
+}
+
+.app-bar .active {
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+}
+
+.app-bar .daniel {
+  font-size: 24px;
+  font-family: Lato Heavy, sans-serif;
+  margin-right: 20px;
+  margin-left: auto;
 }
 
 .flex-middle {
@@ -40,4 +59,8 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.z1 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
