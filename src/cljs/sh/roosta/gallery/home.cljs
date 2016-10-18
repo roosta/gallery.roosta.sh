@@ -45,13 +45,30 @@
 
 (defn Appbar
   []
-  [:div.app-bar.z2
-   [:span.menu-item.flex-middle.active [:div "WORK"]]
-   [:span.menu-item.flex-middle [:div "ABOUT"]]
-   [:span.menu-item.flex-middle [:div "CONTACT"]]
-   [:span.menu-item.flex-middle [:div "SORT"][:div.caret]]
-   [:span.flex-middle.title [:div "DANIEL BERG"]]]
-  )
+  (let [menu-atom (r/atom false)]
+    (fn []
+      [:div.app-bar.z2
+       [:span.menu-item.flex-middle.active
+        [:div "WORK"]]
+       [:span.menu-item.flex-middle
+        [:div "ABOUT"]]
+       [:span.menu-item.flex-middle
+        [:div "CONTACT"]]
+       [:div.dropdown
+        [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
+         [:div "SORT" [:div.caret]]]
+        [:ui.dropdown-menu {:class (if @menu-atom
+                                     "menu-is-open"
+                                     "")}
+         [:li [:a {:href "#"} "PAINTINGS"]]
+         [:li [:a {:href "#"} "DRAWINGS"]]
+         [:li [:a {:href "#"} "PHOTOS"]]
+         [:li [:a {:href "#"} "PIXEL"]]
+         [:li [:a {:href "#"} "DESIGN"]]
+         ]
+        ]
+       [:span.flex-middle.title
+        [:div "DANIEL BERG"]]])))
 
 (defn Grid
   [layouts cols]

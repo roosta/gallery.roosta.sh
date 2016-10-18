@@ -5,17 +5,17 @@
    {:id 2 :w 1280 :h 562 :title "Cake" :src "img/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
    {:id 3 :w 549 :h 908 :title "Charcoal Nomad" :src "img/charnom.jpg" :category :design :desc "Charcoal masked nomad figure"}
    {:id 4 :w 667 :h 975 :title "Cloak in Motion" :src "img/cloak.jpg" :category :photo :desc "One is a series of dark room photographs experimenting with various light exposure settings during development"}
-   {:id 5 :w 270 :h 123 :gif true :title "Conch" :src "img/conch.gif" :category :game :desc "Enemy design for an unfinished untitled shmup game"}
+   {:id 5 :w 270 :h 123 :gif true :title "Conch" :src "img/conch.gif" :category :pixel :desc "Enemy design for an unfinished untitled shmup game"}
    {:id 6 :w 819 :h 1386 :title "Post cover" :src "img/cover.jpg" :category :painting :desc "Conseptual cover for a comic book that was never finished"}
    {:id 7 :w 437 :h 736 :title "Kanal Session Design" :src "img/cs.jpg" :category :design :desc "One of several design suggestions for a skating event. Not used but I still like it"}
    {:id 8 :w 1164 :h 785 :title "Drainpipes" :src "img/drainpipes.jpg" :category :photo :desc "Dark room development"}
    {:id 9 :w 1525 :h 1084 :title "Dunes" :src "img/dunes.jpg" :category :painting :desc "Sand dunes abstracted"}
    {:id 10 :w 376 :h 520 :title "Masked Pencil Sketch" :src "img/edn.jpg" :category :drawing :desc "More pencil drawings of a gass mask wearing figure"}
-   {:id 11 :w 242 :h 208 :gif true :title "Pixel Explosion" :src "img/expl.gif" :category :game :desc "Explosion from an unfinished shmup game"}
-   {:id 12 :w 184 :h 358 :title "Floating Island" :src "img/flisland.png" :category :game :desc "Floating island for an unfinished shmup game"}
+   {:id 11 :w 242 :h 208 :gif true :title "Pixel Explosion" :src "img/expl.gif" :category :pixel :desc "Explosion from an unfinished shmup game"}
+   {:id 12 :w 184 :h 358 :title "Floating Island" :src "img/flisland.png" :category :pixel :desc "Floating island for an unfinished shmup game"}
    {:id 13 :w 1193 :h 929 :title "Development fluid experiment" :src "img/fluid.jpg" :category :photo :desc "Messing around with development fluid that turned out kinda neat"}
    {:id 14 :w 1068 :h 1068 :title "Goat Boys LP cover design" :src "img/gbcover.jpg" :category :design :desc "Cover design for Goat Boys debut album" :link "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"}
-   {:id 15 :w 497 :h 635 :title "Ghost Guy" :src "img/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/games and the masks ghosts wear"}
+   {:id 15 :w 497 :h 635 :title "Ghost Guy" :src "img/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/pixels and the masks ghosts wear"}
    {:id 16 :w 548 :h 320 :title "Gray Brother" :src "img/graybrother.jpg" :category :drawing :desc "Pencil drawing of a gass masked wearing person"}
    {:id 17 :w 1024 :h 576 :title "Hooded Moon" :src "img/hoodie.jpg" :category :design :desc "Cover suggestion for a band, that was never used"}
    {:id 18 :w 720 :h 470 :title "Hufda" :src "img/hufda.jpg" :category :design :desc "Cover suggestion for a band, it that was never used"}
@@ -28,9 +28,9 @@
    {:id 25 :w 865 :h 571 :title "Julie series nr 6" :src "img/js6.jpg" :category :photo :desc "Sixth in a photo series taken during medieval festival and developed in a darkroom"}
    {:id 26 :w 952 :h 1332 :title "Kodak Ice" :src "img/kodak.jpg" :category :photo :desc "Failed to develop this macro image of some ice but the result I still like"}
    {:id 27 :w 549 :h 731 :title "Desert Lady" :src "img/lady.jpg" :category :painting :desc "Unfinished painting trying to depict a desert-like dress style"}
-   {:id 28 :w 480 :h 480 :title "Monoxieman Idle" :src "img/monoxieman_idle.gif" :category :game :desc "Idle animation character sprite for unfinished game"}
-   {:id 29 :w 480 :h 480 :title "Monoxieman Jump" :src "img/monoxieman_jump.gif" :category :game :desc "Jump animation character sprite for unfinished game"}
-   {:id 30 :w 480 :h 480 :title "Monoxieman Running" :src "img/monoxieman_running.gif" :category :game :desc "Running animation character sprite for unfinished game"}
+   {:id 28 :w 480 :h 480 :title "Monoxieman Idle" :src "img/monoxieman_idle.gif" :category :pixel :desc "Idle animation character sprite for unfinished game"}
+   {:id 29 :w 480 :h 480 :title "Monoxieman Jump" :src "img/monoxieman_jump.gif" :category :pixel :desc "Jump animation character sprite for unfinished game"}
+   {:id 30 :w 480 :h 480 :title "Monoxieman Running" :src "img/monoxieman_running.gif" :category :pixel :desc "Running animation character sprite for unfinished game"}
    {:id 31 :w 592 :h 800 :title "More ink!" :src "img/moreink.jpg" :category :drawing :desc "Random sketch drawn with a rough hand"}
    {:id 32 :w 592 :h 800 :title "More mask!" :src "img/moremask.jpg" :category :drawing :desc "Random sketch drawn with a rough hand"}
    {:id 33 :w 1248 :h 1575 :title "Nomad Angle" :src "img/nomad-ang.jpg" :category :painting :desc "Titular nomad drawn from an angle. Comic book concept"}
@@ -42,7 +42,7 @@
    {:id 39 :w 598 :h 877 :title "Runny ink portrait" :src "img/riportrait.jpg" :category :painting :desc "Self portrait with gratuitous use of ink"}
    {:id 40 :w 1237 :h 1748 :title "Salt" :src "img/salt.jpg" :category :painting :desc "Salt/sand dunes abstracted illustration"}
    {:id 41 :w 1184 :h 1600 :title "Sectered" :src "img/sectered.jpg" :category :painting :desc "Gass mask wearing kid in the series of insect inspired gass masks"}
-   {:id 42 :w 1702 :h 630 :title "Shmup Screenshot" :src "img/shmup.png" :category :game :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
+   {:id 42 :w 1702 :h 630 :title "Shmup Screenshot" :src "img/shmup.png" :category :pixel :desc "Composit unfinished shmup screenshot from an unfinished untitled game"}
    {:id 43 :w 1527 :h 1084 :title "Sea of sand" :src "img/sos.jpg" :category :painting :desc "Mountain surrounded by sand. Looks in hindsight more like water"}
    {:id 44 :w 850 :h 1163 :title "Splotch" :src "img/splotch.jpg" :category :painting :desc "Watercolor and ink drawing of a gassmask wearing creature"}
    {:id 45 :w 779 :h 566 :title "Stones study" :src "img/stones.jpg" :category :painting :desc "Study of stone texture, watercolor"}
