@@ -55,6 +55,6 @@
    {:id 52 :w 1228 :h 1332 :title "Noir Webpage Splash" :src "img/inkdannoir.jpg" :category :painting :desc "Part of an older web page gallery"}
    {:id 53 :w 1870 :h 1384 :title "Pipes" :src "img/pipes.jpg" :category :photo :desc "Dark room experiment"}
    {:id 54 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}
-   {:id 55 :w 192 :h 480 :title "Pixel cliff" :src "img/cliff.png" :category :painting :desc "Pixel Cliff"}
+   {:id 55 :w 192 :h 480 :title "Pixel cliff" :src "img/cliff.png" :category :pixel :desc "Pixel Cliff"}
 
    ])

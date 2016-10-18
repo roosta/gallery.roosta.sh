@@ -41,51 +41,6 @@
     (.init pswp)
     ))
 
-(defn Appbar
-  []
-  (let [menu-atom (r/atom false)]
-    (fn []
-      [:div.app-bar.z2
-       [:span.menu-item.flex-middle.active
-        [:div "WORK"]]
-       [:div.dropdown
-        [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
-         [:div "FILTER" [:div.caret]]]
-        [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
-         [:li [:span "PAINTINGS"]]
-         [:li [:span "DRAWINGS"]]
-         [:li [:span "PHOTOS"]]
-         [:li [:span "PIXEL"]]
-         [:li [:span "DESIGN"]]]]
-       [:span.menu-item.flex-middle
-        [:div "ABOUT"]]
-       [:span.menu-item.flex-middle
-        [:div "CONTACT"]]
-       [:span.flex-middle.title
-        [:div "DANIEL BERG"]]])))
-
-(defn Grid
-  [layouts cols]
-  [ResponsiveGridLayout
-   {:className "layout"
-    :layouts (clj->js layouts)
-    :isDraggable false
-    :isResizable false
-    :container-padding [0 60]
-    :breakpoints {:lg 1200 :md 996 :sm 768}
-    :cols (clj->js cols)
-    :items 57
-    :margin [0 0]
-    :rowHeight 100}
-   (map-indexed
-    (fn [index item]
-      ^{:key (str (:id item) "n")}
-      [:div.img-container.flex-middle {:on-click #(open-photoswipe index)}
-       [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
-       [:div.info.flex-middle
-        [:div (str (:title item))]]
-       ])
-    resources/items)])
 
 (defn get-filtered-items
   [cat]
@@ -112,9 +67,62 @@
        (get-filtered-items cat)))
     cols)))
 
+(defn Appbar
+  [state]
+  (let [menu-atom (r/atom false)]
+    (fn []
+      [:div.app-bar.z2
+       [:span.menu-item.flex-middle.active
+        [:div "WORK"]]
+       [:div.dropdown
+        [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
+         [:div "FILTER" [:div.caret]]]
+        [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
+         [:li {:on-click #(swap! state assoc :category :all)}
+          [:span "ALL"]]
+         [:li {:on-click #(swap! state assoc :category :painting)}
+          [:span "PAINTINGS"]]
+         [:li {:on-click #(swap! state assoc :category :drawing)}
+          [:span "DRAWINGS"]]
+         [:li {:on-click #(swap! state assoc :category :photo)}
+          [:span "PHOTOS"]]
+         [:li {:on-click #(swap! state assoc :category :pixel)}
+          [:span "PIXEL"]]
+         [:li {:on-click #(swap! state assoc :category :design)}
+          [:span "DESIGN"]]]]
+       [:span.menu-item.flex-middle
+        [:div "ABOUT"]]
+       [:span.menu-item.flex-middle
+        [:div "CONTACT"]]
+       [:span.flex-middle.title
+        [:div "DANIEL BERG"]]])))
+
+(defn Grid
+  [state]
+  [ResponsiveGridLayout
+   {:className "layout"
+    :layouts (clj->js (generate-layout (:category @state)))
+    :isDraggable false
+    :isResizable false
+    :container-padding [0 60]
+    :breakpoints {:lg 1200 :md 996 :sm 768}
+    :cols (clj->js cols)
+    :items 57
+    :margin [0 0]
+    :rowHeight 100}
+   (map-indexed
+    (fn [index item]
+      ^{:key (str (:id item) "n")}
+      [:div.img-container.flex-middle {:on-click #(open-photoswipe index)}
+       [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
+       [:div.info.flex-middle
+        [:div (str (:title item))]]
+       ])
+    (get-filtered-items (:category @state)))])
+
 (defn Main
   []
-  (let [layouts (generate-layout :all)]
+  (let [state (r/atom {:category :all})]
     (r/create-class
      {
       ;; :component-will-mount #(d/log (clj->js layouts))
@@ -123,6 +131,6 @@
       :reagent-render
       (fn []
         [:div
-         [Appbar]
-         [Grid layouts cols]]
+         [Appbar state]
+         [Grid state]]
         )})))
