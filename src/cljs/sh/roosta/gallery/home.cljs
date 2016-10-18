@@ -48,19 +48,19 @@
       [:div.app-bar.z2
        [:span.menu-item.flex-middle.active
         [:div "WORK"]]
-       [:span.menu-item.flex-middle
-        [:div "ABOUT"]]
-       [:span.menu-item.flex-middle
-        [:div "CONTACT"]]
        [:div.dropdown
         [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
-         [:div "SORT" [:div.caret]]]
+         [:div "FILTER" [:div.caret]]]
         [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
          [:li [:span "PAINTINGS"]]
          [:li [:span "DRAWINGS"]]
          [:li [:span "PHOTOS"]]
          [:li [:span "PIXEL"]]
          [:li [:span "DESIGN"]]]]
+       [:span.menu-item.flex-middle
+        [:div "ABOUT"]]
+       [:span.menu-item.flex-middle
+        [:div "CONTACT"]]
        [:span.flex-middle.title
         [:div "DANIEL BERG"]]])))
 
