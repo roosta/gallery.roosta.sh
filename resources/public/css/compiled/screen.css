@@ -110,22 +110,23 @@ body {
   background-color: #984E4F;
   border-radius: 2px;
   display: none;
-  transition: all 200ms linear;
   list-style: none;
   left: 0px;
 }
 
-.dropdown-menu li a {
+.dropdown-menu li span {
   display: block;
   padding: 3px 15px;
   clear: both;
+  font-family: Lato, sans-serif;
   text-decoration: none;
   font-size: 15px;
   color: #FFE4D2;
   white-space: nowrap;
 }
 
-.dropdown-menu li a:hover, .dropdown-menu li a:focus {
+.dropdown-menu li span:hover, .dropdown-menu li span:focus {
+  transition: all 100ms linear;
   background-color: #DB9269;
 }
 

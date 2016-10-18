@@ -39,10 +39,6 @@
     (.init pswp)
     ))
 
-(defn Dropdown-menu
-  []
-  )
-
 (defn Appbar
   []
   (let [menu-atom (r/atom false)]
@@ -57,16 +53,12 @@
        [:div.dropdown
         [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
          [:div "SORT" [:div.caret]]]
-        [:ui.dropdown-menu {:class (if @menu-atom
-                                     "menu-is-open"
-                                     "")}
-         [:li [:a {:href "#"} "PAINTINGS"]]
-         [:li [:a {:href "#"} "DRAWINGS"]]
-         [:li [:a {:href "#"} "PHOTOS"]]
-         [:li [:a {:href "#"} "PIXEL"]]
-         [:li [:a {:href "#"} "DESIGN"]]
-         ]
-        ]
+        [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
+         [:li [:span "PAINTINGS"]]
+         [:li [:span "DRAWINGS"]]
+         [:li [:span "PHOTOS"]]
+         [:li [:span "PIXEL"]]
+         [:li [:span "DESIGN"]]]]
        [:span.flex-middle.title
         [:div "DANIEL BERG"]]])))
 
@@ -93,6 +85,13 @@
        ])
     resources/items)])
 
+(defn get-filtered-items
+  [cat]
+  (if (= :all cat)
+    resources/items
+    (keep #(when (= (:category %) cat) %) resources/items))
+  )
+
 (defn Main
   []
   (let [cols {:lg 6 :md 4 :sm 2}
@@ -109,7 +108,7 @@
                               :w 1
                               :h (+ (rand-int 3) 2)}))
                      []
-                     resources/items))
+                     (get-filtered-items :all)))
                   cols)
                  )]
     (r/create-class

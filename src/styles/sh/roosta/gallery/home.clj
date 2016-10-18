@@ -101,22 +101,21 @@
     :display "none"
     :min-width (px 160)
     :padding "5px 0"
-    :margin "2px 0 0";  // override default ul
+    :margin "2px 0 0"
     :list-style "none"
-    ;; :font-size $mui-base-font-size;
-
-    :transition "all 200ms linear"
+    ;; :transition "all 200ms linear"
     :text-align "left"
     :background-color (:four palette)
     :border-radius (px 2)
     :z-index 1
     :background-clip "padding-box"}
    [:li
-    [:a
+    [:span
      {:display "block"
       ;; :padding-left (px 15)
       :padding "3px 15px"
       :clear "both"
+      :font-family "Lato, sans-serif"
       :text-decoration "none"
       :font-size (px 15)
       ;; :font-weight "normal"
@@ -124,8 +123,8 @@
       :white-space "nowrap"}
      [:&:hover
       :&:focus
-      {:background-color (:three palette)}
-      ]]]]
+      {:transition "all 100ms linear"
+       :background-color (:three palette)}]]]]
   [:.menu-is-open
    {:display "block"
     }])
