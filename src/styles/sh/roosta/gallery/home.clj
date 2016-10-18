@@ -58,6 +58,15 @@
     :align-items "center"
     :justify-content "center"}]
   [:.z1
-   {:box-shadow "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"}
-   #_{:box-shadow "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"}]
-  )
+   {:box-shadow "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"}]
+  [:.z2
+   {:box-shadow "0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)"}]
+  [:.caret
+   {:display "inline-block"
+    :width 0
+    :height 0
+    :margin-left (px 2)
+    :vertical-align "middle"
+    :border-top "4px solid"
+    :border-right "4px solid transparent"
+    :border-left "4px solid transparent"}])
