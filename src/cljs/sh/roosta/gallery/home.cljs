@@ -15,6 +15,8 @@
 (def Responsive js/ReactGridLayout.Responsive)
 (def ResponsiveGridLayout (r/adapt-react-class (js/ReactGridLayout.WidthProvider Responsive)))
 
+(def cols {:lg 6 :md 4 :sm 2})
+
 (defn transform-map
   "Transform resource map to conform to photoswipe"
   [items]
@@ -92,25 +94,27 @@
     (keep #(when (= (:category %) cat) %) resources/items))
   )
 
+(defn generate-layout
+  [cat]
+  (zipmap
+   [:lg :md :sm]
+   (mapv
+    (fn [[k v]]
+      (reduce
+       (fn [acc item]
+         (conj acc
+               {:i (str (:id item) "n")
+                :x (mod (:id item) v)
+                :y 0
+                :w 1
+                :h (+ (rand-int 3) 2)}))
+       []
+       (get-filtered-items cat)))
+    cols)))
+
 (defn Main
   []
-  (let [cols {:lg 6 :md 4 :sm 2}
-        layouts (zipmap
-                 [:lg :md :sm]
-                 (mapv
-                  (fn [[k v]]
-                    (reduce
-                     (fn [acc item]
-                       (conj acc
-                             {:i (str (:id item) "n")
-                              :x (mod (:id item) v)
-                              :y 0
-                              :w 1
-                              :h (+ (rand-int 3) 2)}))
-                     []
-                     (get-filtered-items :all)))
-                  cols)
-                 )]
+  (let [layouts (generate-layout :all)]
     (r/create-class
      {
       ;; :component-will-mount #(d/log (clj->js layouts))
