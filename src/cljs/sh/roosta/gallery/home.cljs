@@ -46,7 +46,7 @@
   [cat]
   (if (= :all cat)
     resources/items
-    (keep #(when (= (:category %) cat) %) resources/items))
+    (filter #(= (:category %) cat) resources/items))
   )
 
 (defn generate-layout
@@ -60,7 +60,7 @@
          (conj acc
                {:i (str (:id item) "n")
                 :x (mod (:id item) v)
-                :y 0
+                :y js/Infinity
                 :w 1
                 :h (+ (rand-int 3) 2)}))
        []
@@ -75,7 +75,7 @@
        [:span.menu-item.flex-middle.active
         [:div "WORK"]]
        [:div.dropdown
-        [:span.menu-item.flex-middle {:on-click #(swap! menu-atom not)}
+        [:span.menu-item.flex-middle {:onClick #(swap! menu-atom not)}
          [:div "FILTER" [:div.caret]]]
         [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
          [:li {:on-click #(swap! state assoc :category :all)}
