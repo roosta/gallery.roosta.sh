@@ -68,27 +68,27 @@
     cols)))
 
 (defn Appbar
-  [state]
-  (let [menu-atom (r/atom false)]
+  [category]
+  (let [open? (r/atom false)]
     (fn []
       [:div.app-bar.z2
        [:span.menu-item.flex-middle.active
         [:div "WORK"]]
        [:div.dropdown
-        [:span.menu-item.flex-middle {:onClick #(swap! menu-atom not)}
+        [:span.menu-item.flex-middle {:onClick #(swap! open? not)}
          [:div "FILTER" [:div.caret]]]
-        [:ui.dropdown-menu {:class (if @menu-atom "menu-is-open" "")}
-         [:li {:on-click #(swap! state assoc :category :all)}
+        [:ui.dropdown-menu {:class (if @open? "menu-is-open" "")}
+         [:li {:on-click #(reset! category :all)}
           [:span "ALL"]]
-         [:li {:on-click #(swap! state assoc :category :painting)}
+         [:li {:on-click #(reset! category :painting)}
           [:span "PAINTINGS"]]
-         [:li {:on-click #(swap! state assoc :category :drawing)}
+         [:li {:on-click #(reset! category :drawing)}
           [:span "DRAWINGS"]]
-         [:li {:on-click #(swap! state assoc :category :photo)}
+         [:li {:on-click #(reset! category :photo)}
           [:span "PHOTOS"]]
-         [:li {:on-click #(swap! state assoc :category :pixel)}
+         [:li {:on-click #(reset! category :pixel)}
           [:span "PIXEL"]]
-         [:li {:on-click #(swap! state assoc :category :design)}
+         [:li {:on-click #(reset! category :design)}
           [:span "DESIGN"]]]]
        [:span.menu-item.flex-middle
         [:div "ABOUT"]]
@@ -98,10 +98,10 @@
         [:div "DANIEL BERG"]]])))
 
 (defn Grid
-  [state]
+  [category]
   [ResponsiveGridLayout
    {:className "layout"
-    :layouts (clj->js (generate-layout (:category @state)))
+    :layouts (clj->js (generate-layout @category))
     :isDraggable false
     :isResizable false
     :container-padding [0 60]
@@ -118,11 +118,11 @@
        [:div.info.flex-middle
         [:div (str (:title item))]]
        ])
-    (get-filtered-items (:category @state)))])
+    (get-filtered-items @category))])
 
 (defn Main
   []
-  (let [state (r/atom {:category :all})]
+  (let [category (r/atom :all)]
     (r/create-class
      {
       ;; :component-will-mount #(d/log (clj->js layouts))
@@ -131,6 +131,6 @@
       :reagent-render
       (fn []
         [:div
-         [Appbar state]
-         [Grid state]]
+         [Appbar category]
+         [Grid category]]
         )})))
