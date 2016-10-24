@@ -48,7 +48,7 @@
    {:padding-left (px 15)
     :padding-right (px 15)
     :font-family "Lato, sans-serif"
-    :color "#FFE4D2"}]
+    :color (:white palette)}]
 
   [:.menu-item:hover
    {:background-color (:gray palette)
