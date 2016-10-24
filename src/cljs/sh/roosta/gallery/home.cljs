@@ -55,17 +55,15 @@
    [:lg :md :sm]
    (mapv
     (fn [[k v]]
-      (reduce
-       (fn [acc item]
-         (conj acc
+      (into []
+            (map-indexed
+             (fn [idx item]
                {:i (str (:id item) "n")
-                :x (mod (:id item) v)
+                :x (mod idx v)
                 :y js/Infinity
                 :w 1
-                :h (+ (rand-int 3) 2)}))
-       []
-       filtered-items
-       ))
+                :h (+ (rand-int 3) 2)})
+             filtered-items)))
     cols)))
 
 (defn Appbar
@@ -111,15 +109,15 @@
     :items 57
     :margin [0 0]
     :rowHeight 100}
-   (map-indexed
-    (fn [index item]
-      ^{:key (str (:id item) "n")}
-      [:div.img-container.flex-middle {:on-click #(open-photoswipe index)}
-       [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
-       [:div.info.flex-middle
-        [:div (str (:title item))]]
-       ])
-    (get-filtered-items resources/items @category))])
+    (map-indexed
+     (fn [index item]
+       ^{:key (str (:id item) "n")}
+       [:div.img-container.flex-middle {:on-click #(open-photoswipe (:id item))}
+        [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
+        [:div.info.flex-middle
+         [:div (str (:title item))]]
+        ])
+     (get-filtered-items resources/items @category))])
 
 (defn Main
   []
