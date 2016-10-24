@@ -34,6 +34,8 @@
    {:transition "opacity 200ms linear"
     :opacity 0.6}]
 
+  [:.pointer-none
+   {:pointer-events "none"}]
   [:.app-bar
    {:position "fixed"
     :background-color (:black palette)

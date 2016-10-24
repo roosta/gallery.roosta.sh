@@ -7,9 +7,7 @@
    [sh.roosta.gallery.resources :as resources]
    [reagent.debug :as d]
    [goog.events :as events]
-   [reagent.core :as r])
-  (:import  [goog.dom ViewportSizeMonitor])
-  )
+   [reagent.core :as r]))
 
 (def GridLayout (r/adapt-react-class js/ReactGridLayout))
 (def Responsive js/ReactGridLayout.Responsive)
@@ -67,37 +65,36 @@
     cols)))
 
 (defn Appbar
-  [category]
-  (let [open? (r/atom false)]
-    (fn []
-      [:div.app-bar.z2
-       [:span.menu-item.flex-middle.active
-        [:div "WORK"]]
-       [:div.dropdown
-        [:span.menu-item.flex-middle {:onClick #(swap! open? not)}
-         [:div "FILTER" [:div.caret]]]
-        [:ui.dropdown-menu {:class (if @open? "menu-is-open" "")}
-         [:li {:on-click #(reset! category :all)}
-          [:span "ALL"]]
-         [:li {:on-click #(reset! category :painting)}
-          [:span "PAINTINGS"]]
-         [:li {:on-click #(reset! category :drawing)}
-          [:span "DRAWINGS"]]
-         [:li {:on-click #(reset! category :photo)}
-          [:span "PHOTOS"]]
-         [:li {:on-click #(reset! category :pixel)}
-          [:span "PIXEL"]]
-         [:li {:on-click #(reset! category :design)}
-          [:span "DESIGN"]]]]
-       [:span.menu-item.flex-middle
-        [:div "ABOUT"]]
-       [:span.menu-item.flex-middle
-        [:div "CONTACT"]]
-       [:span.flex-middle.title
-        [:div "DANIEL BERG"]]])))
+  [category menu-open?]
+  (fn []
+     [:div.app-bar.z2
+      [:span.menu-item.flex-middle.active
+       [:div "WORK"]]
+      [:div.dropdown
+       [:span.menu-item.flex-middle.filter {:on-click #(swap! menu-open? not)}
+        [:div.pointer-none "FILTER" [:div.caret]]]
+       [:ui.dropdown-menu {:class (if @menu-open? "menu-is-open" "")}
+        [:li {:on-click #(reset! category :all)}
+         [:span "ALL"]]
+        [:li {:on-click #(reset! category :painting)}
+         [:span "PAINTINGS"]]
+        [:li {:on-click #(reset! category :drawing)}
+         [:span "DRAWINGS"]]
+        [:li {:on-click #(reset! category :photo)}
+         [:span "PHOTOS"]]
+        [:li {:on-click #(reset! category :pixel)}
+         [:span "PIXEL"]]
+        [:li {:on-click #(reset! category :design)}
+         [:span "DESIGN"]]]]
+      [:span.menu-item.flex-middle
+       [:div "ABOUT"]]
+      [:span.menu-item.flex-middle
+       [:div "CONTACT"]]
+      [:span.flex-middle.title
+       [:div "DANIEL BERG"]]]))
 
 (defn Grid
-  [category]
+  [category menu-open?]
   [ResponsiveGridLayout
    {:className "layout"
     :layouts (clj->js (generate-layout (get-filtered-items resources/items @category)))
@@ -112,7 +109,8 @@
     (map-indexed
      (fn [index item]
        ^{:key (str (:id item) "n")}
-       [:div.img-container.flex-middle {:on-click #(open-photoswipe (:id item))}
+       [:div.img-container.flex-middle {:on-click #(do (reset! menu-open? false)
+                                                       (open-photoswipe (:id item)))}
         [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
         [:div.info.flex-middle
          [:div (str (:title item))]]
@@ -121,15 +119,24 @@
 
 (defn Main
   []
-  (let [category (r/atom :all)]
+  (let [category (r/atom :all)
+        menu-open? (r/atom false)]
     (r/create-class
      {
       ;; :component-will-mount #(d/log (clj->js layouts))
-      ;; :component-did-mount #(init! vsm state)
+      ;; :component-did-mount #(d/log (= (dom/getElementByClass "app-bar")
+      ;;                                 (dom/getElementByClass "layout")))
       ;; :component-will-unmount #(.dispose vsm)
       :reagent-render
       (fn []
-        [:div
-         [Appbar category]
-         [Grid category]]
+        [:div {:on-click #(let [target (.. % -target)
+                                menu (dom/getElementByClass "dropdown-menu")
+                                btn (dom/getElementByClass "filter")]
+                            (if (not= target btn)
+                              (reset! menu-open? false)
+                              ;; (d/log target)
+                              )
+                            )}
+         [Appbar category menu-open?]
+         [Grid category menu-open?]]
         )})))
