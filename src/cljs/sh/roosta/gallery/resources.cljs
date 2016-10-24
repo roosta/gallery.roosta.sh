@@ -17,7 +17,7 @@
    {:id 14 :w 1068 :h 1068 :title "Goat Boys LP cover design" :src "img/gbcover.jpg" :category :design :desc "Cover design for Goat Boys debut album" :link "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"}
    {:id 15 :w 497 :h 635 :title "Ghost Guy" :src "img/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/pixels and the masks ghosts wear"}
    {:id 16 :w 548 :h 320 :title "Gray Brother" :src "img/graybrother.jpg" :category :drawing :desc "Pencil drawing of a gass masked wearing person"}
-   {:id 17 :w 1024 :h 576 :title "Hooded Moon" :src "img/hoodie.jpg" :category :design :desc "Cover suggestion for a band, that was never used"}
+   {:id 17 :w 1024 :h 576 :title "Hooded Moon" :src "img/hoodie.jpg" :category :pixel :desc "Cover suggestion for a band, that was never used"}
    {:id 18 :w 720 :h 470 :title "Hufda" :src "img/hufda.jpg" :category :design :desc "Cover suggestion for a band, it that was never used"}
    {:id 19 :w 625 :h 859 :title "Selv Portrait" :src "img/inkdans.jpg" :category :painting :desc "Selv portrait using ink on plastic"}
    {:id 20 :w 765 :h 959 :title "Insectlike" :src "img/insectlike.jpg" :category :drawing :desc "One of several inksect inspired mask drawings"}
@@ -48,7 +48,7 @@
    {:id 45 :w 779 :h 566 :title "Stones study" :src "img/stones.jpg" :category :painting :desc "Study of stone texture, watercolor"}
    {:id 46 :w 1755 :h 1275 :title "Thirst" :src "img/thirst.jpg" :category :painting :desc "Thirsty fellow drawn with ink on rice paper"}
    {:id 47 :w 1755 :h 1275 :title "Three men" :src "img/tmen.jpg" :category :painting :desc "Card playing fellows drawn with ink on rice paper"}
-   {:id 48 :w 600 :h 600 :title "VLN Cover suggestion" :src "img/vln.jpg" :category :design :desc "Pixel art cover suggestion for a band album"}
+   {:id 48 :w 600 :h 600 :title "VLN Cover suggestion" :src "img/vln.jpg" :category :pixel :desc "Pixel art cover suggestion for a band album"}
    {:id 49 :w 1224 :h 1228 :title "Wind Cover" :src "img/wind.jpg" :category :design :desc "Cover for a 60s inspired jam band. Marker on plastic"}
    {:id 50 :w 542 :h 762 :title "Wrap" :src "img/wrap.jpg" :category :drawing :desc "Cloth study, pencil"}
    {:id 51 :w 586 :h 500 :title "Head" :src "img/head.png" :category :design :desc "Messing around"}
