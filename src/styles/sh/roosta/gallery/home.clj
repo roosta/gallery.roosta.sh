@@ -9,7 +9,10 @@
    :two "#D6B596"
    :three "#DB9269"
    :four "#984E4F"
-   :five "#2A2F33"})
+   :five "#2A2F33"
+   :gray "#848484"
+   :white "#FFE4D2"
+   :black "#2b2b2b"})
 
 (defstyles screen
 
@@ -33,7 +36,7 @@
 
   [:.app-bar
    {:position "fixed"
-    :background-color "#984E4F"
+    :background-color (:black palette)
     :margin-right (px 20)
     :width "100%"
     :display "flex"
@@ -48,17 +51,17 @@
     :color "#FFE4D2"}]
 
   [:.menu-item:hover
-   {:background-color "#DB9269"
+   {:background-color (:gray palette)
     :transition "all 200ms linear"}]
 
   [:.active
-   {:color "#2A2F33"
+   {:color (:black palette)
     :height (px 60)
-    :background-color "#D6B596"}]
+    :background-color (:white palette)}]
 
   [:.active:hover
    {:height (px 60)
-    :background-color "#DB9269"}]
+    :background-color (:gray palette)}]
 
   [:.title
    {:font-size (px 24)
@@ -105,7 +108,7 @@
     :list-style "none"
     ;; :transition "all 200ms linear"
     :text-align "left"
-    :background-color (:four palette)
+    :background-color (:black palette)
     :border-radius (px 2)
     :z-index 1
     :background-clip "padding-box"}
@@ -119,12 +122,12 @@
       :text-decoration "none"
       :font-size (px 15)
       ;; :font-weight "normal"
-      :color (:one palette)
+      :color (:white palette)
       :white-space "nowrap"}
      [:&:hover
       :&:focus
       {:transition "all 100ms linear"
-       :background-color (:three palette)}]]]]
+       :background-color (:gray palette)}]]]]
   [:.menu-is-open
    {:display "block"
     }])

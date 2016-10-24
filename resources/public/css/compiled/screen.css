@@ -26,7 +26,7 @@ body {
 
 .app-bar {
   position: fixed;
-  background-color: #984E4F;
+  background-color: #2b2b2b;
   margin-right: 20px;
   width: 100%;
   display: flex;
@@ -43,19 +43,19 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #DB9269;
+  background-color: #848484;
   transition: all 200ms linear;
 }
 
 .active {
-  color: #2A2F33;
+  color: #2b2b2b;
   height: 60px;
-  background-color: #D6B596;
+  background-color: #FFE4D2;
 }
 
 .active:hover {
   height: 60px;
-  background-color: #DB9269;
+  background-color: #848484;
 }
 
 .title {
@@ -107,7 +107,7 @@ body {
   position: absolute;
   z-index: 1;
   background-clip: padding-box;
-  background-color: #984E4F;
+  background-color: #2b2b2b;
   border-radius: 2px;
   display: none;
   list-style: none;
@@ -127,7 +127,7 @@ body {
 
 .dropdown-menu li span:hover, .dropdown-menu li span:focus {
   transition: all 100ms linear;
-  background-color: #DB9269;
+  background-color: #848484;
 }
 
 .menu-is-open {
