@@ -31,7 +31,12 @@
 
   :minify-assets
   {:assets
-   {"resources/public/css/compiled/screen.min.css" "resources/public/css/compiled/screen.css"}}
+   {"resources/public/css/screen.min.css" "resources/public/css/compiled/screen.css"
+    "resources/public/css/grid-layout.min.css" "resources/public/css/grid-layout.css" 
+    "resources/public/css/normalize.min.css" "resources/public/css/normalize.css" 
+    "resources/public/css/photoswipe.min.css" "resources/public/css/photoswipe.css"
+    "resources/public/css/default-skin/default-skin.min.css" "resources/public/css/default-skin/default-skin.css"
+    }}
 
   :garden {:builds [{;; Optional name of the build:
                      :id "dev"
