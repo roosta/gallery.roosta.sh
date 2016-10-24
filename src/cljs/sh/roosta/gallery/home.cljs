@@ -43,14 +43,14 @@
 
 
 (defn get-filtered-items
-  [cat]
+  [items cat]
   (if (= :all cat)
-    resources/items
-    (filter #(= (:category %) cat) resources/items))
+    items
+    (filter #(= (:category %) cat) items))
   )
 
 (defn generate-layout
-  [cat]
+  [filtered-items]
   (zipmap
    [:lg :md :sm]
    (mapv
@@ -64,7 +64,8 @@
                 :w 1
                 :h (+ (rand-int 3) 2)}))
        []
-       (get-filtered-items cat)))
+       filtered-items
+       ))
     cols)))
 
 (defn Appbar
@@ -101,7 +102,7 @@
   [category]
   [ResponsiveGridLayout
    {:className "layout"
-    :layouts (clj->js (generate-layout @category))
+    :layouts (clj->js (generate-layout (get-filtered-items resources/items @category)))
     :isDraggable false
     :isResizable false
     :container-padding [0 60]
@@ -118,7 +119,7 @@
        [:div.info.flex-middle
         [:div (str (:title item))]]
        ])
-    (get-filtered-items @category))])
+    (get-filtered-items resources/items @category))])
 
 (defn Main
   []
