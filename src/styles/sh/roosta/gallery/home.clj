@@ -69,7 +69,7 @@
   [:.title
    {:font-size (px 24)
     :color "#FFE4D2"
-    :font-family "Lato Light, sans-serif"
+    :font-family "Lato, sans-serif"
     :margin-right (px 20)
     :margin-left "auto"}]
 
