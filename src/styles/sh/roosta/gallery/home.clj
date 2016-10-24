@@ -12,7 +12,8 @@
    :five "#2A2F33"
    :gray "#848484"
    :white "#FFE4D2"
-   :black "#2b2b2b"})
+   :black "#2b2b2b"
+   :background "#212529"})
 
 (defstyles screen
 
@@ -131,5 +132,6 @@
       {:transition "all 100ms linear"
        :background-color (:gray palette)}]]]]
   [:.menu-is-open
-   {:display "block"
-    }])
+   {:display "block"}]
+  [:.pswp__bg {:background-color (:background palette)}]
+  [:.pswp__img {:background-color (:background palette)}])

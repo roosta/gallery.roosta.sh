@@ -137,3 +137,11 @@ body {
 .menu-is-open {
   display: block;
 }
+
+.pswp__bg {
+  background-color: #212529;
+}
+
+.pswp__img {
+  background-color: #212529;
+}
