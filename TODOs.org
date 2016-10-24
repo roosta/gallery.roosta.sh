@@ -1,1 +1,2 @@
 * Fix menu thing on item hover.
+* Make circle animation on item hover.
