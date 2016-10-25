@@ -145,3 +145,15 @@ body {
 .pswp__img {
   background-color: #212529;
 }
+
+@media (max-width: 450px) {
+
+  .title {
+    font-size: 16px;
+  }
+  
+  .menu-item {
+    font-size: 11px;
+  }
+
+}

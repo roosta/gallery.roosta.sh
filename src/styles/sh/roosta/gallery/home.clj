@@ -134,4 +134,12 @@
   [:.menu-is-open
    {:display "block"}]
   [:.pswp__bg {:background-color (:background palette)}]
-  [:.pswp__img {:background-color (:background palette)}])
+  [:.pswp__img {:background-color (:background palette)}]
+  (at-media
+   {:max-width (px 450)}
+   [:.title
+    {:font-size (px 16)}]
+   [:.menu-item
+    {:font-size (px 11)}]
+   )
+  )

@@ -86,7 +86,7 @@
          [:span "PIXEL"]]
         [:li {:on-click #(reset! category :design)}
          [:span "DESIGN"]]]]
-      [:span.menu-item.flex-middle
+      #_[:span.menu-item.flex-middle
        [:div "ABOUT"]]
       [:span.menu-item.flex-middle
        [:div "CONTACT"]]
