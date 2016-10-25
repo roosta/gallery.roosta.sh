@@ -3,7 +3,7 @@
   [{:id 0 :w 411 :h 664 :title "Baby" :src "img/baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
    {:id 1 :w 993 :h 715 :title "Baptism" :src "img/baptism.jpg" :category :painting :desc "Watercolor baptism scene"}
    {:id 2 :w 1280 :h 562 :title "Cake" :src "img/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
-   {:id 3 :w 549 :h 908 :title "Charcoal Nomad" :src "img/charnom.jpg" :category :design :desc "Charcoal masked nomad figure"}
+   {:id 3 :w 549 :h 908 :title "Charcoal Nomad" :src "img/charnom.jpg" :category :drawing :desc "Charcoal masked nomad figure"}
    {:id 4 :w 667 :h 975 :title "Cloak in Motion" :src "img/cloak.jpg" :category :photo :desc "One is a series of dark room photographs experimenting with various light exposure settings during development"}
    {:id 5 :w 270 :h 123 :gif true :title "Conch" :src "img/conch.gif" :category :pixel :desc "Enemy design for an unfinished untitled shmup game"}
    {:id 6 :w 819 :h 1386 :title "Post cover" :src "img/cover.jpg" :category :painting :desc "Conseptual cover for a comic book that was never finished"}
@@ -18,7 +18,7 @@
    {:id 15 :w 497 :h 635 :title "Ghost Guy" :src "img/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/pixels and the masks ghosts wear"}
    {:id 16 :w 548 :h 320 :title "Gray Brother" :src "img/graybrother.jpg" :category :drawing :desc "Pencil drawing of a gass masked wearing person"}
    {:id 17 :w 1024 :h 576 :title "Hooded Moon" :src "img/hoodie.jpg" :category :pixel :desc "Cover suggestion for a band, that was never used"}
-   {:id 18 :w 720 :h 470 :title "Hufda" :src "img/hufda.jpg" :category :design :desc "Cover suggestion for a band, it that was never used"}
+   {:id 18 :w 720 :h 470 :title "Hufda" :src "img/hufda.jpg" :category :drawing :desc "Cover suggestion for a band, it that was never used"}
    {:id 19 :w 625 :h 859 :title "Selv Portrait" :src "img/inkdans.jpg" :category :painting :desc "Selv portrait using ink on plastic"}
    {:id 20 :w 765 :h 959 :title "Insectlike" :src "img/insectlike.jpg" :category :drawing :desc "One of several inksect inspired mask drawings"}
    {:id 21 :w 609 :h 924 :title "Julie series nr 1" :src "img/js1.jpg" :category :photo :desc "First in a photo series taken during medieval festival and developed in a darkroom"}
@@ -51,7 +51,7 @@
    {:id 48 :w 600 :h 600 :title "VLN Cover suggestion" :src "img/vln.jpg" :category :pixel :desc "Pixel art cover suggestion for a band album"}
    {:id 49 :w 1224 :h 1228 :title "Wind Cover" :src "img/wind.jpg" :category :design :desc "Cover for a 60s inspired jam band. Marker on plastic"}
    {:id 50 :w 542 :h 762 :title "Wrap" :src "img/wrap.jpg" :category :drawing :desc "Cloth study, pencil"}
-   {:id 51 :w 586 :h 500 :title "Head" :src "img/head.png" :category :design :desc "Messing around"}
+   {:id 51 :w 586 :h 500 :title "Head" :src "img/head.png" :category :pixel :desc "Messing around"}
    {:id 52 :w 1228 :h 1332 :title "Noir Webpage Splash" :src "img/inkdannoir.jpg" :category :painting :desc "Part of an older web page gallery"}
    {:id 53 :w 1870 :h 1384 :title "Pipes" :src "img/pipes.jpg" :category :photo :desc "Dark room experiment"}
    {:id 54 :w 409 :h 545 :title "Portrait: Per" :src "img/portrait.jpg" :category :painting :desc "Portrait: Per"}
