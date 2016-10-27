@@ -1,5 +1,4 @@
 * Fix menu thing on item hover.
 * Make circle animation on item hover.
 * Add about + contact pages.
-* Fix mobile version
 * Fix scaling of thumbnails
