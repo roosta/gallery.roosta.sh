@@ -18,8 +18,7 @@
 (defstyles screen
 
   [:.img-container
-   {:position "relative"
-    :display "flex"
+   {:position "fixed"
     :overflow "hidden"}]
 
   [:.info

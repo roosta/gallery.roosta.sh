@@ -47,7 +47,7 @@
     (filter #(= (:category %) cat) items))
   )
 
-(def random-height (map #(+ (rand-int 200) 100) resources/items))
+(def random-height (map #(+ (rand-int 200) 150) resources/items))
 
 (defn generate-layout
   [filtered-items]
@@ -111,11 +111,13 @@
     (map-indexed
      (fn [index item]
        ^{:key (str (:id item) "n")}
-       [:div {:on-click #(do (reset! menu-open? false)
+       [:div.img-container.flex-middle {:on-click #(do (reset! menu-open? false)
                              (open-photoswipe (:id item)))}
         [:img {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload/"
-                         "c_crop,w_200,h_"
+                         "c_crop,h_"
                          (nth random-height index)
+                         ",w_"
+                         (:w item)
                          (:src item))}]
         [:div.info.flex-middle
          [:div (str (:title item))]]
