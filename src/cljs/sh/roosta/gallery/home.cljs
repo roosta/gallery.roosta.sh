@@ -21,7 +21,7 @@
    (clj->js
     (reduce
      (fn [acc item]
-       (conj acc {:src (:src item)
+       (conj acc {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload" (:src item))
                   :w (:w item)
                   :h (:h item)}))
      []
@@ -47,6 +47,8 @@
     (filter #(= (:category %) cat) items))
   )
 
+(def random-height (map #(+ (rand-int 200) 100) resources/items))
+
 (defn generate-layout
   [filtered-items]
   (zipmap
@@ -60,9 +62,10 @@
                 :x (mod idx v)
                 :y js/Infinity
                 :w 1
-                :h (+ (rand-int 3) 2)})
+                :h (nth random-height idx)})
              filtered-items)))
     cols)))
+
 
 (defn Appbar
   [category menu-open?]
@@ -88,7 +91,7 @@
          [:span "DESIGN"]]]]
       #_[:span.menu-item.flex-middle
        [:div "ABOUT"]]
-      [:a.menu-item.flex-middle.mailto {:href "mailto:mail@roosta.sh"}
+      [:a.menu-item.flex-middle
        [:div "CONTACT"]]
       [:span.flex-middle.title
        [:div "DANIEL BERG"]]]))
@@ -104,13 +107,16 @@
     :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
     :margin [0 0]
-    :rowHeight 100}
+    :rowHeight 1}
     (map-indexed
      (fn [index item]
        ^{:key (str (:id item) "n")}
-       [:div.img-container.flex-middle {:on-click #(do (reset! menu-open? false)
-                                                       (open-photoswipe (:id item)))}
-        [:img {:src (:src item) :style {:width (:w item) :height (:h item)}}]
+       [:div {:on-click #(do (reset! menu-open? false)
+                             (open-photoswipe (:id item)))}
+        [:img {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload/"
+                         "c_crop,w_200,h_"
+                         (nth random-height index)
+                         (:src item))}]
         [:div.info.flex-middle
          [:div (str (:title item))]]
         ])
