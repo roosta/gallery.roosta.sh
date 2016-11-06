@@ -88,7 +88,7 @@
          [:span "DESIGN"]]]]
       #_[:span.menu-item.flex-middle
        [:div "ABOUT"]]
-      [:span.menu-item.flex-middle
+      [:a.menu-item.flex-middle.mailto {:href "mailto:mail@roosta.sh"}
        [:div "CONTACT"]]
       [:span.flex-middle.title
        [:div "DANIEL BERG"]]]))
@@ -103,7 +103,6 @@
     :container-padding [0 60]
     :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
-    :items 57
     :margin [0 0]
     :rowHeight 100}
     (map-indexed

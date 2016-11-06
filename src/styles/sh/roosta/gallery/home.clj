@@ -50,6 +50,7 @@
   [:.menu-item
    {:padding-left (px 15)
     :padding-right (px 15)
+    :text-decoration "none"
     :font-family "Lato, sans-serif"
     :color (:white palette)}]
 
