@@ -44,10 +44,7 @@
   [items cat]
   (if (= :all cat)
     items
-    (filter #(= (:category %) cat) items))
-  )
-
-(def random-height (map #(+ (rand-int 200) 150) resources/items))
+    (filter #(= (:category %) cat) items)))
 
 (defn generate-layout
   [filtered-items]
@@ -62,7 +59,7 @@
                 :x (mod idx v)
                 :y js/Infinity
                 :w 1
-                :h (nth random-height idx)})
+                :h (:th item)})
              filtered-items)))
     cols)))
 
@@ -115,7 +112,7 @@
                              (open-photoswipe (:id item)))}
         [:img {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload/"
                          "c_crop,h_"
-                         (nth random-height index)
+                         (:th item)
                          ",w_"
                          (:w item)
                          (:src item))}]
