@@ -115,7 +115,9 @@
                          (:th item)
                          ",w_"
                          (:w item)
-                         (:src item))}]
+                         (if (:gif item)
+                           (clojure.string/replace (:src item) #"gif" "png")
+                           (:src item)))}]
         [:div.info.flex-middle
          [:div (str (:title item))]]
         ])
