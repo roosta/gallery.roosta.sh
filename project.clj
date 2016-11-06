@@ -23,19 +23,19 @@
             [lein-asset-minifier "0.3.0"]
             [lein-cljsbuild "1.1.3" :exclusions [[org.clojure/clojure]]]]
 
-  :source-paths ["src/styles"]
-
   :clean-targets ^{:protect false} ["resources/public/js/compiled"
                                     "resources/public/css/compiled"
+                                    "prod/css"
+                                    "prod/js"
                                     "target"]
 
   :minify-assets
   {:assets
-   {"resources/public/css/screen.min.css" "resources/public/css/compiled/screen.css"
-    "resources/public/css/grid-layout.min.css" "resources/public/css/grid-layout.css"
-    "resources/public/css/normalize.min.css" "resources/public/css/normalize.css"
-    "resources/public/css/photoswipe.min.css" "resources/public/css/photoswipe.css"
-    "resources/public/css/default-skin/default-skin.min.css" "resources/public/css/default-skin/default-skin.css"
+   {"prod/css/screen.min.css" "resources/public/css/compiled/screen.css"
+    "prod/css/grid-layout.min.css" "resources/public/css/grid-layout.css"
+    "prod/css/normalize.min.css" "resources/public/css/normalize.css"
+    "prod/css/photoswipe.min.css" "resources/public/css/photoswipe.css"
+    "prod/css/default-skin.min.css" "resources/public/css/default-skin.css"
     }}
 
   :garden {:builds [{;; Optional name of the build:
@@ -83,7 +83,7 @@
                ;; lein cljsbuild once min
                {:id "min"
                 :source-paths ["src/cljs"]
-                :compiler {:output-to "resources/public/js/compiled/sh/roosta/gallery.js"
+                :compiler {:output-to "prod/js/gallery.js"
                            :main sh.roosta.gallery.core
                            :optimizations :advanced
                            :pretty-print false}}]}
