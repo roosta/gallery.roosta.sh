@@ -108,16 +108,22 @@
     (map-indexed
      (fn [index item]
        ^{:key (str (:id item) "n")}
-       [:div.img-container.flex-middle {:on-click #(do (reset! menu-open? false)
-                             (open-photoswipe (:id item)))}
-        [:img {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload/"
-                         "c_crop,h_"
-                         (:th item)
-                         ",w_"
-                         (:w item)
-                         (if (:gif item)
-                           (clojure.string/replace (:src item) #"gif" "png")
-                           (:src item)))}]
+       [:div.image {:on-click #(do (reset! menu-open? false)
+                                                       (open-photoswipe (:id item)))
+                                        :style {:background-image
+                                                (str
+                                                 "url("
+                                                 "http://res.cloudinary.com/dvkodtgl9/image/upload/"
+                                                 "c_crop,h_"
+                                                 (:th item)
+                                                 ",w_"
+                                                 (:w item)
+                                                 (if (:gif item)
+                                                   (clojure.string/replace (:src item) #"gif" "png")
+                                                   (:src item))
+                                                 ")"
+                                                 )}}
+
         [:div.info.flex-middle
          [:div (str (:title item))]]
         ])

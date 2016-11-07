@@ -17,9 +17,12 @@
 
 (defstyles screen
 
-  [:.img-container
-   {:position "fixed"
-    :overflow "hidden"}]
+  [:.image
+   {;:position "relative"
+    :background-position "center"
+    :background-repeat "no-repeat"
+    ;; :overflow "hidden"
+    }]
 
   [:.info
    {:color "white"
