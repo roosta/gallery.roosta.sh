@@ -105,37 +105,39 @@
     :cols (clj->js cols)
     :margin [0 0]
     :rowHeight 1}
-    (map-indexed
-     (fn [index item]
-       ^{:key (str (:id item) "n")}
-       [:div.image {:on-click #(do (reset! menu-open? false)
-                                                       (open-photoswipe (:id item)))
-                                        :style {:background-image
-                                                (str
-                                                 "url("
-                                                 "http://res.cloudinary.com/dvkodtgl9/image/upload/"
-                                                 "c_crop,h_"
-                                                 (:th item)
-                                                 ",w_"
-                                                 (:w item)
-                                                 (if (:gif item)
-                                                   (clojure.string/replace (:src item) #"gif" "png")
-                                                   (:src item))
-                                                 ")"
-                                                 )}}
+   (map-indexed
+    (fn [index item]
+      ^{:key (str (:id item) "n")}
+      [:div.image
+       {:on-click
+        #(do (reset! menu-open? false)
+             (open-photoswipe (:id item)))
+        :style
+        {:background-image
+         (str
+          "url("
+          "http://res.cloudinary.com/dvkodtgl9/image/upload/"
+          "c_crop,h_"
+          (:th item)
+          ",w_"
+          (:w item)
+          (if (:gif item)
+            (clojure.string/replace (:src item) #"gif" "png")
+            (:src item))
+          ")"
+          )}}
 
-        [:div.info.flex-middle
-         [:div (str (:title item))]]
-        ])
-     (get-filtered-items resources/items @category))])
+       [:div.info.flex-middle
+        [:div (str (:title item))]]
+       ])
+    (get-filtered-items resources/items @category))])
 
 (defn Main
   []
   (let [category (r/atom :all)
         menu-open? (r/atom false)]
     (r/create-class
-     {
-      ;; :component-will-mount #(d/log (clj->js layouts))
+     {;; :component-will-mount #(d/log (clj->js layouts))
       ;; :component-did-mount #(d/log (= (dom/getElementByClass "app-bar")
       ;;                                 (dom/getElementByClass "layout")))
       ;; :component-will-unmount #(.dispose vsm)
