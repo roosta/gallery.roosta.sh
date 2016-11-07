@@ -56,7 +56,7 @@
             ["do"
              ["clean"]
              ["garden" "auto"]]
-            "prod" ^{:doc "Clean, minify and recompile"}
+            "prod" ^{:doc "Clean, minify and compile"}
             ["do"
              ["clean"]
              ["garden" "once"]

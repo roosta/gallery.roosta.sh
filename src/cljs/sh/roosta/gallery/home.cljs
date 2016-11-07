@@ -89,6 +89,7 @@
       #_[:span.menu-item.flex-middle
        [:div "ABOUT"]]
       [:a.menu-item.flex-middle
+       {:href "mailto:mail@roosta.sh"}
        [:div "CONTACT"]]
       [:span.flex-middle.title
        [:div "DANIEL BERG"]]]))
