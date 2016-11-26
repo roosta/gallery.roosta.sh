@@ -21,7 +21,7 @@
    (clj->js
     (reduce
      (fn [acc item]
-       (conj acc {:src (str "http://res.cloudinary.com/dvkodtgl9/image/upload" (:src item))
+       (conj acc {:src (str "https://res.cloudinary.com/dvkodtgl9/image/upload" (:src item))
                   :w (:w item)
                   :h (:h item)}))
      []
@@ -117,7 +117,7 @@
         {:background-image
          (str
           "url("
-          "http://res.cloudinary.com/dvkodtgl9/image/upload/"
+          "https://res.cloudinary.com/dvkodtgl9/image/upload/"
           "c_crop,h_"
           (:th item)
           ",w_"
