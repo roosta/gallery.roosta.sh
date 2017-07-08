@@ -99,7 +99,7 @@
                                   [figwheel-sidecar "0.5.8"]
                                   [com.cemerick/piggieback "0.2.1"]]
                    ;; need to add dev source path here to get user.clj loaded
-                   :source-paths ["src/cljs" "dev"]
+                   :source-paths ["src/cljs" "dev" "script"]
                    ;; for CIDER
                    ; :plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]]
                    :repl-options {; for nREPL dev you really need to limit output
