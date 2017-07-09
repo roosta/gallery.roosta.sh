@@ -1,0 +1,54 @@
+#+TITLE: sh.roosta.gallery
+
+* Overview
+  Gallery site for displaying various graphical works I've done over the years.
+  Designed to be responsive, with a minimal design to highlight the art work.
+
+* Libraries used
+  Besides the language itself and namespaces included therein I used these libraries and tools.
+  Huge thanks to all the developers of these.
+** UI
+  - [[http://photoswipe.com/][dimsemenov/PhotoSwipe: JavaScript image gallery for mobile and desktop, modular, framework independent]]
+  - [[https://github.com/strml/react-grid-layout][strml/react-grid-layout: A draggable and resizable grid layout with responsive breakpoints, for React.]]
+  - [[https://github.com/reagent-project/reagent][reagent-project/reagent: A minimalistic ClojureScript interface to React.js]]
+** Tools
+  - [[https://github.com/technomancy/leiningen][technomancy/leiningen: Automate Clojure projects without setting your hair on fire.]]
+  - [[https://github.com/noprompt/garden][noprompt/garden: Generate CSS with Clojure]]
+  - [[https://github.com/gf3/secretary][gf3/secretary: A client-side router for ClojureScript.]]
+  - [[https://github.com/bhauman/lein-figwheel][bhauman/lein-figwheel: Figwheel builds your ClojureScript code and hot loads it into the browser as you are coding!]]
+  - [[https://github.com/yogthos/lein-asset-minifier][yogthos/lein-asset-minifier: Leiningen plugin for CSS/Js asset minifcation]]
+  - [[https://github.com/emezeske/lein-cljsbuild][emezeske/lein-cljsbuild: Leiningen plugin to make ClojureScript development easy.]]
+  - [[https://github.com/binaryage/cljs-devtools][binaryage/cljs-devtools: A collection of Chrome DevTools enhancements for ClojureScript developers]]
+
+* Setup
+  First install [[https://github.com/technomancy/leiningen][Leiningen]]
+
+  To get an interactive development environment run:
+
+  #+BEGIN_SRC shell
+  lein figwheel
+  #+END_SRC
+
+  and open your browser at [[localhost:3449][http://localhost:3449/]].
+  This will auto compile and send all changes to the browser without the need to reload.
+
+  The stylesheets are automatically compiled when the project is first build but to have it update as you develop run:
+
+  #+BEGIN_SRC shell
+  lein garden auto
+  #+END_SRC
+
+  CSS is saved as ~resources/public/css/compiled/screen.css~
+
+  To create a production build run:
+  #+BEGIN_SRC shell
+  lein prod
+  #+END_SRC
+
+  And open your browser in ~prod/index.html~
+
+* License
+
+  Copyright © 2017 Daniel Berg
+
+  Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
