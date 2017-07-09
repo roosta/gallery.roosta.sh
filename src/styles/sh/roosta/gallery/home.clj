@@ -53,25 +53,11 @@
                               :rgb      [252, 232, 195]
                               :code     15}})
 
-(def palette
-  {:one "#FFE4D2"
-   :two "#D6B596"
-   :three "#DB9269"
-   :four "#984E4F"
-   :five "#2A2F33"
-   :gray "#848484"
-   :white "#FFE4D2"
-   :black "#2b2b2b"
-   :background "#212529"})
-
 (defstyles screen
 
   [:.image
-   {;:position "relative"
-    :background-position "center"
-    :background-repeat "no-repeat"
-    ;; :overflow "hidden"
-    }]
+   {:background-position "center"
+    :background-repeat "no-repeat"}]
 
   [:.info
    {:color "white"
@@ -90,12 +76,12 @@
    {:pointer-events "none"}]
   [:.app-bar
    {:position "fixed"
-    :background-color (:black palette)
+    :background-color (-> srcery :bright-black :hex)
     :margin-right (px 20)
     :width "100%"
     :display "flex"
     :z-index 2
-    :height (px 60)
+    :height (px 44)
     :left 0}]
 
   [:.menu-item
@@ -103,26 +89,26 @@
     :padding-right (px 15)
     :text-decoration "none"
     :font-family "Lato, sans-serif"
-    :color (:white palette)}]
+    :color (-> srcery :bright-white :hex)}]
 
   [:.menu-item:hover
-   {:background-color (:gray palette)
+   {:background-color (-> srcery :white :hex)
     :transition "all 200ms linear"}]
 
   [:.active
-   {:color (:black palette)
-    :height (px 60)
-    :background-color (:white palette)}]
+   {:color (-> srcery :black :hex)
+    :height (px 44)
+    :background-color (-> srcery :bright-white :hex)}]
 
   [:.active:hover
-   {:height (px 60)
-    :background-color (:gray palette)}]
+   {:height (px 44)
+    :background-color (-> srcery :white :hex)}]
 
   [:.title
-   {:font-size (px 24)
+   {:font-size (px 16)
     :color "#FFE4D2"
     :font-family "Lato, sans-serif"
-    :margin-right (px 20)
+    :margin-right (px 16)
     :margin-left "auto"}]
 
   [:.flex-middle
@@ -163,7 +149,7 @@
     :list-style "none"
     ;; :transition "all 200ms linear"
     :text-align "left"
-    :background-color (:black palette)
+    :background-color (-> srcery :black :hex)
     :border-radius (px 2)
     :z-index 1
     :background-clip "padding-box"}
@@ -175,18 +161,18 @@
       :clear "both"
       :font-family "Lato, sans-serif"
       :text-decoration "none"
-      :font-size (px 15)
+      :font-size (px 16)
       ;; :font-weight "normal"
-      :color (:white palette)
+      :color (-> srcery :bright-white :hex)
       :white-space "nowrap"}
      [:&:hover
       :&:focus
       {:transition "all 100ms linear"
-       :background-color (:gray palette)}]]]]
+       :background-color (-> srcery :white :hex)}]]]]
   [:.menu-is-open
    {:display "block"}]
-  [:.pswp__bg {:background-color (:background palette)}]
-  [:.pswp__img {:background-color (:background palette)}]
+  [:.pswp__bg {:background-color (-> srcery :black :hex)}]
+  [:.pswp__img {:background-color (-> srcery :black :hex)}]
   (at-media
    {:max-width (px 450)}
    [:.title

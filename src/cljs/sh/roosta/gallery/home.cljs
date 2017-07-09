@@ -67,8 +67,8 @@
 (defn Appbar
   [category menu-open?]
   (fn []
-     [:div.app-bar.z2
-      [:span.menu-item.flex-middle.active
+     [:div.app-bar
+      #_[:span.menu-item.flex-middle.active
        [:div "WORK"]]
       [:div.dropdown
        [:span.menu-item.flex-middle.filter {:on-click #(swap! menu-open? not)}
@@ -101,7 +101,7 @@
     :layouts (clj->js (generate-layout (get-filtered-items resources/items @category)))
     :isDraggable false
     :isResizable false
-    :container-padding [0 60]
+    :container-padding [0 44]
     :breakpoints {:lg 1200 :md 996 :sm 768}
     :cols (clj->js cols)
     :margin [0 0]

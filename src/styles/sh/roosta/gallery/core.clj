@@ -6,5 +6,5 @@
 ;; Change defstylesheet to defstyles.
 (defstyles screen
   [:body
-   {:background-color "#212529"}]
+   {:background-color (-> home/srcery :black :hex)}]
   home/screen)
