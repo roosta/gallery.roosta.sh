@@ -1,6 +1,6 @@
-(defproject sh.roosta.gallery "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+(defproject sh.roosta.gallery "1.0.0"
+  :description "Gallery site"
+  :url "http://gallery.roosta.sh"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
@@ -63,6 +63,8 @@
              ["minify-assets"]
              ["cljsbuild" "once" "min"]]}
 
+  :prep-tasks [["garden" "once"]]
+
   :cljsbuild {:builds
               [{:id "dev"
                 :source-paths ["src/cljs"]
@@ -91,7 +93,6 @@
                            :pretty-print false}}]}
 
   :figwheel {:css-dirs ["resources/public/css"] ;; watch and update CSS
-             ; :nrepl-port 7888
              :open-file-command "emacs-file-opener" }
 
 
@@ -99,6 +100,7 @@
                                   [figwheel-sidecar "0.5.8"]
                                   [com.cemerick/piggieback "0.2.1"]]
                    ;; need to add dev source path here to get user.clj loaded
+                   ;; include script to use repl.clj to start figwheel and cljs repl
                    :source-paths ["src/cljs" "dev" "script"]
                    ;; for CIDER
                    ; :plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]]
