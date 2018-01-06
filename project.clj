@@ -1,4 +1,4 @@
-(defproject sh.roosta.gallery "1.1.0"
+(defproject sh.roosta.gallery "1.2.0"
   :description "Gallery site"
   :url "http://gallery.roosta.sh"
   :license {:name "Eclipse Public License"
