@@ -56,7 +56,7 @@
    {:id 48 :w 600 :h 600 :th (thumbnail-height) :title "VLN Cover suggestion" :src "/v1478438445/gallery/vln.jpg" :category :pixel :desc "Pixel art cover suggestion for a band album"}
    {:id 49 :w 1224 :h 1228 :th (thumbnail-height) :title "Wind Cover" :src "/v1478438445/gallery/wind.jpg" :category :design :desc "Cover for a 60s inspired jam band. Marker on plastic"}
    {:id 50 :w 542 :h 762 :th (thumbnail-height) :title "Wrap" :src "/v1478438445/gallery/wrap.jpg" :category :drawing :desc "Cloth study, pencil"}
-   {:id 51 :w 586 :h 500 :th (thumbnail-height) :title "Head" :src "/v1478438445/gallery/head.png" :category :pixel :desc "Messing around"}
+   {:id 51 :w 777 :h 915 :th (thumbnail-height) :title "Paxel" :src "/v1515266655/gallery/paxel.png" :category :pixel :desc "Header for a startpage I made"}
    {:id 52 :w 1228 :h 1332 :th (thumbnail-height) :title "Noir Webpage Splash" :src "/v1478438445/gallery/inkdannoir.jpg" :category :painting :desc "Part of an older web page gallery"}
    {:id 53 :w 1870 :h 1384 :th (thumbnail-height) :title "Pipes" :src "/v1478438445/gallery/pipes.jpg" :category :photo :desc "Dark room experiment"}
    {:id 54 :w 409 :h 545 :th (thumbnail-height) :title "Portrait: Per" :src "/v1478438445/gallery/portrait.jpg" :category :painting :desc "Portrait: Per"}
