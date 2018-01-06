@@ -6,7 +6,7 @@
    [goog.dom :as dom]
    [sh.roosta.gallery.resources :as resources]
    [reagent.debug :as d]
-   [goog.events :as events]
+   ; [goog.events :as events]
    [reagent.core :as r]))
 
 (def GridLayout (r/adapt-react-class js/ReactGridLayout))
@@ -36,22 +36,24 @@
               js/PhotoSwipeUI_Default
               photoswipe-map
               #js {:index index})]
-    (.init pswp)
-    ))
+    (.init pswp)))
 
+(defn new-function
+  []
+  "New stuff")
 
 (defn get-filtered-items
-  [items cat]
-  (if (= :all cat)
+  [items category]
+  (if (= :all category)
     items
-    (filter #(= (:category %) cat) items)))
+    (filter #(= (:category %) category) items)))
 
 (defn generate-layout
   [filtered-items]
   (zipmap
    [:lg :md :sm]
    (mapv
-    (fn [[k v]]
+    (fn [[_ v]]
       (into []
             (map-indexed
              (fn [idx item]
