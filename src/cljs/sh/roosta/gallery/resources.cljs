@@ -7,7 +7,7 @@
 (def res
   [{:w 411 :h 664 :th (thumbnail-height) :title "Baby" :src "/v1478438445/gallery/baby.jpg" :category :painting :desc "Oil painting of some baby, attempting a diverse colorscheme"}
    {:w 993 :h 715 :th (thumbnail-height) :title "Baptism" :src "/v1478438445/gallery/baptism.jpg" :category :painting :desc "Watercolor baptism scene"}
-   {:w 1280 :h 562 :th (thumbnail-height) :title "Cake" :src "/v1478438445/gallery/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
+   ;; {:w 1280 :h 562 :th (thumbnail-height) :title "Cake" :src "/v1478438445/gallery/cake.jpg" :category :design :desc "One of several design suggestions for a webpage header"}
    {:w 549 :h 908 :th (thumbnail-height) :title "Charcoal Nomad" :src "/v1478438445/gallery/charnom.jpg" :category :drawing :desc "Charcoal masked nomad figure"}
    {:w 667 :h 975 :th (thumbnail-height) :title "Cloak in Motion" :src "/v1478438445/gallery/cloak.jpg" :category :photo :desc "One is a series of dark room photographs experimenting with various light exposure settings during development"}
    {:w 270 :h 123 :th (thumbnail-height) :gif true :title "Conch" :src "/v1478438445/gallery/conch.gif" :category :pixel :desc "Enemy design for an unfinished untitled shmup game"}
@@ -20,7 +20,7 @@
    {:w 184 :h 358 :th (thumbnail-height) :title "Floating Island" :src "/v1478438445/gallery/flisland.png" :category :pixel :desc "Floating island for an unfinished shmup game"}
    {:w 1193 :h 929 :th (thumbnail-height) :title "Development fluid experiment" :src "/v1478438445/gallery/fluid.jpg" :category :photo :desc "Messing around with development fluid that turned out kinda neat"}
    {:w 1068 :h 1068 :th (thumbnail-height) :title "Goat Boys LP cover design" :src "/v1478438445/gallery/gbcover.jpg" :category :design :desc "Cover design for Goat Boys debut album" :link "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"}
-   {:w 497 :h 635 :th (thumbnail-height) :title "Ghost Guy" :src "/v1478438445/gallery/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/pixels and the masks ghosts wear"}
+   ;; {:w 497 :h 635 :th (thumbnail-height) :title "Ghost Guy" :src "/v1478438445/gallery/ghost.jpg" :category :vector :desc "Early vector attempt at a ghost like creature inspired by anime/pixels and the masks ghosts wear"}
    {:w 548 :h 320 :th (thumbnail-height) :title "Gray Brother" :src "/v1478438445/gallery/graybrother.jpg" :category :drawing :desc "Pencil drawing of a gass masked wearing person"}
    {:w 1024 :h 576 :th (thumbnail-height) :title "Hooded Moon" :src "/v1478438445/gallery/hoodie.jpg" :category :pixel :desc "Cover suggestion for a band, that was never used"}
    {:w 720 :h 470 :th (thumbnail-height) :title "Hufda" :src "/v1478438445/gallery/hufda.jpg" :category :drawing :desc "Cover suggestion for a band, it that was never used"}
@@ -61,7 +61,7 @@
    {:w 1870 :h 1384 :th (thumbnail-height) :title "Pipes" :src "/v1478438445/gallery/pipes.jpg" :category :photo :desc "Dark room experiment"}
    {:w 409 :h 545 :th (thumbnail-height) :title "Portrait: Per" :src "/v1478438445/gallery/portrait.jpg" :category :painting :desc "Portrait: Per"}
    ;; {:w 192 :h 480 :th (thumbnail-height) :title "Pixel cliff" :src "/v1478438445/gallery/cliff.png" :category :pixel :desc "Pixel Cliff"}
-   {:w 1566 :h 2638 :th (thumbnail-height) :title "Baph" :src "/v1515268376/gallery/baph.png" :category :pixel :desc "No associated project, just pixel art fun"}
+   {:w 783 :h 1319 :th (thumbnail-height) :title "Baph" :src "/v1540485805/gallery/baph_gallery.png" :category :pixel :desc "No associated project, just pixel art fun"}
 
    ])
 
