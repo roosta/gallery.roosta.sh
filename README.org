@@ -1,4 +1,4 @@
-#+TITLE: sh.roosta.gallery
+#+TITLE: gallery.roosta.sh
 
 * Overview
   Gallery site for displaying various graphical works I've done over the years.
