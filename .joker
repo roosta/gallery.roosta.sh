@@ -1,5 +1,0 @@
-{:known-macros [compojure.core/defroutes]
- :known-namespaces [clojure.string]
- :ignored-unused-namespaces [cljsjs.photoswipe
-                             cljsjs.photoswipe-ui-default
-                             cljsjs.react-grid-layout]}
