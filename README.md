@@ -1,11 +1,9 @@
 Roosta's Gallery
 ===============
 
-## Introduction
-
 Personal gallery for various works I've done over the years, some new, some old.
 
-# License
+## License
 
 Copyright © 2024 Daniel Berg
 
