@@ -8,8 +8,8 @@
     <title>Gallery - Daniel Berg (roosta)</title>
   </head>
   <body class="w-full flex min-h-screen flex-col bg-stone-950">
-    <main class="p-5 flex flex-grow flex-col text-white">
-      <section class="w-2/6">
+    <main class="p-8 flex flex-grow text-white" x-data="state">
+      <section class="w-2/6 pr-8">
         <header class="mb-10">
           <div class="relative inline-block text-left">
             <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -18,12 +18,21 @@
           </div>
         </header>
         <div class="font-cinzel text-4xl text-white mb-4">Gallery</div>
-        <div class="font-fauna text-sm text-gray">
+        <div class="font-fauna text-sm text-grayish">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
           fugiat nulla pariatur.
+        </div>
+      </section>
+      <section class="pl-8 w-4/6 ">
+        <div class="columns-5 gap-8">
+          <template x-for="(asset, index) in assets">
+            <div class="grayscale pb-8">
+              <img class="w-full max-h-80 object-cover bg-backdrop" :src="asset.file" />
+            </div>
+          </template>
         </div>
       </section>
     </main>
