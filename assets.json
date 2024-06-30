@@ -1,416 +1,427 @@
 [
   {
-    "w": 411,
-    "h": 664,
-    "title": "Baby",
-    "src": "/v1478438445/gallery/baby.jpg",
-    "category": "painting",
-    "desc": "Oil painting of some baby, attempting a diverse colorscheme"
+    "width": 411,
+    "height": 664,
+    "title": "Illuminated infant",
+    "file": "./assets/illuminated_infant.jpg",
+    "categories": ["painting", "oil"],
+    "description": "Oil painting of a baby, exploring colors and light, inspired by impressionists. I was trying out some water based oil colors, wet on wet."
   },
   {
-    "w": 993,
-    "h": 715,
-    "title": "Baptism",
-    "src": "/v1478438445/gallery/baptism.jpg",
-    "category": "painting",
-    "desc": "Watercolor baptism scene"
+    "width": 993,
+    "height": 715,
+    "title": "Baptism on water",
+    "file": "baptism.jpg",
+    "categories": ["painting", "Watercolor"],
+    "description": "Watercolor baptism scene, in the inspired by croquis and religous themes"
   },
   {
-    "w": 549,
-    "h": 908,
-    "title": "Charcoal Nomad",
-    "src": "/v1478438445/gallery/charnom.jpg",
-    "category": "drawing",
-    "desc": "Charcoal masked nomad figure"
+    "width": 549,
+    "height": 908,
+    "title": "Proboscis Umbra",
+    "file": "./assets/umbra.jpg",
+    "categories": ["drawing", "charcoal"],
+    "description": "Drawing from a series of mask variations, usually following an insect, or similar impression. Charcoal on rough paper."
   },
   {
-    "w": 667,
-    "h": 975,
-    "title": "Cloak in Motion",
-    "src": "/v1478438445/gallery/cloak.jpg",
-    "category": "photo",
-    "desc": "One is a series of dark room photographs experimenting with various light exposure settings during development"
+    "width": 667,
+    "height": 975,
+    "title": "Cloak",
+    "file": "./assets/cloak.jpg",
+    "categories": ["photo", "darkroom"],
+    "description": "One is a series of dark room photographs experimenting with various light exposure settings during development"
   },
   {
-    "w": 270,
-    "h": 123,
+    "width": 270,
+    "height": 123,
     "gif": true,
-    "title": "Conch",
-    "src": "/v1478438445/gallery/conch.gif",
-    "category": "pixel",
-    "desc": "Enemy design for an unfinished untitled shmup game"
+    "title": "Untitled Game Asset: Conch Enemy",
+    "file": "./conch.gif",
+    "categories": ["pixel", "animated", "game"],
+    "description": "Enemy design for an unreleased shoot-em-up game prototype. Will move in a sinewave pattern and shoot laser beams at your ship. Its laser would span the width of the screen, forcing the player to take evasive action."
   },
   {
-    "w": 819,
-    "h": 1386,
-    "title": "Post cover",
-    "src": "/v1478438445/gallery/cover.jpg",
-    "category": "painting",
-    "desc": "Conseptual cover for a comic book that was never finished"
+    "width": 819,
+    "height": 1386,
+    "title": "Post Concept Cover",
+    "file": "./assets/post_cover.jpg",
+    "categories": ["painting", "ink"],
+    "description": "Cover for a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
-    "w": 1164,
-    "h": 785,
+    "width": 1164,
+    "height": 785,
     "title": "Drainpipes",
-    "src": "/v1478438445/gallery/drainpipes.jpg",
-    "category": "photo",
-    "desc": "Dark room development"
+    "file": "./assets/drainpipes.jpg",
+    "categories": "photo",
+    "description": "Drainpipe macro shot, developed in darkroom. Experimenting with printing light exposure when developing"
   },
   {
-    "w": 1525,
-    "h": 1084,
-    "title": "Dunes",
-    "src": "/v1478438445/gallery/dunes.jpg",
-    "category": "painting",
-    "desc": "Sand dunes abstracted"
+    "width": 1525,
+    "height": 1084,
+    "title": "Stark Dunes",
+    "file": "./assets/stark_dunes.jpg",
+    "categories": ["painting", "ink", "landscape"],
+    "description": "Wind swept, stark sand dunes. Ink on semi-transparent paper and rice paper backing."
   },
   {
-    "w": 376,
-    "h": 520,
-    "title": "Masked Pencil Sketch",
-    "src": "/v1478438445/gallery/edn.jpg",
-    "category": "drawing",
-    "desc": "More pencil drawings of a gass mask wearing figure"
+    "width": 376,
+    "height": 520,
+    "title": "Proboscis Canus",
+    "file": "assets/proboscis_canus.jpg",
+    "categories": ["drawing", "pencil"],
+    "description": "Insect inspired, hunched wandering figure. Part of a series of mask drawings and paintings exploring similar themes. Pencil on paper."
   },
   {
-    "w": 242,
-    "h": 208,
+    "width": 242,
+    "height": 208,
     "gif": true,
-    "title": "Pixel Explosion",
-    "src": "/v1478438445/gallery/expl.gif",
-    "category": "pixel",
-    "desc": "Explosion from an unfinished shmup game"
+    "title": "Ship Explosion",
+    "file": "./assets/player_explosion.gif",
+    "categories": ["pixel", "animated", "game"],
+    "description": "Ship explosion design for an unreleased shoot-em-up game prototype. It was meant as the player death explosion, as you're controlling a spaceship. Inspired by Metal Slug explosion style"
   },
   {
-    "w": 184,
-    "h": 358,
+    "width": 184,
+    "height": 358,
     "title": "Floating Island",
-    "src": "/v1478438445/gallery/flisland.png",
-    "category": "pixel",
-    "desc": "Floating island for an unfinished shmup game"
+    "file": "./assets/floating_island.png",
+    "categories": ["pixel", "game"],
+    "description": "A floating island for an unreleased shoot-em-up game prototype. Would bob slightly up and down, impeding the player"
   },
   {
-    "w": 1193,
-    "h": 929,
+    "width": 1193,
+    "height": 929,
     "title": "Development fluid experiment",
-    "src": "/v1478438445/gallery/fluid.jpg",
-    "category": "photo",
-    "desc": "Messing around with development fluid that turned out kinda neat"
+    "file": "./assets/fluid.jpg",
+    "categories": ["darkroom", "experiment"],
+    "description": "Painting with development fluid on light sensitive paper. Hard to control the result, along with exposure to light, turned out interesting"
   },
   {
-    "w": 1068,
-    "h": 1068,
-    "title": "Goat Boys LP cover design",
-    "src": "/v1478438445/gallery/gbcover.jpg",
-    "category": "design",
-    "desc": "Cover design for Goat Boys debut album",
+    "width": 1068,
+    "height": 1068,
+    "title": "Goat Boys LP Cover Design",
+    "file": "./assets/gbcover.jpg",
+    "categories": ["design", "album cover", "vector"],
+    "description": "Cover design for Goat Boys debut album",
     "link": "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"
   },
   {
-    "w": 548,
-    "h": 320,
-    "title": "Gray Brother",
-    "src": "/v1478438445/gallery/graybrother.jpg",
-    "category": "drawing",
-    "desc": "Pencil drawing of a gass masked wearing person"
+    "width": 548,
+    "height": 320,
+    "title": "Canus Fratr",
+    "file": "./assets/canus_fratr.jpg",
+    "categories": ["drawing", "sketch"],
+    "description": "Pencil sketch of a proboscis gass mask. Part of a larger series of mask exploration."
   },
   {
-    "w": 1024,
-    "h": 576,
+    "width": 1024,
+    "height": 576,
     "title": "Hooded Moon",
-    "src": "/v1478438445/gallery/hoodie.jpg",
-    "category": "pixel",
-    "desc": "Cover suggestion for a band, that was never used"
+    "file": "./assets/hooded_moon.jpg",
+    "categories": ["pixel", "album cover"],
+    "description": "Album cover draft for an electronica band. It was not used, but I still like how it turned out. Would need additional work, and is considered unfinished."
   },
   {
-    "w": 720,
-    "h": 470,
-    "title": "Hufda",
-    "src": "/v1478438445/gallery/hufda.jpg",
-    "category": "drawing",
-    "desc": "Cover suggestion for a band, it that was never used"
+    "width": 720,
+    "height": 470,
+    "title": "Proboscis Bibo",
+    "ignored": true,
+    "file": "./assets/proboscis_bibo.jpg",
+    "categories": ["drawing", "marker"],
+    "description": "Marker and ink on rice paper, done quickly with a more cartoonish style"
   },
   {
-    "w": 625,
-    "h": 859,
-    "title": "Selv Portrait",
-    "src": "/v1478438445/gallery/inkdans.jpg",
-    "category": "painting",
-    "desc": "Selv portrait using ink on plastic"
+    "width": 625,
+    "height": 859,
+    "title": "Self Portrait: Gesture",
+    "file": "./assets/portrait_gesture.jpg",
+    "categories": ["painting", "ink", "portrait"],
+    "description": "Self portrait gesturing, using ink on plastic paper"
   },
   {
-    "w": 765,
-    "h": 959,
-    "title": "Insectlike",
-    "src": "/v1478438445/gallery/insectlike.jpg",
-    "category": "drawing",
-    "desc": "One of several inksect inspired mask drawings"
+    "width": 765,
+    "height": 959,
+    "title": "Proboscis_plicatus",
+    "file": "./assets/proboscis_plicatus.jpg",
+    "interactive": true,
+    "categories": ["drawing", "pattern", "mask"],
+    "description": "One in a series of insect-like mask wearing figures. Was originally part of a website design, make sure to advance the image to the next one to see the version it would transform into"
   },
   {
-    "w": 609,
-    "h": 924,
-    "title": "Julie series nr 1",
-    "src": "/v1478438445/gallery/js1.jpg",
-    "category": "photo",
-    "desc": "First in a photo series taken during medieval festival and developed in a darkroom"
+    "width": 592,
+    "height": 869,
+    "title": "Midsummer 1",
+    "file": "./assets/midsummer1.jpg",
+    "categories": ["photo", "darkroom", "midsummer"],
+    "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "w": 592,
-    "h": 869,
-    "title": "Julie series nr 3",
-    "src": "/v1478438445/gallery/js3.jpg",
-    "category": "photo",
-    "desc": "Third in a photo series taken during medieval festival and developed in a darkroom"
+    "width": 543,
+    "height": 827,
+    "title": "Midsummer 2",
+    "file": "./assets/midsummer2.jpg",
+    "categories": ["photo", "midsummer", "darkroom"],
+    "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "w": 543,
-    "h": 827,
-    "title": "Julie series nr 4",
-    "src": "/v1478438445/gallery/js4.jpg",
-    "category": "photo",
-    "desc": "Forth in a photo series taken during medieval festival and developed in a darkroom"
+    "width": 574,
+    "height": 854,
+    "title": "Midsummer 3",
+    "file": "./assets/midsummer3.jpg",
+    "categories": ["photo", "midsummer", "darkroom"],
+    "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "w": 574,
-    "h": 854,
-    "title": "Julie series nr 5",
-    "src": "/v1478438445/gallery/js5.jpg",
-    "category": "photo",
-    "desc": "Fifth in a photo series taken during medieval festival and developed in a darkroom"
+    "width": 865,
+    "height": 571,
+    "title": "Midsummer 4",
+    "file": "./assets/midsummer4.jpg",
+    "categories": ["photo", "midsummer", "darkroom"],
+    "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "w": 865,
-    "h": 571,
-    "title": "Julie series nr 6",
-    "src": "/v1478438445/gallery/js6.jpg",
-    "category": "photo",
-    "desc": "Sixth in a photo series taken during medieval festival and developed in a darkroom"
+    "width": 549,
+    "height": 731,
+    "title": "Desert Dweller",
+    "file": "./assets/desert_dweller.jpg",
+    "ignored": true,
+    "categories": ["painting", "ink"],
+    "description": "Partial drawing of a desert dweller, part of the post conceptual comic. Never finished this, but I still like it"
   },
   {
-    "w": 549,
-    "h": 731,
-    "title": "Desert Lady",
-    "src": "/v1478438445/gallery/lady.jpg",
-    "category": "painting",
-    "desc": "Unfinished painting trying to depict a desert-like dress style"
-  },
-  {
-    "w": 480,
-    "h": 480,
+    "width": 480,
+    "height": 480,
     "gif": true,
-    "title": "Monoxieman Idle",
-    "src": "/v1478438445/gallery/monoxieman_idle.gif",
-    "category": "pixel",
-    "desc": "Idle animation character sprite for unfinished game"
+    "title": "Monoxi Player: idle animation",
+    "file": "./assets/monoxie_idle.gif",
+    "categories": ["pixel", "animated", "game"],
+    "description": "Idle animation player character sprite for an unreleased game prototype"
   },
   {
-    "w": 480,
-    "h": 480,
+    "width": 480,
+    "height": 480,
     "gif": true,
-    "title": "Monoxieman Jump",
-    "src": "/v1478438445/gallery/monoxieman_jump.gif",
-    "category": "pixel",
-    "desc": "Jump animation character sprite for unfinished game"
+    "title": "Monoxie Player: jump animation",
+    "file": "./assets/monoxie_jump.gif",
+    "categories": ["pixel", "animated", "game"],
+    "description": "Jump animation player character sprite for unreleased game prototype"
   },
   {
-    "w": 480,
-    "h": 480,
+    "width": 480,
+    "height": 480,
     "gif": true,
-    "title": "Monoxieman Running",
-    "src": "/v1478438445/gallery/monoxieman_running.gif",
-    "category": "pixel",
-    "desc": "Running animation character sprite for unfinished game"
+    "title": "Monoxie Player: running animation",
+    "file": "./assets/monoxie_running.gif",
+    "categories": "pixel",
+    "description": "Running animation player character sprite for unreleased game prototype"
   },
   {
-    "w": 592,
-    "h": 800,
+    "width": 592,
+    "height": 800,
     "title": "More ink!",
-    "src": "/v1478438445/gallery/moreink.jpg",
-    "category": "drawing",
-    "desc": "Random sketch drawn with a rough hand"
+    "file": "./assets/moreink.jpg",
+    "categories": "drawing",
+    "description": "Random sketch drawn with a rough hand"
   },
   {
-    "w": 592,
-    "h": 800,
-    "title": "More mask!",
-    "src": "/v1478438445/gallery/moremask.jpg",
-    "category": "drawing",
-    "desc": "Random sketch drawn with a rough hand"
+    "width": 592,
+    "height": 800,
+    "title": "Proboscis Ingens",
+    "file": "./assets/proboscis_ingens.jpg",
+    "categories": ["drawing", "ink"],
+    "description": "Ink drawing of a insect like masked figure. Part of a series of mask drawings and paintings exploring similar themes."
   },
   {
-    "w": 1248,
-    "h": 1575,
-    "title": "Nomad Angle",
-    "src": "/v1478438445/gallery/nomad-ang.jpg",
-    "category": "painting",
-    "desc": "Titular nomad drawn from an angle. Comic book concept"
+    "width": 1248,
+    "height": 1575,
+    "title": "Post Character: Angle",
+    "file": "./assets/post_angle.jpg",
+    "categories": ["painting", "ink"],
+    "description": "Character for a conceptual comic book called Post. A post apocalyptic desert adventure with heavy religious themes. Trying variable angle, trying to capture from below"
   },
   {
-    "w": 638,
-    "h": 878,
-    "title": "Nomad Equipped",
-    "src": "/v1478438445/gallery/nomad-eq.jpg",
-    "category": "drawing",
-    "desc": "Nomad with equipment, comic book concept"
+    "width": 638,
+    "height": 878,
+    "title": "Post character: Equipped",
+    "file": "./assets/post_equipped.jpg",
+    "categories": "drawing",
+    "description": "Character for a conceptual comic book called Post. A post apocalyptic desert adventure with heavy religious themes. Attempting to visualize an equipped character."
   },
   {
-    "w": 752,
-    "h": 696,
+    "width": 752,
+    "height": 696,
     "title": "Pattern Composition",
-    "src": "/v1478438445/gallery/pattern_comp.jpg",
-    "category": "drawing",
-    "desc": "One of many patterns inspired loosely on the art nouveau style"
+    "file": "./assets/pattern_comp.jpg",
+    "categories": ["drawing", "pattern", "composition"],
+    "description": "Ornamental pattern drawing, scaled and mirrored. Scan quality is not great, but I like the nouveau inspiration."
   },
   {
-    "w": 542,
-    "h": 769,
+    "width": 542,
+    "height": 769,
     "title": "Pray Pencil",
-    "src": "/v1478438445/gallery/pray_pencil.jpg",
-    "category": "drawing",
-    "desc": "Sketch of two praying figures"
+    "file": "./assets/pray_pencil.jpg",
+    "categories": "drawing",
+    "description": "Two praying figures in the desert. Pencil on paper. Weathered"
   },
   {
-    "w": 1545,
-    "h": 380,
-    "title": "House gardener logo suggestion",
-    "src": "/v1478438445/gallery/precore.png",
-    "category": "vector",
-    "desc": "Logo suggestion for a design/gardening company. Not used but I still like it"
+    "width": 1545,
+    "height": 380,
+    "title": "Domestic Gardening",
+    "file": "./assets/domestic_gardening.png",
+    "categories": ["vector", "design", "logo"],
+    "description": "Several logo drafts for a gardening company. These were rejected, but I still like them."
   },
   {
-    "w": 598,
-    "h": 877,
-    "title": "Runny ink portrait",
-    "src": "/v1478438445/gallery/riportrait.jpg",
-    "category": "painting",
-    "desc": "Self portrait with gratuitous use of ink"
+    "width": 1237,
+    "height": 1748,
+    "title": "Salt Dunes",
+    "file": "./assets/salt_dunes.jpg",
+    "categories": ["marker", "ink", "painting"],
+    "description": "Salt/sand dunes abstracted illustration"
   },
   {
-    "w": 1237,
-    "h": 1748,
-    "title": "Salt",
-    "src": "/v1478438445/gallery/salt.jpg",
-    "category": "painting",
-    "desc": "Salt/sand dunes abstracted illustration"
+    "width": 1184,
+    "height": 1600,
+    "title": "Underground Dweller",
+    "file": "./assets/underground_dweller.jpg",
+    "categories": "painting",
+    "description": "Another in th"
   },
   {
-    "w": 1184,
-    "h": 1600,
-    "title": "Sectered",
-    "src": "/v1478438445/gallery/sectered.jpg",
-    "category": "painting",
-    "desc": "Gass mask wearing kid in the series of insect inspired gass masks"
+    "width": 1702,
+    "height": 630,
+    "title": "Untitled Game: Screenshot",
+    "file": "./assets/untitled_screenshot.png",
+    "categories": ["pixel", "game"],
+    "description": "Screenshot from an unreleased shoot-em-up game prototype. Game was in very early stages, so some post composition is done to give a full impression."
   },
   {
-    "w": 1702,
-    "h": 630,
-    "title": "Shmup Screenshot",
-    "src": "/v1478438445/gallery/shmup.png",
-    "category": "pixel",
-    "desc": "Composit unfinished shmup screenshot from an unfinished untitled game"
-  },
-  {
-    "w": 1527,
-    "h": 1084,
+    "width": 1527,
+    "height": 1084,
     "title": "Sea of sand",
-    "src": "/v1478438445/gallery/sos.jpg",
-    "category": "painting",
-    "desc": "Mountain surrounded by sand. Looks in hindsight more like water"
+    "file": "./assets/sea_of_sand.jpg",
+    "categories": ["painting", "ink", "landscape"],
+    "description": "Desert landscape, where the sand compacted almost looks like the sea. Ink on plastic transparent paper, on top of weathered rice paper "
   },
   {
-    "w": 850,
-    "h": 1163,
-    "title": "Splotch",
-    "src": "/v1478438445/gallery/splotch.jpg",
-    "category": "painting",
-    "desc": "Watercolor and ink drawing of a gassmask wearing creature"
+    "width": 850,
+    "height": 1163,
+    "title": "Proboscis Color",
+    "file": "./assets/proboscis_color.jpg",
+    "categories": ["drawing", "marker"],
+    "description": "Watercolor drawing of a kneeling masked person. Part of a series of mask drawings and paintings exploring similar themes."
   },
   {
-    "w": 779,
-    "h": 566,
+    "width": 779,
+    "height": 566,
     "title": "Stones study",
-    "src": "/v1478438445/gallery/stones.jpg",
-    "category": "painting",
-    "desc": "Study of stone texture, watercolor"
+    "file": "./assets/stones_study.jpg",
+    "categories": ["painting", "ink", "study"],
+    "description": "A study of stone texture, drawn with ink on watercolor paper."
   },
   {
-    "w": 1755,
-    "h": 1275,
+    "width": 1755,
+    "height": 1275,
     "title": "Thirst",
-    "src": "/v1478438445/gallery/thirst.jpg",
-    "category": "painting",
-    "desc": "Thirsty fellow drawn with ink on rice paper"
+    "file": "./assets/thirst.jpg",
+    "categories": ["painting", "ink"],
+    "description": "Person arriving after wandering the desert for to long, captured when he takes his first drink when arriving at the settlement. Ink on rice paper"
   },
   {
-    "w": 1755,
-    "h": 1275,
-    "title": "Three men",
-    "src": "/v1478438445/gallery/tmen.jpg",
-    "category": "painting",
-    "desc": "Card playing fellows drawn with ink on rice paper"
+    "width": 1755,
+    "height": 1275,
+    "title": "The Three Men",
+    "file": "./assets/tmen.jpg",
+    "categories": "painting",
+    "description": "Three desert dwellers passing the time by playing card. Large emphasis on shadow and play of light. Ink on rice paper. Part of a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
-    "w": 600,
-    "h": 600,
-    "title": "VLN Cover suggestion",
-    "src": "/v1478438445/gallery/vln.jpg",
-    "category": "pixel",
-    "desc": "Pixel art cover suggestion for a band album"
+    "width": 600,
+    "height": 600,
+    "title": "VLN Cover draft",
+    "file": "./assets/vln.jpg",
+    "categories": ["pixel", "album cover"],
+    "description": "Pixel art draft for an album cover. Not used but I got to explore text from that perspective, and general pixel art texturing"
   },
   {
-    "w": 1224,
-    "h": 1228,
-    "title": "Wind Cover",
-    "src": "/v1478438445/gallery/wind.jpg",
-    "category": "design",
-    "desc": "Cover for a 60s inspired jam band. Marker on plastic"
+    "width": 1224,
+    "height": 1228,
+    "title": "Wind Album Cover",
+    "file": "./assets/wind.jpg",
+    "categories": ["design", "album cover"],
+    "description": "Cover for a 60s inspired jam band. Taking heavy inspiration from other illustrations from the era of the bands style, and art nouveau. Marker on paper"
   },
   {
-    "w": 542,
-    "h": 762,
+    "width": 542,
+    "height": 762,
     "title": "Wrap",
-    "src": "/v1478438445/gallery/wrap.jpg",
-    "category": "drawing",
-    "desc": "Cloth study, pencil"
+    "file": "./assets/wrap.jpg",
+    "categories": ["drawing", "study"],
+    "description": "Cloth face wrap study, pencil"
   },
   {
-    "w": 777,
-    "h": 915,
+    "width": 777,
+    "height": 915,
     "title": "Paxel",
-    "src": "/v1515266655/gallery/paxel.png",
-    "category": "pixel",
-    "desc": "Header for a startpage I made"
+    "file": "./assets/paxel.png",
+    "categories": ["pixel"],
+    "description": "Pixel art stylized gassmask used for a home page design"
   },
   {
-    "w": 1228,
-    "h": 1332,
-    "title": "Noir Webpage Splash",
-    "src": "/v1478438445/gallery/inkdannoir.jpg",
-    "category": "painting",
-    "desc": "Part of an older web page gallery"
+    "width": 1228,
+    "height": 1332,
+    "title": "Self Portrait: Noir",
+    "file": "./assets/portrait_noir.jpg",
+    "categories": ["painting", "composition", "portrait"],
+    "description": "Banner image for a previous gallery webpage called noir. Parts drawn separately, composed together later"
   },
   {
-    "w": 1870,
-    "h": 1384,
-    "title": "Pipes",
-    "src": "/v1478438445/gallery/pipes.jpg",
-    "category": "photo",
-    "desc": "Dark room experiment"
+    "width": 1870,
+    "height": 1384,
+    "title": "Blending Materials",
+    "file": "./assets/pipes.jpg",
+    "categories": ["photo", "darkroom"],
+    "description": "Abstract photo. Experimenting with development methods and weathering"
   },
   {
-    "w": 409,
-    "h": 545,
+    "width": 409,
+    "height": 545,
     "title": "Portrait: Per",
-    "src": "/v1478438445/gallery/portrait.jpg",
-    "category": "painting",
-    "desc": "Portrait: Per"
+    "file": "./assets/portrait.jpg",
+    "categories": ["painting", "portrait", "ink"],
+    "description": "Portrait painted as part of a celebration, only captured with poor camera, will update when I get the chance. Ink on plastic paper"
   },
   {
-    "w": 783,
-    "h": 1319,
-    "title": "Baph",
-    "src": "/v1540485805/gallery/baph_gallery.png",
-    "category": "pixel",
-    "desc": "No associated project, just pixel art fun"
+    "width": 783,
+    "height": 1319,
+    "title": "Baphomet",
+    "file": "./assets/baphomet.png",
+    "categories": ["pixel"],
+    "description": "A very large pixel art skeleton featuring the fictional plague mask."
+  },
+  {
+    "width": 280,
+    "height": 562,
+    "title": "Datorder Logo Draft",
+    "file": "./assets/cake.jpg",
+    "categories": ["design", "logo"],
+    "description": "Part of a series of logo designs for a order management platform. This draft was not used, but I still like it"
+  },
+  {
+    "width": 190,
+    "height": 480,
+    "title": "Untitled Game Asset: Cliff",
+    "file": "./assets/cliff.jpg",
+    "categories": ["pixel", "game"],
+    "description": "Landscape asset from an unreleased, untitled shoot-em-up game prototype"
+  },
+  {
+    "width": 373,
+    "height": 763,
+    "title": "Lamp Noir",
+    "file": "./assets/lamp_noir.jpg",
+    "categories": ["design", "vector", "pattern"],
+    "description": "A lamp face design, made to look like a glass painting. Cut with a laser cutter and cutouts painted in various colors, illuminated with a light."
   }
 ]
