@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300" rel="stylesheet">
     <title>Gallery - Daniel Berg (roosta)</title>
   </head>
-  <body class="w-full flex min-h-screen flex-col bg-stone-950">
-    <main class="p-8 flex flex-grow text-white" x-data="state">
-      <section class="w-2/6 pr-8">
+  <body class="w-full h-screen flex flex-col bg-black">
+    <main class="p-8 flex text-white overflow-hidden" x-data="state">
+      <section class="w-2/6 pr-8 flex flex-col flex-grow">
         <header class="mb-10">
           <div class="relative inline-block text-left">
             <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -26,13 +26,15 @@
           fugiat nulla pariatur.
         </div>
       </section>
-      <section class="pl-8 w-4/6 ">
-        <div class="columns-5 gap-8">
-          <template x-for="asset in assets">
-            <div class="grayscale pb-8">
-              <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
-            </div>
-          </template>
+      <section class="pr-2 pl-8 w-4/6 overflow-auto flex flex-gap flex-grow">
+        <div>
+          <div class="columns-5 gap-8">
+            <template x-for="asset in assets">
+              <div class="grayscale pb-8">
+                <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
+              </div>
+            </template>
+          </div>
         </div>
       </section>
     </main>
