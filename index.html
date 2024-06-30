@@ -28,7 +28,7 @@
       </section>
       <section class="pl-8 w-4/6 ">
         <div class="columns-5 gap-8">
-          <template x-for="(asset, index) in assets">
+          <template x-for="asset in assets">
             <div class="grayscale pb-8">
               <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
             </div>
