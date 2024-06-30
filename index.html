@@ -2,13 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300" rel="stylesheet">
-    <title>Vite App</title>
+    <title>Gallery - Daniel Berg (roosta)</title>
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="w-full flex min-h-screen flex-col bg-stone-950">
+    <main class="p-5 flex flex-grow flex-col text-white">
+      <section class="w-2/6">
+        <header class="mb-10">
+          <div class="relative inline-block text-left">
+            <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
+              <i class="fa-solid fa-bars text-4"></i>
+            </button>
+          </div>
+        </header>
+        <div class="font-cinzel text-4xl text-white mb-4">Gallery</div>
+        <div class="font-fauna text-sm text-gray">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
+        </div>
+      </section>
+    </main>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
