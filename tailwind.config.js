@@ -1,6 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
   content: [
     "./index.html",
@@ -12,6 +12,10 @@ export default {
         work: ["Work Sans", ...defaultTheme.fontFamily.sans],
         open: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        "white": "#FBFBFB",
+        "gray": "#A4A497"
+      }
     },
   },
   plugins: [],
