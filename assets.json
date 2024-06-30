@@ -11,7 +11,7 @@
     "width": 993,
     "height": 715,
     "title": "Baptism on water",
-    "file": "baptism.jpg",
+    "file": "./assets/baptism.jpg",
     "categories": ["painting", "Watercolor"],
     "description": "Watercolor baptism scene, in the inspired by croquis and religous themes"
   },
@@ -36,7 +36,7 @@
     "height": 123,
     "gif": true,
     "title": "Untitled Game Asset: Conch Enemy",
-    "file": "./conch.gif",
+    "file": "./assets/conch.gif",
     "categories": ["pixel", "animated", "game"],
     "description": "Enemy design for an unreleased shoot-em-up game prototype. Will move in a sinewave pattern and shoot laser beams at your ship. Its laser would span the width of the screen, forcing the player to take evasive action."
   },
@@ -213,16 +213,16 @@
     "gif": true,
     "title": "Monoxie Player: running animation",
     "file": "./assets/monoxie_running.gif",
-    "categories": "pixel",
+    "categories": ["pixel", "game"],
     "description": "Running animation player character sprite for unreleased game prototype"
   },
   {
     "width": 592,
     "height": 800,
-    "title": "More ink!",
+    "title": "Ink Character",
     "file": "./assets/moreink.jpg",
-    "categories": "drawing",
-    "description": "Random sketch drawn with a rough hand"
+    "categories": ["drawing", "ink"],
+    "description": "Inked character in a rough style. Ink on paper."
   },
   {
     "width": 592,
@@ -332,7 +332,7 @@
     "width": 1755,
     "height": 1275,
     "title": "The Three Men",
-    "file": "./assets/tmen.jpg",
+    "file": "./assets/three_men.jpg",
     "categories": "painting",
     "description": "Three desert dwellers passing the time by playing card. Large emphasis on shadow and play of light. Ink on rice paper. Part of a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
@@ -388,7 +388,7 @@
     "width": 409,
     "height": 545,
     "title": "Portrait: Per",
-    "file": "./assets/portrait.jpg",
+    "file": "./assets/portrait_per.jpg",
     "categories": ["painting", "portrait", "ink"],
     "description": "Portrait painted as part of a celebration, only captured with poor camera, will update when I get the chance. Ink on plastic paper"
   },
@@ -412,7 +412,7 @@
     "width": 190,
     "height": 480,
     "title": "Untitled Game Asset: Cliff",
-    "file": "./assets/cliff.jpg",
+    "file": "./assets/cliff.png",
     "categories": ["pixel", "game"],
     "description": "Landscape asset from an unreleased, untitled shoot-em-up game prototype"
   },
@@ -420,7 +420,7 @@
     "width": 373,
     "height": 763,
     "title": "Lamp Noir",
-    "file": "./assets/lamp_noir.jpg",
+    "file": "./assets/lamp_noir.png",
     "categories": ["design", "vector", "pattern"],
     "description": "A lamp face design, made to look like a glass painting. Cut with a laser cutter and cutouts painted in various colors, illuminated with a light."
   }
