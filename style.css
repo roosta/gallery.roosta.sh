@@ -33,7 +33,7 @@
   user-select: none;
   mask: radial-gradient(
     var(--saturate-size) var(--saturate-size) at var(--saturate-x) var(--saturate-y),
-    black 10%,
+    black 20%,
     transparent 50%
   );
   transition: 400ms mask ease;
