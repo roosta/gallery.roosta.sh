@@ -26,7 +26,7 @@ Runs a live reload Vite server, see `stdout` for port, point your browser to loc
 
 - [Vite documentation](https://vitejs.dev/guide/build.html)
 
-To build for production, make sure you have a copy of the `github.json` file in `src`, then run:
+To build for production:
 
 ```shell
 npm run build
