@@ -2,6 +2,9 @@ import './style.css';
 import assets from "./assets.json";
 import Alpine from "alpinejs";
 
+import sortBy from "lodash/sortBy.js";
+import { setupSaturate } from './saturate.js'
+
 window.Alpine = Alpine
 
 Alpine.data("state", () => ({
@@ -12,3 +15,5 @@ Alpine.data("state", () => ({
   }
 }))
 Alpine.start()
+setupSaturate();
+

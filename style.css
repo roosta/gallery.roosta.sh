@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 
+
 @layer base {
   @font-face {
     font-family: "Work Sans";
@@ -20,4 +21,21 @@
     font-stretch: normal;
     font-style: normal;
   }
+}
+
+.saturate-overlay {
+  --saturate-size: 25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: ;
+  pointer-events: none;
+  user-select: none;
+  mask: radial-gradient(
+    var(--saturate-size) var(--saturate-size) at var(--saturate-x) var(--saturate-y),
+    black 10%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
 }
