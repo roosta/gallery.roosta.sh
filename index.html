@@ -28,9 +28,9 @@
       </section>
       <section class="pr-2 pl-8 w-4/6 flex flex-gap flex-grow">
         <div class="saturate-capture relative overflow-auto">
-          <div class="columns-5 gap-8 grayscale">
+          <div class="columns-5 gap-8">
             <template x-for="asset in assets">
-              <div class="pb-8 cursor-pointer">
+              <div class="pb-8 cursor-pointer grayscale">
                 <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
               </div>
             </template>
@@ -38,7 +38,7 @@
           <div class="saturate-overlay">
             <div class="columns-5 gap-8">
               <template x-for="asset in assets">
-                <div class="pb-8 cursor-pointer">
+                <div class="pb-8">
                   <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
                 </div>
               </template>
