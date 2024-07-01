@@ -25,6 +25,8 @@
 
 .saturate-overlay {
   --saturate-size: 25rem;
+  --saturate-x: calc(var(--saturate-size) * -1);
+  --saturate-y: calc(var(--saturate-size) * -1);
   position: absolute;
   top: 0;
   left: 0;
