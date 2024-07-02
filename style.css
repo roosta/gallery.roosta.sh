@@ -23,21 +23,4 @@
   }
 }
 
-.saturate-overlay {
-  --saturate-size: 25rem;
-  --saturate-x: calc(var(--saturate-size) * -1);
-  --saturate-y: calc(var(--saturate-size) * -1);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: ;
-  pointer-events: none;
-  user-select: none;
-  mask: radial-gradient(
-    var(--saturate-size) var(--saturate-size) at var(--saturate-x) var(--saturate-y),
-    black 20%,
-    transparent 70%
-  );
-  /* transition: 1000ms mask ease; */
-  will-change: mask;
-}
+.grid-item { width: 200px; }
