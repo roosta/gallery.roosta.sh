@@ -38,6 +38,6 @@
     black 20%,
     transparent 50%
   );
-  transition: 400ms mask ease;
+  /* transition: 1000ms mask ease; */
   will-change: mask;
 }
