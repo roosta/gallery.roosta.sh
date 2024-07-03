@@ -13,9 +13,10 @@ export default {
         open: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        "white": "#FBFBFB",
-        "grayish": "#A4A497",
-        "backdrop": "#1A1A1A"
+        white: "#FBFBFB",
+        grayish: "#A4A497",
+        backdrop: "#1A1A1A",
+        whiteish: "#D1D1CA"
       }
     },
   },

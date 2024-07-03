@@ -10,20 +10,29 @@
   <body class="w-full h-screen flex flex-col bg-black">
     <main class="p-6 md:p-8 md:gap-8 flex text-white flex-wrap gap-8 lg:flex-nowrap lg:overflow-hidden" x-data="assets">
       <section class="lg:w-2/6 w-full flex flex-col flex-grow">
-        <header class="mb-10">
+        <header class="mb-8">
           <div class="relative inline-block text-left">
             <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
               <i class="fa-solid fa-bars text-4"></i>
             </button>
           </div>
         </header>
-        <div class="font-cinzel text-4xl text-white mb-4">Gallery</div>
-        <div class="font-fauna text-sm text-grayish">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur.
+        <div class="flex flex-col gap-8 flex-grow">
+          <div class="font-work text-4xl text-white">Gallery</div>
+          <div class="font-open text-sm text-grayish">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur.
+          </div>
+          <div class="flex flex-col flex-grow justify-end">
+            <div class="flex flex-wrap gap-2">
+              <template x-for="tag in categories">
+                <div x-text="tag" class="tag"></div>
+              </template>
+            </div>
+          </div>
         </div>
       </section>
       <section class="lg:w-4/6 w-full flex flex-grow">

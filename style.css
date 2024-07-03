@@ -21,3 +21,10 @@
     font-style: normal;
   }
 }
+
+@layer components {
+  .tag {
+    @apply ring-grayish hover:ring-white hover:text-white cursor-pointer text-xs inline-flex items-center font-bold uppercase px-3 py-1 text-grayish ring-1 rounded-full;
+  }
+}
+

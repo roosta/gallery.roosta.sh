@@ -1,6 +1,8 @@
 import './style.css';
 import assets from "./assets.json";
 import Alpine from "alpinejs";
+import uniq from "lodash/uniq";
+import flatten from "lodash/flatten";
 
 window.Alpine = Alpine;
 
@@ -9,6 +11,10 @@ Alpine.data("assets", () => ({
     return assets.filter(a => {
       return !a?.ignored
     })
+  },
+  categories() {
+    const tags = assets.map(x => x.categories);
+    return uniq(flatten(tags))
   },
   calcSize(asset) {
     const ratio = asset.width / asset.height;
