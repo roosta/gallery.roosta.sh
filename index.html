@@ -8,7 +8,7 @@
     <title>Gallery - Daniel Berg (roosta)</title>
   </head>
   <body class="w-full h-screen flex flex-col bg-black">
-    <main class="p-6 md:p-8 md:gap-8 flex text-white flex-wrap gap-8 lg:flex-nowrap lg:overflow-hidden" x-data="state">
+    <main class="p-6 md:p-8 md:gap-8 flex text-white flex-wrap gap-8 lg:flex-nowrap lg:overflow-hidden" x-data="assets">
       <section class="lg:w-2/6 w-full flex flex-col flex-grow">
         <header class="mb-10">
           <div class="relative inline-block text-left">
@@ -28,8 +28,8 @@
       </section>
       <section class="lg:w-4/6 w-full flex flex-grow">
         <div class="overflow-auto">
-          <div class="grid grid-cols-2 lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense">
-            <template x-for="asset in assets">
+          <div class="grid grid-cols-2 lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
+            <template x-for="asset in data">
               <div
                 class="cursor-pointer"
                 :class="calcSize(asset)"

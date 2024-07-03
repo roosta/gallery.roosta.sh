@@ -4,8 +4,8 @@ import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 
-Alpine.data("state", () => ({
-  assets() {
+Alpine.data("assets", () => ({
+  data() {
     return assets.filter(a => {
       return !a?.ignored
     })
