@@ -28,10 +28,13 @@
       </section>
       <section class="pr-2 pl-8 w-4/6 flex flex-gap flex-grow">
         <div class="overflow-auto">
-          <div class="columns-5 gap-8">
+          <div class="grid grid-cols-10 gap-8 ">
             <template x-for="asset in assets">
-              <div class="pb-8 cursor-pointer">
-                <img class="w-full max-h-80 rounded object-cover bg-backdrop" :src="asset.file" />
+              <div
+                class="cursor-pointer"
+                :class="calcSize(asset)"
+                >
+                <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
               </div>
             </template>
           </div>

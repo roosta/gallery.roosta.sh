@@ -9,6 +9,13 @@ Alpine.data("state", () => ({
     return assets.filter(a => {
       return !a?.ignored
     })
+  },
+  calcSize(asset) {
+    if (asset.width > asset.height) {
+      return 'col-span-2 row-span-1'
+    } else {
+      return 'col-span-2 row-span-2'
+    }
   }
 }));
 
