@@ -7,6 +7,7 @@ import flatten from "lodash/flatten";
 window.Alpine = Alpine;
 
 Alpine.data("assets", () => ({
+  filtersOpen: false,
   data() {
     return assets.filter(a => {
       return !a?.ignored

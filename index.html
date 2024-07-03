@@ -26,8 +26,22 @@
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
             fugiat nulla pariatur.
           </div>
-          <div class="flex flex-col flex-grow justify-end">
-            <div class="flex flex-wrap gap-2">
+          <div class="flex flex-col flex-grow gap-4 justify-end">
+            <div @click="filtersOpen = !filtersOpen" class="border-b opacity-50 hover:opacity-75 cursor-pointer text-grayish text-sm border-grayish pb-1 flex justify-between">
+              <span>
+                <i class="fa-solid fa-filter text-4"></i>
+                Filters
+              </span>
+              <i class="fa-solid fa-chevron-down text-4"></i>
+              <!-- <button class="button" > -->
+              <!--   <i class="fa-solid fa-filter text-4"></i> -->
+              <!--   filters -->
+              <!-- </button> -->
+            </div>
+            <!-- <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true"> -->
+            <!--   <i class="fa-solid fa-filter text-4"></i> -->
+            <!-- </button> -->
+            <div x-show="filtersOpen" x-transition class="flex flex-wrap gap-2">
               <template x-for="tag in categories">
                 <div x-text="tag" class="tag"></div>
               </template>
