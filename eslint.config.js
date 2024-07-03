@@ -1,6 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import babelParser from "@babel/eslint-parser";
 
 export default [
   {
@@ -13,7 +14,12 @@ export default [
         ...globals.es2021,
         ...globals.node,
       }
-    }
+      parser: babelParser,
+      parserOptions: {
+        requireConfigFile: false,
+      },
+    },
+
   },
   pluginJs.configs.recommended,
   eslintConfigPrettier,
