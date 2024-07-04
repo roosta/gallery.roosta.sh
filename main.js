@@ -17,33 +17,43 @@ window.Alpine = Alpine;
 Alpine.data("assets", () => ({
   filtersOpen: false,
   data() {
-    return assets.filter(a => {
-      return !a?.ignored
+    return assets.map(asset => {
+      asset.aspect = this.getAspect(asset)
+      return asset
     })
+  },
+  filtered() {
+    return this.data().filter(asset => {
+      return !asset?.ignored
+    });
   },
   categories() {
     const tags = assets.map(x => x.categories);
     return uniq(flatten(tags))
   },
-  selected: {
-    asset: null,
-    element: null,
-  },
-  setSelected(asset, element) {
-    this.selected = {
-      asset,
-      element
-    }
-    console.log(element)
-  },
-  calcSize(asset) {
-    const ratio = asset.width / asset.height;
-    if (asset.width > asset.height && ratio > 2) { // Landscape
-      return "sm:col-span-2 md:col-span-4";
-    } else if (asset.height > asset.width) { // portrait
-      return "sm:col-span-2 sm:row-span-2"
+  selected: null,
+  getClass(asset) {
+    if (this.selected?.file === asset.file) {
+      return `${asset.aspect}-selected`;
     } else {
-      return "sm:col-span-2" // square
+      return asset.aspect;
+    }
+  },
+  setSelected(asset) {
+    if (this.selected?.file === asset.file) {
+      this.selected = null;
+    } else {
+      this.selected = asset;
+    }
+  },
+  getAspect(asset) {
+    const ratio = asset.width / asset.height;
+    if (asset.width > asset.height && ratio > 2) {
+      return "landscape";
+    } else if (asset.height > asset.width) {
+      return "portrait"
+    } else {
+      return "square"
     }
   }
 }));

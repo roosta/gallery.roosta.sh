@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   @font-face {
     font-family: "Work Sans";
@@ -29,5 +28,46 @@
   .button {
     @apply lg:rounded ring-1 ring-grayish py-2 px-4 font-bold uppercase text-grayish text-xs transition-all opacity-75 hover:opacity-100 focus:ring-1 focus:ring-white focus:text-white active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
   }
+  .landscape {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  .landscape-selected {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  .portrait {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  .portrait-selected {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  .square {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  @screen sm {
+    .landscape {
+      @apply col-span-2
+    }
+    .portrait {
+      @apply col-span-2 row-span-2
+    }
+    .square {
+      @apply sm:col-span-2
+    }
+  }
+  @screen md {
+    .landscape {
+      @apply col-span-4
+    }
+    .landscape-selected {
+      @apply col-span-8 row-span-2
+    }
+    .portrait-selected {
+      @apply col-span-4 row-span-2
+    }
+    .square-selected {
+      @apply col-span-4 row-span-2
+    }
+  }
 }
 
+/* vim: set ts=2 sw=2 tw=0 fdm=marker et :*/
