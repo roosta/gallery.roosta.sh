@@ -54,7 +54,7 @@
           <div class="grid grid-cols-2 lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
             <template x-for="asset in data">
               <div
-                class="cursor-pointer"
+                class="col-span-full row-span-1 cursor-pointer"
                 :class="calcSize(asset)"
                 >
                 <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
