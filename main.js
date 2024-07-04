@@ -27,12 +27,12 @@ Alpine.data("assets", () => ({
   },
   calcSize(asset) {
     const ratio = asset.width / asset.height;
-    if (asset.width > asset.height && ratio > 2) {
+    if (asset.width > asset.height && ratio > 2) { // Landscape
       return "sm:col-span-2 md:col-span-4";
-    } else if (asset.height > asset.width) {
+    } else if (asset.height > asset.width) { // portrait
       return "sm:col-span-2 sm:row-span-2"
     } else {
-      return "sm:col-span-2"
+      return "sm:col-span-2" // square
     }
   }
 }));
