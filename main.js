@@ -25,6 +25,17 @@ Alpine.data("assets", () => ({
     const tags = assets.map(x => x.categories);
     return uniq(flatten(tags))
   },
+  selected: {
+    asset: null,
+    element: null,
+  },
+  setSelected(asset, element) {
+    this.selected = {
+      asset,
+      element
+    }
+    console.log(element)
+  },
   calcSize(asset) {
     const ratio = asset.width / asset.height;
     if (asset.width > asset.height && ratio > 2) { // Landscape

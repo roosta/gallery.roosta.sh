@@ -55,6 +55,7 @@
             <template x-for="asset in data">
               <div
                 class="col-span-full row-span-1 cursor-pointer"
+                @click="setSelected(asset, $el)"
                 :class="calcSize(asset)"
                 >
                 <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
