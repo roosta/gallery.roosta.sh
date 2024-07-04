@@ -1,10 +1,16 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import("tailwindcss").Config} */
 export default {
   content: [
     "./index.html",
     "./main.js"
+  ],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant("selected", "&[data-selected='true']")
+    })
   ],
   theme: {
     extend: {
@@ -20,6 +26,5 @@ export default {
       }
     },
   },
-  plugins: [],
 }
 
