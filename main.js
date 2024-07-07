@@ -30,9 +30,9 @@ Alpine.data("assets", () => ({
   },
   getAspect(asset) {
     const ratio = asset.width / asset.height;
-    if (asset.width > asset.height && ratio > 2) {
+    if (ratio > 2) {
       return "landscape";
-    } else if (asset.height > asset.width) {
+    } else if (ratio < 1) {
       return "portrait"
     } else {
       return "square"
