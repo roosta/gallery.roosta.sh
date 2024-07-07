@@ -3,6 +3,7 @@ import assets from "./assets.json";
 import Alpine from "alpinejs";
 import uniq from "lodash/uniq";
 import flatten from "lodash/flatten";
+import { wrapGrid } from 'animate-css-grid'
 
 window.Alpine = Alpine;
 
@@ -14,6 +15,24 @@ const breakpoints = { // eslint-disable-line
   xl: 1280,
   "2xl": 1536
 }
+
+function loadImage(img){
+  return new Promise(resolve=>{img.onload = resolve})
+}
+
+document.addEventListener('alpine:initialized', () => {
+
+  const images = document.querySelectorAll("img");
+  const promises = [];
+  images.forEach(img => {
+    promises.push(loadImage(img))
+  })
+  Promise.all(promises).then(() => {
+    const grid = document.querySelector(".grid");
+    wrapGrid(grid);
+  })
+})
+
 
 Alpine.data("assets", () => ({
   selected: null,
