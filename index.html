@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300" rel="stylesheet">
     <title>Gallery - Daniel Berg (roosta)</title>
   </head>
@@ -45,28 +45,28 @@
       </section>
       <section class="lg:w-4/6 w-full flex flex-grow">
         <div class="overflow-auto flex flex-grow">
-          <div
-            class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2"
-            x-data="assets">
-            <template x-for="asset in filtered">
+          <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
+            {{#each assets}}
               <div
-                @click="setSelected(asset, $el)"
-                class="col-span-full row-span-1 cursor-pointer"
-                :class="{
-                  'sm:col-span-2 md:col-span-4': asset.aspect === 'landscape',
-                  'sm:col-span-2 sm:row-span-2': asset.aspect === 'portrait',
-                  'sm:col-span-2 ': asset.aspect === 'square',
-                  'md:col-span-8 md:row-span-2': asset.aspect === 'landscape' && isSelected(asset),
-                  'md:col-span-6 md:row-span-4': asset.aspect === 'portrait' && isSelected(asset),
-                  'md:col-span-8 md:row-span-4': asset.aspect === 'square' && isSelected(asset)
-                }"
+                data-file="{{this.file}}"
+                data-aspect="{{this.aspect}}"
+                {{#landscape this}}
+                  class="grid-item sm:col-span-2 md:col-span-4"
+                  data-selected="grid-item sm:col-span-2 md:col-span-8 md:row-span-2"
+                {{/landscape}}{{#portrait this}}
+                  class="grid-item sm:col-span-2 sm:row-span-2"
+                  data-selected="grid-item sm:col-span-2 sm:row-span-2 md:col-span-6 md:row-span-4"
+                {{/portrait}}{{#square this}}
+                   class="grid-item sm:col-span-2"
+                   data-selected="grid-item sm:col-span-2 md:col-span-8 md:row-span-4"
+                {{/square}}
                 >
                 <div class="w-full h-full relative">
                   <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop"></div>
-                  <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
+                  <img class="w-full h-full rounded object-cover bg-backdrop" src="{{ this.file }}" />
                 </div>
               </div>
-            </template>
+            {{/each}}
           </div>
         </div>
       </section>
@@ -74,3 +74,5 @@
     <script type="module" src="/main.js"></script>
   </body>
 </html>
+
+{{!-- vim: set ts=2 sw=2 tw=0 et ft=handlebars : --}}

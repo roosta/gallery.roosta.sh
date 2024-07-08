@@ -5,8 +5,6 @@ import uniq from "lodash/uniq";
 import flatten from "lodash/flatten";
 import { wrapGrid } from 'animate-css-grid'
 
-window.Alpine = Alpine;
-
 // tailwind breakpoints
 const breakpoints = { // eslint-disable-line
   sm: 640,
@@ -16,58 +14,26 @@ const breakpoints = { // eslint-disable-line
   "2xl": 1536
 }
 
-function loadImage(img){
-  return new Promise(resolve=>{img.onload = resolve})
-}
 
-document.addEventListener('alpine:initialized', () => {
+// function loadImage(img){
+//   return new Promise(resolve=>{img.onload = resolve})
+// }
 
-  const images = document.querySelectorAll("img");
-  const promises = [];
-  images.forEach(img => {
-    promises.push(loadImage(img))
-  })
-  Promise.all(promises).then(() => {
-    const grid = document.querySelector(".grid");
-    wrapGrid(grid);
-  })
-})
+// document.addEventListener('alpine:initialized', () => {
+//
+//   // const images = document.querySelectorAll("img");
+//   // const promises = [];
+//   // images.forEach(img => {
+//   //   promises.push(loadImage(img))
+//   // })
+//   // Promise.all(promises).then(() => {
+//   //   const grid = document.querySelector(".grid");
+//   //   wrapGrid(grid);
+//   // })
+//     // const grid = document.querySelector(".grid");
+//     // wrapGrid(grid);
+// })
 
-
-Alpine.data("assets", () => ({
-  selected: null,
-  data() {
-    return assets.map(asset => {
-      asset.aspect = this.getAspect(asset)
-      return asset
-    })
-  },
-  filtered() {
-    return this.data().filter(asset => {
-      return !asset?.ignored
-    });
-  },
-  getAspect(asset) {
-    const ratio = asset.width / asset.height;
-    if (ratio > 2) {
-      return "landscape";
-    } else if (ratio < 1) {
-      return "portrait"
-    } else {
-      return "square"
-    }
-  },
-  isSelected(asset) {
-    return this.selected?.file === asset.file
-  },
-  setSelected(asset) {
-    if (this.selected?.file === asset.file) {
-      this.selected = null;
-    } else {
-      this.selected = asset;
-    }
-  },
-}))
 
 Alpine.data("filter", () => ({
   open: false,
@@ -79,3 +45,42 @@ Alpine.data("filter", () => ({
 
 Alpine.start();
 
+
+const state = {
+  selected: null,
+  previousClasses: "",
+  setSelected(el) {
+    const aspect = el.dataset?.aspect;
+    const file = el.dataset?.file;
+    const selected = el.dataset?.selected;
+    if (this.selected === file) {
+      el.className = this.previousClasses
+      this.selected = null;
+    } else {
+      this.previousClasses = el.className
+      el.className = selected;
+      this.selected = file
+    }
+  },
+  isSelected(file) {
+    return this.selected === file
+  },
+};
+
+function attachListeners() {
+  const elements = document.querySelectorAll(".grid-item");
+  elements.forEach(el => {
+    el.addEventListener("click", () => state.setSelected(el))
+  })
+}
+
+
+function main() {
+  const grid = document.querySelector(".grid");
+  attachListeners();
+  wrapGrid(grid);
+}
+
+// document.addEventListener("DOMContentLoaded", main);
+//
+main();

@@ -30,5 +30,26 @@
   .button {
     @apply lg:rounded ring-1 ring-grayish py-2 px-4 font-bold uppercase text-grayish text-xs transition-all opacity-75 hover:opacity-100 focus:ring-1 focus:ring-white focus:text-white active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none
   }
+  .grid-item {
+    @apply col-span-full row-span-1 cursor-pointer
+  }
+  /* .art-landscape { */
+  /*   @apply art-shared sm:col-span-2 md:col-span-4 */
+  /* } */
+  /* .art-portrait { */
+  /*   @apply art-shared sm:col-span-2 sm:row-span-2 */
+  /* } */
+  /* .art-square { */
+  /*   @apply art-shared sm:col-span-2 */
+  /* } */
+  /* .art-landscape-selected { */
+  /*   @apply art-shared sm:col-span-2 md:col-span-8 md:row-span-2 */
+  /* } */
+  /* .art-portrait-selected { */
+  /*   @apply art-shared sm:col-span-2 sm:row-span-2 md:col-span-6 md:row-span-4 */
+  /* } */
+  /* .art-square-selected { */
+  /*   @apply art-shared sm:col-span-2 md:col-span-8 md:row-span-4 */
+  /* } */
 }
 
