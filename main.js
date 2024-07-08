@@ -52,10 +52,11 @@ const state = {
     file: null,
     previous: "",
   },
+  // Set selected item, and deselect previous
   setSelected(el) {
     // const aspect = el.dataset?.aspect;
     const file = el.dataset?.file;
-    const selectedClasses = el.dataset?.selected;
+    const selectedClass = el.dataset?.selectedClass;
     if (this.selected.file === file) {
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
@@ -64,7 +65,7 @@ const state = {
         this.selected.el.className = this.selected.previous;
       }
       this.selected = { el, file, previous: el.className }
-      el.className = selectedClasses;
+      el.className = selectedClass;
     }
   },
   isSelected(file) {
