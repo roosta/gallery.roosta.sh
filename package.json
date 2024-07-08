@@ -21,7 +21,8 @@
     "prettier": "^3.3.2",
     "prettier-plugin-packagejson": "^2.5.0",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
