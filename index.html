@@ -44,22 +44,27 @@
         </div>
       </section>
       <section class="lg:w-4/6 w-full flex flex-grow">
-        <div class="overflow-auto">
-          <div class="grid grid-cols-2 lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2" x-data="assets">
+        <div class="overflow-auto flex flex-grow">
+          <div
+            class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6 xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2"
+            x-data="assets">
             <template x-for="asset in filtered">
               <div
                 @click="setSelected(asset, $el)"
-                class="col-span-full row-span-1 cursor-pointer grid-item"
+                class="col-span-full row-span-1 cursor-pointer"
                 :class="{
                   'sm:col-span-2 md:col-span-4': asset.aspect === 'landscape',
                   'sm:col-span-2 sm:row-span-2': asset.aspect === 'portrait',
-                  'sm:col-span-2': asset.aspect === 'square',
-                  'md:col-span-8 row-span-2': asset.aspect === 'landscape' && isSelected(asset),
+                  'sm:col-span-2 ': asset.aspect === 'square',
+                  'md:col-span-8 md:row-span-2': asset.aspect === 'landscape' && isSelected(asset),
                   'md:col-span-6 md:row-span-4': asset.aspect === 'portrait' && isSelected(asset),
                   'md:col-span-8 md:row-span-4': asset.aspect === 'square' && isSelected(asset)
                 }"
                 >
-                <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
+                <div class="w-full h-full relative">
+                  <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop"></div>
+                  <img class="w-full h-full rounded object-cover bg-backdrop" :src="asset.file" />
+                </div>
               </div>
             </template>
           </div>
