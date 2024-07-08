@@ -47,19 +47,24 @@ Alpine.start();
 
 
 const state = {
-  selected: null,
-  previousClasses: "",
+  selected: {
+    el: null,
+    file: null,
+    previous: "",
+  },
   setSelected(el) {
     // const aspect = el.dataset?.aspect;
     const file = el.dataset?.file;
-    const selected = el.dataset?.selected;
-    if (this.selected === file) {
-      el.className = this.previousClasses
-      this.selected = null;
+    const selectedClasses = el.dataset?.selected;
+    if (this.selected.file === file) {
+      el.className = this.selected.previous;
+      this.selected = { el: null, file: null};
     } else {
-      this.previousClasses = el.className
-      el.className = selected;
-      this.selected = file
+      if (this.selected.previous) {
+        this.selected.el.className = this.selected.previous;
+      }
+      this.selected = { el, file, previous: el.className }
+      el.className = selectedClasses;
     }
   },
   isSelected(file) {
