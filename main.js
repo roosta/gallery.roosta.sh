@@ -50,7 +50,7 @@ const state = {
   selected: null,
   previousClasses: "",
   setSelected(el) {
-    const aspect = el.dataset?.aspect;
+    // const aspect = el.dataset?.aspect;
     const file = el.dataset?.file;
     const selected = el.dataset?.selected;
     if (this.selected === file) {
@@ -81,6 +81,5 @@ function main() {
   wrapGrid(grid);
 }
 
-// document.addEventListener("DOMContentLoaded", main);
-//
-main();
+document.addEventListener("DOMContentLoaded", main);
+// main();
