@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 import assets from "./assets.json";
 import Alpine from "alpinejs";
 import uniq from "lodash/uniq";
