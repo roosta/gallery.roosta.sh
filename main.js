@@ -1,9 +1,8 @@
 // import './style.css';
-import assets from "./assets.json";
-import Alpine from "alpinejs";
-import uniq from "lodash/uniq";
-import flatten from "lodash/flatten";
+// import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
+// import anime from 'animejs/lib/anime.es.js';
+
 
 // tailwind breakpoints
 const breakpoints = { // eslint-disable-line
@@ -19,48 +18,27 @@ const breakpoints = { // eslint-disable-line
 //   return new Promise(resolve=>{img.onload = resolve})
 // }
 
-// document.addEventListener('alpine:initialized', () => {
-//
-//   // const images = document.querySelectorAll("img");
-//   // const promises = [];
-//   // images.forEach(img => {
-//   //   promises.push(loadImage(img))
-//   // })
-//   // Promise.all(promises).then(() => {
-//   //   const grid = document.querySelector(".grid");
-//   //   wrapGrid(grid);
-//   // })
-//     // const grid = document.querySelector(".grid");
-//     // wrapGrid(grid);
-// })
-
-
-Alpine.data("filter", () => ({
-  open: false,
-  categories() {
-    const tags = assets.map(x => x.categories);
-    return uniq(flatten(tags))
-  },
-}));
-
-Alpine.start();
-
-
 const state = {
+  categoriesOpen: false,
   selected: {
     el: null,
     file: null,
     previous: "",
   },
+  toggleCategories() {
+    const target = document.querySelector(".filter-container");
+    target.classList.toggle("hidden");
+    this.categoriesOpen != this.categoriesOpen
+  },
+
   // Set selected item, and deselect previous
   setSelected(el) {
-    // const aspect = el.dataset?.aspect;
     const file = el.dataset?.file;
     const selectedClass = el.dataset?.selectedClass;
-    if (this.selected.file === file) {
+    if (this.selected.file === file) { // Unselect item
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
-    } else {
+    } else { // Select item
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
       }
@@ -74,10 +52,12 @@ const state = {
 };
 
 function attachListeners() {
-  const elements = document.querySelectorAll(".grid-item");
-  elements.forEach(el => {
+  const gridItems = document.querySelectorAll(".grid-item");
+  gridItems.forEach(el => {
     el.addEventListener("click", () => state.setSelected(el))
   })
+  const filterButton = document.querySelector(".filter-button");
+  filterButton.addEventListener("click", () => state.toggleCategories());
 }
 
 

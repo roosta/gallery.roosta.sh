@@ -1,5 +1,7 @@
 import handlebars from "vite-plugin-handlebars";
 import assets from "./assets.json";
+import uniq from "lodash/uniq";
+import flatten from "lodash/flatten";
 
 function calcAspect(asset) {
   const ratio = asset.width / asset.height;
@@ -13,10 +15,13 @@ const withAspect = assets.map(x => {
   return x;
 })
 
+const categories = uniq(flatten(assets.map(x => x.categories)));
+
 export default {
   plugins: [handlebars({
     context: {
-      assets: withAspect
+      assets: withAspect,
+      categories
     },
     helpers: {
       landscape: (asset, options) => {

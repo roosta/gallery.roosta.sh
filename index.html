@@ -27,18 +27,20 @@
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
             fugiat nulla pariatur.
           </div>
-          <div class="flex flex-col flex-grow gap-4 justify-end" x-data="filter">
-            <div @click="open = !open" class="border-dotted border-b opacity-50 hover:opacity-75 cursor-pointer text-grayish text-sm border-grayish pb-1 flex justify-between">
+          <div class="flex flex-col flex-grow gap-4 justify-end">
+            <div class="filter-button border-dotted border-b opacity-50 hover:opacity-75 cursor-pointer text-grayish text-sm border-grayish pb-1 flex justify-between">
               <span>
                 <i class="fa-solid fa-filter text-4"></i>
                 Filters
               </span>
               <i class="fa-solid fa-chevron-down text-4"></i>
             </div>
-            <div x-show="open" x-transition class="flex flex-wrap gap-2">
-              <template x-for="tag in categories">
-                <div x-text="tag" class="tag"></div>
-              </template>
+            <div class="filter-container flex flex-wrap gap-2 hidden">
+              {{#each categories}}
+                <div class="ring-grayish opacity-75 hover:opacity-100 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-grayish ring-1 rounded-full">
+                  {{ this }}
+                </div>
+              {{/each}}
             </div>
           </div>
         </div>
@@ -49,7 +51,6 @@
             {{#each assets}}
               <div
                 data-file="{{this.file}}"
-                data-aspect="{{this.aspect}}"
                 {{#landscape this}}
                   class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-4"
                   data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-8 md:row-span-2"

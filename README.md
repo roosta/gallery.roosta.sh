@@ -18,9 +18,8 @@ Runs a live reload Vite server, see `stdout` for port, point your browser to loc
 ## Libraries
 
 - [Vite](https://vitejs.dev/)
-- [Alpine.js](https://alpinejs.dev/)
-- [PostCSS](https://postcss.org)
 - [TailwindCSS](https://tailwindcss.com)
+- [Handlebars](https://handlebarsjs.com/)
 
 ## Building for production
 
