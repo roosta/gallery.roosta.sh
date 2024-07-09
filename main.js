@@ -1,6 +1,7 @@
 // import './style.css';
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
+import intersection from "lodash/intersection";
 // import anime from 'animejs/lib/anime.es.js';
 
 
@@ -20,21 +21,38 @@ const breakpoints = { // eslint-disable-line
 
 const state = {
   categoriesOpen: false,
+  filter: {
+    data: [],
+    class: ""
+  },
+  loaded() {
+    const grid = document.querySelector(".grid");
+    wrapGrid(grid);
+  },
   selected: {
     el: null,
     file: null,
     previous: "",
   },
+  init() {
+    // Initialize tag classname, swapping classname based on active state, so we need to store the original
+    const tag = document.querySelector(".filter-tag");
+    this.filter.class = tag.className;
+  },
   toggleCategories() {
     const target = document.querySelector(".filter-container");
     target.classList.toggle("hidden");
     this.categoriesOpen != this.categoriesOpen
+    if (!this.categoriesOpen) {
+      this.setFilter();
+    }
   },
 
   // Set selected item, and deselect previous
   setSelected(el) {
     const file = el.dataset?.file;
     const selectedClass = el.dataset?.selectedClass;
+    if (!file || !selectedClass) return;
     if (this.selected.file === file) { // Unselect item
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
@@ -46,9 +64,38 @@ const state = {
       el.className = selectedClass;
     }
   },
-  isSelected(file) {
-    return this.selected === file
+
+  // Set image filter, state array contains all active filters
+  setFilter(el) {
+    const category = el?.dataset?.category;
+    if (el && category) {
+      if (this.filter.data.includes(category)) {
+        this.filter.data = this.filter.data.filter(x => x !== category);
+      } else {
+        this.filter.data.push(category)
+      }
+    }
+    const gridItems = document.querySelectorAll(".grid-item");
+    gridItems.forEach(el => {
+      const categories = el.dataset.categories.split(",");
+      if (this.filter.data.length === 0) {
+        el.classList.remove("hidden");
+      } else if (intersection(categories, this.filter.data).length === 0) {
+        el.classList.add("hidden");
+      } else {
+        el.classList.remove("hidden");
+      }
+    })
+    const filterTags = document.querySelectorAll(".filter-tag");
+    filterTags.forEach(tag => {
+      if (this.filter.data.includes(tag.dataset.category)) {
+        tag.className = tag.dataset.selectedClass;
+      } else {
+        tag.className = this.filter.class;
+      }
+    })
   },
+
 };
 
 function attachListeners() {
@@ -58,14 +105,18 @@ function attachListeners() {
   })
   const filterButton = document.querySelector(".filter-button");
   filterButton.addEventListener("click", () => state.toggleCategories());
+
+  const filterTags = document.querySelectorAll(".filter-tag");
+  filterTags.forEach(tag => {
+    tag.addEventListener("click", () => state.setFilter(tag))
+  })
 }
 
 
 function main() {
-  const grid = document.querySelector(".grid");
   attachListeners();
-  wrapGrid(grid);
+  state.init();
 }
 
-document.addEventListener("DOMContentLoaded", main);
-// main();
+document.addEventListener("DOMContentLoaded", state.loaded);
+main();

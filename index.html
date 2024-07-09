@@ -37,7 +37,10 @@
             </div>
             <div class="filter-container flex flex-wrap gap-2 hidden">
               {{#each categories}}
-                <div class="ring-grayish opacity-75 hover:opacity-100 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-grayish ring-1 rounded-full">
+                <div
+                  data-selected-class="filter-tag ring-white opacity-100 hover:opacity-100 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full"
+                  data-category="{{ this }}"
+                  class="filter-tag ring-grayish opacity-75 hover:opacity-100 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-grayish ring-1 rounded-full">
                   {{ this }}
                 </div>
               {{/each}}
@@ -51,6 +54,7 @@
             {{#each assets}}
               <div
                 data-file="{{this.file}}"
+                data-categories={{this.categories}}
                 {{#landscape this}}
                   class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-4"
                   data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-8 md:row-span-2"
