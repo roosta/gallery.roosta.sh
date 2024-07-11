@@ -49,14 +49,6 @@
     "description": "Cover for a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
-    "width": 1164,
-    "height": 785,
-    "title": "Drainpipes",
-    "file": "./assets/drainpipes.jpg",
-    "categories": "photo",
-    "description": "Drainpipe macro shot, developed in darkroom. Experimenting with printing light exposure when developing"
-  },
-  {
     "width": 1525,
     "height": 1084,
     "title": "Stark Dunes",
@@ -377,8 +369,8 @@
     "description": "Banner image for a previous gallery webpage called noir. Parts drawn separately, composed together later. Ink and marker on plastic paper."
   },
   {
-    "width": 1870,
-    "height": 1384,
+    "width": 1563,
+    "height": 1080,
     "title": "Drainpipes",
     "file": "./assets/drainpipes.jpg",
     "categories": ["photo", "darkroom"],
