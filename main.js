@@ -23,7 +23,8 @@ const state = {
   categoriesOpen: false,
   filter: {
     data: [],
-    class: ""
+    tagClass: "",
+    buttonClass: "",
   },
   loaded() {
     const grid = document.querySelector(".grid");
@@ -36,15 +37,23 @@ const state = {
   },
   init() {
     // Initialize tag classname, swapping classname based on active state, so we need to store the original
-    const tag = document.querySelector(".filter-tag");
-    this.filter.class = tag.className;
+    const filterTag = document.querySelector(".filter-tag");
+    const filterButton = document.querySelector(".filter-button");
+    this.filter.tagClass = filterTag.className;
+    this.filter.buttonClass = filterButton.className;
   },
-  toggleCategories() {
+
+  // Toggle categories panel
+  toggleCategories(filterButton) {
     const target = document.querySelector(".filter-container");
     target.classList.toggle("hidden");
-    this.categoriesOpen != this.categoriesOpen
-    if (!this.categoriesOpen) {
+    if (this.categoriesOpen) {
       this.setFilter();
+      filterButton.className = this.filter.buttonClass;
+      this.categoriesOpen = false;
+    } else {
+      filterButton.className = filterButton.dataset.selectedClass;
+      this.categoriesOpen = true;
     }
   },
 
@@ -74,6 +83,8 @@ const state = {
       } else {
         this.filter.data.push(category)
       }
+    } else {
+      this.filter.data = [];
     }
     const gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach(el => {
@@ -91,7 +102,7 @@ const state = {
       if (this.filter.data.includes(tag.dataset.category)) {
         tag.className = tag.dataset.selectedClass;
       } else {
-        tag.className = this.filter.class;
+        tag.className = this.filter.tagClass;
       }
     })
   },
@@ -104,7 +115,7 @@ function attachListeners() {
     el.addEventListener("click", () => state.setSelected(el))
   })
   const filterButton = document.querySelector(".filter-button");
-  filterButton.addEventListener("click", () => state.toggleCategories());
+  filterButton.addEventListener("click", () => state.toggleCategories(filterButton));
 
   const filterTags = document.querySelectorAll(".filter-tag");
   filterTags.forEach(tag => {
@@ -114,8 +125,8 @@ function attachListeners() {
 
 
 function main() {
-  attachListeners();
   state.init();
+  attachListeners();
 }
 
 document.addEventListener("DOMContentLoaded", state.loaded);
