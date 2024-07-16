@@ -1,97 +1,71 @@
 [
   {
-    "width": 411,
-    "height": 664,
     "title": "Illuminated Infant",
     "file": "./assets/illuminated_infant.jpg",
     "categories": ["painting", "oil"],
     "description": "Oil painting of a baby, exploring colors and light, inspired by impressionists. I was trying out some water based oil colors, wet on wet."
   },
   {
-    "width": 993,
-    "height": 715,
     "title": "Baptism on Water",
     "file": "./assets/baptism.jpg",
     "categories": ["painting", "Watercolor"],
     "description": "Watercolor baptism scene, in the inspired by croquis and religous themes"
   },
   {
-    "width": 549,
-    "height": 908,
     "title": "Proboscis Umbra",
     "file": "./assets/umbra.jpg",
     "categories": ["drawing", "charcoal"],
     "description": "Drawing from a series of mask variations, usually following an insect, or similar impression. Charcoal on rough paper."
   },
   {
-    "width": 667,
-    "height": 975,
     "title": "Cloak",
     "file": "./assets/cloak.jpg",
     "categories": ["photo", "darkroom"],
     "description": "One is a series of dark room photographs experimenting with various light exposure settings during development"
   },
   {
-    "width": 270,
-    "height": 123,
-    "gif": true,
     "title": "Untitled Game Asset: Conch Enemy",
     "file": "./assets/conch.gif",
     "categories": ["pixel", "animated", "game"],
     "description": "Enemy design for an unreleased shoot-em-up game prototype. Will move in a sinewave pattern and shoot laser beams at your ship. Its laser would span the width of the screen, forcing the player to take evasive action."
   },
   {
-    "width": 819,
-    "height": 1386,
     "title": "Post Concept Cover",
     "file": "./assets/post_cover.jpg",
     "categories": ["painting", "ink"],
     "description": "Cover for a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
-    "width": 1525,
-    "height": 1084,
     "title": "Stark Dunes",
     "file": "./assets/stark_dunes.jpg",
     "categories": ["painting", "ink", "landscape"],
     "description": "Wind swept, stark sand dunes. Ink on semi-transparent paper and rice paper backing."
   },
   {
-    "width": 376,
-    "height": 520,
     "title": "Proboscis Canus",
     "file": "assets/proboscis_canus.jpg",
     "categories": ["drawing", "pencil"],
     "description": "Insect inspired, hunched wandering figure. Part of a series of mask drawings and paintings exploring similar themes. Pencil on paper."
   },
   {
-    "width": 242,
-    "height": 208,
-    "gif": true,
     "title": "Ship Explosion",
     "file": "./assets/player_explosion.gif",
     "categories": ["pixel", "animated", "game"],
     "description": "Ship explosion design for an unreleased shoot-em-up game prototype. It was meant as the player death explosion, as you're controlling a spaceship. Inspired by Metal Slug explosion style"
   },
   {
-    "width": 184,
-    "height": 358,
     "title": "Floating Island",
     "file": "./assets/floating_island.png",
     "categories": ["pixel", "game"],
     "description": "A floating island for an unreleased shoot-em-up game prototype. Would bob slightly up and down, impeding the player"
   },
   {
-    "width": 1193,
-    "height": 929,
     "title": "Development fluid experiment",
     "file": "./assets/fluid.jpg",
     "categories": ["darkroom", "experiment"],
     "description": "Painting with development fluid on light sensitive paper. Hard to control the result, along with exposure to light, turned out interesting"
   },
   {
-    "width": 1068,
-    "height": 1068,
     "title": "Goat Boys LP Cover Design",
     "file": "./assets/gbcover.jpg",
     "categories": ["design", "album cover", "vector"],
@@ -99,24 +73,18 @@
     "link": "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"
   },
   {
-    "width": 548,
-    "height": 320,
     "title": "Canus Fratr",
     "file": "./assets/canus_fratr.jpg",
     "categories": ["drawing", "sketch"],
     "description": "Pencil sketch of a proboscis gass mask. Part of a larger series of mask exploration."
   },
   {
-    "width": 1024,
-    "height": 576,
     "title": "Hooded Moon",
     "file": "./assets/hooded_moon.jpg",
     "categories": ["pixel", "album cover"],
     "description": "Album cover draft for an electronica band. It was not used, but I still like how it turned out. Would need additional work, and is considered unfinished."
   },
   {
-    "width": 720,
-    "height": 470,
     "title": "Proboscis Bibo",
     "ignored": true,
     "file": "./assets/proboscis_bibo.jpg",
@@ -124,16 +92,12 @@
     "description": "Marker and ink on rice paper, done quickly with a more cartoonish style"
   },
   {
-    "width": 625,
-    "height": 859,
     "title": "Self Portrait: Gesture",
     "file": "./assets/portrait_gesture.jpg",
     "categories": ["painting", "ink", "portrait"],
     "description": "Self portrait gesturing, using ink on plastic paper"
   },
   {
-    "width": 765,
-    "height": 959,
     "title": "Proboscis_plicatus",
     "file": "./assets/proboscis_plicatus.jpg",
     "interactive": true,
@@ -141,40 +105,30 @@
     "description": "One in a series of insect-like mask wearing figures. Was originally part of a website design, make sure to advance the image to the next one to see the version it would transform into"
   },
   {
-    "width": 592,
-    "height": 869,
     "title": "Midsummer 1",
     "file": "./assets/midsummer1.jpg",
     "categories": ["photo", "darkroom", "midsummer"],
     "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "width": 543,
-    "height": 827,
     "title": "Midsummer 2",
     "file": "./assets/midsummer2.jpg",
     "categories": ["photo", "midsummer", "darkroom"],
     "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "width": 574,
-    "height": 854,
     "title": "Midsummer 3",
     "file": "./assets/midsummer3.jpg",
     "categories": ["photo", "midsummer", "darkroom"],
     "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "width": 865,
-    "height": 571,
     "title": "Midsummer 4",
     "file": "./assets/midsummer4.jpg",
     "categories": ["photo", "midsummer", "darkroom"],
     "description": "Part of the midsummer photo series developed on a darkroom. Later weathered and lightly painted."
   },
   {
-    "width": 549,
-    "height": 731,
     "title": "Desert Dweller",
     "file": "./assets/desert_dweller.jpg",
     "ignored": true,
@@ -182,235 +136,174 @@
     "description": "Partial drawing of a desert dweller, part of the post conceptual comic. Never finished this, but I still like it"
   },
   {
-    "width": 480,
-    "height": 480,
-    "gif": true,
     "title": "Monoxi Player: idle animation",
     "file": "./assets/monoxie_idle.gif",
     "categories": ["pixel", "animated", "game"],
     "description": "Idle animation player character sprite for an unreleased game prototype"
   },
   {
-    "width": 480,
-    "height": 480,
-    "gif": true,
     "title": "Monoxie Player: jump animation",
     "file": "./assets/monoxie_jump.gif",
     "categories": ["pixel", "animated", "game"],
     "description": "Jump animation player character sprite for unreleased game prototype"
   },
   {
-    "width": 480,
-    "height": 480,
-    "gif": true,
     "title": "Monoxie Player: running animation",
     "file": "./assets/monoxie_running.gif",
     "categories": ["pixel", "game"],
     "description": "Running animation player character sprite for unreleased game prototype"
   },
   {
-    "width": 592,
-    "height": 800,
     "title": "Ink Character",
     "file": "./assets/moreink.jpg",
     "categories": ["drawing", "ink"],
     "description": "Inked character in a rough style. Ink on paper."
   },
   {
-    "width": 592,
-    "height": 800,
     "title": "Proboscis Ingens",
     "file": "./assets/proboscis_ingens.jpg",
     "categories": ["drawing", "ink"],
     "description": "Ink drawing of a insect like masked figure. Part of a series of mask drawings and paintings exploring similar themes."
   },
   {
-    "width": 1248,
-    "height": 1575,
     "title": "Post Character: Angle",
     "file": "./assets/post_angle.jpg",
     "categories": ["painting", "ink"],
     "description": "Character for a conceptual comic book called Post. A post apocalyptic desert adventure with heavy religious themes. Trying variable angle, trying to capture from below"
   },
   {
-    "width": 638,
-    "height": 878,
     "title": "Post character: Equipped",
     "file": "./assets/post_equipped.jpg",
     "categories": "drawing",
     "description": "Character for a conceptual comic book called Post. A post apocalyptic desert adventure with heavy religious themes. Attempting to visualize an equipped character."
   },
   {
-    "width": 752,
-    "height": 696,
     "title": "Pattern Composition",
     "file": "./assets/pattern_comp.jpg",
     "categories": ["drawing", "pattern", "composition"],
     "description": "Ornamental pattern drawing, scaled and mirrored. Scan quality is not great, but I like the nouveau inspiration."
   },
   {
-    "width": 542,
-    "height": 769,
     "title": "Pray Pencil",
     "file": "./assets/pray_pencil.jpg",
     "categories": "drawing",
     "description": "Two praying figures in the desert. Pencil on paper. Weathered"
   },
   {
-    "width": 1545,
-    "height": 380,
     "title": "Domestic Gardening",
     "file": "./assets/domestic_gardening.png",
     "categories": ["vector", "design", "logo"],
     "description": "Several logo drafts for a gardening company. These were rejected, but I still like them."
   },
   {
-    "width": 1237,
-    "height": 1748,
     "title": "Salt Dunes",
     "file": "./assets/salt_dunes.jpg",
     "categories": ["marker", "ink", "painting"],
     "description": "Salt/sand dunes abstracted illustration"
   },
   {
-    "width": 1184,
-    "height": 1600,
     "title": "Underground Dweller",
     "file": "./assets/underground_dweller.jpg",
     "categories": "painting",
     "description": "Another in th"
   },
   {
-    "width": 1702,
-    "height": 630,
     "title": "Untitled Game: Screenshot",
     "file": "./assets/untitled_screenshot.png",
     "categories": ["pixel", "game"],
     "description": "Screenshot from an unreleased shoot-em-up game prototype. Game was in very early stages, so some post composition is done to give a full impression."
   },
   {
-    "width": 1527,
-    "height": 1084,
     "title": "Sea of sand",
     "file": "./assets/sea_of_sand.jpg",
     "categories": ["painting", "ink", "landscape"],
     "description": "Desert landscape, where the sand compacted almost looks like the sea. Ink on plastic transparent paper, on top of weathered rice paper "
   },
   {
-    "width": 850,
-    "height": 1163,
     "title": "Proboscis Color",
     "file": "./assets/proboscis_color.jpg",
     "categories": ["drawing", "marker"],
     "description": "Watercolor drawing of a kneeling masked person. Part of a series of mask drawings and paintings exploring similar themes."
   },
   {
-    "width": 779,
-    "height": 566,
     "title": "Stones study",
     "file": "./assets/stones_study.jpg",
     "categories": ["painting", "ink", "study"],
     "description": "A study of stone texture, drawn with ink on watercolor paper."
   },
   {
-    "width": 1755,
-    "height": 1275,
     "title": "Thirst",
     "file": "./assets/thirst.jpg",
     "categories": ["painting", "ink"],
     "description": "Person arriving after wandering the desert for to long, captured when he takes his first drink when arriving at the settlement. Ink on rice paper"
   },
   {
-    "width": 1755,
-    "height": 1275,
     "title": "The Three Men",
     "file": "./assets/three_men.jpg",
     "categories": "painting",
     "description": "Three desert dwellers passing the time by playing card. Large emphasis on shadow and play of light. Ink on rice paper. Part of a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
-    "width": 600,
-    "height": 600,
     "title": "VLN Cover draft",
     "file": "./assets/vln.jpg",
     "categories": ["pixel", "album cover"],
     "description": "Pixel art draft for an album cover. Not used but I got to explore text from that perspective, and general pixel art texturing"
   },
   {
-    "width": 1224,
-    "height": 1228,
     "title": "Wind Album Cover",
     "file": "./assets/wind.jpg",
     "categories": ["design", "album cover"],
     "description": "Cover for a 60s inspired jam band. Taking heavy inspiration from other illustrations from the era of the bands style, and art nouveau. Marker on paper"
   },
   {
-    "width": 542,
-    "height": 762,
     "title": "Wrap",
     "file": "./assets/wrap.jpg",
     "categories": ["drawing", "study"],
     "description": "Cloth face wrap study, pencil"
   },
   {
-    "width": 777,
-    "height": 915,
     "title": "Paxel",
     "file": "./assets/paxel.png",
     "categories": ["pixel"],
     "description": "Pixel art stylized gassmask used for a home page design"
   },
   {
-    "width": 1228,
-    "height": 1332,
     "title": "Self Portrait: Noir",
     "file": "./assets/portrait_noir.jpg",
     "categories": ["painting", "composition", "portrait"],
     "description": "Banner image for a previous gallery webpage called noir. Parts drawn separately, composed together later. Ink and marker on plastic paper."
   },
   {
-    "width": 1563,
-    "height": 1080,
     "title": "Drainpipes",
     "file": "./assets/drainpipes.jpg",
     "categories": ["photo", "darkroom"],
     "description": "Drainpipe macro shot, developed in darkroom. Experimenting with printing light exposure when developing"
   },
   {
-    "width": 409,
-    "height": 545,
     "title": "Portrait: Per",
     "file": "./assets/portrait_per.jpg",
     "categories": ["painting", "portrait", "ink"],
     "description": "Portrait painted as part of a celebration, only captured with poor camera, will update when I get the chance. Ink on plastic paper"
   },
   {
-    "width": 783,
-    "height": 1319,
     "title": "Baphomet",
     "file": "./assets/baphomet.png",
     "categories": ["pixel"],
     "description": "A very large pixel art skeleton featuring the fictional plague mask."
   },
   {
-    "width": 1280,
-    "height": 562,
     "title": "Datorder Logo Draft",
     "file": "./assets/cake.jpg",
     "categories": ["design", "logo"],
     "description": "Part of a series of logo designs for a order management platform. This draft was not used, but I still like it"
   },
   {
-    "width": 190,
-    "height": 480,
     "title": "Untitled Game Asset: Cliff",
     "file": "./assets/cliff.png",
     "categories": ["pixel", "game"],
     "description": "Landscape asset from an unreleased, untitled shoot-em-up game prototype"
   },
   {
-    "width": 373,
-    "height": 763,
     "title": "Lamp Noir",
     "file": "./assets/lamp_noir.png",
     "categories": ["design", "vector", "pattern"],
