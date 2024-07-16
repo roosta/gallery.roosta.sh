@@ -1,8 +1,11 @@
 import handlebars from "vite-plugin-handlebars";
-import assets from "./assets.json";
+import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
 import flatten from "lodash/flatten";
+import ColorThief from "colorthief";
+import sizeOf from "image-size";
 
+// This requires size fields to be set, make sure its called after `withSize`
 function calcAspect(asset) {
   const ratio = asset.width / asset.height;
   if (ratio > 2) { return "landscape" }
@@ -10,17 +13,45 @@ function calcAspect(asset) {
   return "square";
 };
 
-const withAspect = assets.map(x => {
-  x.aspect = calcAspect(x)
-  return x;
-})
+function withSize(item) {
+  const size = sizeOf(item.file)
+  return {
+    ...item,
+    ...size
+  }
+}
 
-const categories = uniq(flatten(assets.map(x => x.categories)));
+function withAspect(item) {
+  return {
+    ...item,
+    aspect: calcAspect(item)
+  }
+}
+
+// Handle promise returned from ColorThief
+function withPalette(item) {
+  return ColorThief.getPalette(item.file, 5)
+    .then(palette => {
+      return {
+        ...item,
+        palette
+      }
+  }).catch(err => {
+    console.error(err);
+  })
+}
+
+
+const categories = uniq(flatten(assetsJson.map(x => x.categories)));
+const assets =
+  await Promise.all(assetsJson.map(withPalette))
+  .then(p => p.map(withSize).map(withAspect))
+  .catch(err => console.error(err))
 
 export default {
   plugins: [handlebars({
     context: {
-      assets: withAspect,
+      assets,
       categories
     },
     helpers: {
