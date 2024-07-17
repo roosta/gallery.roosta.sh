@@ -56,7 +56,7 @@
             {{#each assets}}
               <div
                 data-file="{{this.file}}"
-                data-categories={{this.categories}}
+                data-categories="{{this.categories}}"
                 {{#landscape this}}
                   class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-4"
                   data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-6 md:row-span-2"
@@ -72,7 +72,7 @@
                 >
                 <div class="w-full h-full relative">
                   <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop"></div>
-                  <img class="w-full h-full rounded object-cover bg-backdrop" src="{{ this.file }}" />
+                  <img class="w-full h-full rounded object-cover bg-backdrop" src="{{this.file}}" alt="{{this.title}}" />
                 </div>
               </div>
             {{/each}}
