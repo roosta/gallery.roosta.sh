@@ -62,10 +62,22 @@ const state = {
     const file = el.dataset?.file;
     const selectedClass = el.dataset?.selectedClass;
     if (!file || !selectedClass) return;
+    const defaultEl = document.querySelector('div[data-handle="default"]');
     if (this.selected.file === file) { // Unselect item
       el.className = this.selected.previous;
+      const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
       this.selected = { el: null, file: null};
+      defaultEl.classList.replace("opacity-0", "opacity-100");
+      previousEl.classList.replace("opacity-100", "opacity-0");
     } else { // Select item
+      const targetEl = document.querySelector(`div[data-handle="${file}"]`);
+      if (!this.selected.file) {
+        defaultEl.classList.replace("opacity-100", "opacity-0")
+      } else {
+        const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
+        previousEl.classList.replace("opacity-100", "opacity-0")
+      }
+      targetEl.classList.replace("opacity-0", "opacity-100")
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
       }

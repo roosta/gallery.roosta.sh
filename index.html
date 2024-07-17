@@ -11,22 +11,35 @@
   <body class="w-full h-screen flex flex-col bg-black">
     <main class="p-6 md:p-8 md:gap-8 flex flex-grow text-white flex-wrap gap-8 lg:flex-nowrap lg:overflow-hidden">
       <section class="lg:w-2/6 w-full flex flex-col flex-grow">
-        <header class="mb-8">
+        <nav class="mb-8">
           <div class="relative inline-block text-left">
             <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
               <i class="fa-solid fa-bars text-4"></i>
             </button>
           </div>
-        </header>
-        <div class="flex flex-col gap-8 flex-grow">
-          <h1 class="font-work text-4xl text-white">Gallery</h1>
-          <p class="font-open text-sm text-grayish">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur.
-          </p>
+        </nav>
+        <div class="flex flex-col flex-grow">
+          <section class="relative">
+            <div class="flex flex-col gap-8 absolute opacity-100" data-handle="default">
+              <h1 class="font-work text-4xl text-white">Gallery</h1>
+              <p class="font-open text-sm text-grayish">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+              </p>
+            </div>
+            {{#each assets}}
+            <div
+              class="flex flex-col gap-8 absolute opacity-0" data-handle="{{this.file}}">
+              <h1 class="font-work text-4xl text-white">{{this.title}}</h1>
+              <p class="font-open text-sm text-grayish">
+                {{this.description}}
+              </p>
+            </div>
+            {{/each}}
+          </section>
           <div class="flex flex-col flex-grow gap-4 justify-end">
             <div
               data-selected-class="filter-button border-dotted border-b opacity-100 hover:opacity-75 cursor-pointer text-white text-sm border-white pb-1 flex justify-between"
