@@ -17,7 +17,6 @@
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.8.0",
-    "htmlhint": "^1.1.4",
     "image-size": "^1.1.1",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
