@@ -8,9 +8,15 @@ import sizeOf from "image-size";
 // This requires size fields to be set, make sure its called after `withSize`
 function calcAspect(asset) {
   const ratio = asset.width / asset.height;
-  if (ratio >= 1.4) { return "landscape" }
-  else if (ratio < 0.9) { return "portrait" }
-  return "square";
+  if (ratio >= 0.8 && ratio <= 1.2) {
+    return "square"
+  } else if (ratio > 1.2 && ratio < 2) {
+    return "landscape"
+  } else if (ratio >= 2) {
+    return "wide"
+  } else {
+    return "portrait"
+  }
 };
 
 function withSize(item) {
@@ -76,6 +82,11 @@ export default {
     helpers: {
       landscape: (asset, options) => {
         if (asset.aspect === "landscape") {
+          return options.fn(this);
+        }
+      },
+      wide: (asset, options) => {
+        if (asset.aspect === "wide") {
           return options.fn(this);
         }
       },

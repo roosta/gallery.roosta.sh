@@ -69,19 +69,40 @@
             {{#each assets}}
               <div
                 data-file="{{this.file}}"
+                data-aspect="{{this.aspect}}"
                 data-categories="{{this.categories}}"
                 {{#landscape this}}
-                  class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-4"
-                  data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-6 md:row-span-2"
+                  class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:row-span-2 sm:col-span-2 md:col-span-4"
+                  data-selected-class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 md:col-span-6 md:row-span-3"
                 {{/landscape}}
                 {{#portrait this}}
-                  class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 sm:row-span-2"
-                  data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
+                  class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 sm:row-span-2"
+                  data-selected-class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
                 {{/portrait}}
                 {{#square this}}
-                   class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2"
-                   data-selected-class="grid-item col-span-full row-span-1 cursor-pointer sm:col-span-2 md:col-span-4 md:row-span-2"
+                  class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 sm:row-span-1"
+                  data-selected-class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 md:col-span-4"
                 {{/square}}
+                {{#wide this}}
+                  class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-6"
+                  data-selected-class=
+                  "grid-item col-span-full row-span-1 cursor-pointer
+                   sm:col-span-2 md:col-span-8 md:row-span-3"
+                {{/wide}}
                 >
                 <div class="w-full h-full relative">
                   <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop"></div>
