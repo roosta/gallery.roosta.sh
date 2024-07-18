@@ -14,7 +14,6 @@ const breakpoints = { // eslint-disable-line
   "2xl": 1536
 }
 
-
 // function loadImage(img){
 //   return new Promise(resolve=>{img.onload = resolve})
 // }
@@ -56,20 +55,13 @@ const state = {
       this.categoriesOpen = true;
     }
   },
-
-  // Set selected item, and deselect previous
-  setSelected(el) {
-    const file = el.dataset?.file;
-    const selectedClass = el.dataset?.selectedClass;
-    if (!file || !selectedClass) return;
+  toggleDetails(file) {
     const defaultEl = document.querySelector('div[data-handle="default"]');
-    if (this.selected.file === file) { // Unselect item
-      el.className = this.selected.previous;
+    if (this.selected.file === file) {
       const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-      this.selected = { el: null, file: null};
       defaultEl.classList.replace("opacity-0", "opacity-100");
       previousEl.classList.replace("opacity-100", "opacity-0");
-    } else { // Select item
+    } else {
       const targetEl = document.querySelector(`div[data-handle="${file}"]`);
       if (!this.selected.file) {
         defaultEl.classList.replace("opacity-100", "opacity-0")
@@ -78,6 +70,19 @@ const state = {
         previousEl.classList.replace("opacity-100", "opacity-0")
       }
       targetEl.classList.replace("opacity-0", "opacity-100")
+    }
+  },
+
+  // Set selected item, and deselect previous
+  setSelected(el) {
+    const file = el.dataset?.file;
+    const selectedClass = el.dataset?.selectedClass;
+    if (!file || !selectedClass) return;
+    this.toggleDetails(file);
+    if (this.selected.file === file) { // Unselect item
+      el.className = this.selected.previous;
+      this.selected = { el: null, file: null};
+    } else { // Select item
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
       }
@@ -121,6 +126,7 @@ const state = {
 
 };
 
+
 function attachListeners() {
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach(el => {
@@ -143,3 +149,4 @@ function main() {
 
 document.addEventListener("DOMContentLoaded", state.loaded);
 main();
+
