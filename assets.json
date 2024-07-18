@@ -174,7 +174,7 @@
   {
     "title": "Post character: Equipped",
     "file": "./assets/post_equipped.jpg",
-    "categories": "drawing",
+    "categories": ["painting", "ink"],
     "description": "Character for a conceptual comic book called Post. A post apocalyptic desert adventure with heavy religious themes. Attempting to visualize an equipped character."
   },
   {
@@ -186,7 +186,7 @@
   {
     "title": "Pray Pencil",
     "file": "./assets/pray_pencil.jpg",
-    "categories": "drawing",
+    "categories": ["drawing"],
     "description": "Two praying figures in the desert. Pencil on paper. Weathered"
   },
   {
@@ -204,8 +204,8 @@
   {
     "title": "Underground Dweller",
     "file": "./assets/underground_dweller.jpg",
-    "categories": "painting",
-    "description": "Another in th"
+    "categories": ["painting", "ink"],
+    "description": "Mask study, part of a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
     "title": "Untitled Game: Screenshot",
@@ -240,7 +240,7 @@
   {
     "title": "The Three Men",
     "file": "./assets/three_men.jpg",
-    "categories": "painting",
+    "categories": ["painting", "ink"],
     "description": "Three desert dwellers passing the time by playing card. Large emphasis on shadow and play of light. Ink on rice paper. Part of a conceptual comic book. A post apocalyptic desert adventure with heavy religious themes."
   },
   {
