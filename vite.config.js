@@ -28,13 +28,32 @@ function withAspect(item) {
   }
 }
 
+// https://stackoverflow.com/a/5624139/4306379
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
 // Handle promise returned from ColorThief
 function withPalette(item) {
   return ColorThief.getPalette(item.file, 5)
     .then(palette => {
-      return {
-        ...item,
-        palette
+      try {
+        const hexes = palette.map(color => rgbToHex(...color))
+        return {
+          ...item,
+          palette: hexes
+        }
+      } catch (err) {
+        console.error(err);
+        return {
+          ...item,
+          palette: null
+        }
       }
   }).catch(err => {
     console.error(err);
