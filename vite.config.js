@@ -8,8 +8,8 @@ import sizeOf from "image-size";
 // This requires size fields to be set, make sure its called after `withSize`
 function calcAspect(asset) {
   const ratio = asset.width / asset.height;
-  if (ratio > 2) { return "landscape" }
-  else if (ratio < 1) { return "portrait" }
+  if (ratio >= 1.4) { return "landscape" }
+  else if (ratio < 0.9) { return "portrait" }
   return "square";
 };
 
