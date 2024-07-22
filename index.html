@@ -22,13 +22,17 @@
           <section class="relative">
             <div class="flex flex-col gap-8 absolute opacity-100" data-handle="default">
               <h1 class="font-work text-4xl text-white">Gallery</h1>
-              <p class="font-open text-sm text-grayish">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-              </p>
+              <div class="font-open text-sm text-grayish flex flex-col gap-3">
+                <p class="">
+                  Welcome to my gallery, it's an eclectic collection of
+                  artworks I've made over the years, in various mediums and
+                  styles. Click on each to see a short description.
+                </p>
+                <!-- TODO: Add mode text -->
+                <p>
+                  - Daniel Berg (roosta)
+                </p>
+              </div>
             </div>
             {{#each assets}}
             <div
