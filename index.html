@@ -20,7 +20,13 @@
         </nav>
         <div class="flex flex-col flex-grow">
           <section class="relative">
-            <div class="flex flex-col gap-8 absolute opacity-100" data-handle="default">
+            {{#with  "opacity-100" as |selected|}}
+            {{#with  "opacity-0" as |unselected|}}
+            <div
+              class="flex flex-col gap-8 absolute {{selected}}"
+              data-unselected-class="{{unselected}}"
+              data-selected-class="{{selected}}"
+              data-handle="default">
               <h1 class="font-work text-4xl text-white">Gallery</h1>
               <div class="font-open text-sm text-grayish flex flex-col gap-3">
                 <p class="">
@@ -34,14 +40,24 @@
                 </p>
               </div>
             </div>
-            {{#each assets}}
+            {{/with}}
+            {{/with}}
+
+            {{#each assets as |asset|}}
+            {{#with "opacity-0" as |unselected|}}
+            {{#with "opacity-100" as |selected|}}
             <div
-              class="flex flex-col gap-8 absolute opacity-0" data-handle="{{this.file}}">
-              <h1 class="font-work text-4xl text-white">{{this.title}}</h1>
+              class="flex flex-col gap-8 absolute {{unselected}}"
+              data-unselected-class="{{unselected}}"
+              data-selected-class="{{selected}}"
+              data-handle="{{asset.file}}">
+              <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
               <p class="font-open text-sm text-grayish">
-                {{this.description}}
+                {{asset.description}}
               </p>
             </div>
+            {{/with}}
+            {{/with}}
             {{/each}}
           </section>
           <div class="flex flex-col flex-grow gap-4 justify-end">
@@ -81,6 +97,7 @@
           <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
             xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
             {{#each assets as | asset |}}
+            <!-- class is common classnames across each asset, stored as class to avoid repeats -->
             {{#with "grid-item col-span-full row-span-1 cursor-pointer" as | class |}}
             <div
               data-file="{{asset.file}}"

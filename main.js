@@ -25,6 +25,7 @@ const state = {
     tagClass: "",
     buttonClass: "",
   },
+  // Run after dom content is loaded
   loaded() {
     const grid = document.querySelector(".grid");
     wrapGrid(grid);
@@ -34,6 +35,7 @@ const state = {
     file: null,
     previous: "",
   },
+  // Run possibly before dom is done rendering, before everything else
   init() {
     // Initialize tag classname, swapping classname based on active state, so we need to store the original
     const filterTag = document.querySelector(".filter-tag");
@@ -55,21 +57,37 @@ const state = {
       this.categoriesOpen = true;
     }
   },
+  // Swap selected with unselected classes, see markup for actual classnames
   toggleDetails(file) {
     const defaultEl = document.querySelector('div[data-handle="default"]');
     if (this.selected.file === file) {
       const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-      defaultEl.classList.replace("opacity-0", "opacity-100");
-      previousEl.classList.replace("opacity-100", "opacity-0");
+      defaultEl.classList.replace(
+          defaultEl.dataset.unselectedClass.split(" "),
+          defaultEl.dataset.selectedClass.split(" "),
+      )
+      previousEl.classList.replace(
+        previousEl.dataset.selectedClass.split(" "),
+        previousEl.dataset.unselectedClass.split(" ")
+      );
     } else {
       const targetEl = document.querySelector(`div[data-handle="${file}"]`);
       if (!this.selected.file) {
-        defaultEl.classList.replace("opacity-100", "opacity-0")
+        defaultEl.classList.replace(
+          defaultEl.dataset.selectedClass.split(" "),
+          defaultEl.dataset.unselectedClass.split(" "),
+        )
       } else {
         const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-        previousEl.classList.replace("opacity-100", "opacity-0")
+        previousEl.classList.replace(
+          previousEl.dataset.selectedClass.split(" "),
+          previousEl.dataset.unselectedClass.split(" ")
+        )
       }
-      targetEl.classList.replace("opacity-0", "opacity-100")
+      targetEl.classList.replace(
+        targetEl.dataset.unselectedClass.split(" "),
+        targetEl.dataset.selectedClass.split(" ")
+      )
     }
   },
 
