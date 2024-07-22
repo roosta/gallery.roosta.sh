@@ -82,12 +82,15 @@ const state = {
     if (this.selected.file === file) { // Unselect item
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
+      el.dataset.selected = false;
     } else { // Select item
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
+        this.selected.el.dataset.selected = null;
       }
       this.selected = { el, file, previous: el.className }
       el.className = selectedClass;
+      el.dataset.selected = true;
     }
   },
 
