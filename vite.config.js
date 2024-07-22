@@ -48,21 +48,15 @@ function rgbToHex(r, g, b) {
 function withPalette(item) {
   return ColorThief.getPalette(item.file, 5)
     .then(palette => {
-      try {
-        const hexes = palette.map(color => rgbToHex(...color))
-        return {
-          ...item,
-          palette: hexes
-        }
-      } catch (err) {
-        console.error(err);
-        return {
-          ...item,
-          palette: null
-        }
-      }
-  }).catch(err => {
-    console.error(err);
+      const ret = {
+        ...item,
+        palette: null
+      };
+      if (palette) {
+        const hexes = palette?.map(color => rgbToHex(...color))
+        ret.palette = hexes;
+      };
+      return ret
   })
 }
 
