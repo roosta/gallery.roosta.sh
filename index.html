@@ -55,6 +55,13 @@
               <p class="font-open text-sm text-grayish">
                 {{asset.description}}
               </p>
+
+              <h2 class="font-work text-lg text-white">Palette</h2>
+              <div class="flex gap-1">
+                {{#each asset.palette as |color|}}
+                <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
+                {{/each}}
+              </div>
             </div>
             {{/with}}
             {{/with}}
