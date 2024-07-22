@@ -104,8 +104,12 @@
               {{/wide}}
               >
               <div class="w-full h-full relative">
-                <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop"></div>
-                <img class="w-full h-full rounded object-cover bg-backdrop" src="{{asset.file}}" alt="{{asset.title}}" />
+                <div class="animate-pulse absolute hidden w-full h-full rounded object-cover bg-backdrop">
+                </div>
+                <img
+                  class="w-full h-full rounded object-cover bg-backdrop"
+                  src="{{asset.file}}"
+                  alt="{{asset.title}}" />
               </div>
             </div>
             {{/with}}
