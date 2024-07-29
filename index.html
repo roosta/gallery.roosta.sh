@@ -52,16 +52,16 @@
               data-selected-class="{{selected}}"
               data-handle="{{asset.file}}">
               <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
+              <div class="flex gap-3">
+                {{#each asset.palette as |color|}}
+                <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
+                  <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
+                </div>
+                {{/each}}
+              </div>
               <p class="font-open text-sm text-grayish">
                 {{asset.description}}
               </p>
-
-              <h2 class="font-work text-lg text-white">Palette</h2>
-              <div class="flex gap-1">
-                {{#each asset.palette as |color|}}
-                <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
-                {{/each}}
-              </div>
             </div>
             {{/with}}
             {{/with}}
