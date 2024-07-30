@@ -20,8 +20,8 @@
         </nav>
         <div class="flex flex-col flex-grow">
           <section class="relative">
-            {{#with  "opacity-100" as |selected|}}
-            {{#with  "opacity-0" as |unselected|}}
+            {{#with  "visible" as |selected|}}
+            {{#with  "hidden" as |unselected|}}
             <div
               class="flex flex-col gap-8 absolute {{selected}}"
               data-unselected-class="{{unselected}}"
@@ -44,8 +44,8 @@
             {{/with}}
 
             {{#each assets as |asset|}}
-            {{#with "opacity-0" as |unselected|}}
-            {{#with "opacity-100" as |selected|}}
+            {{#with "hidden" as |unselected|}}
+            {{#with "visible" as |selected|}}
             <div
               class="flex flex-col gap-8 absolute {{unselected}}"
               data-unselected-class="{{unselected}}"
@@ -62,6 +62,26 @@
               <p class="font-open text-sm text-grayish">
                 {{asset.description}}
               </p>
+
+              <div class="">
+                <h2 class="font-open text-grayish mb-4">Categories</h2>
+                <div class="flex gap-3">
+                  {{#each asset.categories as |cat|}}
+                <div
+                  data-selected-class="filter-tag ring-white opacity-100
+                  hover:opacity-75 cursor-pointer text-xs inline-flex
+                  items-center uppercase px-3 py-1 text-white ring-1
+                  rounded-full"
+                  data-category="{{ cat }}"
+                  class="filter-tag ring-grayish opacity-75 hover:opacity-100
+                  cursor-pointer text-xs inline-flex items-center uppercase
+                  px-3 py-1 text-grayish ring-1 rounded-full">
+                  {{ cat }}
+                </div>
+                  {{/each}}
+                </div>
+              </div>
+
             </div>
             {{/with}}
             {{/with}}

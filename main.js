@@ -49,7 +49,7 @@ const state = {
     const target = document.querySelector(".filter-container");
     target.classList.toggle("hidden");
     if (this.categoriesOpen) {
-      this.setFilter();
+      // this.setFilter();
       filterButton.className = this.filter.buttonClass;
       this.categoriesOpen = false;
     } else {
@@ -115,6 +115,11 @@ const state = {
   // Set image filter, state array contains all active filters
   setFilter(el) {
     const category = el?.dataset?.category;
+    if (this.selected.file !== null) {
+      const filterButton = document.querySelector(".filter-button");
+      this.toggleCategories(filterButton);
+      this.setSelected(this.selected.el)
+    }
     if (el && category) {
       if (this.filter.data.includes(category)) {
         this.filter.data = this.filter.data.filter(x => x !== category);
