@@ -1,9 +1,11 @@
 import handlebars from "vite-plugin-handlebars";
 import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
+import sortBy from "lodash/sortBy";
 import flatten from "lodash/flatten";
 import ColorThief from "colorthief";
 import sizeOf from "image-size";
+import tinycolor from "tinycolor2";
 
 // This requires size fields to be set, make sure its called after `withSize`
 function calcAspect(asset) {
@@ -20,10 +22,9 @@ function calcAspect(asset) {
 };
 
 function withSize(item) {
-  const size = sizeOf(item.file)
   return {
     ...item,
-    ...size
+    ...sizeOf(item.file)
   }
 }
 
@@ -34,15 +35,6 @@ function withAspect(item) {
   }
 }
 
-// https://stackoverflow.com/a/5624139/4306379
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
 
 // Handle promise returned from ColorThief
 function withPalette(item) {
@@ -53,8 +45,11 @@ function withPalette(item) {
         palette: null
       };
       if (palette) {
-        const hexes = palette?.map(color => rgbToHex(...color))
-        ret.palette = hexes;
+        const colors = palette?.map(([r, g, b]) => {
+          return tinycolor({r, g, b})
+        });
+        const sorted = sortBy(colors, color => color.getBrightness());
+        ret.palette = sorted.map(color => color.toHexString());
       };
       return ret
   })
