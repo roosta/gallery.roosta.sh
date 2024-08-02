@@ -125,6 +125,15 @@ const state = {
       } else {
         this.filter.data.push(category)
       }
+      if (this.selected.el) {
+        // If we select a filter combination that doesn't include the currenly
+        // selected's categories, we need to deselect it
+        const categories = this.selected.el.dataset.categories.split(",");
+        const includes = (this.filter.data.some(tag => categories.includes(tag)) || this.filter.data.length === 0);
+        if (!includes) {
+          this.setSelected(this.selected.el)
+        }
+      }
     } else {
       this.filter.data = [];
     }
