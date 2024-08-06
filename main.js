@@ -104,6 +104,13 @@ const state = {
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
+      const gridItems = document.querySelectorAll(".grid-item");
+      gridItems.forEach(el => {
+        if (el.classList.contains("opacity-50")) {
+          el.classList.replace("opacity-50", "opacity-100");
+        }
+      })
+
     } else { // Select item
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
@@ -112,6 +119,13 @@ const state = {
       this.selected = { el, file, previous: el.className }
       el.className = selectedClass;
       el.dataset.selected = true;
+      const notSelected
+        = document.querySelectorAll(".grid-item[data-selected='false']");
+      notSelected.forEach(el => {
+        if (el.classList.contains("opacity-100")) {
+          el.classList.replace("opacity-100", "opacity-50");
+        }
+      })
     }
   },
 
