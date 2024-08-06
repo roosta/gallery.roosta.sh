@@ -115,19 +115,24 @@ const state = {
   // Set image filter, state array contains all active filters
   setFilter(el) {
     const category = el?.dataset?.category;
+
+    // Open categories panel if it isn't already
     if (!this.categoriesOpen) {
       const filterButton = document.querySelector(".filter-button");
       this.toggleCategories(filterButton, false);
     }
+
+    // Handle filter state
     if (el && category) {
       if (this.filter.data.includes(category)) {
         this.filter.data = this.filter.data.filter(x => x !== category);
       } else {
         this.filter.data.push(category)
       }
+
+      // If we select a filter combination that doesn't include the currenly
+      // selected's categories, we need to deselect it
       if (this.selected.el) {
-        // If we select a filter combination that doesn't include the currenly
-        // selected's categories, we need to deselect it
         const categories = this.selected.el.dataset.categories.split(",");
         const includes = (this.filter.data.some(tag => categories.includes(tag)) || this.filter.data.length === 0);
         if (!includes) {
@@ -137,6 +142,8 @@ const state = {
     } else {
       this.filter.data = [];
     }
+
+    // Toggle 'hidden' based on filter data
     const gridItems = document.querySelectorAll(".grid-item");
     gridItems.forEach(el => {
       const categories = el.dataset.categories.split(",");
@@ -148,6 +155,8 @@ const state = {
         el.classList.remove("hidden");
       }
     })
+
+    // Toggle active status on filter tags
     const filterTags = document.querySelectorAll(".filter-tag");
     filterTags.forEach(tag => {
       if (this.filter.data.includes(tag.dataset.category)) {
