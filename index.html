@@ -124,7 +124,7 @@
           <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
             xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
             {{#each assets as | asset |}}
-            {{#with "grid-item col-span-full row-span-1 cursor-pointer opacity-100" as | class |}}
+            {{#with "grid-item col-span-full row-span-1 cursor-pointer opacity-100 transition-opacity duration-300" as | class |}}
             <div
               data-file="{{asset.file}}"
               data-aspect="{{asset.aspect}}"
