@@ -37,7 +37,8 @@ const state = {
   },
   // Run possibly before dom is done rendering, before everything else
   init() {
-    // Initialize tag classname, swapping classname based on active state, so we need to store the original
+    // Initialize tag classname, swapping classname based on active state, so
+    // we need to store the original
     const filterTag = document.querySelector(".filter-tag");
     const filterButton = document.querySelector(".filter-button");
     this.filter.tagClass = filterTag.className;
@@ -61,7 +62,8 @@ const state = {
   toggleDetails(file) {
     const defaultEl = document.querySelector('div[data-handle="default"]');
     if (this.selected.file === file) {
-      const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
+      const previousEl
+        = document.querySelector(`div[data-handle="${this.selected.file}"]`)
       defaultEl.classList.replace(
           defaultEl.dataset.unselectedClass.split(" "),
           defaultEl.dataset.selectedClass.split(" "),
@@ -78,7 +80,8 @@ const state = {
           defaultEl.dataset.unselectedClass.split(" "),
         )
       } else {
-        const previousEl = document.querySelector(`div[data-handle="${this.selected.file}"]`)
+        const previousEl
+          = document.querySelector(`div[data-handle="${this.selected.file}"]`)
         previousEl.classList.replace(
           previousEl.dataset.selectedClass.split(" "),
           previousEl.dataset.unselectedClass.split(" ")
@@ -134,7 +137,11 @@ const state = {
       // selected's categories, we need to deselect it
       if (this.selected.el) {
         const categories = this.selected.el.dataset.categories.split(",");
-        const includes = (this.filter.data.some(tag => categories.includes(tag)) || this.filter.data.length === 0);
+        const includes = (
+          this.filter.data.some(
+            tag => categories.includes(tag)
+          ) || this.filter.data.length === 0
+        );
         if (!includes) {
           this.setSelected(this.selected.el)
         }
@@ -176,7 +183,9 @@ function attachListeners() {
     el.addEventListener("click", () => state.setSelected(el))
   })
   const filterButton = document.querySelector(".filter-button");
-  filterButton.addEventListener("click", () => state.toggleCategories(filterButton, true));
+  filterButton.addEventListener("click", () => {
+    return state.toggleCategories(filterButton, true);
+  });
 
   const filterTags = document.querySelectorAll(".filter-tag");
   filterTags.forEach(tag => {
