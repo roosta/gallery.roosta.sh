@@ -45,11 +45,11 @@ const state = {
   },
 
   // Toggle categories panel
-  toggleCategories(filterButton) {
+  toggleCategories(filterButton, clearFilter = false) {
     const target = document.querySelector(".filter-container");
     target.classList.toggle("hidden");
     if (this.categoriesOpen) {
-      // this.setFilter();
+      clearFilter && this.setFilter();
       filterButton.className = this.filter.buttonClass;
       this.categoriesOpen = false;
     } else {
@@ -117,7 +117,7 @@ const state = {
     const category = el?.dataset?.category;
     if (!this.categoriesOpen) {
       const filterButton = document.querySelector(".filter-button");
-      this.toggleCategories(filterButton);
+      this.toggleCategories(filterButton, false);
     }
     if (el && category) {
       if (this.filter.data.includes(category)) {
@@ -167,11 +167,11 @@ function attachListeners() {
     el.addEventListener("click", () => state.setSelected(el))
   })
   const filterButton = document.querySelector(".filter-button");
-  filterButton.addEventListener("click", () => state.toggleCategories(filterButton));
+  filterButton.addEventListener("click", () => state.toggleCategories(filterButton, true));
 
   const filterTags = document.querySelectorAll(".filter-tag");
   filterTags.forEach(tag => {
-    tag.addEventListener("click", () => state.setFilter(tag))
+    tag.addEventListener("click", () => state.setFilter(tag, true))
   })
 }
 
