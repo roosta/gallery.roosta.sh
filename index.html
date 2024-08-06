@@ -124,7 +124,6 @@
           <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
             xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2">
             {{#each assets as | asset |}}
-            <!-- class is common classnames across each asset, stored as class to avoid repeats -->
             {{#with "grid-item col-span-full row-span-1 cursor-pointer" as | class |}}
             <div
               data-file="{{asset.file}}"
