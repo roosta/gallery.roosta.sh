@@ -119,7 +119,7 @@
       <section class="lg:w-4/6 w-full flex flex-grow">
         <div class="overflow-auto flex flex-grow">
           <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
-                      xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2"
+                      xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2 "
             >
             {{#each assets as | asset |}}
             {{#with "grid-item col-span-full row-span-1 cursor-pointer
@@ -133,7 +133,7 @@
               data-categories="{{asset.categories}}"
               {{#landscape asset}}
               class="{{class}} sm:row-span-1 sm:col-span-2 md:col-span-2"
-              data-selected-class="{{class}} sm:col-span-2 md:col-span-6 md:row-span-3"
+              data-selected-class="{{class}} sm:col-span-2 md:col-span-6 md:row-span-4"
               {{/landscape}}
               {{#portrait asset}}
               class= "{{class}} sm:col-span-2 sm:row-span-2"
@@ -141,11 +141,11 @@
               {{/portrait}}
               {{#square asset}}
               class="{{class}} sm:col-span-2 sm:row-span-1"
-              data-selected-class="{{class}} sm:col-span-2 md:col-span-4"
+              data-selected-class="{{class}} sm:col-span-2 md:col-span-4 md:row-span-4"
               {{/square}}
               {{#wide asset}}
               class="{{class}} sm:col-span-4"
-              data-selected-class="{{class}} sm:col-span-2 md:col-span-6 md:row-span-2"
+              data-selected-class="{{class}} sm:col-span-2 md:col-span-8 md:row-span-2"
               {{/wide}}
               >
               <img
