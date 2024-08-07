@@ -18,56 +18,54 @@
             </button>
           </div>
         </nav>
-        <div class="flex flex-col flex-grow">
-          <section class="relative">
-            {{#with  "visible" as |selected|}}
-            {{#with  "hidden" as |unselected|}}
-            <div
-              class="flex flex-col gap-8 absolute {{selected}}"
-              data-unselected-class="{{unselected}}"
-              data-selected-class="{{selected}}"
-              data-handle="default">
-              <h1 class="font-work text-4xl text-white">Gallery</h1>
-              <div class="font-open text-sm text-grayish flex flex-col gap-3">
-                <p class="text-white">
-                  Welcome to my gallery, it's an eclectic collection of
-                  artworks I've made over the years, in various mediums and
-                  styles. Click on each to see a short description.
-                </p>
-                <!-- TODO: Add mode text -->
-                <p>
-                  - Daniel Berg (roosta)
-                </p>
-              </div>
-            </div>
-            {{/with}}
-            {{/with}}
-
-            {{#each assets as |asset|}}
-            {{#with "hidden" as |unselected|}}
-            {{#with "visible" as |selected|}}
-            <div
-              class="flex flex-col gap-8 absolute {{unselected}}"
-              data-unselected-class="{{unselected}}"
-              data-selected-class="{{selected}}"
-              data-handle="{{asset.file}}">
-              <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
-              <div class="flex gap-3">
-                {{#each asset.palette as |color|}}
-                <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
-                  <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
-                </div>
-                {{/each}}
-              </div>
-              <p class="font-open text-sm text-white">
-                {{asset.description}}
+        <div class="flex flex-col flex-grow relative">
+          {{#with  "visible" as |selected|}}
+          {{#with  "hidden" as |unselected|}}
+          <header
+            class="flex flex-col gap-8 absolute {{selected}}"
+            data-unselected-class="{{unselected}}"
+            data-selected-class="{{selected}}"
+            data-handle="default">
+            <h1 class="font-work text-4xl text-white">Gallery</h1>
+            <div class="font-open text-sm text-grayish flex flex-col gap-3">
+              <p class="text-white">
+                Welcome to my gallery, it's an eclectic collection of
+                artworks I've made over the years, in various mediums and
+                styles. Click on each to see a short description.
               </p>
+              <p>
+                - Daniel Berg (roosta)
+              </p>
+            </div>
+          </header>
+          {{/with}}
+          {{/with}}
 
-              <div class="">
-                <h2 class="font-open text-white mb-4">Categories</h2>
-                <div class="flex gap-3">
-                  {{#each asset.categories as |cat|}}
-                <div
+          {{#each assets as |asset|}}
+          {{#with "hidden" as |unselected|}}
+          {{#with "visible" as |selected|}}
+          <div
+            class="flex flex-col gap-8 absolute {{unselected}}"
+            data-unselected-class="{{unselected}}"
+            data-selected-class="{{selected}}"
+            data-handle="{{asset.file}}">
+            <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
+            <div class="flex gap-3">
+              {{#each asset.palette as |color|}}
+              <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
+                <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
+              </div>
+              {{/each}}
+            </div>
+            <p class="font-open text-sm text-white">
+              {{asset.description}}
+            </p>
+
+            <div class="">
+              <h2 class="font-open text-white mb-4">Categories</h2>
+              <div class="flex gap-3">
+                {{#each asset.categories as |cat|}}
+                <button
                   data-selected-class="filter-tag ring-white opacity-100
                   hover:opacity-75 cursor-pointer text-xs inline-flex
                   items-center uppercase px-3 py-1 text-white ring-1
@@ -77,18 +75,17 @@
                   cursor-pointer text-xs inline-flex items-center uppercase
                   px-3 py-1 text-grayish ring-1 rounded-full">
                   {{ cat }}
-                </div>
-                  {{/each}}
-                </div>
+                </button>
+                {{/each}}
               </div>
-
             </div>
-            {{/with}}
-            {{/with}}
-            {{/each}}
-          </section>
+
+          </div>
+          {{/with}}
+          {{/with}}
+          {{/each}}
           <div class="flex flex-col flex-grow gap-4 justify-end">
-            <div
+            <button
               data-selected-class="filter-button border-dotted border-b
               opacity-100 hover:opacity-75 cursor-pointer text-white text-sm
               border-white pb-1 flex justify-between"
@@ -100,20 +97,20 @@
                 Filters
               </span>
               <i class="fa-solid fa-chevron-down text-4"></i>
-            </div>
+            </button>
             <div class="filter-container flex flex-wrap gap-2 hidden">
               {{#each categories}}
-                <div
-                  data-selected-class="filter-tag ring-white opacity-100
-                  hover:opacity-75 cursor-pointer text-xs inline-flex
-                  items-center uppercase px-3 py-1 text-white ring-1
-                  rounded-full"
-                  data-category="{{ this }}"
-                  class="filter-tag ring-grayish opacity-75 hover:opacity-100
-                  cursor-pointer text-xs inline-flex items-center uppercase
-                  px-3 py-1 text-grayish ring-1 rounded-full">
-                  {{ this }}
-                </div>
+              <div
+                data-selected-class="filter-tag ring-white opacity-100
+                hover:opacity-75 cursor-pointer text-xs inline-flex
+                items-center uppercase px-3 py-1 text-white ring-1
+                rounded-full"
+                data-category="{{ this }}"
+                class="filter-tag ring-grayish opacity-75 hover:opacity-100
+                cursor-pointer text-xs inline-flex items-center uppercase
+                px-3 py-1 text-grayish ring-1 rounded-full">
+                {{ this }}
+              </div>
               {{/each}}
             </div>
           </div>
@@ -128,7 +125,7 @@
             {{#with "grid-item col-span-full row-span-1 cursor-pointer
                      opacity-100 transition-opacity duration-300 min-h-48
                      bg-no-repeat bg-cover bg-center rounded selected:bg-contain" as | class |}}
-            <div
+            <figure
               data-file="{{asset.file}}"
               style="background-image: url({{asset.file}});"
               data-aspect="{{asset.aspect}}"
@@ -155,7 +152,7 @@
                 class="sr-only"
                 src="{{asset.file}}"
                 alt="{{asset.title}}" />
-            </div>
+            </figure>
             {{/with}}
             {{/each}}
           </div>

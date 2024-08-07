@@ -60,13 +60,13 @@ const state = {
   },
   // Swap selected with unselected classes, see markup for actual classnames
   toggleDetails(file) {
-    const defaultEl = document.querySelector('div[data-handle="default"]');
+    const headerEl = document.querySelector('header');
     if (this.selected.file === file) {
       const previousEl
         = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-      defaultEl.classList.replace(
-          defaultEl.dataset.unselectedClass.split(" "),
-          defaultEl.dataset.selectedClass.split(" "),
+      headerEl.classList.replace(
+          headerEl.dataset.unselectedClass.split(" "),
+          headerEl.dataset.selectedClass.split(" "),
       )
       previousEl.classList.replace(
         previousEl.dataset.selectedClass.split(" "),
@@ -75,9 +75,9 @@ const state = {
     } else {
       const targetEl = document.querySelector(`div[data-handle="${file}"]`);
       if (!this.selected.file) {
-        defaultEl.classList.replace(
-          defaultEl.dataset.selectedClass.split(" "),
-          defaultEl.dataset.unselectedClass.split(" "),
+        headerEl.classList.replace(
+          headerEl.dataset.selectedClass.split(" "),
+          headerEl.dataset.unselectedClass.split(" "),
         )
       } else {
         const previousEl
