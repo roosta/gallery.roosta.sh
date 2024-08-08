@@ -18,6 +18,8 @@ const breakpoints = { // eslint-disable-line
 //   return new Promise(resolve=>{img.onload = resolve})
 // }
 
+// State object, contains all state for site, and methods that operate on that
+// state
 const state = {
   categoriesOpen: false,
   filter: {
@@ -99,8 +101,11 @@ const state = {
     const file = el.dataset?.file;
     const selectedClass = el.dataset?.selectedClass;
     if (!file || !selectedClass) return;
+
     this.toggleDetails(file);
-    if (this.selected.file === file) { // Unselect item
+
+    // Unselect item if clicking on same
+    if (this.selected.file === file) {
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
@@ -110,15 +115,20 @@ const state = {
           el.classList.replace("opacity-50", "opacity-100");
         }
       })
-
-    } else { // Select item
+    // Select item
+    } else {
+      // If there already exist a selected we want to deselect it
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
         this.selected.el.dataset.selected = null;
       }
+
+      // Assign new selected
       this.selected = { el, file, previous: el.className }
       el.className = selectedClass;
       el.dataset.selected = true;
+
+      // Set opacity to 50 on all items that isn't selected
       const notSelected
         = document.querySelectorAll(".grid-item[data-selected='false']");
       notSelected.forEach(el => {
@@ -191,7 +201,7 @@ const state = {
 };
 
 
-function attachListeners() {
+function setupEvents() {
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach(el => {
     el.addEventListener("click", () => state.setSelected(el))
@@ -208,9 +218,10 @@ function attachListeners() {
 }
 
 
+// Main entry
 function main() {
   state.init();
-  attachListeners();
+  setupEvents();
 }
 
 document.addEventListener("DOMContentLoaded", state.loaded);
