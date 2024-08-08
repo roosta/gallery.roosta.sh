@@ -69,8 +69,11 @@
     "title": "Goat Boys LP Cover Design",
     "file": "./assets/gbcover.jpg",
     "categories": ["design", "album cover", "vector"],
-    "description": "Cover design for Goat Boys debut album",
-    "link": "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK"
+    "description": "Cover design for Goat Boys debut album. Vector design inspired by Chinese theater masks.",
+    "link": {
+      "url": "https://open.spotify.com/artist/2GadG4cFR4bNH6fyLFt8JK",
+      "title": "Listen on Spotify"
+    }
   },
   {
     "title": "Canus Fratr",

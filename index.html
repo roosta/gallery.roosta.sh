@@ -68,6 +68,21 @@
               {{asset.description}}
             </p>
 
+            {{#if asset.link}}
+            <div>
+              <a
+                href="{{asset.link.url}}"
+                target="_blank"
+                class="text-sm opacity-75 hover:opacity-100 border-dotted
+                border-b visited:text-grayish">
+                <i class="fa-solid fa-link text-4"></i>
+                <span>
+                  {{asset.link.title}}
+                </span>
+              </a>
+            </div>
+            {{/if}}
+
             <!-- Categories -->
             <div class="">
               <h2 class="font-open text-white mb-4">Categories</h2>
