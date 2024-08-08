@@ -21,6 +21,8 @@
         <div class="flex flex-col flex-grow relative">
           {{#with  "visible" as |selected|}}
           {{#with  "hidden" as |unselected|}}
+
+          <!-- Header section -->
           <header
             class="flex flex-col gap-8 absolute {{selected}}"
             data-unselected-class="{{unselected}}"
@@ -41,6 +43,7 @@
           {{/with}}
           {{/with}}
 
+          <!-- Details -->
           {{#each assets as |asset|}}
           {{#with "hidden" as |unselected|}}
           {{#with "visible" as |selected|}}
@@ -50,6 +53,8 @@
             data-selected-class="{{selected}}"
             data-handle="{{asset.file}}">
             <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
+
+            <!-- Palette -->
             <div class="flex gap-3">
               {{#each asset.palette as |color|}}
               <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
@@ -57,10 +62,13 @@
               </div>
               {{/each}}
             </div>
+
+            <!-- Description -->
             <p class="font-open text-sm text-white">
               {{asset.description}}
             </p>
 
+            <!-- Categories -->
             <div class="">
               <h2 class="font-open text-white mb-4">Categories</h2>
               <div class="flex gap-3">
@@ -84,6 +92,8 @@
           {{/with}}
           {{/with}}
           {{/each}}
+
+          <!-- Filter section -->
           <div class="flex flex-col flex-grow gap-4 justify-end">
             <button
               data-selected-class="filter-button border-dotted border-b
@@ -116,6 +126,8 @@
           </div>
         </div>
       </section>
+
+      <!-- Gallery section -->
       <section class="lg:w-4/6 w-full flex flex-grow">
         <div class="overflow-auto flex flex-grow">
           <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
