@@ -55,6 +55,7 @@
             <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
 
             <!-- Palette -->
+            {{#if asset.palette}}
             <div class="flex gap-3">
               {{#each asset.palette as |color|}}
               <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
@@ -62,6 +63,7 @@
               </div>
               {{/each}}
             </div>
+            {{/if}}
 
             <!-- Description -->
             <p class="font-open text-sm text-white">
