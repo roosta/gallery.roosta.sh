@@ -18,6 +18,9 @@ export default {
         work: ["Work Sans", ...defaultTheme.fontFamily.sans],
         open: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
+      gridAutoRows: {
+        'gallery': 'minmax(12rem, 2fr)',
+      },
       colors: {
         white: "#FBFBFB",
         grayish: "#A4A497",
