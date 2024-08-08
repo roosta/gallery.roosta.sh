@@ -121,6 +121,7 @@ const state = {
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
         this.selected.el.dataset.selected = null;
+        this.selected.el.classList.replace("opacity-100", "opacity-50")
       }
 
       // Assign new selected
