@@ -24,7 +24,7 @@ export default {
       colors: {
         white: "#FBFBFB",
         grayish: "#A4A497",
-        backdrop: "#1A1A1A",
+        backdrop: "#0D0D0D",
         whiteish: "#D1D1CA"
       }
     },

@@ -153,7 +153,7 @@
             {{#each assets as | asset |}}
             {{#with "grid-item col-span-full row-span-1 cursor-pointer
                      opacity-100 transition-opacity duration-300
-                     bg-no-repeat bg-cover bg-center rounded selected:bg-contain" as | class |}}
+                     bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain" as | class |}}
             <figure
               data-file="{{asset.file}}"
               style="background-image: url({{asset.file}});"
