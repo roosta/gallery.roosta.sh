@@ -269,7 +269,7 @@
     "description": "Pixel art stylized gassmask used for a new tab/start page project.",
     "link": {
       "url": "https://github.com/roosta/startpage",
-      "title": "Start page repository"
+      "title": "Source code"
     }
   },
   {
@@ -300,7 +300,7 @@
     "title": "Datorder: Logo Draft",
     "file": "./assets/cake.jpg",
     "categories": ["design", "logo"],
-    "description": "Part of a series of logo designs for a order management platform. Was supposed to evoke a feeling of order, and a focus on  kk"
+    "description": "Part of a series of logo designs for a order management platform. Was supposed to evoke a feeling of order, and a focus on whatever item passed through the system. Multiple palette versions were made of this."
   },
   {
     "title": "Untitled Game Asset: Cliff",
@@ -311,7 +311,67 @@
   {
     "title": "Lamp Noir",
     "file": "./assets/lamp_noir.png",
+    "ignored": true,
     "categories": ["design", "vector", "pattern"],
     "description": "A lamp face design, made to look like a glass painting. Cut with a laser cutter and cutouts painted in various colors, illuminated with a light. The implementation was poor but the pattern turned out great."
+  },
+  {
+    "title": "Datorder: Eight",
+    "file": "./assets/datorder_eight.png",
+    "categories": ["design", "vector", "logo"],
+    "description": "One of the logo designs I made for an order management platform. The eight had a symboling meaning for the founders."
+  },
+  {
+    "title": "Find in Files (fif)",
+    "file": "./assets/fif.png",
+    "link": {
+      "url": "https://github.com/roosta/fif",
+      "title": "Source code"
+    },
+    "categories": ["design", "vector", "logo"],
+    "description": "Logo design for a program I made searching for text in files using fuzzy matching. Later used for various things, I've used it as an avatar and as a logo for this gallery."
+  },
+  {
+    "title": "Herb",
+    "file": "./assets/herb.png",
+    "link": {
+      "url": "https://github.com/roosta/herb",
+      "title": "Source code"
+    },
+    "categories": ["design", "vector", "logo"],
+    "description": "Logo design made for a programming library for CSS styling web pages. Repository has been archived, but it's still available in it's current state. I was unable to keep maintaining it, was a lot harder when I didn't actively used it due to employment and priority changes."
+  },
+  {
+    "title": "Monoxie Vector Experiment",
+    "ignored": true,
+    "file": "./assets/monoxie_logo.png",
+    "categories": ["design", "vector", "experiment"],
+    "description": "Messing around in inkscpe. An attempt at making vector looking less \"slick\", turned out instresting."
+  },
+  {
+    "title": "Morning Fog",
+    "file": "./assets/morning_fog.jpg",
+    "categories": ["photo"],
+    "description": "Picture taken during my morning commute, I like the foggy almost liminal feel of it."
+  },
+  {
+    "title": "Srcery Logo",
+    "file": "./assets/srcery.png",
+    "categories": ["design", "vector", "logo"],
+    "description": "Logo for a colorscheme I made, for various editors. Meant to invoke a certain occult vibe. The colors in the logo are the ones from the color scheme.",
+    "link": {
+      "url": "https://srcery.sh/",
+      "title": "Srcery website"
+    }
+  },
+  {
+    "title": "Tincture",
+    "file": "./assets/tincture.png",
+    "link": {
+      "url": "https://github.com/roosta/trincture",
+      "title": "Source code"
+    },
+    "categories": ["design", "vector", "logo"],
+    "description": "Logo design made for a programming library for CSS styling toolkit. It is a collection of various thing I used on a regular basis at work. Repository has been archived, but it's still available in it's current state. I was unable to keep maintaining it, was a lot harder when I didn't actively used it due to employment and priority changes."
   }
 ]
