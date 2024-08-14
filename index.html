@@ -5,89 +5,98 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300"
+      rel="stylesheet"
+    />
     <title>Gallery - Daniel Berg (roosta)</title>
   </head>
-  <body class="w-full h-screen flex flex-col bg-black">
-    <main class="p-6 md:p-8 md:gap-8 flex flex-grow text-white flex-wrap gap-8 lg:flex-nowrap lg:overflow-hidden">
-      <section class="lg:w-2/6 w-full flex flex-col flex-grow">
+  <body class="flex h-screen w-full flex-col bg-black">
+    <main
+      class="flex flex-grow flex-wrap gap-8 p-6 text-white md:gap-8 md:p-8 lg:flex-nowrap lg:overflow-hidden"
+    >
+      <section class="flex w-full flex-grow flex-col lg:w-2/6">
         <nav class="mb-8">
           <div class="relative inline-block text-left">
-            <button type="button" class="inline-flex w-full justify-center " id="menu-button" aria-expanded="true" aria-haspopup="true">
+            <button
+              type="button"
+              class="inline-flex w-full justify-center"
+              id="menu-button"
+              aria-expanded="true"
+              aria-haspopup="true"
+            >
               <i class="fa-solid fa-bars text-4"></i>
             </button>
           </div>
         </nav>
-        <div class="flex flex-col flex-grow relative">
-          {{#with  "visible" as |selected|}}
-          {{#with  "hidden" as |unselected|}}
+        <div class="relative flex flex-grow flex-col">
+          {{#with "visible" as |selected|}} {{#with "hidden" as |unselected|}}
 
           <!-- Header section -->
           <header
             class="flex flex-col gap-8 absolute {{selected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
-            data-handle="default">
+            data-handle="default"
+          >
             <h1 class="font-work text-4xl text-white">Gallery</h1>
-            <div class="font-open text-sm text-grayish flex flex-col gap-3">
+            <div class="flex flex-col gap-3 font-open text-sm text-grayish">
               <p class="text-white">
-                Welcome to my gallery, it's an eclectic collection of
-                artworks I've made over the years, in various mediums and
-                styles. Click on each to see a short description.
+                Welcome to my gallery, it's an eclectic collection of artworks
+                I've made over the years, in various mediums and styles. Click
+                on each to see a short description.
               </p>
-              <p>
-                - Daniel Berg (roosta)
-              </p>
+              <p>- Daniel Berg (roosta)</p>
             </div>
           </header>
-          {{/with}}
-          {{/with}}
+          {{/with}} {{/with}}
 
           <!-- Details -->
-          {{#each assets as |asset|}}
-          {{#with "hidden" as |unselected|}}
-          {{#with "visible" as |selected|}}
+          {{#each assets as |asset|}} {{#with "hidden" as |unselected|}} {{#with
+          "visible" as |selected|}}
           <div
             class="flex flex-col gap-8 absolute {{unselected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
-            data-handle="{{asset.file}}">
+            data-handle="{{asset.file}}"
+          >
             <h1 class="font-work text-4xl text-white">{{asset.title}}</h1>
 
             <!-- Palette -->
             {{#if asset.palette}}
             <div class="flex gap-3">
               {{#each asset.palette as |color|}}
-              <div class="ring-2 ring-offset-black ring-white/30 ring-offset-2 rounded">
-                <div class="w-12 h-12 rounded" style="background-color: {{color}};"></div>
+              <div
+                class="rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
+              >
+                <div
+                  class="h-12 w-12 rounded"
+                  style="background-color: {{color}};"
+                ></div>
               </div>
               {{/each}}
             </div>
             {{/if}}
 
             <!-- Description -->
-            <p class="font-open text-sm text-white">
-              {{asset.description}}
-            </p>
+            <p class="font-open text-sm text-white">{{asset.description}}</p>
 
             {{#if asset.link}}
             <div>
               <a
                 href="{{asset.link.url}}"
                 target="_blank"
-                class="text-sm opacity-75 hover:opacity-100 border-dotted
-                border-b visited:text-grayish">
+                class="border-b border-dotted text-sm opacity-75 visited:text-grayish hover:opacity-100"
+              >
                 <i class="fa-solid fa-link text-4"></i>
-                <span>
-                  {{asset.link.title}}
-                </span>
+                <span> {{asset.link.title}} </span>
               </a>
             </div>
             {{/if}}
 
             <!-- Categories -->
             <div class="">
-              <h2 class="font-open text-white mb-4">Categories</h2>
+              <h2 class="mb-4 font-open text-white">Categories</h2>
               <div class="flex gap-3">
                 {{#each asset.categories as |cat|}}
                 <button
@@ -96,36 +105,31 @@
                   items-center uppercase px-3 py-1 text-white ring-1
                   rounded-full"
                   data-category="{{ cat }}"
-                  class="filter-tag ring-grayish opacity-75 hover:opacity-100
-                  cursor-pointer text-xs inline-flex items-center uppercase
-                  px-3 py-1 text-grayish ring-1 rounded-full">
+                  class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100"
+                >
                   {{ cat }}
                 </button>
                 {{/each}}
               </div>
             </div>
-
           </div>
-          {{/with}}
-          {{/with}}
-          {{/each}}
+          {{/with}} {{/with}} {{/each}}
 
           <!-- Filter section -->
-          <div class="flex flex-col flex-grow gap-4 justify-end">
+          <div class="flex flex-grow flex-col justify-end gap-4">
             <button
               data-selected-class="filter-button border-dotted border-b
               opacity-100 hover:opacity-75 cursor-pointer text-white text-sm
               border-white pb-1 flex justify-between"
-              class="filter-button border-dotted border-b opacity-75
-              hover:opacity-100 cursor-pointer text-grayish text-sm
-              border-grayish pb-1 flex justify-between">
+              class="filter-button flex cursor-pointer justify-between border-b border-dotted border-grayish pb-1 text-sm text-grayish opacity-75 hover:opacity-100"
+            >
               <span>
                 <i class="fa-solid fa-filter text-4"></i>
                 Filters
               </span>
               <i class="fa-solid fa-chevron-down text-4"></i>
             </button>
-            <div class="filter-container flex flex-wrap gap-2 hidden">
+            <div class="filter-container flex hidden flex-wrap gap-2">
               {{#each categories}}
               <div
                 data-selected-class="filter-tag ring-white opacity-100
@@ -133,9 +137,8 @@
                 items-center uppercase px-3 py-1 text-white ring-1
                 rounded-full"
                 data-category="{{ this }}"
-                class="filter-tag ring-grayish opacity-75 hover:opacity-100
-                cursor-pointer text-xs inline-flex items-center uppercase
-                px-3 py-1 text-grayish ring-1 rounded-full">
+                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100"
+              >
                 {{ this }}
               </div>
               {{/each}}
@@ -145,16 +148,14 @@
       </section>
 
       <!-- Gallery section -->
-      <section class="lg:w-4/6 w-full flex flex-grow">
-        <div class="overflow-auto flex flex-grow">
-          <div class="grid grid-cols-2 flex-grow lg:grid-cols-8 md:grid-cols-6
-                      xl:grid-cols-10 sm:grid-cols-4 gap-8 grid-flow-dense pr-2 auto-rows-gallery"
-            >
+      <section class="flex w-full flex-grow lg:w-4/6">
+        <div class="flex flex-grow overflow-auto">
+          <div
+            class="grid flex-grow grid-flow-dense auto-rows-gallery grid-cols-2 gap-8 pr-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10"
+          >
             <!-- prettier-ignore -->
             {{#each assets as | asset |}}
-              {{#with "grid-item col-span-full row-span-1 cursor-pointer
-              transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop
-              bg-center rounded selected:bg-contain opacity-100" as | commonClass |}}
+              {{#with "grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" as | commonClass |}}
               {{#landscape asset}}
                 {{>figure asset=asset
                 common=commonClass
