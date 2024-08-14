@@ -1,5 +1,6 @@
 # .prettierignore
-
 **/package-lock.yaml
 dist
-
+.git
+node_modules
+public
