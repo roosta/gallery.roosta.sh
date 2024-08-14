@@ -45,7 +45,7 @@ function withPalette(item) {
         palette: null
       };
       if (palette) {
-        const colors = palette?.map(([r, g, b]) => {
+        const colors = palette.map(([r, g, b]) => {
           return tinycolor({r, g, b})
         });
         const sorted = sortBy(colors, color => color.getBrightness());
@@ -56,9 +56,9 @@ function withPalette(item) {
 }
 
 
-const categories = uniq(flatten(assetsJson.map(x => x.categories)));
-const assets =
-  await Promise.all(assetsJson.map(withPalette))
+const filtered = assetsJson.filter(x => !x?.ignored);
+const categories = uniq(flatten(filtered.map(x => x.categories)));
+const assets = await Promise.all(filtered.map(withPalette))
   .then(p => p.map(withSize).map(withAspect))
   .catch(err => console.error(err))
 
