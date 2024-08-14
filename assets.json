@@ -90,6 +90,7 @@
   {
     "title": "Proboscis Bibo",
     "file": "./assets/proboscis_bibo.jpg",
+    "ignored": true,
     "categories": ["drawing", "marker", "ink"],
     "description": "Mixed medium, marker and ink on rice paper, done quickly with a more cartoonish style."
   },
