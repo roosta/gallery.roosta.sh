@@ -5,7 +5,7 @@ import intersection from "lodash/intersection";
 // import anime from 'animejs/lib/anime.es.js';
 
 
-// tailwind breakpoints
+// tailwind breakpoints, unused cyr
 const breakpoints = { // eslint-disable-line
   sm: 640,
   md: 768,
@@ -109,19 +109,19 @@ const state = {
       el.className = this.selected.previous;
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
-      const gridItems = document.querySelectorAll(".grid-item");
-      gridItems.forEach(el => {
+
+      // Set all items to opacity-100
+      document.querySelectorAll(".grid-item").forEach(el => {
         if (el.classList.contains("opacity-50")) {
           el.classList.replace("opacity-50", "opacity-100");
         }
-      })
+      });
     // Select item
     } else {
       // If there already exist a selected we want to deselect it
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
-        this.selected.el.dataset.selected = null;
-        this.selected.el.classList.replace("opacity-100", "opacity-50")
+        this.selected.el.dataset.selected = false;
       }
 
       // Assign new selected
@@ -130,13 +130,12 @@ const state = {
       el.dataset.selected = true;
 
       // Set opacity to 50 on all items that isn't selected
-      const notSelected
-        = document.querySelectorAll(".grid-item[data-selected='false']");
-      notSelected.forEach(el => {
-        if (el.classList.contains("opacity-100")) {
-          el.classList.replace("opacity-100", "opacity-50");
-        }
-      })
+      document
+        .querySelectorAll(".grid-item[data-selected='false']").forEach(el => {
+          if (el.classList.contains("opacity-100")) {
+            el.classList.replace("opacity-100", "opacity-50");
+          }
+      });
     }
   },
 
