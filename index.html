@@ -156,37 +156,37 @@
           >
             <!-- prettier-ignore -->
             {{#each assets}}
-              {{#let asset=this commonClass="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
+              {{#let asset=this common-class="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
                 {{#landscape this}}
                   {{>figure
                   asset=asset
-                  common=commonClass
+                  common=common-class
                   class="sm:row-span-1 sm:col-span-2 md:col-span-2"
-                  selectedClass="sm:col-span-2 md:col-span-6 md:row-span-4"
+                  selected-class="sm:col-span-2 md:col-span-6 md:row-span-4"
                   }}
                 {{/landscape}}
                 {{#portrait this}}
                   {{>figure
                   context=asset
-                  common=commonClass
+                  common=common-class
                   class="sm:col-span-2 sm:row-span-2"
-                  selectedClass="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
+                  selected-class="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
                   }}
                 {{/portrait}}
                 {{#square this}}
                   {{>figure
                   asset=asset
-                  common=commonClass
+                  common=common-class
                   class="sm:col-span-2 sm:row-span-1"
-                  selectedClass="sm:col-span-2 md:col-span-4 md:row-span-4"
+                  selected-class="sm:col-span-2 md:col-span-4 md:row-span-4"
                   }}
                 {{/square}}
                 {{#wide this}}
                   {{>figure
                   asset=asset
-                  common=commonClass
+                  common=common-class
                   class="sm:col-span-4"
-                  selectedClass="sm:col-span-2 md:col-span-8 md:row-span-2"
+                  selected-class="sm:col-span-2 md:col-span-8 md:row-span-2"
                   }}
                 {{/wide}}
               {{/let}}
