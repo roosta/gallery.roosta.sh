@@ -71,24 +71,27 @@ export default {
       categories
     },
     helpers: {
-      landscape: (asset, options) => {
-        if (asset.aspect === "landscape") {
-          return options.fn(this);
+      let: (options) => {
+        return options.fn(options.hash)
+      },
+      landscape: (context, options) => {
+        if (context.asset.aspect === "landscape") {
+          return options.fn(context);
         }
       },
-      wide: (asset, options) => {
-        if (asset.aspect === "wide") {
-          return options.fn(this);
+      wide: (context, options) => {
+        if (context.asset.aspect === "wide") {
+          return options.fn(context);
         }
       },
-      portrait: (asset, options) => {
-        if (asset.aspect === "portrait") {
-          return options.fn(this);
+      portrait: (context, options) => {
+        if (context.asset.aspect === "portrait") {
+          return options.fn(context);
         }
       },
-      square: (asset, options) => {
-        if (asset.aspect === "square") {
-          return options.fn(this);
+      square: (context, options) => {
+        if (context.asset.aspect === "square") {
+          return options.fn(context);
         }
       }
     },

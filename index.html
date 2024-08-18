@@ -154,37 +154,41 @@
             class="grid flex-grow grid-flow-dense auto-rows-gallery grid-cols-2 gap-8 pr-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10"
           >
             <!-- prettier-ignore -->
-            {{#each assets as | asset |}}
-              {{#with "grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" as | commonClass |}}
-              {{#landscape asset}}
-                {{>figure asset=asset
-                common=commonClass
-                class="sm:row-span-1 sm:col-span-2 md:col-span-2"
-                selectedClass="sm:col-span-2 md:col-span-6 md:row-span-4"
-                }}
-              {{/landscape}}
-              {{#portrait asset}}
-                {{>figure asset=asset
-                common=commonClass
-                class="sm:col-span-2 sm:row-span-2"
-                selectedClass="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
-                }}
-              {{/portrait}}
-              {{#square asset}}
-                {{>figure asset=asset
-                common=commonClass
-                class="sm:col-span-2 sm:row-span-1"
-                selectedClass="sm:col-span-2 md:col-span-4 md:row-span-4"
-                }}
-              {{/square}}
-              {{#wide asset}}
-                {{>figure asset=asset
-                common=commonClass
-                class="sm:col-span-4"
-                selectedClass="sm:col-span-2 md:col-span-8 md:row-span-2"
-                }}
-              {{/wide}}
-            {{/with}}
+            {{#each assets}}
+              {{#let asset=this commonClass="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
+                {{#landscape this}}
+                  {{>figure
+                  asset=asset
+                  common=commonClass
+                  class="sm:row-span-1 sm:col-span-2 md:col-span-2"
+                  selectedClass="sm:col-span-2 md:col-span-6 md:row-span-4"
+                  }}
+                {{/landscape}}
+                {{#portrait this}}
+                  {{>figure
+                  context=asset
+                  common=commonClass
+                  class="sm:col-span-2 sm:row-span-2"
+                  selectedClass="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
+                  }}
+                {{/portrait}}
+                {{#square this}}
+                  {{>figure
+                  asset=asset
+                  common=commonClass
+                  class="sm:col-span-2 sm:row-span-1"
+                  selectedClass="sm:col-span-2 md:col-span-4 md:row-span-4"
+                  }}
+                {{/square}}
+                {{#wide this}}
+                  {{>figure
+                  asset=asset
+                  common=commonClass
+                  class="sm:col-span-4"
+                  selectedClass="sm:col-span-2 md:col-span-8 md:row-span-2"
+                  }}
+                {{/wide}}
+              {{/let}}
             {{/each}}
           </div>
         </div>
