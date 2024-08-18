@@ -30,7 +30,7 @@
           </div>
         </nav>
         <div class="relative flex flex-grow flex-col">
-          {{#with "visible" as |selected|}} {{#with "hidden" as |unselected|}}
+          {{#let selected="visible" unselected="hidden"}}
 
           <!-- Header section -->
           <header
@@ -49,11 +49,11 @@
               <p>- Daniel Berg (roosta)</p>
             </div>
           </header>
-          {{/with}} {{/with}}
+          {{/let}}
 
           <!-- Details -->
-          {{#each assets as |asset|}} {{#with "hidden" as |unselected|}} {{#with
-          "visible" as |selected|}}
+          {{#each assets}}
+          {{#let unselected="hidden" asset=this selected="visible" }}
           <div
             class="flex flex-col gap-8 absolute {{unselected}}"
             data-unselected-class="{{unselected}}"
@@ -113,7 +113,8 @@
               </div>
             </div>
           </div>
-          {{/with}} {{/with}} {{/each}}
+          {{/let}}
+          {{/each}}
 
           <!-- Filter section -->
           <div class="flex flex-grow flex-col justify-end gap-4">
