@@ -33,7 +33,7 @@ function withSize(item) {
 function withAspect(item) {
   return {
     ...item,
-    aspect: calcAspect(item)
+    [calcAspect(item)]: true
   }
 }
 
@@ -74,27 +74,7 @@ export default {
     helpers: {
       let: (options) => {
         return options.fn(options.hash);
-      },
-      landscape: (context, options) => {
-        if (context.asset.aspect === "landscape") {
-          return options.fn(context);
-        }
-      },
-      wide: (context, options) => {
-        if (context.asset.aspect === "wide") {
-          return options.fn(context);
-        }
-      },
-      portrait: (context, options) => {
-        if (context.asset.aspect === "portrait") {
-          return options.fn(context);
-        }
-      },
-      square: (context, options) => {
-        if (context.asset.aspect === "square") {
-          return options.fn(context);
-        }
       }
-    },
-  })],
+    }
+  })]
 };

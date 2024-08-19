@@ -157,38 +157,38 @@
             {{! prettier-ignore }}
             {{#each assets}}
               {{#let asset=this common-class="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
-                {{#landscape this}}
+                {{#if asset.landscape}}
                   {{>figure
                   asset=asset
                   common=common-class
                   class="sm:row-span-1 sm:col-span-2 md:col-span-2"
                   selected-class="sm:col-span-2 md:col-span-6 md:row-span-4"
                   }}
-                {{/landscape}}
-                {{#portrait this}}
+                {{/if}}
+                {{#if asset.portrait}}
                   {{>figure
                   context=asset
                   common=common-class
                   class="sm:col-span-2 sm:row-span-2"
                   selected-class="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
                   }}
-                {{/portrait}}
-                {{#square this}}
+                {{/if}}
+                {{#if asset.square}}
                   {{>figure
                   asset=asset
                   common=common-class
                   class="sm:col-span-2 sm:row-span-1"
                   selected-class="sm:col-span-2 md:col-span-4 md:row-span-4"
                   }}
-                {{/square}}
-                {{#wide this}}
+                {{/if}}
+                {{#if asset.wide}}
                   {{>figure
                   asset=asset
                   common=common-class
                   class="sm:col-span-4"
                   selected-class="sm:col-span-2 md:col-span-8 md:row-span-2"
                   }}
-                {{/wide}}
+                {{/if}}
               {{/let}}
             {{/each}}
           </div>
