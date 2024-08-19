@@ -2,6 +2,7 @@ import handlebars from "vite-plugin-handlebars";
 import { resolve } from 'path';
 import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
+import shuffle from "lodash/shuffle";
 import sortBy from "lodash/sortBy";
 import flatten from "lodash/flatten";
 import ColorThief from "colorthief";
@@ -60,7 +61,7 @@ function withPalette(item) {
 const filtered = assetsJson.filter(x => !x?.ignored);
 const categories = uniq(flatten(filtered.map(x => x.categories)));
 const assets = await Promise.all(filtered.map(withPalette))
-  .then(p => p.map(withSize).map(withAspect))
+  .then(p => shuffle(p.map(withSize).map(withAspect)))
   .catch(err => console.error(err))
 
 export default {
@@ -72,7 +73,7 @@ export default {
     },
     helpers: {
       let: (options) => {
-        return options.fn(options.hash)
+        return options.fn(options.hash);
       },
       landscape: (context, options) => {
         if (context.asset.aspect === "landscape") {
