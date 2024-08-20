@@ -139,7 +139,9 @@
   },
   {
     "title": "Monoxi Player: idle animation",
-    "file": "./assets/monoxie_idle.gif",
+    "file": "./assets/monoxie_idle.png",
+    "video": "./assets/monoxie_idle.mp4",
+    "colors": 4,
     "categories": ["pixel art", "animated", "game"],
     "description": "Idle animation player character sprite for an unreleased game prototype"
   },

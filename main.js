@@ -200,6 +200,18 @@ const state = {
 
 };
 
+function playVideo(button) {
+  const handle = button.dataset.handle;
+  const target = document.querySelector(`video[data-file="${handle}"]`);
+  target.play();
+}
+
+function pauseVideo(button) {
+  const handle = button.dataset.handle;
+  const target = document.querySelector(`video[data-file="${handle}"]`);
+  target.pause();
+}
+
 
 function setupEvents() {
   const gridItems = document.querySelectorAll(".grid-item");
@@ -214,6 +226,14 @@ function setupEvents() {
   const filterTags = document.querySelectorAll(".filter-tag");
   filterTags.forEach(tag => {
     tag.addEventListener("click", () => state.setFilter(tag, true))
+  })
+  const playButtons = document.querySelectorAll(".play");
+  playButtons.forEach(button => {
+    button.addEventListener("click", () => playVideo(button))
+  })
+  const pauseButtons = document.querySelectorAll(".pause");
+  pauseButtons.forEach(button => {
+    button.addEventListener("click", () => pauseVideo(button))
   })
 }
 

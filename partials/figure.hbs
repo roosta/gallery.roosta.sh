@@ -1,3 +1,16 @@
+{{#if asset.video}}
+<video
+  data-file="{{asset.file}}"
+  data-aspect="{{asset.aspect}}"
+  data-selected="false"
+  loop
+  data-categories="{{asset.categories}}"
+  class="{{common}} {{class}}"
+  data-selected-class="{{common}} {{selected-class}}"
+  >
+  <source src="{{asset.video}}"></source>
+</video>
+{{else}}
 <figure
   data-file="{{asset.file}}"
   style="background-image: url({{asset.file}});"
@@ -12,3 +25,4 @@
     src="{{asset.file}}"
     alt="{{asset.title}}" />
 </figure>
+{{/if}}

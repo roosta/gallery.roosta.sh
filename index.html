@@ -34,7 +34,7 @@
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-8 absolute {{selected}}"
+            class="flex flex-col gap-6 absolute {{selected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
             data-handle="default"
@@ -55,7 +55,7 @@
           {{#each assets}}
           {{#let unselected="hidden" asset=this selected="visible" }}
           <div
-            class="flex flex-col gap-8 absolute {{unselected}}"
+            class="flex flex-col gap-6 absolute {{unselected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
             data-handle="{{asset.file}}"
@@ -81,6 +81,19 @@
             <!-- Description -->
             <p class="font-open text-sm text-white">{{asset.description}}</p>
 
+            <!-- Video controls -->
+            {{#if asset.video}}
+            <div class="flex text-grayish gap-2 items-center">
+              <button data-handle="{{asset.file}}" class="play ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+                <i class="fa-solid fa-play text-4"></i>
+              </button>
+              <button data-handle="{{asset.file}}" class="pause ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+                <i class="fa-solid fa-pause text-4"></i>
+              </button>
+            </div>
+            {{/if}}
+
+            <!-- Asset link -->
             {{#if asset.link}}
             <div>
               <a
