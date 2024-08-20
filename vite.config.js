@@ -65,7 +65,7 @@ function withPalette(item) {
 }
 
 
-const filtered = assetsJson.filter(x => !x?.ignored);
+const filtered = assetsJson.filter(x => !x.ignored);
 const categories = uniq(flatten(filtered.map(x => x.categories)));
 const assets = await Promise.all(filtered.map(withPalette))
   .then(p => shuffle(p.map(withSize).map(withAspect)))
