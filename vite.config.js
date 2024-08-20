@@ -40,7 +40,14 @@ function withAspect(item) {
 
 // Handle promise returned from ColorThief
 function withPalette(item) {
-  return ColorThief.getPalette(item.file, 5)
+
+  // Number of color samples
+  let n = 5;
+
+  // if colors is defined in json, use that as the sample count
+  if (item.colors) n = item.colors
+
+  return ColorThief.getPalette(item.file, n)
     .then(palette => {
       const ret = {
         ...item,
