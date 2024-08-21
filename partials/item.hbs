@@ -3,12 +3,13 @@
   data-file="{{asset.file}}"
   data-aspect="{{asset.aspect}}"
   data-selected="false"
+  muted
   loop
   data-categories="{{asset.categories}}"
   class="{{common}} {{class}}"
   data-selected-class="{{common}} {{selected-class}}"
   >
-  <source src="{{asset.video}}"></source>
+  <source src="{{asset.video}}" type="video/mp4"></source>
 </video>
 {{else}}
 <figure
