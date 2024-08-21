@@ -171,7 +171,7 @@
             {{#each assets}}
               {{#let asset=this common-class="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
                 {{#if asset.landscape}}
-                  {{>figure
+                  {{>item
                   asset=asset
                   common=common-class
                   class="sm:row-span-1 sm:col-span-2 md:col-span-2"
@@ -179,7 +179,7 @@
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
-                  {{>figure
+                  {{>item
                   context=asset
                   common=common-class
                   class="sm:col-span-2 sm:row-span-2"
@@ -187,7 +187,7 @@
                   }}
                 {{/if}}
                 {{#if asset.square}}
-                  {{>figure
+                  {{>item
                   asset=asset
                   common=common-class
                   class="sm:col-span-2 sm:row-span-1"
@@ -195,7 +195,7 @@
                   }}
                 {{/if}}
                 {{#if asset.wide}}
-                  {{>figure
+                  {{>item
                   asset=asset
                   common=common-class
                   class="sm:col-span-4"
