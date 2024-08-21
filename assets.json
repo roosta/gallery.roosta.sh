@@ -147,7 +147,9 @@
   },
   {
     "title": "Monoxie Player: jump animation",
-    "file": "./assets/monoxie_jump.gif",
+    "file": "./assets/monoxie_jump.png",
+    "video": "./assets/monoxie_jump.mp4",
+    "colors": 4,
     "categories": ["pixel art", "animated", "game"],
     "description": "Jump animation player character sprite for unreleased game prototype"
   },
