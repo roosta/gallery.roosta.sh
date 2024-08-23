@@ -25,7 +25,8 @@
   },
   {
     "title": "Untitled Game Asset: Conch Enemy",
-    "file": "./assets/conch.gif",
+    "file": "./assets/conch.png",
+    "video": "./assets/conch.mp4",
     "categories": ["pixel art", "animated", "game"],
     "description": "Enemy design for an unreleased shoot-em-up game prototype. Will move in a sine wave pattern and shoot laser beams at your ship. Its laser would span the width of the screen, forcing the player to take evasive action."
   },
@@ -49,7 +50,8 @@
   },
   {
     "title": "Untitled Game: Ship Explosion",
-    "file": "./assets/player_explosion.gif",
+    "file": "./assets/player_explosion.png",
+    "video": "./assets/player_explosion.mp4",
     "categories": ["pixel art", "animated", "game"],
     "description": "Ship explosion design for an unreleased shoot-em-up game prototype. It was meant as the player death explosion, as you're controlling a spaceship. Inspired by Metal Slug explosion style."
   },
@@ -155,7 +157,9 @@
   },
   {
     "title": "Monoxie Player: running animation",
-    "file": "./assets/monoxie_running.gif",
+    "file": "./assets/monoxie_running.png",
+    "video": "./assets/monoxie_running.mp4",
+    "colors": 4,
     "categories": ["pixel art", "game"],
     "description": "Running animation player character sprite for unreleased game prototype"
   },
