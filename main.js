@@ -200,16 +200,33 @@ const state = {
 
 };
 
-function playVideo(button) {
+function toggleVideo(button) {
   const handle = button.dataset.handle;
   const video = document.querySelector(`video[data-file="${handle}"]`);
-  video.play();
+  const flag = video.dataset.playing;
+  const icon = button.querySelector("i");
+  if (flag == "true") {
+    video.pause()
+    icon.classList.replace("fa-pause", "fa-play")
+    video.dataset.playing = false;
+  } else {
+    video.play();
+    icon.classList.replace("fa-play", "fa-pause")
+    video.dataset.playing = true;
+  }
 }
-
-function pauseVideo(button) {
+function stopVideo(button) {
   const handle = button.dataset.handle;
+  const input = document.querySelector(`input[data-handle="${handle}"]`);
   const video = document.querySelector(`video[data-file="${handle}"]`);
-  video.pause();
+  const icon = document.querySelector(`button.play-pause[data-handle="${handle}"] i.fa-pause`)
+  if (icon) {
+    icon.classList.replace("fa-pause", "fa-play");
+  }
+  video.dataset.playing = false;
+  video.pause();;
+  video.currentTime = 0;
+  input.value = 0;
 }
 
 function seekChange(input) {
@@ -241,13 +258,13 @@ function setupEvents() {
   filterTags.forEach(tag => {
     tag.addEventListener("click", () => state.setFilter(tag, true))
   })
-  const playButtons = document.querySelectorAll(".play");
-  playButtons.forEach(button => {
-    button.addEventListener("click", () => playVideo(button))
+  const playPauseButtons = document.querySelectorAll(".play-pause");
+  playPauseButtons.forEach(button => {
+    button.addEventListener("click", () => toggleVideo(button))
   })
-  const pauseButtons = document.querySelectorAll(".pause");
-  pauseButtons.forEach(button => {
-    button.addEventListener("click", () => pauseVideo(button))
+  const stopButtons = document.querySelectorAll(".stop");
+  stopButtons.forEach(button => {
+    button.addEventListener("click", () => stopVideo(button))
   })
   const seekInputs = document.querySelectorAll("input.seek");
   seekInputs.forEach(input => {
