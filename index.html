@@ -43,8 +43,16 @@
             <div class="flex flex-col gap-3 font-open text-sm text-grayish">
               <p class="text-white">
                 Welcome to my gallery, it's an eclectic collection of artworks
-                I've made over the years, in various mediums and styles. Click
-                on each to see a short description.
+                I've made over the years, in various mediums and styles.
+              </p>
+              <p class="text-white">
+                A lot of my earlier work was physical, most often painted with
+                ink on various backings. Later I've moved mostly over to
+                digital works, a lot of spaces to explore there, and is largely
+                driven by my love for computers.
+              </p>
+              <p class="text-white">
+                I hope you enjoy!
               </p>
               <p>- Daniel Berg (roosta)</p>
             </div>
@@ -90,6 +98,7 @@
               <button data-handle="{{asset.file}}" class="pause ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
                 <i class="fa-solid fa-pause text-4"></i>
               </button>
+              <input type="range" value="0" min="0" max="100" class="w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
             </div>
             {{/if}}
 
