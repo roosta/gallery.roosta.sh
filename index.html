@@ -98,7 +98,7 @@
               <button data-handle="{{asset.file}}" class="pause ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
                 <i class="fa-solid fa-pause text-4"></i>
               </button>
-              <input type="range" value="0" min="0" max="100" class="w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+              <input data-handle="{{asset.file}}" type="range" value="0" min="0" max="100" class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
             </div>
             {{/if}}
 

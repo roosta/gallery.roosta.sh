@@ -202,16 +202,30 @@ const state = {
 
 function playVideo(button) {
   const handle = button.dataset.handle;
-  const target = document.querySelector(`video[data-file="${handle}"]`);
-  target.play();
+  const video = document.querySelector(`video[data-file="${handle}"]`);
+  video.play();
 }
 
 function pauseVideo(button) {
   const handle = button.dataset.handle;
-  const target = document.querySelector(`video[data-file="${handle}"]`);
-  target.pause();
+  const video = document.querySelector(`video[data-file="${handle}"]`);
+  video.pause();
 }
 
+function seekChange(input) {
+  const handle = input.dataset.handle;
+  const video = document.querySelector(`video[data-file="${handle}"]`);
+  let percent = input.value / 100;
+  let position = video.duration * percent;
+  video.currentTime = position;
+}
+
+function seekUpdate(video) {
+  const handle = video.dataset.file;
+  const input = document.querySelector(`input[data-handle="${handle}"]`);
+  const pos = Math.floor(100 * video.currentTime / video.duration);
+  input.value = pos;
+}
 
 function setupEvents() {
   const gridItems = document.querySelectorAll(".grid-item");
@@ -234,6 +248,14 @@ function setupEvents() {
   const pauseButtons = document.querySelectorAll(".pause");
   pauseButtons.forEach(button => {
     button.addEventListener("click", () => pauseVideo(button))
+  })
+  const seekInputs = document.querySelectorAll("input.seek");
+  seekInputs.forEach(input => {
+    input.addEventListener("change", () => seekChange(input))
+  })
+  const videoElements = document.querySelectorAll("video");
+  videoElements.forEach(video => {
+    video.addEventListener('timeupdate', () => seekUpdate(video));
   })
 }
 
