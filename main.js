@@ -219,7 +219,9 @@ function stopVideo(button) {
   const handle = button.dataset.handle;
   const input = document.querySelector(`input[data-handle="${handle}"]`);
   const video = document.querySelector(`video[data-file="${handle}"]`);
-  const icon = document.querySelector(`button.play-pause[data-handle="${handle}"] i.fa-pause`)
+  const icon = document.querySelector(
+    `button.play-pause[data-handle="${handle}"] i.fa-pause`
+  )
   if (icon) {
     icon.classList.replace("fa-pause", "fa-play");
   }
