@@ -185,7 +185,7 @@
                   asset=asset
                   common=common-class
                   class="row-span-1 col-span-full sm:col-span-1"
-                  selected-class="col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
+                  selected-class="col-span-full xl:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
@@ -193,7 +193,7 @@
                   context=asset
                   common=common-class
                   class="col-span-full md:col-span-1 row-span-1 md:row-span-2"
-                  selected-class="col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
+                  selected-class="col-span-full xl:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.square}}
@@ -201,15 +201,15 @@
                   asset=asset
                   common=common-class
                   class="col-span-full sm:col-span-1 row-span-1 h-full w-full object-cover"
-                  selected-class="col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
+                  selected-class="col-span-full xl:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.wide}}
                   {{>item
                   asset=asset
                   common=common-class
-                  class="col-span-full md:col-span-2 h-full w-full object-cover"
-                  selected-class="col-span-full row-span-2 h-full w-full col-start-1"
+                  class="col-span-full md:col-span-2 h-full w-full object-contain"
+                  selected-class="col-span-full row-span-1 sm:row-span-2 h-full w-full col-start-1"
                   }}
                 {{/if}}
               {{/let}}
