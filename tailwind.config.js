@@ -5,7 +5,8 @@ const plugin = require('tailwindcss/plugin')
 export default {
   content: [
     "./index.html",
-    "./main.js"
+    "./main.js",
+    "./partials/*"
   ],
   plugins: [
     plugin(function({ addVariant }) {
