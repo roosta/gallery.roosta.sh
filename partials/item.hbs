@@ -7,8 +7,8 @@
   muted
   loop
   data-categories="{{asset.categories}}"
-  class="{{common}} {{class}}"
-  data-selected-class="{{common}} {{selected-class}}"
+  class="{{class}} {{unselected-class}}"
+  data-selected-class="{{class}} {{selected-class}}"
   >
   <source src="{{asset.video}}" type="video/mp4"></source>
 </video>
@@ -19,8 +19,8 @@
   data-aspect="{{asset.aspect}}"
   data-selected="false"
   data-categories="{{asset.categories}}"
-  class="{{common}} {{class}}"
-  data-selected-class="{{common}} {{selected-class}}"
+  class="{{class}} {{unselected-class}}"
+  data-selected-class="{{class}} {{selected-class}}"
   >
   <img
     class="sr-only"
