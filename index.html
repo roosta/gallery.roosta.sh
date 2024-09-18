@@ -175,7 +175,7 @@
         <div class="flex flex-grow overflow-auto">
           <div
             id="gallery"
-            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 pr-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 pr-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
           >
             {{! prettier-ignore }}
             {{#each assets}}
@@ -184,7 +184,7 @@
                   {{>item
                   asset=asset
                   common=common-class
-                  class="row-span-1 col-span-1"
+                  class="row-span-1 col-span-full sm:col-span-1"
                   selected-class="col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
@@ -200,7 +200,7 @@
                   {{>item
                   asset=asset
                   common=common-class
-                  class="col-span-1 row-span-1 h-full w-full object-cover"
+                  class="col-span-full sm:col-span-1 row-span-1 h-full w-full object-cover"
                   selected-class="col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
@@ -208,7 +208,7 @@
                   {{>item
                   asset=asset
                   common=common-class
-                  class="col-span-2 h-full w-full object-cover"
+                  class="col-span-full md:col-span-2 h-full w-full object-cover"
                   selected-class="col-span-full row-span-2 h-full w-full col-start-1"
                   }}
                 {{/if}}
