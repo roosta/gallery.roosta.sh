@@ -64,4 +64,4 @@ function gridPos(itemEl) {
 }
 
 
-export { gridPos };
+export { gridPos, breakpoints };

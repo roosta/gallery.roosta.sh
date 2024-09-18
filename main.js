@@ -2,7 +2,7 @@
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
 import intersection from "lodash/intersection";
-import { gridPos } from "./utils.js";
+import { gridPos, breakpoints } from "./utils.js";
 // import anime from 'animejs/lib/anime.es.js';
 
 
@@ -53,48 +53,71 @@ const state = {
     }
   },
   // Swap selected with unselected classes, see markup for actual classnames
-  toggleDetails(file) {
-    const headerEl = document.querySelector('header');
+  toggleDetails(file, row) { // eslint-disable-line
+
+    const winWidth = window.innerWidth;
+    const headerEl = winWidth >= breakpoints.lg ?
+      document.querySelector("header") : null;
+
     if (this.selected.file === file) {
-      const previousEl
-        = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-      headerEl.classList.replace(
-          headerEl.dataset.unselectedClass.split(" "),
-          headerEl.dataset.selectedClass.split(" "),
-      )
-      previousEl.classList.replace(
-        previousEl.dataset.selectedClass.split(" "),
-        previousEl.dataset.unselectedClass.split(" ")
-      );
-    } else {
-      const targetEl = document.querySelector(`div[data-handle="${file}"]`);
-      if (!this.selected.file) {
-        headerEl.classList.replace(
-          headerEl.dataset.selectedClass.split(" "),
-          headerEl.dataset.unselectedClass.split(" "),
-        )
-      } else {
-        const previousEl
-          = document.querySelector(`div[data-handle="${this.selected.file}"]`)
-        previousEl.classList.replace(
-          previousEl.dataset.selectedClass.split(" "),
-          previousEl.dataset.unselectedClass.split(" ")
+      if (headerEl) {
+        headerEl.className = headerEl.className.replace(
+          headerEl.dataset.unselectedClass,
+          headerEl.dataset.selectedClass,
         )
       }
-      targetEl.classList.replace(
-        targetEl.dataset.unselectedClass.split(" "),
-        targetEl.dataset.selectedClass.split(" ")
-      )
+      const previousEls = document.querySelectorAll(
+        `div[data-handle="${this.selected.file}"]`
+      );
+      previousEls.forEach(el => {
+        el.className = el.className.replace(
+          el.dataset.selectedClass,
+          el.dataset.unselectedClass
+        );
+      })
+    } else {
+      if (!this.selected.file) {
+        if (headerEl) {
+          headerEl.className = headerEl.className.replace(
+            headerEl.dataset.selectedClass,
+            headerEl.dataset.unselectedClass,
+          )
+        }
+      } else {
+        const previousEls = document.querySelectorAll(
+          `div[data-handle="${this.selected.file}"]`
+        );
+        previousEls.forEach(el => {
+          el.className = el.className.replace(
+            el.dataset.selectedClass,
+            el.dataset.unselectedClass
+          )
+        })
+      }
+
+      // targetEl.style.setProperty("grid-row-start", row + 1)
+      const targetEls = document.querySelectorAll(
+        `div[data-handle="${file}"]`
+      );
+      targetEls.forEach(el => {
+        el.className = el.className.replace(
+          el.dataset.unselectedClass,
+          el.dataset.selectedClass
+        )
+      })
     }
+
+    // }
   },
 
   // Set selected item, and deselect previous
   setSelected(el) {
     const file = el.dataset?.file;
+    const {row, } = gridPos(el);
     const selectedClass = el.dataset?.selectedClass;
     if (!file || !selectedClass) return;
 
-    this.toggleDetails(file);
+    this.toggleDetails(file, row);
 
     // Unselect item if clicking on same
     if (this.selected.file === file) {
@@ -122,7 +145,6 @@ const state = {
 
       // Assign new selected
       this.selected = { el, file, previous: el.className }
-      const {row, } = gridPos(el);
       el.className = selectedClass;
       el.style.setProperty("grid-row-start", row)
       el.dataset.selected = true;
