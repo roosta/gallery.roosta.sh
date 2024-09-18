@@ -27,7 +27,6 @@ const state = {
   selected: {
     el: null,
     file: null,
-    previous: "",
   },
   // Run possibly before dom is done rendering, before everything else
   init() {
@@ -53,7 +52,7 @@ const state = {
     }
   },
   // Swap selected with unselected classes, see markup for actual classnames
-  toggleDetails(file, row) { // eslint-disable-line
+  toggleDetails(file, row) {
 
     const winWidth = window.innerWidth;
     const headerEl = winWidth >= breakpoints.lg ?
@@ -112,49 +111,62 @@ const state = {
 
   // Set selected item, and deselect previous
   setSelected(el) {
-    const file = el.dataset?.file;
+    const file = el.dataset.file;
     const {row, } = gridPos(el);
-    const selectedClass = el.dataset?.selectedClass;
-    if (!file || !selectedClass) return;
 
     this.toggleDetails(file, row);
 
     // Unselect item if clicking on same
     if (this.selected.file === file) {
-      el.className = this.selected.previous;
+      el.className = el.className.replace(
+        el.dataset.selectedClass,
+        el.dataset.unselectedClass
+      )
       el.style.setProperty("grid-row-start", "auto")
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
 
       // Set all items to opacity-100
       document.querySelectorAll(".grid-item").forEach(el => {
-        if (el.classList.contains("opacity-30")) {
-          el.classList.replace("opacity-30", "opacity-100");
-        }
+        el.className = el.className.replace(
+          el.dataset.unfocusClass,
+          el.dataset.focusClass
+        )
       });
     // Select item
     } else {
 
       // If there already exist a selected we want to deselect it
-      if (this.selected.previous) {
-        this.selected.el.className = this.selected.previous;
+      if (this.selected.file) {
+        this.selected.el.className = this.selected.el.className.replace(
+          this.selected.el.dataset.selectedClass,
+          this.selected.el.dataset.unselectedClass
+        );
 
         this.selected.el.style.setProperty("grid-row-start", "auto")
         this.selected.el.dataset.selected = false;
       }
 
       // Assign new selected
-      this.selected = { el, file, previous: el.className }
-      el.className = selectedClass;
+      this.selected = { el, file }
+      el.className = el.className.replace(
+        el.dataset.unselectedClass,
+        el.dataset.selectedClass
+      );
       el.style.setProperty("grid-row-start", row)
       el.dataset.selected = true;
+      el.className = el.className.replace(
+        el.dataset.unfocusClass,
+        el.dataset.focusClass,
+      )
 
       // Set opacity to 50 on all items that isn't selected
       document
         .querySelectorAll(".grid-item[data-selected='false']").forEach(el => {
-          if (el.classList.contains("opacity-100")) {
-            el.classList.replace("opacity-100", "opacity-30");
-          }
+          el.className = el.className.replace(
+            el.dataset.focusClass,
+            el.dataset.unfocusClass
+          )
       });
     }
   },

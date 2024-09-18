@@ -105,19 +105,28 @@
           >
             {{! prettier-ignore }}
             {{#each assets}}
-              {{#let asset=this class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
+              {{#let
+                asset=this
+                class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain"
+                focus-class="opacity-100"
+                unfocus-class="opacity-30"
+                }}
                 {{#if asset.landscape}}
                   {{>item
                     asset=asset
                     class=class
+                    focus-class=focus-class
+                    unfocus-class=unfocus-class
                     unselected-class="row-span-1 col-span-full sm:col-span-1"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
                   {{>item
-                    context=asset
+                    asset=asset
                     class=class
+                    focus-class=focus-class
+                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 row-span-2 md:row-span-2"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
@@ -126,6 +135,8 @@
                   {{>item
                     asset=asset
                     class=class
+                    focus-class=focus-class
+                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 row-span-1 h-full w-full object-cover"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
@@ -134,6 +145,8 @@
                   {{>item
                     asset=asset
                     class=class
+                    focus-class=focus-class
+                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 md:col-span-2 h-full w-full object-contain"
                     selected-class="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 h-full w-full col-start-1"
                   }}
