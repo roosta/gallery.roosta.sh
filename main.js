@@ -105,8 +105,8 @@ const state = {
 
       // Set all items to opacity-100
       document.querySelectorAll(".grid-item").forEach(el => {
-        if (el.classList.contains("opacity-50")) {
-          el.classList.replace("opacity-50", "opacity-100");
+        if (el.classList.contains("opacity-30")) {
+          el.classList.replace("opacity-30", "opacity-100");
         }
       });
     // Select item
@@ -131,7 +131,7 @@ const state = {
       document
         .querySelectorAll(".grid-item[data-selected='false']").forEach(el => {
           if (el.classList.contains("opacity-100")) {
-            el.classList.replace("opacity-100", "opacity-50");
+            el.classList.replace("opacity-100", "opacity-30");
           }
       });
     }
