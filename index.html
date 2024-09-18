@@ -146,6 +146,122 @@
         </div>
       </section>
     </main>
+    {{#*inline "item"}}
+      {{#if asset.video}}
+        <video
+          data-file="{{asset.file}}"
+          data-aspect="{{aspect}}"
+          data-selected="false"
+          data-playing="false"
+          muted
+          loop
+          data-categories="{{asset.categories}}"
+          class="{{class}} {{unselected-class}} {{focus-class}}"
+          data-focus-class="{{focus-class}}"
+          data-unfocus-class="{{unfocus-class}}"
+          data-unselected-class="{{class}} {{unselected-class}}"
+          data-selected-class="{{class}} {{selected-class}}"
+          >
+          <source src="{{asset.video}}" type="video/mp4"></source>
+        </video>
+      {{else}}
+        <figure
+          data-file="{{asset.file}}"
+          style="background-image: url({{asset.file}});"
+          data-aspect="{{aspect}}"
+          data-selected="false"
+          data-categories="{{asset.categories}}"
+          data-focus-class="{{focus-class}}"
+          data-unfocus-class="{{unfocus-class}}"
+          class="{{class}} {{unselected-class}} {{focus-class}}"
+          data-unselected-class="{{class}} {{unselected-class}}"
+          data-selected-class="{{class}} {{selected-class}}"
+          >
+          <img
+            class="sr-only"
+            src="{{asset.file}}"
+            alt="{{asset.title}}" />
+        </figure>
+      {{/if}}
+    {{/inline}}
+
+    {{#*inline "detail"}}
+      <div
+        class="{{this.tag}}-detail {{this.class}} {{this.unselected}}"
+        data-unselected-class="{{this.unselected}}"
+        data-selected-class="{{this.selected}}"
+        data-handle="{{this.asset.file}}"
+        >
+        <div class="flex flex-col gap-6 border-box">
+          <h1 class="font-work text-4xl text-white">{{this.asset.title}}</h1>
+
+          <!-- Palette -->
+          {{#if this.asset.palette}}
+          <div class="flex gap-3">
+            {{#each this.asset.palette as |color|}}
+            <div
+              class="rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
+              >
+              <div
+                class="h-12 w-12 rounded"
+                style="background-color: {{color}};"
+                ></div>
+            </div>
+            {{/each}}
+          </div>
+          {{/if}}
+
+          <!-- Description -->
+          <p class="font-open text-sm text-white">{{this.asset.description}}</p>
+
+          <!-- Video controls -->
+          {{#if this.asset.video}}
+          <div class="flex text-grayish gap-2 items-center">
+            <button data-handle="{{this.asset.file}}" class="play-pause ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              <i class="fa-solid fa-play text-4"></i>
+            </button>
+            <button data-handle="{{this.asset.file}}" class="stop ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              <i class="fa-solid fa-stop text-4"></i>
+            </button>
+            <input data-handle="{{this.asset.file}}" type="range" value="0" min="0" max="100" class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+          </div>
+          {{/if}}
+
+          <!-- Asset link -->
+          {{#if this.asset.link}}
+          <div>
+            <a
+              href="{{this.asset.link.url}}"
+              target="_blank"
+              class="border-b border-dotted text-sm opacity-75 visited:text-grayish hover:opacity-100"
+              >
+              <i class="fa-solid fa-link text-4"></i>
+              <span> {{this.asset.link.title}} </span>
+            </a>
+          </div>
+          {{/if}}
+
+          <!-- Categories -->
+          <div class="">
+            <h2 class="mb-4 font-open text-white">Categories</h2>
+            <div class="flex gap-3">
+              {{#each this.asset.categories as |cat|}}
+              <button
+                data-selected-class="filter-tag ring-white opacity-100
+                hover:opacity-75 cursor-pointer text-xs inline-flex
+                items-center uppercase px-3 py-1 text-white ring-1
+                rounded-full"
+                data-category="{{ cat }}"
+                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100"
+                >
+                {{ cat }}
+              </button>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/inline}}
     <script type="module" src="/main.js"></script>
   </body>
 </html>

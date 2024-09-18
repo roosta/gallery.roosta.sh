@@ -73,7 +73,6 @@ const assets = await Promise.all(filtered.map(withPalette))
 
 export default {
   plugins: [handlebars({
-    partialDirectory: resolve(__dirname, 'partials'),
     context: {
       assets,
       categories
