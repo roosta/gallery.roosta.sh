@@ -20,8 +20,11 @@ function gridPos(itemEl) {
   let maxRow = 1;
 
   for (let el of gridEl.children) {
-    const gridColumn = window.getComputedStyle(el).getPropertyValue("grid-column");
-    const gridRow = window.getComputedStyle(el).getPropertyValue("grid-row");
+    const elStyle = window.getComputedStyle(el);
+    if (elStyle.display === 'none') continue; // Skip elements with display: none
+
+    const gridColumn = elStyle.getPropertyValue("grid-column");
+    const gridRow = elStyle.getPropertyValue("grid-row");
     const colSpan = gridColumn.includes("span") ? parseInt(gridColumn.split("span")[1]) : 1;
     const rowSpan = gridRow.includes("span") ? parseInt(gridRow.split("span")[1]) : 1;
 
