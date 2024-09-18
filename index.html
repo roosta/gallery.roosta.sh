@@ -174,41 +174,41 @@
       <section class="flex w-full flex-grow lg:w-4/6">
         <div class="flex flex-grow overflow-auto">
           <div
-            class="grid flex-grow grid-flow-dense auto-rows-gallery grid-cols-2 gap-8 pr-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10"
+            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 pr-2 grid-cols-5"
           >
             {{! prettier-ignore }}
             {{#each assets}}
-              {{#let asset=this common-class="grid-item col-span-full row-span-1 cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
+              {{#let asset=this common-class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
                 {{#if asset.landscape}}
                   {{>item
                   asset=asset
                   common=common-class
-                  class="sm:row-span-1 sm:col-span-2 md:col-span-2"
-                  selected-class="sm:col-span-2 md:col-span-6 md:row-span-4"
+                  class="row-span-1 col-span-1"
+                  selected-class="col-span-3 row-span-3 col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
                   {{>item
                   context=asset
                   common=common-class
-                  class="sm:col-span-2 sm:row-span-2"
-                  selected-class="sm:col-span-2 sm:row-span-2 md:col-span-4 md:row-span-4"
+                  class="col-span-1 row-span-2"
+                  selected-class="col-span-3 row-span-3 col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.square}}
                   {{>item
                   asset=asset
                   common=common-class
-                  class="sm:col-span-2 sm:row-span-1 h-full w-full object-cover"
-                  selected-class="sm:col-span-2 md:col-span-4 md:row-span-4"
+                  class="col-span-1 row-span-1 h-full w-full object-cover"
+                  selected-class="col-span-3 row-span-3 col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.wide}}
                   {{>item
                   asset=asset
                   common=common-class
-                  class="sm:col-span-4 h-full w-full object-cover"
-                  selected-class="sm:col-span-2 md:col-span-8 md:row-span-2 h-full w-full object-cover"
+                  class="col-span-2 h-full w-full object-cover"
+                  selected-class="col-span-4 row-span-3 h-full w-full object-cover col-start-2"
                   }}
                 {{/if}}
               {{/let}}

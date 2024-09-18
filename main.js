@@ -2,17 +2,9 @@
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
 import intersection from "lodash/intersection";
+import { gridPos } from "./utils.js";
 // import anime from 'animejs/lib/anime.es.js';
 
-
-// tailwind breakpoints, unused cyr
-const breakpoints = { // eslint-disable-line
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  "2xl": 1536
-}
 
 // function loadImage(img){
 //   return new Promise(resolve=>{img.onload = resolve})
@@ -107,6 +99,7 @@ const state = {
     // Unselect item if clicking on same
     if (this.selected.file === file) {
       el.className = this.selected.previous;
+      el.style.setProperty("grid-row-start", "auto")
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
 
@@ -118,15 +111,20 @@ const state = {
       });
     // Select item
     } else {
+
       // If there already exist a selected we want to deselect it
       if (this.selected.previous) {
         this.selected.el.className = this.selected.previous;
+
+        this.selected.el.style.setProperty("grid-row-start", "auto")
         this.selected.el.dataset.selected = false;
       }
 
       // Assign new selected
       this.selected = { el, file, previous: el.className }
+      const {row, } = gridPos(el);
       el.className = selectedClass;
+      el.style.setProperty("grid-row-start", row)
       el.dataset.selected = true;
 
       // Set opacity to 50 on all items that isn't selected
@@ -277,7 +275,6 @@ function setupEvents() {
     video.addEventListener('timeupdate', () => seekUpdate(video));
   })
 }
-
 
 // Main entry
 function main() {
