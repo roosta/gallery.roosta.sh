@@ -21,6 +21,9 @@ export default {
       gridAutoRows: {
         'gallery': 'minmax(12rem, 2fr)',
       },
+      spacing: {
+        '128': '32rem',
+      },
       colors: {
         white: "#FBFBFB",
         grayish: "#A4A497",

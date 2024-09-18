@@ -178,7 +178,7 @@
           >
             {{! prettier-ignore }}
             {{#each assets}}
-              {{#let asset=this common-class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100" }}
+              {{#let asset=this common-class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain opacity-100 max-h-128" }}
                 {{#if asset.landscape}}
                   {{>item
                   asset=asset
