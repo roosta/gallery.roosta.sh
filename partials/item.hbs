@@ -1,7 +1,7 @@
 {{#if asset.video}}
 <video
   data-file="{{asset.file}}"
-  data-aspect="{{asset.aspect}}"
+  data-aspect="{{aspect}}"
   data-selected="false"
   data-playing="false"
   muted
@@ -19,7 +19,7 @@
 <figure
   data-file="{{asset.file}}"
   style="background-image: url({{asset.file}});"
-  data-aspect="{{asset.aspect}}"
+  data-aspect="{{aspect}}"
   data-selected="false"
   data-categories="{{asset.categories}}"
   data-focus-class="{{focus-class}}"
