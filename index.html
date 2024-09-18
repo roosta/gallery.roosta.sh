@@ -112,45 +112,29 @@
                 unfocus-class="opacity-30"
                 }}
                 {{#if asset.landscape}}
-                  {{>item
+                  {{>item this
                     aspect="landscape"
-                    asset=asset
-                    class=class
-                    focus-class=focus-class
-                    unfocus-class=unfocus-class
                     unselected-class="row-span-1 col-span-full sm:col-span-1"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
-                  {{>item
-                    asset=asset
+                  {{>item this
                     aspect="portrait"
-                    class=class
-                    focus-class=focus-class
-                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 row-span-2 md:row-span-2"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.square}}
-                  {{>item
-                    asset=asset
+                  {{>item this
                     aspect="square"
-                    class=class
-                    focus-class=focus-class
-                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 row-span-1 h-full w-full object-cover"
                     selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 sm:row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
                   }}
                 {{/if}}
                 {{#if asset.wide}}
-                  {{>item
-                    asset=asset
+                  {{>item this
                     aspect="wide"
-                    class=class
-                    focus-class=focus-class
-                    unfocus-class=unfocus-class
                     unselected-class="col-span-1 md:col-span-2 h-full w-full object-contain"
                     selected-class="col-span-1 sm:col-span-2 row-span-1 sm:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 h-full w-full col-start-1"
                   }}
