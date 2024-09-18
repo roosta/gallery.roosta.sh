@@ -12,7 +12,7 @@ const breakpoints = { // eslint-disable-line
 // correct position, row/col span needs to be accounted for, hence the
 // complexity
 function gridPos(itemEl) {
-  const gridEl = document.querySelector(".grid");
+  const gridEl = document.getElementById("gallery");
   const gridStyle = window.getComputedStyle(gridEl);
   const colCount = gridStyle.gridTemplateColumns.split(" ").length;
 
