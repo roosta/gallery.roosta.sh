@@ -29,12 +29,12 @@
             </button>
           </div>
         </nav>
-        <div class="relative flex flex-grow flex-col">
+        <div class="relative flex flex-grow flex-col gap-6">
           {{#let selected="visible" unselected="hidden"}}
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-6 absolute {{selected}}"
+            class="flex flex-col gap-6 lg:absolute {{selected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
             data-handle="default"
@@ -63,7 +63,7 @@
           {{#each assets}}
           {{#let unselected="hidden" asset=this selected="visible" }}
           <div
-            class="flex flex-col gap-6 absolute {{unselected}}"
+            class="flex flex-col gap-6 lg:absolute {{unselected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
             data-handle="{{asset.file}}"
