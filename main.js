@@ -94,7 +94,6 @@ const state = {
         })
       }
 
-      // targetEl.style.setProperty("grid-row-start", row + 1)
       const targetEls = document.querySelectorAll(
         `div[data-handle="${file}"]`
       );
@@ -126,7 +125,6 @@ const state = {
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
 
-      // Set all items to opacity-100
       document.querySelectorAll(".grid-item").forEach(el => {
         el.className = el.className.replace(
           el.dataset.unfocusClass,
@@ -160,7 +158,6 @@ const state = {
         el.dataset.focusClass,
       )
 
-      // Set opacity to 50 on all items that isn't selected
       document
         .querySelectorAll(".grid-item[data-selected='false']").forEach(el => {
           el.className = el.className.replace(
