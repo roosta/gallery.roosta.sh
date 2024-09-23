@@ -52,13 +52,13 @@ const state = {
     }
   },
   // Swap selected with unselected classes, see markup for actual classnames
-  toggleDetails(file, row) {
+  toggleDetails(file, previousFile, row, selectedEl) {
 
     const winWidth = window.innerWidth;
     const headerEl = winWidth >= breakpoints.lg ?
       document.querySelector("header") : null;
 
-    if (this.selected.file === file) {
+    if (previousFile === file) {
       if (headerEl) {
         headerEl.className = headerEl.className.replace(
           headerEl.dataset.unselectedClass,
@@ -66,7 +66,7 @@ const state = {
         )
       }
       const previousEls = document.querySelectorAll(
-        `div[data-handle="${this.selected.file}"]`
+        `div[data-handle="${previousFile}"]`
       );
       previousEls.forEach(el => {
         el.className = el.className.replace(
@@ -75,7 +75,7 @@ const state = {
         );
       })
     } else {
-      if (!this.selected.file) {
+      if (!previousFile) {
         if (headerEl) {
           headerEl.className = headerEl.className.replace(
             headerEl.dataset.selectedClass,
@@ -84,7 +84,7 @@ const state = {
         }
       } else {
         const previousEls = document.querySelectorAll(
-          `div[data-handle="${this.selected.file}"]`
+          `div[data-handle="${previousFile}"]`
         );
         previousEls.forEach(el => {
           el.className = el.className.replace(
@@ -98,6 +98,12 @@ const state = {
         `div[data-handle="${file}"]`
       );
       targetEls.forEach(el => {
+        if (el.classList.contains("tail-detail")) {
+          const style = window.getComputedStyle(selectedEl);
+          const gridRow = style.getPropertyValue("grid-row");
+          const rowSpan = gridRow.includes("span") ? parseInt(gridRow.split("span")[1]) : 1;
+          el.style.setProperty("grid-row-start", row + rowSpan)
+        }
         el.className = el.className.replace(
           el.dataset.unselectedClass,
           el.dataset.selectedClass
@@ -112,8 +118,7 @@ const state = {
   setSelected(el) {
     const file = el.dataset.file;
     const {row, } = gridPos(el);
-
-    this.toggleDetails(file, row);
+    const previousFile = this.selected.file;
 
     // Unselect item if clicking on same
     if (this.selected.file === file) {
@@ -166,6 +171,8 @@ const state = {
           )
       });
     }
+
+    this.toggleDetails(file, previousFile, row, el);
   },
 
   // Set image filter, state array contains all active filters
