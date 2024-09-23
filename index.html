@@ -192,12 +192,12 @@
         data-selected-class="{{this.selected}}"
         data-handle="{{this.asset.file}}"
         >
-        <div class="flex flex-col gap-6 border-box">
+        <div class="flex flex-col gap-6">
           <h1 class="font-work text-4xl text-white">{{this.asset.title}}</h1>
 
           <!-- Palette -->
           {{#if this.asset.palette}}
-          <div class="flex gap-3">
+          <div class="flex gap-3 m-1">
             {{#each this.asset.palette as |color|}}
             <div
               class="rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
