@@ -17,7 +17,7 @@
     >
       <section class="flex w-full flex-grow flex-col lg:w-2/6">
         <nav class="mb-8">
-          <div class="relative inline-block text-left">
+          <div class="inline-block text-left">
             <button
               type="button"
               class="inline-flex w-full justify-center"
@@ -29,12 +29,12 @@
             </button>
           </div>
         </nav>
-        <div class="relative flex flex-grow flex-col gap-6">
+        <div class="flex flex-grow flex-col gap-6 overflow-auto">
           {{#let selected="block" unselected="hidden"}}
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-6 lg:absolute {{selected}}"
+            class="flex flex-col gap-6 {{selected}}"
             data-unselected-class="{{unselected}}"
             data-selected-class="{{selected}}"
             data-handle="default"
@@ -61,7 +61,7 @@
 
           <!-- Details -->
           {{#each assets}}
-            {{>detail asset=this tag="head" class="absolute" selected="hidden lg:block" unselected="hidden"}}
+            {{>detail asset=this tag="head" class="" selected="hidden lg:block" unselected="hidden"}}
           {{/each}}
 
           <!-- Filter section -->
