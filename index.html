@@ -80,13 +80,12 @@
             </button>
             <div class="filter-container flex hidden flex-wrap gap-2">
               {{#each categories}}
-              <div
-                data-selected-class="filter-tag ring-white opacity-100 hover:opacity-75 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full m-px"
-                data-category="{{this}}"
-                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100 m-px"
-              >
-                {{this}}
-              </div>
+                {{>filter-tag
+                  category=this
+                  selected-class="ring-white opacity-100 hover:opacity-75 text-white"
+                  unselected-class="text-grayish opacity-75 ring-grayish hover:opacity-100"
+                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 rounded-full text-xs uppercase"
+                }}
               {{/each}}
             </div>
           </div>
@@ -182,6 +181,17 @@
       {{/if}}
     {{/inline}}
 
+    {{#*inline "filter-tag"}}
+    <button
+      data-selected-class="{{selected-class}}"
+      data-unselected-class="{{unselected-class}}"
+      class="{{class}} {{unselected-class}}"
+      data-category="{{ category }}"
+      >
+      {{ category }}
+    </button>
+    {{/inline}}
+
     {{#*inline "detail"}}
       <div
         class="{{this.tag}}-detail {{this.class}} {{this.unselected}}"
@@ -250,19 +260,19 @@
             <h2 class="mb-4 font-open text-white">Categories</h2>
             <div class="flex gap-3">
               {{#each this.asset.categories as |cat|}}
-              <button
-                data-selected-class="filter-tag ring-white opacity-100 hover:opacity-75 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full"
-                data-category="{{ cat }}"
-                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100 m-px"
-                >
-                {{ cat }}
-              </button>
+                {{>filter-tag
+                  category=cat
+                  selected-class="ring-white opacity-100 hover:opacity-75 text-white"
+                  unselected-class="text-grayish opacity-75 ring-grayish hover:opacity-100"
+                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 rounded-full text-xs uppercase"
+                }}
               {{/each}}
             </div>
           </div>
         </div>
       </div>
     {{/inline}}
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

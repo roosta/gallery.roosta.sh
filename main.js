@@ -233,9 +233,15 @@ const state = {
     const filterTags = document.querySelectorAll(".filter-tag");
     filterTags.forEach(tag => {
       if (this.filter.data.includes(tag.dataset.category)) {
-        tag.className = tag.dataset.selectedClass;
+        tag.className = tag.className.replace(
+          tag.dataset.unselectedClass,
+          tag.dataset.selectedClass,
+        )
       } else {
-        tag.className = this.filter.tagClass;
+        tag.className = tag.className.replace(
+          tag.dataset.selectedClass,
+          tag.dataset.unselectedClass,
+        );
       }
     })
   },
