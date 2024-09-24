@@ -194,16 +194,13 @@
 
           <!-- Palette -->
           {{#if this.asset.palette}}
-          <div class="flex gap-3 m-1">
+          <div class="flex gap-3">
             {{#each this.asset.palette as |color|}}
-            <div
-              class="rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
+            <span
+              class="rounded h-12 w-12 rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
+              style="background-color: {{color}};"
               >
-              <div
-                class="h-12 w-12 rounded"
-                style="background-color: {{color}};"
-                ></div>
-            </div>
+            </span>
             {{/each}}
           </div>
           {{/if}}
