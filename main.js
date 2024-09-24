@@ -173,6 +173,12 @@ const state = {
     }
 
     this.toggleDetails(file, previousFile, row, el);
+
+    // Stop any playing videos when changing selection
+    const videos = document.querySelectorAll("video[data-playing='true']")
+    videos.forEach(video => {
+      stopVideo(video.dataset.file)
+    })
   },
 
   // Set image filter, state array contains all active filters
@@ -251,8 +257,7 @@ function toggleVideo(button) {
     video.dataset.playing = true;
   }
 }
-function stopVideo(button) {
-  const handle = button.dataset.handle;
+function stopVideo(handle) {
   const input = document.querySelector(`input[data-handle="${handle}"]`);
   const video = document.querySelector(`video[data-file="${handle}"]`);
   const icon = document.querySelector(
@@ -302,7 +307,7 @@ function setupEvents() {
   })
   const stopButtons = document.querySelectorAll(".stop");
   stopButtons.forEach(button => {
-    button.addEventListener("click", () => stopVideo(button))
+    button.addEventListener("click", () => stopVideo(button.dataset.handle))
   })
   const seekInputs = document.querySelectorAll("input.seek");
   seekInputs.forEach(input => {
