@@ -81,9 +81,9 @@
             <div class="filter-container flex hidden flex-wrap gap-2">
               {{#each categories}}
               <div
-                data-selected-class="filter-tag ring-white opacity-100 hover:opacity-75 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full"
+                data-selected-class="filter-tag ring-white opacity-100 hover:opacity-75 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full m-px"
                 data-category="{{this}}"
-                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100"
+                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100 m-px"
               >
                 {{this}}
               </div>
@@ -194,10 +194,10 @@
 
           <!-- Palette -->
           {{#if this.asset.palette}}
-          <div class="flex gap-3">
+          <div class="flex gap-2">
             {{#each this.asset.palette as |color|}}
             <span
-              class="rounded h-12 w-12 rounded ring-2 ring-white/30 ring-offset-2 ring-offset-black"
+              class="rounded h-12 w-12 rounded ring-2 m-1 ring-white/30 ring-offset-2 ring-offset-black"
               style="background-color: {{color}};"
               >
             </span>
@@ -211,10 +211,10 @@
           <!-- Video controls -->
           {{#if this.asset.video}}
           <div class="flex text-grayish gap-2 items-center">
-            <button data-handle="{{this.asset.file}}" class="play-pause ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+            <button data-handle="{{this.asset.file}}" class="play-pause ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-play text-4"></i>
             </button>
-            <button data-handle="{{this.asset.file}}" class="stop ring-1 ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+            <button data-handle="{{this.asset.file}}" class="stop ring-1  m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-stop text-4"></i>
             </button>
             <input data-handle="{{this.asset.file}}" type="range" value="0" min="0" max="100" class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
@@ -241,12 +241,9 @@
             <div class="flex gap-3">
               {{#each this.asset.categories as |cat|}}
               <button
-                data-selected-class="filter-tag ring-white opacity-100
-                hover:opacity-75 cursor-pointer text-xs inline-flex
-                items-center uppercase px-3 py-1 text-white ring-1
-                rounded-full"
+                data-selected-class="filter-tag ring-white opacity-100 hover:opacity-75 cursor-pointer text-xs inline-flex items-center uppercase px-3 py-1 text-white ring-1 rounded-full"
                 data-category="{{ cat }}"
-                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100"
+                class="filter-tag inline-flex cursor-pointer items-center rounded-full px-3 py-1 text-xs uppercase text-grayish opacity-75 ring-1 ring-grayish hover:opacity-100 m-px"
                 >
                 {{ cat }}
               </button>
