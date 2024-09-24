@@ -211,13 +211,23 @@
           <!-- Video controls -->
           {{#if this.asset.video}}
           <div class="flex text-grayish gap-2 items-center">
-            <button data-handle="{{this.asset.file}}" class="play-pause ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+            <button
+              data-handle="{{this.asset.file}}"
+              class="play-pause ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-play text-4"></i>
             </button>
-            <button data-handle="{{this.asset.file}}" class="stop ring-1  m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+            <button
+              data-handle="{{this.asset.file}}"
+              class="stop ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-stop text-4"></i>
             </button>
-            <input data-handle="{{this.asset.file}}" type="range" value="0" min="0" max="100" class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+            <input
+              data-handle="{{this.asset.file}}"
+              type="range"
+              value="0"
+              min="0"
+              max="100"
+              class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
           </div>
           {{/if}}
 
