@@ -107,36 +107,36 @@
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}
                 {{#if asset.landscape}}
                   {{>item this
                     aspect="landscape"
-                    unselected-class="row-span-1 col-span-full sm:col-span-1"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2"
+                    unselected-class="row-span-1 col-span-full sm:col-span-1 object-cover"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
                   {{>item this
                     aspect="portrait"
-                    unselected-class="col-span-1 row-span-2 md:row-span-2"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2"
+                    unselected-class="col-span-1 row-span-2 md:row-span-2 object-cover"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 col-span-full xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2 object-contain"
                   }}
                 {{/if}}
                 {{#if asset.square}}
                   {{>item this
                     aspect="square"
-                    unselected-class="col-span-1 row-span-1 h-full w-full object-cover"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2"
+                    unselected-class="col-span-1 row-span-1 object-cover"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain"
                   }}
                 {{/if}}
                 {{#if asset.wide}}
                   {{>item this
                     aspect="wide"
-                    unselected-class="col-span-1 md:col-span-2 h-full w-full object-contain"
-                    selected-class="col-span-1 sm:col-span-2 row-span-1 lg:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 h-full w-full col-start-1"
+                    unselected-class="col-span-1 md:col-span-2 object-contain"
+                    selected-class="col-span-1 sm:col-span-2 row-span-1 lg:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 col-start-1 object-contain"
                   }}
                 {{/if}}
                 {{>detail asset=asset tag="tail" class="col-span-full" selected="block lg:hidden" unselected="hidden"}}
