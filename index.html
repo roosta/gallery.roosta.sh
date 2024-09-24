@@ -142,6 +142,8 @@
         </div>
       </section>
     </main>
+    {{! Templates: <<<1 }}
+    {{! Gallery item: <<<2 }}
     {{#*inline "item"}}
       {{#if asset.video}}
         <video
@@ -180,7 +182,8 @@
         </figure>
       {{/if}}
     {{/inline}}
-
+    {{! >>> }}
+    {{! Filter tag: <<<2 }}
     {{#*inline "filter-tag"}}
     <button
       data-selected-class="{{selected-class}}"
@@ -191,7 +194,8 @@
       {{ category }}
     </button>
     {{/inline}}
-
+    {{! >>> }}
+    {{! Detail: <<<2 }}
     {{#*inline "detail"}}
       <div
         class="{{this.tag}}-detail {{this.class}} {{this.unselected}}"
@@ -272,9 +276,10 @@
         </div>
       </div>
     {{/inline}}
-
+    {{! >>> }}
+    {{! >>> }}
     <script type="module" src="/main.js"></script>
   </body>
 </html>
 
-{{!-- vim: set ts=2 sw=2 tw=0 et ft=html.handlebars : --}}
+{{!-- vim: set ts=2 sw=2 tw=0 et fdm=marker ft=html.handlebars fmr=<<<,>>> : --}}
