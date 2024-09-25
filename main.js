@@ -2,7 +2,7 @@
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
 import intersection from "lodash/intersection";
-import { gridPos, breakpoints } from "./utils.js";
+import { gridPos } from "./utils.js";
 // import anime from 'animejs/lib/anime.es.js';
 
 
