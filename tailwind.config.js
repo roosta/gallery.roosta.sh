@@ -9,7 +9,8 @@ export default {
   ],
   theme: {
     data: {
-      selected: 'selected~="true"'
+      selected: 'selected~="true"',
+      'item-active': 'item-active~="true"'
     },
     extend: {
       fontFamily: {

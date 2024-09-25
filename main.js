@@ -54,17 +54,7 @@ const state = {
   // Swap selected with unselected classes, see markup for actual classnames
   toggleDetails(file, previousFile, row, selectedEl) {
 
-    const winWidth = window.innerWidth;
-    const headerEl = winWidth >= breakpoints.lg ?
-      document.querySelector("header") : null;
-
     if (previousFile === file) {
-      if (headerEl) {
-        headerEl.className = headerEl.className.replace(
-          headerEl.dataset.unselectedClass,
-          headerEl.dataset.selectedClass,
-        )
-      }
       const previousEls = document.querySelectorAll(
         `div[data-handle="${previousFile}"]`
       );
@@ -75,24 +65,15 @@ const state = {
         );
       })
     } else {
-      if (!previousFile) {
-        if (headerEl) {
-          headerEl.className = headerEl.className.replace(
-            headerEl.dataset.selectedClass,
-            headerEl.dataset.unselectedClass,
-          )
-        }
-      } else {
-        const previousEls = document.querySelectorAll(
-          `div[data-handle="${previousFile}"]`
-        );
-        previousEls.forEach(el => {
-          el.className = el.className.replace(
-            el.dataset.selectedClass,
-            el.dataset.unselectedClass
-          )
-        })
-      }
+      const previousEls = document.querySelectorAll(
+        `div[data-handle="${previousFile}"]`
+      );
+      previousEls.forEach(el => {
+        el.className = el.className.replace(
+          el.dataset.selectedClass,
+          el.dataset.unselectedClass
+        )
+      })
 
       const targetEls = document.querySelectorAll(
         `div[data-handle="${file}"]`
@@ -119,9 +100,11 @@ const state = {
     const file = el.dataset.file;
     const {row, } = gridPos(el);
     const previousFile = this.selected.file;
+    const headerEl = document.querySelector("header");
 
-    // Unselect item if clicking on same
+    // Unselect item
     if (this.selected.file === file) {
+      headerEl.dataset.itemActive = false;
       el.className = el.className.replace(
         el.dataset.selectedClass,
         el.dataset.unselectedClass
@@ -138,6 +121,8 @@ const state = {
       });
     // Select item
     } else {
+
+      headerEl.dataset.itemActive = true;
 
       // If there already exist a selected we want to deselect it
       if (this.selected.file) {

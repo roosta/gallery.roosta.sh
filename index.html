@@ -30,13 +30,11 @@
           </div>
         </nav>
         <div class="flex flex-grow flex-col gap-6 overflow-auto">
-          {{#let selected="block" unselected="hidden"}}
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-6 {{selected}}"
-            data-unselected-class="{{unselected}}"
-            data-selected-class="{{selected}}"
+            class="flex flex-col gap-6 data-item-active:lg:hidden"
+            data-item-active="false"
             data-handle="default"
           >
             <h1 class="font-work text-4xl text-white">Gallery</h1>
@@ -57,7 +55,6 @@
               <p>- Daniel Berg (roosta)</p>
             </div>
           </header>
-          {{/let}}
 
           <!-- Details -->
           {{#each assets}}
@@ -103,7 +100,7 @@
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded selected:bg-contain"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded data-selected:bg-contain"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}
