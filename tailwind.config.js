@@ -1,5 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const plugin = require('tailwindcss/plugin')
 
 /** @type {import("tailwindcss").Config} */
 export default {
@@ -8,12 +7,10 @@ export default {
     "./main.js",
     "./partials/*"
   ],
-  plugins: [
-    plugin(function({ addVariant }) {
-      addVariant("selected", "&[data-selected='true']")
-    })
-  ],
   theme: {
+    data: {
+      selected: 'selected~="true"'
+    },
     extend: {
       fontFamily: {
         work: ["Work Sans", ...defaultTheme.fontFamily.sans],
