@@ -141,7 +141,7 @@ const state = {
         el.dataset.unselectedClass,
         el.dataset.selectedClass
       );
-      el.style.setProperty("grid-row-start", row)
+      el.style.setProperty("grid-row-start", `${row}`)
       el.dataset.selected = true;
       el.className = el.className.replace(
         el.dataset.unfocusClass,
@@ -158,6 +158,9 @@ const state = {
     }
 
     this.toggleDetails(file, previousFile, row, el);
+
+    // Ensure smooth scrolling to the selected item
+    el.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
 
     // Stop any playing videos when changing selection
     const videos = document.querySelectorAll("video[data-playing='true']")
