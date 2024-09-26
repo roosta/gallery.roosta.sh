@@ -2,7 +2,6 @@
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
 import intersection from "lodash/intersection";
-import { gridPos } from "./utils.js";
 // import anime from 'animejs/lib/anime.es.js';
 
 
@@ -52,7 +51,7 @@ const state = {
     }
   },
   // Swap selected with unselected classes, see markup for actual classnames
-  toggleDetails(file, previousFile, row, selectedEl) {
+  toggleDetails(file, previousFile) {
 
     if (previousFile === file) {
       const previousEls = document.querySelectorAll(
@@ -79,12 +78,6 @@ const state = {
         `div[data-handle="${file}"]`
       );
       targetEls.forEach(el => {
-        if (el.classList.contains("tail-detail")) {
-          const style = window.getComputedStyle(selectedEl);
-          const gridRow = style.getPropertyValue("grid-row");
-          const rowSpan = gridRow.includes("span") ? parseInt(gridRow.split("span")[1]) : 1;
-          el.style.setProperty("grid-row-start", row + rowSpan)
-        }
         el.className = el.className.replace(
           el.dataset.unselectedClass,
           el.dataset.selectedClass
@@ -98,7 +91,6 @@ const state = {
   // Set selected item, and deselect previous
   setSelected(el) {
     const file = el.dataset.file;
-    const {row, } = gridPos(el);
     const previousFile = this.selected.file;
     const headerEl = document.querySelector("header");
 
@@ -109,7 +101,6 @@ const state = {
         el.dataset.selectedClass,
         el.dataset.unselectedClass
       )
-      el.style.setProperty("grid-row-start", "auto")
       this.selected = { el: null, file: null};
       el.dataset.selected = false;
 
@@ -131,7 +122,6 @@ const state = {
           this.selected.el.dataset.unselectedClass
         );
 
-        this.selected.el.style.setProperty("grid-row-start", "auto")
         this.selected.el.dataset.selected = false;
       }
 
@@ -141,7 +131,6 @@ const state = {
         el.dataset.unselectedClass,
         el.dataset.selectedClass
       );
-      el.style.setProperty("grid-row-start", `${row}`)
       el.dataset.selected = true;
       el.className = el.className.replace(
         el.dataset.unfocusClass,
@@ -157,10 +146,10 @@ const state = {
       });
     }
 
-    this.toggleDetails(file, previousFile, row, el);
+    this.toggleDetails(file, previousFile, el);
 
     // Ensure smooth scrolling to the selected item
-    el.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    el.scrollIntoView({behavior: "smooth", block: "nearest"});
 
     // Stop any playing videos when changing selection
     const videos = document.querySelectorAll("video[data-playing='true']")
