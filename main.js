@@ -149,7 +149,7 @@ const state = {
     this.toggleDetails(file, previousFile, el);
 
     // Ensure smooth scrolling to the selected item
-    el.scrollIntoView({behavior: "smooth", block: "nearest"});
+    el.scrollIntoView({behavior: "smooth", block: "center"});
 
     // Stop any playing videos when changing selection
     const videos = document.querySelectorAll("video[data-playing='true']")
