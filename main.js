@@ -13,6 +13,7 @@ import intersection from "lodash/intersection";
 // state
 const state = {
   categoriesOpen: false,
+  menuOpen: false,
   filter: {
     data: [],
     tagClass: "",
@@ -86,6 +87,23 @@ const state = {
     }
 
     // }
+  },
+
+  toggleMenu() {
+    const menu = document.getElementById("menu")
+    if (this.menuOpen) {
+      this.menuOpen = false;
+      menu.className = menu.className.replace(
+        menu.dataset.selectedClass,
+        menu.dataset.unselectedClass,
+      )
+    } else {
+      this.menuOpen = true;
+      menu.className = menu.className.replace(
+        menu.dataset.unselectedClass,
+        menu.dataset.selectedClass
+      )
+    }
   },
 
   // Set selected item, and deselect previous
@@ -300,6 +318,8 @@ function setupEvents() {
   videoElements.forEach(video => {
     video.addEventListener('timeupdate', () => seekUpdate(video));
   })
+  const menuButton = document.getElementById("menu-button");
+  menuButton.addEventListener("click", state.toggleMenu)
 }
 
 // Main entry
