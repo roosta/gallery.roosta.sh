@@ -15,10 +15,9 @@
     <main
       class="flex flex-grow flex-wrap gap-8 p-6 text-white md:gap-8 md:p-8 lg:flex-nowrap lg:overflow-hidden"
     >
-      <section class="flex w-full flex-grow flex-col lg:w-2/6">
-        <nav class="mb-8 relative">
-          <div class="inline-block text-left w-6 h-6 ring-1 hover:ring-gray-500 ring-gray-600 rounded active:ring-blue-500">
       <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4">
+        <nav class="relative">
+          <div class="inline-block text-left w-6 h-6 ring-1 hover:ring-2 ring-grayish rounded active:ring-white">
             <button
               type="button"
               class="inline-flex w-full justify-center"
@@ -26,13 +25,13 @@
               aria-expanded="true"
               aria-haspopup="true"
             >
-              <i class="fa-solid fa-bars text-4"></i>
+              <i class="fa-solid fa-bars text-4 text-grayish"></i>
             </button>
           </div>
           <div
-            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white ring-1 hidden ring-black ring-opacity-5 focus:outline-none"
             id="menu"
             role="menu"
+            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-[#2A2A2A] ring-1 hidden ring-black dark:ring-grayish ring-opacity-5 focus:outline-none"
             aria-orientation="vertical"
             data-selected-class="block"
             data-unselected-class="hidden"
@@ -40,8 +39,8 @@
             tabindex="-1">
             <div class="py-1" role="none">
               <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" role="menuitem" tabindex="-1" id="menu-about">About</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200" role="menuitem" tabindex="-1" id="menu-theme">Theme</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05]" role="menuitem" tabindex="-1" id="menu-about">About</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700  dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05]" role="menuitem" tabindex="-1" id="menu-theme">Theme</a>
             </div>
           </div>
         </nav>
