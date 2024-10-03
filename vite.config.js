@@ -1,5 +1,5 @@
 import handlebars from "vite-plugin-handlebars";
-import { resolve } from 'path';
+// import { resolve } from 'path';
 import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
 import shuffle from "lodash/shuffle";
