@@ -94,9 +94,9 @@
               {{#each categories}}
                 {{>filter-tag
                   category=this
-                  selected-class="ring-white opacity-100 hover:opacity-75 text-white"
-                  unselected-class="text-grayish opacity-75 ring-grayish hover:opacity-100"
-                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 rounded-full text-xs uppercase"
+                  selected-class="ring-white opacity-100 text-white ring-2"
+                  unselected-class="text-grayish opacity-75 ring-grayish"
+                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>
@@ -283,9 +283,9 @@
               {{#each this.asset.categories as |cat|}}
                 {{>filter-tag
                   category=cat
-                  selected-class="ring-white opacity-100 hover:opacity-75 text-white"
-                  unselected-class="text-grayish opacity-75 ring-grayish hover:opacity-100"
-                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 rounded-full text-xs uppercase"
+                  selected-class="ring-white opacity-100 text-white ring-2"
+                  unselected-class="text-grayish opacity-75 ring-grayish"
+                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>
