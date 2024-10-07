@@ -45,3 +45,10 @@ npm run preview
 Copyright © 2024 Daniel Berg
 
 - Source code from 2024 onward is distributed under [GNU General Public License v3.0](LICENSE) or later.
+
+**NO AI TRAINING**: Without in any way limiting the artist’s exclusive rights
+under copyright, any use of this gallery to "train" generative artificial
+intelligence (AI) technologies to generate artwork is expressly prohibited. The
+artist reserves all rights to license uses of this work for generative AI
+training and development of machine learning language models.
+
