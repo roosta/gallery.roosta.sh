@@ -50,5 +50,5 @@ Copyright © 2024 Daniel Berg
 under copyright, any use of this gallery to "train" generative artificial
 intelligence (AI) technologies to generate artwork is expressly prohibited. The
 artist reserves all rights to license uses of this work for generative AI
-training and development of machine learning language models.
+training and development of machine learning generative models.
 
