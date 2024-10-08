@@ -80,18 +80,19 @@
 
           <!-- Filter section -->
           <div class="flex flex-grow flex-col justify-end gap-4">
-            <button
-              data-selected-class="filter-button border-dotted border-b
-              opacity-100 hover:opacity-75 cursor-pointer text-white text-sm
-              border-white pb-1 flex justify-between"
-              class="filter-button flex cursor-pointer justify-between border-b border-dotted border-grayish pb-1 text-sm text-grayish opacity-75 hover:opacity-100"
-            >
-              <span>
-                <i class="fa-solid fa-filter text-4"></i>
-                Filters
-              </span>
-              <i class="fa-solid fa-chevron-down text-4"></i>
-            </button>
+            {{#let selected-class="opacity-100 hover:opacity-75 border-white text-white" unselected-class="border-grayish text-grayish opacity-75 hover:opacity-100"}}
+              <button
+                data-selected-class="{{selected-class}}"
+                data-unselected-class="{{unselected-class}}"
+                class="filter-button flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
+              >
+                <span>
+                  <i class="fa-solid fa-filter text-4"></i>
+                  Filters
+                </span>
+                <i class="fa-solid fa-chevron-down text-4"></i>
+              </button>
+            {{/let}}
             <div class="filter-container flex hidden flex-wrap gap-2">
               {{#each categories}}
                 {{>filter-tag

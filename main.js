@@ -29,14 +29,7 @@ const state = {
     file: null,
   },
   // Run possibly before dom is done rendering, before everything else
-  init() {
-    // Initialize tag classname, swapping classname based on active state, so
-    // we need to store the original
-    const filterTag = document.querySelector(".filter-tag");
-    const filterButton = document.querySelector(".filter-button");
-    this.filter.tagClass = filterTag.className;
-    this.filter.buttonClass = filterButton.className;
-  },
+  init() { },
 
   // Toggle categories panel
   toggleCategories(filterButton, clearFilter = false) {
@@ -44,10 +37,16 @@ const state = {
     target.classList.toggle("hidden");
     if (this.categoriesOpen) {
       clearFilter && this.setFilter();
-      filterButton.className = this.filter.buttonClass;
+      filterButton.className = filterButton.className.replace(
+        filterButton.dataset.selectedClass,
+        filterButton.dataset.unselectedClass,
+      );
       this.categoriesOpen = false;
     } else {
-      filterButton.className = filterButton.dataset.selectedClass;
+      filterButton.className = filterButton.className.replace(
+        filterButton.dataset.unselectedClass,
+        filterButton.dataset.selectedClass,
+      )
       this.categoriesOpen = true;
     }
   },
