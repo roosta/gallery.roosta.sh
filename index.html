@@ -38,9 +38,25 @@
             aria-labelledby="menu-button"
             tabindex="-1">
             <div class="py-1" role="none">
-              <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05]" role="menuitem" tabindex="-1" id="menu-about">About</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700  dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05]" role="menuitem" tabindex="-1" id="menu-theme">Theme</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+                <div>
+                  <i class="fa-solid fa-user text-4 text-grayish"></i>
+                  <span>About</span>
+                </div>
+                <i class="fa-solid fa-arrow-right text-4 text-grayish"></i>
+              </a>
+              <label class="cursor-pointer w-full px-4 py-2 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05] flex justify-between items-center" role="menuitem" tabindex="-1" id="menu-theme">
+                <div>
+                  <i class="fa-solid fa-palette text-grayish"></i>
+                  <span>Theme:</span>
+                  <span>Dark</span>
+                </div>
+                <input type="checkbox" value="" class="sr-only peer">
+                <div
+                  class="relative w-9 h-4 bg-gray-200 peer-focus:outline-none peer-focus:ring peer-focus:ring-blue-300 dark:peer-focus:ring-white/[0.2] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-[18px] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-grayish/[0.6]">
+                </div>
+
+              </label>
             </div>
           </div>
         </nav>
