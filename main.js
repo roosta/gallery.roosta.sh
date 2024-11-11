@@ -14,6 +14,7 @@ import intersection from "lodash/intersection";
 const state = {
   categoriesOpen: false,
   menuOpen: false,
+  theme: "light",
   filter: {
     data: [],
     tagClass: "",
@@ -29,8 +30,32 @@ const state = {
     file: null,
   },
   // Run possibly before dom is done rendering, before everything else
-  init() { },
+  init() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if ((!localStorage.theme && prefersDark) || localStorage.theme === "dark") {
+      this.theme = "dark"
+    }
+    const checkbox = document.querySelector(".theme-switch");
+    checkbox.checked = this.theme === "light";
+  },
 
+  setTheme(theme) {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    this.theme = theme;
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+    if ((prefersDark && theme === "dark") || (prefersLight && theme === "light")) {
+      localStorage.removeItem('theme');
+    } else if (prefersLight && theme === "dark") {
+      localStorage.theme = "dark";
+    } else if (prefersDark && theme === "light") {
+      localStorage.theme = "light";
+    }
+  },
   // Toggle categories panel
   toggleCategories(filterButton, clearFilter = false) {
     const target = document.querySelector(".filter-container");
@@ -331,6 +356,10 @@ function setupEvents() {
         state.toggleMenu();
       }
     }
+  })
+  const themeSwitch = document.querySelector(".theme-switch");
+  themeSwitch.addEventListener("click", (event) => {
+    state.setTheme(event.target.checked ? "light" : "dark");
   })
 }
 

@@ -7,6 +7,7 @@ export default {
     "./main.js",
     "./partials/*"
   ],
+  darkMode: 'selector',
   theme: {
     data: {
       selected: 'selected~="true"',
