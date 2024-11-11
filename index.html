@@ -10,6 +10,12 @@
       rel="stylesheet"
     />
     <title>Gallery - Daniel Berg (roosta)</title>
+    <script>
+      document.documentElement.classList.toggle(
+        'dark',
+        localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      )
+    </script>
   </head>
   <body class="flex h-screen w-full flex-col bg-black">
     <main
