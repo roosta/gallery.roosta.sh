@@ -31,7 +31,6 @@ export default {
         "dim-light": "#484848",
         "backdrop-dark": "#0D0D0D",
         "backdrop-light": "#B4B1AB",
-        "whiteish": "#E5E1D8"
       }
     },
   },
