@@ -25,10 +25,13 @@ export default {
         '128': '32rem',
       },
       colors: {
-        white: "#FBFBFB",
-        grayish: "#A4A497",
-        backdrop: "#0D0D0D",
-        whiteish: "#D1D1CA"
+        "white": "#E5E1D8",
+        "black": "#141414",
+        "dim-dark": "#A4A497",
+        "dim-light": "#484848",
+        "backdrop-dark": "#0D0D0D",
+        "backdrop-light": "#B4B1AB",
+        "whiteish": "#E5E1D8"
       }
     },
   },

@@ -17,14 +17,14 @@
       )
     </script>
   </head>
-  <body class="flex h-screen w-full flex-col bg-black">
+  <body class="flex h-screen w-full flex-col dark:bg-black bg-whiteish">
     <main
-      class="flex flex-grow flex-wrap gap-8 p-6 text-white md:gap-8 md:p-8 lg:flex-nowrap lg:overflow-hidden"
+      class="flex flex-grow flex-wrap gap-8 p-6 dark:text-white text-black md:gap-8 md:p-8 lg:flex-nowrap lg:overflow-hidden"
     >
       <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4">
         <nav class="relative">
           <button
-            class="inline-block text-left w-6 h-6 ring-1 hover:ring-2 ring-grayish rounded text-grayish active:text-white active:ring-white"
+            class="inline-block text-left w-6 h-6 ring-1 hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
             type="button"
             id="menu-button"
             aria-expanded="true"
@@ -37,28 +37,28 @@
           <div
             id="menu"
             role="menu"
-            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-[#2A2A2A] ring-1 hidden ring-black dark:ring-grayish ring-opacity-5 focus:outline-none"
+            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus:outline-none drop-shadow-lg"
             aria-orientation="vertical"
             data-selected-class="block"
             data-unselected-class="hidden"
             aria-labelledby="menu-button"
             tabindex="-1">
             <div class="py-1" role="none">
-              <a href="#" class="block px-4 py-3 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+              <a href="#" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
                 <div>
-                  <i class="fa-solid fa-user text-4 text-grayish"></i>
+                  <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
                   <span>About</span>
                 </div>
-                <i class="fa-solid fa-arrow-right text-4 text-grayish"></i>
+                <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
               </a>
-              <label class="cursor-pointer w-full px-4 py-3 text-sm text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/[.05] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
-                <i class="fa-solid fa-palette text-grayish"></i>
+              <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] dark:active:bg-white/[0.1] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
+                <i class="fa-solid fa-palette dark:text-dim-dark text-dim-light"></i>
                 <input type="checkbox" value="" class="sr-only peer theme-switch">
                 <span>Theme:</span>
                 <span class="peer-checked:hidden inline-block">Dark</span>
                 <span class="peer-checked:inline-block hidden">Light</span>
                 <div
-                  class="ml-auto relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-white/[0.2] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-grayish/[0.6]">
+                  class="ml-auto relative w-9 h-5 bg-dim-light peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-black/[0.1] dark:peer-focus:ring-white/[0.1] rounded-full peer dark:bg-white/[0.2] peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] dark:after:bg-white after:bg-black after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-dim-dark">
                 </div>
 
               </label>
@@ -73,22 +73,22 @@
             data-item-active="false"
             data-handle="default"
           >
-            <h1 class="font-work text-4xl text-white">Gallery</h1>
-            <div class="flex flex-col gap-4 font-open text-sm text-grayish">
-              <p class="text-white">
+            <h1 class="font-work font-bold text-4xl dark:text-white text-black">Gallery</h1>
+            <div class="flex flex-col gap-4 font-open text-sm text-dim-dark">
+              <p class="dark:text-white text-black">
                 Welcome to my gallery, it's an eclectic collection of artworks
                 I've made over the years, in various mediums and styles.
               </p>
-              <p class="text-white">
+              <p class="dark:text-white text-black">
                 A lot of my earlier work was physical, most often painted with
                 ink on various backings. Later I've moved mostly over to
                 digital works, a lot of spaces to explore there, and is largely
                 driven by my love for computers.
               </p>
-              <p class="text-white">
+              <p class="dark:text-white text-black">
                 I hope you enjoy!
               </p>
-              <p class="text-grayish mb-4">
+              <p class="dark:text-dim-dark text-dim-light mb-4">
                 - Daniel Berg (roosta)
               </p>
             </div>
@@ -101,7 +101,9 @@
 
           <!-- Filter section -->
           <div class="flex flex-grow flex-col justify-end gap-4">
-            {{#let selected-class="opacity-100 hover:opacity-75 border-white text-white" unselected-class="border-grayish text-grayish opacity-75 hover:opacity-100"}}
+            {{#let
+              selected-class="opacity-100 hover:opacity-75 dark:border-white border-black dark:text-white text-black"
+              unselected-class="dark:border-dim-dark border-dim-light dark:text-dim-dark text-dim-light opacity-75 hover:opacity-100"}}
               <button
                 data-selected-class="{{selected-class}}"
                 data-unselected-class="{{unselected-class}}"
@@ -114,12 +116,12 @@
                 <i class="fa-solid fa-chevron-down text-4"></i>
               </button>
             {{/let}}
-            <div class="filter-container flex hidden flex-wrap gap-2">
+            <div class="filter-container flex hidden flex-wrap gap-2 p-1">
               {{#each categories}}
                 {{>filter-tag
                   category=this
-                  selected-class="ring-white opacity-100 text-white ring-2"
-                  unselected-class="text-grayish opacity-75 ring-grayish"
+                  selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black ring-2 font-bold"
+                  unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
                   class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
@@ -130,7 +132,7 @@
 
       <!-- Gallery section -->
       <section class="flex w-full flex-grow lg:w-4/6">
-        <div class="flex flex-grow overflow-auto">
+        <div class="flex flex-grow overflow-auto px-2">
           <div
             id="gallery"
             class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 pr-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
@@ -139,7 +141,7 @@
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover bg-backdrop bg-center rounded data-selected:bg-contain"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded data-selected:bg-contain"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}
@@ -147,28 +149,28 @@
                   {{>item this
                     aspect="landscape"
                     unselected-class="row-span-1 col-span-full sm:col-span-1 object-cover"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain p-8"
                   }}
                 {{/if}}
                 {{#if asset.portrait}}
                   {{>item this
                     aspect="portrait"
                     unselected-class="col-span-1 row-span-2 md:row-span-2 object-cover"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2 object-contain"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 xl:col-span-3 row-span-2 md:row-span-3 col-start-1 xl:col-start-2 object-contain p-8"
                   }}
                 {{/if}}
                 {{#if asset.square}}
                   {{>item this
                     aspect="square"
                     unselected-class="col-span-1 row-span-1 object-cover"
-                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain"
+                    selected-class="col-span-1 sm:col-span-2 md:col-span-3 row-span-1 md:row-span-2 col-start-1 xl:col-start-2 object-contain p-8"
                   }}
                 {{/if}}
                 {{#if asset.wide}}
                   {{>item this
                     aspect="wide"
                     unselected-class="col-span-1 md:col-span-2 object-contain"
-                    selected-class="col-span-1 sm:col-span-2 row-span-1 lg:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 col-start-1 object-contain"
+                    selected-class="col-span-1 sm:col-span-2 row-span-1 lg:row-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 col-start-1 object-contain p-8"
                   }}
                 {{/if}}
                 {{>detail asset=asset tag="tail" class="col-span-full" selected="block lg:hidden" unselected="hidden"}}
@@ -245,14 +247,14 @@
         data-handle="{{this.asset.file}}"
         >
         <div class="flex flex-col gap-6">
-          <h1 class="font-work text-4xl text-white">{{this.asset.title}}</h1>
+          <h1 class="font-work text-4xl dark:text-white text-black font-bold">{{this.asset.title}}</h1>
 
           <!-- Palette -->
           {{#if this.asset.palette}}
           <div class="flex gap-2 flex-wrap">
             {{#each this.asset.palette as |color|}}
             <span
-              class="rounded h-12 w-12 rounded ring-2 m-1 ring-white/30 ring-offset-2 ring-offset-black"
+              class="rounded h-12 w-12 rounded ring-2 m-1 dark:ring-white/30 ring-black/40 ring-offset-2 dark:ring-offset-black ring-offset-white"
               style="background-color: {{color}};"
               >
             </span>
@@ -261,19 +263,19 @@
           {{/if}}
 
           <!-- Description -->
-          <p class="font-open text-sm text-white">{{this.asset.description}}</p>
+          <p class="font-open text-sm dark:text-white text-black">{{this.asset.description}}</p>
 
           <!-- Video controls -->
           {{#if this.asset.video}}
-          <div class="flex text-grayish gap-2 items-center">
+          <div class="flex text-dim-dark gap-2 items-center">
             <button
               data-handle="{{this.asset.file}}"
-              class="play-pause ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              class="play-pause ring-1 m-px ring-white/[.2] hover:ring-dim-dark hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-play text-4"></i>
             </button>
             <button
               data-handle="{{this.asset.file}}"
-              class="stop ring-1 m-px ring-white/[.2] hover:ring-grayish hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              class="stop ring-1 m-px ring-white/[.2] hover:ring-dim-dark hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-stop text-4"></i>
             </button>
             <input
@@ -287,12 +289,13 @@
           {{/if}}
 
           <!-- Asset link -->
+          <!-- TODO: Visited -->
           {{#if this.asset.link}}
           <div>
             <a
               href="{{this.asset.link.url}}"
               target="_blank"
-              class="border-b border-dotted text-sm opacity-75 visited:text-grayish hover:opacity-100"
+              class="border-b border-dotted text-sm dark:text-dim-dark text-dim-light hover:text-black dark:hover:text-white"
               >
               <i class="fa-solid fa-link text-4"></i>
               <span> {{this.asset.link.title}} </span>
@@ -302,13 +305,13 @@
 
           <!-- Categories -->
           <div class="">
-            <h2 class="mb-4 font-open text-white">Categories</h2>
+            <h2 class="mb-4 font-open dark:text-white text-black">Categories</h2>
             <div class="flex gap-2">
               {{#each this.asset.categories as |cat|}}
                 {{>filter-tag
                   category=cat
-                  selected-class="ring-white opacity-100 text-white ring-2"
-                  unselected-class="text-grayish opacity-75 ring-grayish"
+                  selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black font-bold ring-2"
+                  unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
                   class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
