@@ -267,15 +267,15 @@
 
           <!-- Video controls -->
           {{#if this.asset.video}}
-          <div class="flex text-dim-dark gap-2 items-center">
+          <div class="flex dark:text-dim-dark text-dim-light gap-2 items-center">
             <button
               data-handle="{{this.asset.file}}"
-              class="play-pause ring-1 m-px ring-white/[.2] hover:ring-dim-dark hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              class="play-pause ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-play text-4"></i>
             </button>
             <button
               data-handle="{{this.asset.file}}"
-              class="stop ring-1 m-px ring-white/[.2] hover:ring-dim-dark hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
+              class="stop ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center">
               <i class="fa-solid fa-stop text-4"></i>
             </button>
             <input
@@ -284,7 +284,7 @@
               value="0"
               min="0"
               max="100"
-              class="seek w-3/6 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+              class="seek w-3/6 h-2 bg-dim-light dark:bg-dim-dark/40 rounded-lg appearance-none cursor-pointer" />
           </div>
           {{/if}}
 
