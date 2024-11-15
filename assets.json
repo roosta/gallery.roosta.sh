@@ -62,10 +62,10 @@
     "description": "A floating island for an unreleased shoot-em-up game prototype. Would bob slightly up and down, impeding the player."
   },
   {
-    "title": "Development fluid experiment",
+    "title": "Development Fluid Experiment",
     "file": "./assets/fluid.jpg",
     "categories": ["darkroom", "experiment"],
-    "description": "Painting with development fluid on light sensitive paper. Hard to control the result, along with exposure to light, turned out interesting though"
+    "description": "Painting with development fluid on light sensitive paper. Hard to control the result, along with exposure to light, turned out interesting though."
   },
   {
     "title": "Goat Boys LP Cover Design",
@@ -87,7 +87,7 @@
     "title": "Hooded Moon",
     "file": "./assets/hooded_moon.jpg",
     "categories": ["pixel art", "album cover"],
-    "description": "Album cover draft for an electronica band. It was not used, but I still like how it turned out. Would need additional work, and is considered unfinished."
+    "description": "Album cover draft for an electronica band. Never finished, and there are left out space intended to be filled by it never went beyond a draft. Inspired by other electronica album covers and video game intro screens."
   },
   {
     "title": "Proboscis Bibo",
@@ -100,14 +100,15 @@
     "title": "Self Portrait: Gesture",
     "file": "./assets/portrait_gesture.jpg",
     "categories": ["painting", "ink", "portrait"],
-    "description": "Self portrait gesturing, using ink on plastic paper. Part of a series of self portriaits done in this style."
+    "description": "Self portrait gesturing, using ink on plastic paper. Part of a series of self portraits done in this style."
   },
   {
     "title": "Proboscis Plicatus",
     "file": "./assets/proboscis_plicatus.jpg",
     "interactive": true,
+    "ignored": true,
     "categories": ["drawing", "pattern", "mask"],
-    "description": "One in a series of insect-like mask wearing figures. Was originally part of a website design, make sure to advance the image to the next one to see the version it would transform into"
+    "description": "One in a series of insect-like mask wearing figures. Was originally part of a website design, make sure to advance the image to the next one to see the version it would transform into."
   },
   {
     "title": "Midsummer 1",
@@ -191,7 +192,7 @@
     "title": "Pattern Composition",
     "file": "./assets/pattern_comp.jpg",
     "categories": ["drawing", "pattern"],
-    "description": "Ornamental pattern drawing, scaled and mirrored. Scan quality is not great, but I like the nouveau inspiration."
+    "description": "Ornamental pattern drawing, portions are scaled and mirrored for effect. Inspired partially by Art Nouveau, but mainly a freehand pattern. You can see similar patterns in some of my other drawings as well."
   },
   {
     "title": "Pray Pencil",
@@ -203,7 +204,7 @@
     "title": "Domestic Gardening",
     "file": "./assets/domestic_gardening.png",
     "categories": ["vector", "design", "logo"],
-    "description": "Several logo drafts for a gardening company. These were rejected, but I still like them."
+    "description": "Logo color variations for a gardening company. I went of a bit off track on this one, and it was never used, but I still enjoy the result."
   },
   {
     "title": "Salt Dunes",
@@ -233,7 +234,7 @@
     "title": "Proboscis Color",
     "file": "./assets/proboscis_color.jpg",
     "categories": ["drawing", "marker", "mask"],
-    "description": "Watercolor & marker. Drawing of a kneeling masked person. Part of a series of mask drawings and paintings exploring similar themes. Drawn on very cheap paper, so I was never able to get it fully flat when scanning."
+    "description": "Watercolor & marker. Drawing of a kneeling masked person. Part of a series of mask drawings and paintings exploring similar themes. Drawn on printer paper, so I was never able to get it fully flat when scanning."
   },
   {
     "title": "Stones Study",
@@ -257,13 +258,13 @@
     "title": "VLN Cover Draft",
     "file": "./assets/vln.jpg",
     "categories": ["pixel art", "album cover"],
-    "description": "Pixel art draft for an album cover. Not used but I got to explore text from that perspective, general pixel art texturing, and light."
+    "description": "Pixel art draft for an album cover. Never finished, and there are left out space intended to be filled by it never went beyond a draft. Inspired by electronica album covers and video game intro screens."
   },
   {
     "title": "Wind Album Cover",
     "file": "./assets/wind.jpg",
-    "categories": ["design", "album cover"],
-    "description": "Cover for a 60s inspired jam band. Taking heavy inspiration from other illustrations from the era of the bands style, and Art Nouveau. Marker on paper. Later adjusted for color balance, and mirrored certain sections in the border."
+    "categories": ["design", "album cover", "pattern"],
+    "description": "Album cover for a 60s inspired jam band. Taking heavy inspiration from other illustrations from the era of the bands style, and Art Nouveau. Marker on paper. Later adjusted for color balance, and mirrored certain sections like the border for symmetry."
   },
   {
     "title": "Cloth Study",
@@ -297,13 +298,13 @@
     "title": "Portrait: Per",
     "file": "./assets/portrait_per.jpg",
     "categories": ["painting", "portrait", "ink"],
-    "description": "Portrait painted as part of a celebration, only captured with poor camera, will update when I get the chance. Ink on plastic paper"
+    "description": "Portrait painted as part of a celebration, only captured with a poor camera, and a better scan will replace this eventually. Ink on plastic paper."
   },
   {
     "title": "Baphomet",
     "file": "./assets/baphomet.png",
     "categories": ["pixel art", "mask"],
-    "description": "A very large pixel art skeleton featuring a plague mask. I no longer remember what spurred on this creation, but it was supposed to be part of something, originally never finished it. Came back later for finishing touches."
+    "description": "A very large pixel art skeleton featuring a plague mask. I no longer remember what spurred on this creation, but it was supposed to be part of something, originally never finished it. Came back later for and touched up some details. I would still consider this unfinished so far though."
   },
   {
     "title": "Datorder: Logo Draft",
@@ -315,14 +316,13 @@
     "title": "Untitled Game Asset: Cliff",
     "file": "./assets/cliff.png",
     "categories": ["pixel art", "game"],
-    "description": "Landscape asset from an unreleased, untitled shoot-em-up game prototype. Part of a larger tileset for the first work."
+    "description": "Landscape asset from an unreleased, untitled shoot-em-up game prototype. Part of a larger tileset for a mist covered landscape, and the first level of the game."
   },
   {
     "title": "Lamp Noir",
     "file": "./assets/lamp_noir.png",
-    "ignored": true,
     "categories": ["design", "vector", "pattern"],
-    "description": "A lamp face design, made to look like a glass painting. Cut with a laser cutter and cutouts painted in various colors, illuminated with a light. The implementation was poor but the pattern turned out great."
+    "description": "A lamp face design, made to look like a glass painting. Cut with a laser cutter and cutouts painted in various colors, illuminated with a light. I tried making one, but it didn't turn out well, but this pattern did."
   },
   {
     "title": "Datorder: Eight",
@@ -360,10 +360,10 @@
     "title": "Srcery Logo",
     "file": "./assets/srcery.png",
     "categories": ["design", "vector", "logo"],
-    "description": "Logo for a colorscheme I made, for various editors. Meant to invoke a certain occult vibe. The colors in the logo are the ones from the color scheme.",
+    "description": "Logo for a colorscheme I made for various code editors. Meant to invoke a certain occult vibe, given it's name. The colors in the logo are the ones from the color scheme.",
     "link": {
       "url": "https://srcery.sh/",
-      "title": "Srcery website"
+      "title": "Srcery Website"
     }
   },
   {
