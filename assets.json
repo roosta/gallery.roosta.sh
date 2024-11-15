@@ -351,13 +351,6 @@
     "description": "Logo design made for a programming library for CSS styling web pages. Repository has been archived, but it's still available in it's current state. I was unable to keep maintaining it, was a lot harder when I didn't actively used it due to employment and priority changes."
   },
   {
-    "title": "Monoxie Vector Experiment",
-    "ignored": true,
-    "file": "./assets/monoxie_logo.png",
-    "categories": ["design", "vector", "experiment"],
-    "description": "Messing around in inkscpe. An attempt at making vector looking less \"slick\", turned out instresting."
-  },
-  {
     "title": "Morning Fog",
     "file": "./assets/morning_fog.jpg",
     "categories": ["photo"],
