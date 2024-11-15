@@ -11,6 +11,7 @@
     />
     <title>Gallery - Daniel Berg (roosta)</title>
     <script>
+      // Set dark class earily to avoid fuoc
       document.documentElement.classList.toggle(
         'dark',
         localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
