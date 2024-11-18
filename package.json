@@ -14,7 +14,7 @@
     "animate-css-grid": "^1.5.1",
     "animejs": "^3.2.2",
     "lodash": "^4.17.21",
-    "tailwindcss": "^3.4.14"
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
