@@ -320,6 +320,11 @@ function setupEvents() {
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach(el => {
     el.addEventListener("click", () => state.setSelected(el))
+    el.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        state.setSelected(el)
+      }
+    })
   })
   const filterButton = document.querySelector(".filter-button");
   filterButton.addEventListener("click", () => {

@@ -192,6 +192,7 @@
           data-playing="false"
           muted
           loop
+          role="button"
           data-categories="{{asset.categories}}"
           class="{{class}} {{unselected-class}} {{focus-class}}"
           data-focus-class="{{focus-class}}"
@@ -204,6 +205,8 @@
       {{else}}
         <figure
           data-file="{{asset.file}}"
+          role="button"
+          tabindex="0"
           style="background-image: url({{asset.file}});"
           data-aspect="{{aspect}}"
           data-selected="false"
