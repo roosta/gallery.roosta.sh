@@ -14,6 +14,7 @@ import intersection from "lodash/intersection";
 const state = {
   categoriesOpen: false,
   menuOpen: false,
+  menuIndex: -1,
   theme: "light",
   filter: {
     data: [],
@@ -56,6 +57,7 @@ const state = {
       localStorage.theme = "light";
     }
   },
+
   // Toggle categories panel
   toggleCategories(filterButton, clearFilter = false) {
     const target = document.querySelector(".filter-container");
@@ -111,25 +113,80 @@ const state = {
     }
   },
 
-  toggleMenu(event, menuButton) {
+  openMenu() {
     const menu = document.getElementById("menu")
-    if (this.menuOpen) {
-      this.menuOpen = false;
-      menu.className = menu.className.replace(
-        menu.dataset.selectedClass,
-        menu.dataset.unselectedClass,
-      )
-      menuButton.setAttribute('aria-expanded', 'false');
-    } else {
-      this.menuOpen = true;
-      menu.className = menu.className.replace(
-        menu.dataset.unselectedClass,
-        menu.dataset.selectedClass
-      )
-      menuButton.setAttribute('aria-expanded', 'true');
+    const button = document.getElementById("menu-button");
+    this.menuOpen = true;
+    menu.className = menu.className.replace(
+      menu.dataset.unselectedClass,
+      menu.dataset.selectedClass
+    )
+    button.setAttribute("aria-expanded", "true");
+  },
+
+  closeMenu(focus = false) {
+    const menu = document.getElementById("menu")
+    const button = document.getElementById("menu-button");
+    this.menuOpen = false;
+    menu.className = menu.className.replace(
+      menu.dataset.selectedClass,
+      menu.dataset.unselectedClass,
+    )
+    if (focus) button.focus();
+    button.setAttribute("aria-expanded", "false");
+  },
+  toggleMenu() {
+    if (this.menuOpen) this.closeMenu();
+    else this.openMenu();
+  },
+
+  // Handle opening and closing menu from event
+  handleMenuButton(event) {
+    if (event.type === "click") {
+      this.toggleMenu();
+    } else if (event?.key === "ArrowDown" ||
+      event?.key === "Enter" || event?.key === " ") {
+      event.preventDefault();
+      this.openMenu();
+      this.focusMenuItem(0);
     }
-    if (event) {
-      event.stopPropagation();
+  },
+
+  focusMenuItem(index) {
+    const menuItems = document.querySelectorAll('[role="menuitem"]');
+    // Wrap around if we go past the ends
+    if (index >= menuItems.length) index = 0;
+    if (index < 0) index = menuItems.length - 1;
+
+    menuItems[index].focus();
+    this.menuIndex = index;
+
+  },
+
+  // Handle keyboard navigation for menu
+  handleMenuNav(event) {
+
+    event.preventDefault();
+
+    switch (event.key) {
+      case "ArrowDown":
+        this.focusMenuItem(this.menuIndex + 1);
+        break;
+      case "ArrowUp":
+        this.focusMenuItem(this.menuIndex - 1);
+        break;
+      case 'Enter':
+      case ' ':
+        if (document.activeElement.tagName === 'LABEL') {
+          // For the theme toggle
+          const checkbox = document.activeElement.querySelector('input[type="checkbox"]');
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event('change'));
+        } else {
+          // For regular menu items
+          document.activeElement.click();
+        }
+
     }
   },
 
@@ -295,7 +352,7 @@ function stopVideo(handle) {
     icon.classList.replace("fa-pause", "fa-play");
   }
   video.dataset.playing = false;
-  video.pause();;
+  video.pause();
   video.currentTime = 0;
   input.value = 0;
 }
@@ -316,6 +373,9 @@ function seekUpdate(video) {
 }
 
 function setupEvents() {
+
+  /// Gallery
+  // ------------------------
   const gridItems = document.querySelectorAll(".grid-item");
   gridItems.forEach(el => {
     el.addEventListener("click", () => state.setSelected(el))
@@ -325,6 +385,9 @@ function setupEvents() {
       }
     })
   })
+
+  /// Filters
+  // ------------------------
   const filterButton = document.querySelector(".filter-button");
   filterButton.addEventListener("click", () => {
     return state.toggleCategories(filterButton, true);
@@ -334,6 +397,9 @@ function setupEvents() {
   filterTags.forEach(tag => {
     tag.addEventListener("click", () => state.setFilter(tag, true))
   })
+
+  /// Videos
+  // ------------------------
   const playPauseButtons = document.querySelectorAll(".play-pause");
   playPauseButtons.forEach(button => {
     button.addEventListener("click", () => toggleVideo(button))
@@ -350,19 +416,30 @@ function setupEvents() {
   videoElements.forEach(video => {
     video.addEventListener('timeupdate', () => seekUpdate(video));
   })
+
+  /// Menu
+  // ------------------------
   const menuButton = document.getElementById("menu-button");
-  menuButton.addEventListener("click", (event) => state.toggleMenu(event, menuButton))
-  document.addEventListener("click", (event) => {
+  menuButton.addEventListener("click", (e) => state.handleMenuButton(e))
+  menuButton.addEventListener("keydown", (e) => state.handleMenuButton(e))
+
+  const menu = document.getElementById("menu");
+  menu.addEventListener("keydown", (e) => state.handleMenuNav(e))
+
+  document.addEventListener("keydown", (e) => {
+    if (state.menuOpen && e.key === "Escape") {
+      state.closeMenu(true);
+    }
+  })
+  document.addEventListener("click", (e) => {
     if (state.menuOpen) {
-      const target = document.getElementById("menu");
-      const withinBoundaries = event.composedPath().includes(target);
-      if (!withinBoundaries) {
-        state.toggleMenu(event, menuButton);
+      if (!menu.contains(e.target) && !menuButton.contains(e.target)) {
+        state.closeMenu();
       }
     }
   })
   const themeSwitch = document.querySelector(".theme-switch");
-  themeSwitch.addEventListener("click", (event) => {
+  themeSwitch.addEventListener("change", (event) => {
     state.setTheme(event.target.checked ? "light" : "dark");
   })
 }
