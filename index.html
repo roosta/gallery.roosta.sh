@@ -25,7 +25,7 @@
       <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4">
         <nav class="relative">
           <button
-            class="inline-block text-left w-6 h-6 ring-1 focus:outline-none focus:dark:ring-white focus:ring-2 focus:dark:text-white focus:text-black focus:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
+            class="inline-block text-left w-6 h-6 ring-1 focus-visible:outline-none focus-visible:dark:ring-white focus-visible:ring-2 focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
             type="button"
             id="menu-button"
             aria-expanded="true"
@@ -38,21 +38,21 @@
           <div
             id="menu"
             role="menu"
-            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus:outline-none drop-shadow-lg"
+            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus-visible:outline-none drop-shadow-lg"
             aria-orientation="vertical"
             data-selected-class="block"
             data-unselected-class="hidden"
             aria-labelledby="menu-button"
             tabindex="-1">
             <div class="py-1" role="none">
-              <a href="#" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none dark:focus:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+              <a href="#" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-none dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
                 <div>
                   <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
                   <span>About</span>
                 </div>
                 <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
               </a>
-              <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus:bg-black/[0.08] focus:outline-none dark:active:bg-white/[0.1] dark:focus:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
+              <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-none dark:active:bg-white/[0.1] dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
                 <i class="fa-solid fa-palette dark:text-dim-dark text-dim-light"></i>
                 <input type="checkbox" value="" class="sr-only peer theme-switch">
                 <span>Theme:</span>
@@ -107,7 +107,7 @@
               <button
                 data-selected-class="{{selected-class}}"
                 data-unselected-class="{{unselected-class}}"
-                class="filter-button focus:outline-none focus:font-bold focus:text-black focus:dark:text-white focus:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
+                class="filter-button focus-visible:outline-none focus-visible:font-bold focus-visible:text-black focus-visible:dark:text-white focus-visible:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
               >
                 <span>
                   <i class="fa-solid fa-filter text-4"></i>
