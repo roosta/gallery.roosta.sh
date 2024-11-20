@@ -109,8 +109,6 @@ const state = {
         )
       })
     }
-
-    // }
   },
 
   toggleMenu(event) {
