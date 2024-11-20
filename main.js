@@ -111,7 +111,7 @@ const state = {
     }
   },
 
-  toggleMenu(event) {
+  toggleMenu(event, menuButton) {
     const menu = document.getElementById("menu")
     if (this.menuOpen) {
       this.menuOpen = false;
@@ -119,13 +119,14 @@ const state = {
         menu.dataset.selectedClass,
         menu.dataset.unselectedClass,
       )
+      menuButton.setAttribute('aria-expanded', 'false');
     } else {
-
       this.menuOpen = true;
       menu.className = menu.className.replace(
         menu.dataset.unselectedClass,
         menu.dataset.selectedClass
       )
+      menuButton.setAttribute('aria-expanded', 'true');
     }
     if (event) {
       event.stopPropagation();
@@ -350,13 +351,13 @@ function setupEvents() {
     video.addEventListener('timeupdate', () => seekUpdate(video));
   })
   const menuButton = document.getElementById("menu-button");
-  menuButton.addEventListener("click", (event) => state.toggleMenu(event))
+  menuButton.addEventListener("click", (event) => state.toggleMenu(event, menuButton))
   document.addEventListener("click", (event) => {
     if (state.menuOpen) {
       const target = document.getElementById("menu");
       const withinBoundaries = event.composedPath().includes(target);
       if (!withinBoundaries) {
-        state.toggleMenu();
+        state.toggleMenu(event, menuButton);
       }
     }
   })
