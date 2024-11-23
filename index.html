@@ -28,6 +28,7 @@
             class="inline-block text-left w-6 h-6 ring-1 focus-visible:outline-none focus-visible:dark:ring-white focus-visible:ring-2 focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
             type="button"
             id="menu-button"
+            aria-label="navigation dropdown menu button"
             aria-expanded="true"
             aria-haspopup="true"
             >
@@ -106,6 +107,7 @@
               unselected-class="dark:border-dim-dark border-dim-light dark:text-dim-dark text-dim-light opacity-75 hover:opacity-100"}}
               <button
                 data-selected-class="{{selected-class}}"
+                aria-label="filter button"
                 data-unselected-class="{{unselected-class}}"
                 class="filter-button focus-visible:outline-none focus-visible:font-bold focus-visible:text-black focus-visible:dark:text-white focus-visible:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
               >
