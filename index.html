@@ -20,9 +20,9 @@
   </head>
   <body class="flex h-screen w-full flex-col dark:bg-black bg-white">
     <main
-      class="flex flex-grow flex-wrap gap-8 p-6 dark:text-white text-black md:gap-8 md:p-8 lg:flex-nowrap lg:overflow-hidden"
+      class="flex flex-grow flex-wrap gap-6 p-4 dark:text-white text-black md:p-6 lg:flex-nowrap lg:overflow-hidden"
     >
-      <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4">
+      <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4 p-2">
         <nav class="relative">
           <button
             class="inline-block text-left w-6 h-6 ring-1 focus-visible:outline-none focus-visible:dark:ring-white focus-visible:ring-2 focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
@@ -67,7 +67,7 @@
             </div>
           </div>
         </nav>
-        <div class="flex flex-grow flex-col overflow-auto">
+        <div class="flex flex-grow flex-col overflow-auto pr-4">
 
           <!-- Header section -->
           <header
@@ -134,10 +134,10 @@
 
       <!-- Gallery section -->
       <section class="flex w-full flex-grow lg:w-4/6">
-        <div class="flex flex-grow overflow-auto px-2 focus-visible:outline-none focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:dark:outline-white focus-visible:outline-black rounded">
+        <div class="flex flex-grow overflow-auto focus-visible:outline-none focus-visible:outline-offset-8 focus-visible:outline-2 focus-visible:dark:outline-white focus-visible:outline-black rounded">
           <div
             id="gallery"
-            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 pr-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 p-2 pr-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
           >
             {{! prettier-ignore }}
             {{#each assets}}
