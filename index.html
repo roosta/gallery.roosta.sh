@@ -276,12 +276,14 @@
             <div class="flex gap-2">
               <button
                 data-handle="{{this.asset.file}}"
-                class="play-pause ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white">
+                aria-label="Play/pause button"
+                class="play-pause ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black">
                 <i class="fa-solid fa-play text-4"></i>
               </button>
               <button
                 data-handle="{{this.asset.file}}"
-                class="stop ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white">
+                aria-label="Stop button"
+                class="stop ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black">
                 <i class="fa-solid fa-stop text-4"></i>
               </button>
             </div>
@@ -289,6 +291,10 @@
               data-handle="{{this.asset.file}}"
               type="range"
               value="0"
+              role="slider"
+              aria-label="Video progress"
+              aria-valuemin="0"
+              aria-valuemax="100"
               min="0"
               max="100"
               class="seek w-3/6 h-2 bg-dim-light dark:bg-dim-dark/40 rounded-lg appearance-none cursor-pointer focus-visible:outline-none focus-visible:outline-offset-8 focus-visible:outline-1 focus-visible:dark:outline-white focus-visible:outline-black" />
