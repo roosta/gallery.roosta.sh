@@ -365,6 +365,25 @@ function seekChange(input) {
   video.currentTime = position;
 }
 
+function handleSeekKeyboard(event) {
+  const input = event.target;
+  const step = 5; // 5% step for keyboard navigation
+  switch(event.key) {
+    case 'ArrowRight':
+    case 'ArrowUp':
+      event.preventDefault();
+      input.value = Math.min(100, parseInt(input.value) + step);
+      seekChange(input);
+      break;
+    case 'ArrowLeft':
+    case 'ArrowDown':
+      event.preventDefault();
+      input.value = Math.max(0, parseInt(input.value) - step);
+      seekChange(input);
+      break;
+  }
+}
+
 function seekUpdate(video) {
   const handle = video.dataset.file;
   const input = document.querySelector(`input[data-handle="${handle}"]`);
@@ -411,6 +430,7 @@ function setupEvents() {
   const seekInputs = document.querySelectorAll("input.seek");
   seekInputs.forEach(input => {
     input.addEventListener("change", () => seekChange(input))
+    input.addEventListener("keydown", handleSeekKeyboard);
   })
   const videoElements = document.querySelectorAll("video");
   videoElements.forEach(video => {
