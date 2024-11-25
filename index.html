@@ -124,7 +124,7 @@
                   category=this
                   selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black ring-2 font-bold"
                   unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
-                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
+                  class="cursor-pointer filter-tag focus-visible:outline-none focus-visible:ring-2 focus-visible:dark:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>
@@ -309,7 +309,7 @@
           {{/if}}
 
           <!-- Categories -->
-          <div class="">
+          <div class="px-1">
             <h2 class="mb-4 font-open dark:text-white text-black">Categories</h2>
             <div class="flex gap-2">
               {{#each this.asset.categories as |cat|}}
@@ -317,7 +317,7 @@
                   category=cat
                   selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black font-bold ring-2"
                   unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
-                  class="cursor-pointer filter-tag inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
+                  class="cursor-pointer filter-tag focus-visible:outline-none focus-visible:ring-2 focus-visible:dark:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>
