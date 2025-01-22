@@ -42,7 +42,7 @@ npm run preview
 
 ## License
 
-Copyright © 2024 Daniel Berg
+Copyright © 2016 Daniel Berg
 
 - Source code from 2024 onward is distributed under [GNU General Public License v3.0](LICENSE) or later.
 
