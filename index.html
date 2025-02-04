@@ -20,12 +20,12 @@
   </head>
   <body class="flex h-screen w-full flex-col dark:bg-black bg-white">
     <main
-      class="flex flex-grow flex-wrap gap-6 p-4 dark:text-white text-black md:p-6 lg:flex-nowrap lg:overflow-hidden"
+      class="flex grow flex-wrap gap-6 p-4 dark:text-white text-black md:p-6 lg:flex-nowrap lg:overflow-hidden"
     >
-      <section class="flex w-full flex-grow flex-col lg:w-2/6 gap-4 p-2 lg:pr-4 overflow-auto">
+      <section class="flex w-full grow flex-col lg:w-2/6 gap-4 p-2 lg:pr-4 overflow-auto">
         <nav class="relative">
           <button
-            class="inline-block text-left w-6 h-6 ring-1 focus-visible:outline-none focus-visible:dark:ring-white focus-visible:ring-2 focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
+            class="flex items-center justify-center text-left w-6 h-6 ring-1 focus-visible:outline-hidden dark:focus-visible:ring-white focus-visible:ring-2 dark:focus-visible:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded-sm dark:text-dim-dark text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
             type="button"
             id="menu-button"
             aria-label="navigation dropdown menu button"
@@ -39,21 +39,21 @@
           <div
             id="menu"
             role="menu"
-            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus-visible:outline-none drop-shadow-lg"
+            class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus-visible:outline-hidden drop-shadow-lg"
             aria-orientation="vertical"
             data-selected-class="block"
             data-unselected-class="hidden"
             aria-labelledby="menu-button"
             tabindex="-1">
             <div class="py-1" role="none">
-              <a href="#" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-none dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+              <a href="#" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
                 <div>
                   <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
                   <span>About</span>
                 </div>
                 <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
               </a>
-              <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-none dark:active:bg-white/[0.1] dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
+              <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:active:bg-white/[0.1] dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
                 <i class="fa-solid fa-palette dark:text-dim-dark text-dim-light"></i>
                 <input type="checkbox" value="" class="sr-only peer theme-switch">
                 <span>Theme:</span>
@@ -67,11 +67,11 @@
             </div>
           </div>
         </nav>
-        <div class="flex flex-grow flex-col">
+        <div class="flex grow flex-col">
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-6 data-item-active:lg:hidden"
+            class="flex flex-col gap-6 lg:data-item-active:hidden"
             data-item-active="false"
             data-handle="default"
           >
@@ -101,7 +101,7 @@
           {{/each}}
 
           <!-- Filter section -->
-          <div class="flex flex-grow flex-col justify-end gap-4">
+          <div class="flex grow flex-col justify-end gap-4">
             {{#let
               selected-class="opacity-100 hover:opacity-75 dark:border-white border-black dark:text-white text-black"
               unselected-class="dark:border-dim-dark border-dim-light dark:text-dim-dark text-dim-light opacity-75 hover:opacity-100"}}
@@ -109,7 +109,7 @@
                 data-selected-class="{{selected-class}}"
                 aria-label="filter button"
                 data-unselected-class="{{unselected-class}}"
-                class="filter-button focus-visible:outline-none focus-visible:font-bold focus-visible:text-black focus-visible:dark:text-white focus-visible:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
+                class="filter-button focus-visible:outline-hidden focus-visible:font-bold focus-visible:text-black dark:focus-visible:text-white focus-visible:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
               >
                 <span>
                   <i class="fa-solid fa-filter text-4"></i>
@@ -124,7 +124,7 @@
                   category=this
                   selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black ring-2 font-bold"
                   unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
-                  class="cursor-pointer filter-tag focus-visible:outline-none focus-visible:ring-2 focus-visible:dark:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
+                  class="cursor-pointer filter-tag focus-visible:outline-hidden focus-visible:ring-2 dark:focus-visible:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>
@@ -133,17 +133,17 @@
       </section>
 
       <!-- Gallery section -->
-      <section class="flex w-full flex-grow lg:w-4/6">
-        <div class="flex flex-grow overflow-auto focus-visible:outline-none focus-visible:outline-offset-6 focus-visible:outline-2 focus-visible:dark:outline-white focus-visible:outline-black rounded">
+      <section class="flex w-full grow lg:w-4/6">
+        <div class="flex grow overflow-auto focus-visible:outline-hidden focus-visible:outline-offset-6 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black rounded-sm">
           <div
             id="gallery"
-            class="grid flex-grow grid-flow-dense auto-rows-gallery gap-8 p-2 lg:pr-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+            class="grid grow grid-flow-dense auto-rows-gallery gap-8 p-2 lg:pr-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
           >
             {{! prettier-ignore }}
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded data-selected:bg-contain focus-visible:outline-none focus-visible:outline-offset-4 focus-visible:outline-2 focus-visible:dark:outline-white focus-visible:outline-black"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded-sm data-selected:bg-contain focus-visible:outline-hidden focus-visible:outline-offset-4 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}
@@ -259,7 +259,7 @@
           <div class="flex gap-2 flex-wrap">
             {{#each this.asset.palette as |color|}}
             <span
-              class="rounded h-12 w-12 rounded ring-2 m-1 dark:ring-white/30 ring-black/40 ring-offset-2 dark:ring-offset-black ring-offset-white"
+              class="rounded-sm h-12 w-12 rounded-sm ring-2 m-1 dark:ring-white/30 ring-black/40 ring-offset-2 dark:ring-offset-black ring-offset-white"
               style="background-color: {{color}};"
               >
             </span>
@@ -277,13 +277,13 @@
               <button
                 data-handle="{{this.asset.file}}"
                 aria-label="Play/pause button"
-                class="play-pause ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black">
+                class="play-pause ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded-sm flex items-center justify-center focus-visible:outline-hidden focus-visible:outline-2 dark:focus-visible:ring-white dark:focus-visible:text-white focus-visible:text-black focus-visible:ring-black">
                 <i class="fa-solid fa-play text-4"></i>
               </button>
               <button
                 data-handle="{{this.asset.file}}"
                 aria-label="Stop button"
-                class="stop ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded flex items-center justify-center focus-visible:outline-none focus-visible:outline-2 focus-visible:dark:ring-white focus-visible:dark:text-white focus-visible:text-black focus-visible:ring-black">
+                class="stop ring-1 m-px dark:ring-white/20 ring-black/50 dark:hover:ring-dim-dark hover:ring-dim-light hover:text-black dark:hover:text-white w-6 h-6 hover:cursor-pointer rounded-sm flex items-center justify-center focus-visible:outline-hidden focus-visible:outline-2 dark:focus-visible:ring-white dark:focus-visible:text-white focus-visible:text-black focus-visible:ring-black">
                 <i class="fa-solid fa-stop text-4"></i>
               </button>
             </div>
@@ -297,7 +297,7 @@
               aria-valuemax="100"
               min="0"
               max="100"
-              class="seek w-3/6 h-2 bg-dim-light dark:bg-dim-dark/40 rounded-lg appearance-none cursor-pointer focus-visible:outline-none focus-visible:outline-offset-8 focus-visible:outline-1 focus-visible:dark:outline-white focus-visible:outline-black" />
+              class="seek w-3/6 h-2 bg-dim-light dark:bg-dim-dark/40 rounded-lg appearance-none cursor-pointer focus-visible:outline-hidden focus-visible:outline-offset-8 focus-visible:outline-1 dark:focus-visible:outline-white focus-visible:outline-black" />
           </div>
           {{/if}}
 
@@ -325,7 +325,7 @@
                   category=cat
                   selected-class="dark:ring-white ring-black opacity-100 dark:text-white text-black font-bold ring-2"
                   unselected-class="dark:text-dim-dark text-dim-light dark:opacity-75 dark:ring-dim-dark ring-dim-light"
-                  class="cursor-pointer filter-tag focus-visible:outline-none focus-visible:ring-2 focus-visible:dark:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
+                  class="cursor-pointer filter-tag focus-visible:outline-hidden focus-visible:ring-2 dark:focus-visible:ring-white focus-visible:ring-black inline-flex items-center m-px px-3 py-1 ring-1 hover:ring-2 rounded-full text-xs uppercase"
                 }}
               {{/each}}
             </div>

@@ -2,6 +2,10 @@
 // import assets from "./assets.json";
 import { wrapGrid } from 'animate-css-grid'
 import intersection from "lodash/intersection";
+
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+
 // import anime from 'animejs/lib/anime.es.js';
 
 
