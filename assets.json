@@ -209,7 +209,7 @@
   {
     "title": "Salt Dunes",
     "file": "./assets/salt_dunes.jpg",
-    "categories": ["marker", "ink", "painting"],
+    "categories": ["marker", "ink", "painting", "landscape"],
     "description": "Sand dunes dunes abstracted. Drawn with ink & marker on rice paper."
   },
   {
@@ -353,7 +353,7 @@
   {
     "title": "Morning Fog",
     "file": "./assets/morning_fog.jpg",
-    "categories": ["photo"],
+    "categories": ["photo", "landscape"],
     "description": "Picture taken during my morning commute, I like the foggy almost liminal feel of it."
   },
   {
