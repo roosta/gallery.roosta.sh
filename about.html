@@ -19,17 +19,55 @@
     </script>
   </head>
   <body class="flex h-screen w-full flex-col dark:bg-black bg-white">
-    <main class="flex grow flex-wrap gap-6 p-4 dark:text-white text-black md:p-6">
-
-      <section class="flex w-full grow flex-col lg:w-2/6 gap-4 p-2 lg:pr-4">
-        {{>menu about=true}}
+    <main class="flex gap-6 flex-col p-4 dark:text-white text-black md:p-8 gap-4 w-full lg:w-2/6">
+      {{>menu about=true}}
       <header
         class="flex flex-col gap-6"
         >
-
         <h1 class="font-work font-bold text-4xl dark:text-white text-black">About</h1>
       </header>
-      <section>
+      <section class="flex flex-col gap-4">
+        <p>
+          Hello, my name is Daniel but I usually go by <code>roosta</code> online. I'm a
+          web developer by trade, and artist as more of a hobby, albeit has
+          come in very handy in my profession sometimes.
+        </p>
+        <p>
+          The Gallery as well as showcasing various pieces I've done over the
+          years, I also consider the webpage that's facilitating its viewing
+          as part of the gallery itself.
+        </p>
+        <p>You can find the source code for this webpage on
+          <a
+            target="_blank"
+            class="border-b border-dotted dark:text-dim-dark text-dim-light hover:text-black dark:hover:text-white"
+            href="https://github.com/roosta/gallery.roosta.sh">
+
+            <i class="fa-brands fa-github text-4"></i>
+            <span>Github</span>
+          </a>
+          along with my other
+          <a
+            href="https://github.com/roosta"
+            class="border-b border-dotted dark:text-dim-dark text-dim-light hover:text-black dark:hover:text-white"
+            target="_blank">
+            open source projects
+          </a>.
+        </p>
+        <h2 class="font-work font-bold text-lg">Licensing</h2>
+        <p>
+          The source code is licensed using
+          <a
+            class="border-b border-dotted dark:text-dim-dark text-dim-light hover:text-black dark:hover:text-white"
+            href="https://www.gnu.org/licenses/gpl-3.0.en.html">
+            GNU General Public License
+          </a>
+          and is freely available, but keep in mind license terms. Graphical
+          assets are not under the same license as the code, and must be
+          removed if using source code for any purpose.
+        </p>
+      </section>
+
     </main>
     <script type="module" src="/about.js"></script>
   </body>
