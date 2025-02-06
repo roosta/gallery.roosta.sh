@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Work+Sans:300"
+      rel="stylesheet"
+    />
+    <title>About - Daniel Berg (roosta)</title>
+    <script>
+      // Set dark class earily to avoid fuoc
+      document.documentElement.classList.toggle(
+        'dark',
+        localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      )
+    </script>
+  </head>
+  <body class="flex h-screen w-full flex-col dark:bg-black bg-white">
+    <main class="flex grow flex-wrap gap-6 p-4 dark:text-white text-black md:p-6">
+
+      <section class="flex w-full grow flex-col lg:w-2/6 gap-4 p-2 lg:pr-4">
+        {{>menu about=true}}
+      <header
+        class="flex flex-col gap-6"
+        >
+
+        <h1 class="font-work font-bold text-4xl dark:text-white text-black">About</h1>
+      </header>
+      <section>
+    </main>
+    <script type="module" src="/about.js"></script>
+  </body>
+</html>
+
+{{!-- vim: set ts=2 sw=2 tw=0 et fdm=marker ft=html.handlebars fmr=<<<,>>> : --}}

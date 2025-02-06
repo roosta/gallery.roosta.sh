@@ -21,13 +21,23 @@
     aria-labelledby="menu-button"
     tabindex="-1">
     <div class="py-1" role="none">
-      <a href="/about.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
-        <div>
-          <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
-          <span>About</span>
-        </div>
-        <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
-      </a>
+      {{#if gallery}}
+        <a href="/about.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+          <div>
+            <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
+            <span>About</span>
+          </div>
+          <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
+        </a>
+      {{else if about}}
+        <a href="/" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+          <div>
+            <i class="fa-solid fa-image text-4 dark:text-dim-dark text-dim-light"></i>
+            <span>Gallery</span>
+          </div>
+          <i class="fa-solid fa-arrow-left text-4 dark:text-dim-dark text-dim-light"></i>
+        </a>
+      {{/if}}
       <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:active:bg-white/[0.1] dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
         <i class="fa-solid fa-palette dark:text-dim-dark text-dim-light"></i>
         <input type="checkbox" value="" class="sr-only peer theme-switch">
