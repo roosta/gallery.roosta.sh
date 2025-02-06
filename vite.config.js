@@ -1,5 +1,5 @@
 import handlebars from "vite-plugin-handlebars";
-// import { resolve } from 'path';
+import { resolve } from 'path';
 import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
 import shuffle from "lodash/shuffle";
@@ -73,6 +73,7 @@ const assets = await Promise.all(filtered.map(withPalette))
 
 export default {
   plugins: [handlebars({
+    partialDirectory: resolve(__dirname, 'partials'),
     context: {
       assets,
       categories

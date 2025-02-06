@@ -1,0 +1,44 @@
+<nav class="relative">
+  <button
+    class="flex items-center justify-center text-left w-6 h-6 ring-1 focus-visible:outline-hidden dark:focus-visible:ring-white focus-visible:ring-2 dark:focus-visible:text-white focus-visible:text-black focus-visible:ring-black hover:ring-2 dark:ring-dim-dark ring-dim-light rounded-sm dark:text-dim-dark cursor-pointer text-dim-light dark:active:text-white active:text-black dark:active:ring-white active:ring-black"
+    type="button"
+    id="menu-button"
+    aria-label="navigation dropdown menu button"
+    aria-expanded="true"
+    aria-haspopup="true"
+    >
+    <div class="inline-flex w-full justify-center">
+      <i class="fa-solid fa-bars text-4"></i>
+    </div>
+  </button>
+  <div
+    id="menu"
+    role="menu"
+    class="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white dark:bg-black ring-1 hidden ring-black dark:ring-dim-dark ring-dim-light focus-visible:outline-hidden drop-shadow-lg"
+    aria-orientation="vertical"
+    data-selected-class="block"
+    data-unselected-class="hidden"
+    aria-labelledby="menu-button"
+    tabindex="-1">
+    <div class="py-1" role="none">
+      <a href="/about.html" class="block px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] dark:active:bg-white/[0.1] active:bg-black/[0.1] flex justify-between" role="menuitem" tabindex="-1" id="menu-about">
+        <div>
+          <i class="fa-solid fa-user text-4 dark:text-dim-dark text-dim-light"></i>
+          <span>About</span>
+        </div>
+        <i class="fa-solid fa-arrow-right text-4 dark:text-dim-dark text-dim-light"></i>
+      </a>
+      <label class="cursor-pointer w-full px-4 py-3 text-sm text-black dark:text-white hover:bg-black/[0.08] focus-visible:bg-black/[0.08] focus-visible:outline-hidden dark:active:bg-white/[0.1] dark:focus-visible:bg-white/[.05] dark:hover:bg-white/[.05] active:bg-black/[0.1] flex gap-1 items-center" role="menuitem" tabindex="-1" id="menu-theme">
+        <i class="fa-solid fa-palette dark:text-dim-dark text-dim-light"></i>
+        <input type="checkbox" value="" class="sr-only peer theme-switch">
+        <span>Theme:</span>
+        <span class="peer-checked:hidden inline-block">Dark</span>
+        <span class="peer-checked:inline-block hidden">Light</span>
+        <div
+          class="ml-auto relative w-9 h-5 bg-dim-light rounded-full peer dark:bg-white/[0.2] peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] dark:after:bg-white after:bg-black after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-dim-dark">
+        </div>
+
+      </label>
+    </div>
+  </div>
+</nav>
