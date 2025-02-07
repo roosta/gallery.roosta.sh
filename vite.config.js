@@ -72,6 +72,14 @@ const assets = await Promise.all(filtered.map(withPalette))
   .catch(err => console.error(err))
 
 export default {
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about.html')
+      }
+    }
+  },
   plugins: [handlebars({
     partialDirectory: resolve(__dirname, 'partials'),
     context: {
