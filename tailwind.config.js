@@ -5,7 +5,7 @@ export default {
   content: [
     "*.js",
     "*.html",
-    "./partials/*",
+    "./parials/*"
   ],
   darkMode: 'selector',
   theme: {

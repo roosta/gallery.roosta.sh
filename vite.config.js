@@ -1,4 +1,5 @@
 import handlebars from "vite-plugin-handlebars";
+import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 import assetsJson from "./assets.json";
 import uniq from "lodash/uniq";
@@ -80,16 +81,19 @@ export default {
       }
     }
   },
-  plugins: [handlebars({
-    partialDirectory: resolve(__dirname, 'partials'),
-    context: {
-      assets,
-      categories
-    },
-    helpers: {
-      let: (options) => {
-        return options.fn(options.hash);
+  plugins: [
+    handlebars({
+      partialDirectory: resolve(__dirname, 'partials'),
+      context: {
+        assets,
+        categories
+      },
+      helpers: {
+        let: (options) => {
+          return options.fn(options.hash);
+        }
       }
-    }
-  })]
+    }),
+    tailwindcss()
+  ]
 };
