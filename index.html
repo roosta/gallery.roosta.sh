@@ -28,7 +28,7 @@
 
           <!-- Header section -->
           <header
-            class="flex flex-col gap-6 lg:data-item-active:hidden"
+            class="flex flex-col gap-6 lg:data-[item-active=true]:hidden"
             data-item-active="false"
             data-handle="default"
           >
@@ -100,7 +100,7 @@
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded-sm data-selected:bg-contain focus-visible:outline-hidden focus-visible:outline-offset-4 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded-sm data-[selected=true]:bg-contain focus-visible:outline-hidden focus-visible:outline-offset-4 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}

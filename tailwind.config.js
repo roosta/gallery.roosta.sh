@@ -9,10 +9,6 @@ export default {
   ],
   darkMode: 'selector',
   theme: {
-    data: {
-      selected: 'selected~="true"',
-      'item-active': 'item-active~="true"'
-    },
     extend: {
       fontFamily: {
         work: ["Work Sans", ...defaultTheme.fontFamily.sans],
