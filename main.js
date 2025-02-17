@@ -21,14 +21,29 @@ const state = {
     tagClass: "",
     buttonClass: "",
   },
-  // Run after dom content is loaded
-  loaded() {
-    const grid = document.querySelector(".grid");
-    wrapGrid(grid);
-  },
   selected: {
     el: null,
     file: null,
+  },
+  loaded() {
+    const grid = document.querySelector(".grid");
+    wrapGrid(grid, {
+
+      // Scroll image into view
+      onStart() {
+        const el = document.querySelector(".grid-item[data-selected='true']");
+        if (el) {
+          el.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+      },
+      // Correct if when on aniation end we're still not centered, fire again
+      onEnd() {
+        const el = document.querySelector(".grid-item[data-selected='true']");
+        if (el) {
+          el.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+      }
+    });
   },
 
   // Toggle categories panel
@@ -146,9 +161,6 @@ const state = {
     }
 
     this.toggleDetails(file, previousFile, el);
-
-    // Ensure smooth scrolling to the selected item
-    el.scrollIntoView({behavior: "smooth", block: "center"});
 
     // Stop any playing videos when changing selection
     const videos = document.querySelectorAll("video[data-playing='true']")
