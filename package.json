@@ -22,7 +22,7 @@
     "@babel/eslint-parser": "^7.26.5",
     "@eslint/js": "^9.21.0",
     "colorthief": "^2.6.0",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "globals": "^16.0.0",
     "image-size": "^1.2.0",
