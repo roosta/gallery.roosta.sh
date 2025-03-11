@@ -10,71 +10,130 @@ import ColorThief from "colorthief";
 import { imageSizeFromFile } from 'image-size/fromFile'
 import tinycolor from "tinycolor2";
 
-// This requires size fields to be set, make sure its called after `withSize`
-function calcAspect(asset) {
-  const ratio = asset.width / asset.height;
-  if (ratio >= 0.8 && ratio <= 1.2) {
-    return "square"
-  } else if (ratio > 1.2 && ratio < 2) {
-    return "landscape"
-  } else if (ratio >= 2) {
-    return "wide"
-  } else {
-    return "portrait"
+const AssetProcessor = {
+  /**
+   * Determines the aspect ratio category of an asset
+   * @param {Object} asset - Asset with width and height properties
+   * @returns {string} - Aspect ratio category: square, landscape, wide, or portrait
+   */
+  calcAspect(asset) {
+    const ratio = asset.width / asset.height;
+
+    if (ratio >= 0.8 && ratio <= 1.2) {
+      return "square";
+    } else if (ratio > 1.2 && ratio < 2) {
+      return "landscape";
+    } else if (ratio >= 2) {
+      return "wide";
+    } else {
+      return "portrait";
+    }
+  },
+
+  /**
+   * Adds size information to an asset
+   * @param {Object} item - Asset item
+   * @returns {Promise<Object>} - Asset with width and height properties
+   */
+  async withSize(item) {
+    try {
+      const size = await imageSizeFromFile(item.file);
+      return {
+        ...item,
+        ...size
+      };
+    } catch (error) {
+      console.error(`Error getting size for ${item.file}:`, error);
+      // Return original item with default dimensions if there's an error
+      return {
+        ...item,
+        width: 0,
+        height: 0
+      };
+    }
+  },
+
+  /**
+   * Adds aspect ratio category as a boolean property
+   * @param {Object} item - Asset with size information
+   * @returns {Object} - Asset with aspect ratio boolean property
+   */
+  withAspect(item) {
+    return {
+      ...item,
+      [this.calcAspect(item)]: true
+    };
+  },
+
+  /**
+   * Extracts color palette from an image
+   * @param {Object} item - Asset item
+   * @returns {Promise<Object>} - Asset with palette property
+   */
+  async withPalette(item) {
+    // Number of color samples (default: 5)
+    const n = item.colors || 5;
+
+    try {
+      const palette = await ColorThief.getPalette(item.file, n);
+
+      if (!palette) {
+        return { ...item, palette: null };
+      }
+
+      const colors = palette.map(([r, g, b]) => tinycolor({r, g, b}));
+      const sorted = sortBy(colors, color => color.getBrightness());
+
+      return {
+        ...item,
+        palette: sorted.map(color => color.toHexString())
+      };
+    } catch (error) {
+      console.error(`Error extracting palette for ${item.file}:`, error);
+      return { ...item, palette: null };
+    }
   }
 };
 
-function withSize(item) {
-  return imageSizeFromFile(item.file).then((size) => {
-    return {
-      ...item,
-      ...size
-    };
+/**
+ * Process all assets with enhanced error handling
+ * @param {Array} assetsJson - Raw assets from JSON
+ * @returns {Promise<Object>} - Processed assets and categories
+ */
+async function processAssets(assetsJson) {
+  try {
+    console.log('Processing assets...');
+    const filtered = assetsJson.filter(x => !x.ignored);
+    const categories = uniq(flatten(filtered.map(x => x.categories))).sort();
 
-  })
-}
+    // Process assets in sequence for better error handling
+    let processedItems = [];
+    for (const item of filtered) {
+      try {
+        // Process each item with palette and size
+        const withPalette = await AssetProcessor.withPalette(item);
+        const withSize = await AssetProcessor.withSize(withPalette);
+        const withAspect = AssetProcessor.withAspect.call(AssetProcessor, withSize);
+        processedItems.push(withAspect);
+      } catch (error) {
+        console.error(`Error processing asset ${item.file}:`, error);
+        // Skip this item but continue processing others
+      }
+    }
 
-function withAspect(item) {
-  return {
-    ...item,
-    [calcAspect(item)]: true
+    // Shuffle the processed items
+    const assets = shuffle(processedItems);
+
+    return { assets, categories };
+  } catch (err) {
+    console.error('Error processing assets:', err);
+    // Return empty arrays as fallback
+    return { assets: [], categories: [] };
   }
 }
 
-
-// Handle promise returned from ColorThief
-function withPalette(item) {
-
-  // Number of color samples
-  let n = 5;
-
-  // if colors is defined in json, use that as the sample count
-  if (item.colors) n = item.colors
-
-  return ColorThief.getPalette(item.file, n)
-    .then(palette => {
-      const res = {
-        ...item,
-        palette: null
-      };
-      if (palette) {
-        const colors = palette.map(([r, g, b]) => {
-          return tinycolor({r, g, b})
-        });
-        const sorted = sortBy(colors, color => color.getBrightness());
-        res.palette = sorted.map(color => color.toHexString());
-      };
-      return res
-  })
-}
-
-
-const filtered = assetsJson.filter(x => !x.ignored);
-const categories = uniq(flatten(filtered.map(x => x.categories))).sort();
-const assets = await Promise.all(filtered.map(withPalette))
-  .then(items => Promise.all(items.map(withSize)) )
-  .then(items => shuffle(items.map(withAspect)))
-  .catch(err => console.error(err))
+// Process assets
+const context = await processAssets(assetsJson);
 
 export default {
   build: {
@@ -88,10 +147,7 @@ export default {
   plugins: [
     handlebars({
       partialDirectory: resolve(__dirname, 'partials'),
-      context: {
-        assets,
-        categories
-      },
+      context,
       helpers: {
         let: (options) => {
           return options.fn(options.hash);
