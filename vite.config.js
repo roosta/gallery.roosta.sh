@@ -7,7 +7,7 @@ import shuffle from "lodash/shuffle";
 import sortBy from "lodash/sortBy";
 import flatten from "lodash/flatten";
 import ColorThief from "colorthief";
-import sizeOf from "image-size";
+import { imageSizeFromFile } from 'image-size/fromFile'
 import tinycolor from "tinycolor2";
 
 // This requires size fields to be set, make sure its called after `withSize`
@@ -25,10 +25,13 @@ function calcAspect(asset) {
 };
 
 function withSize(item) {
-  return {
-    ...item,
-    ...sizeOf(item.file)
-  }
+  return imageSizeFromFile(item.file).then((size) => {
+    return {
+      ...item,
+      ...size
+    };
+
+  })
 }
 
 function withAspect(item) {
@@ -50,7 +53,7 @@ function withPalette(item) {
 
   return ColorThief.getPalette(item.file, n)
     .then(palette => {
-      const ret = {
+      const res = {
         ...item,
         palette: null
       };
@@ -59,9 +62,9 @@ function withPalette(item) {
           return tinycolor({r, g, b})
         });
         const sorted = sortBy(colors, color => color.getBrightness());
-        ret.palette = sorted.map(color => color.toHexString());
+        res.palette = sorted.map(color => color.toHexString());
       };
-      return ret
+      return res
   })
 }
 
@@ -69,7 +72,8 @@ function withPalette(item) {
 const filtered = assetsJson.filter(x => !x.ignored);
 const categories = uniq(flatten(filtered.map(x => x.categories))).sort();
 const assets = await Promise.all(filtered.map(withPalette))
-  .then(p => shuffle(p.map(withSize).map(withAspect)))
+  .then(items => Promise.all(items.map(withSize)) )
+  .then(items => shuffle(items.map(withAspect)))
   .catch(err => console.error(err))
 
 export default {
