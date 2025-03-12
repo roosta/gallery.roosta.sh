@@ -149,6 +149,8 @@ export default {
       partialDirectory: resolve(__dirname, 'partials'),
       context,
       helpers: {
+        // very simple helper that lets you bind strings to named variables
+        // that can be refered to within the scope of the let block.
         let: (options) => {
           return options.fn(options.hash);
         }
