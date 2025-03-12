@@ -45,6 +45,8 @@ npm run preview
 Copyright © 2016 Daniel Berg
 
 - Source code from 2024 onward is distributed under [GNU General Public License v3.0](LICENSE) or later.
+- Graphical assets are not under the same license as the code, and must be
+  removed if using source code for any purpose.
 
 **NO AI TRAINING**: Without in any way limiting the artist’s exclusive rights
 under copyright, any use of this gallery to "train" generative artificial
