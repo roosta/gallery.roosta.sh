@@ -96,7 +96,7 @@
 
       <!-- Gallery section -->
       <section class="flex w-full grow lg:w-4/6">
-        <div class="flex grow overflow-auto focus-visible:outline-hidden focus-visible:outline-offset-6 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black rounded-sm">
+        <div class="flex grow overflow-auto focus-visible:outline-offset-6 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black rounded-sm">
           <div
             id="gallery"
             class="grid grow grid-flow-dense auto-rows-gallery gap-8 p-2 lg:pr-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
@@ -105,7 +105,7 @@
             {{#each assets}}
               {{#let
                 asset=this
-                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded-sm data-[selected=true]:bg-contain focus-visible:outline-hidden focus-visible:outline-offset-4 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black"
+                class="grid-item cursor-pointer h-full w-full transition-opacity duration-300 bg-no-repeat bg-cover dark:bg-backdrop-dark bg-backdrop-light bg-origin-content drop-shadow-lg bg-center rounded-sm data-[selected=true]:bg-contain focus-visible:outline-offset-4 focus-visible:outline-2 dark:focus-visible:outline-white focus-visible:outline-black"
                 focus-class="opacity-100"
                 unfocus-class="opacity-30"
                 }}
