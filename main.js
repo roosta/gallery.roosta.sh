@@ -46,16 +46,26 @@ const state = {
   // Toggle categories panel
   toggleCategories(filterButton, clearFilter = false) {
     const target = document.querySelector(".filter-container");
+    const icon = filterButton.querySelector("i.chevron");
     target.classList.toggle("hidden");
     if (this.categoriesOpen) {
       clearFilter && this.setFilter();
-      filterButton.setAttribute("aria-expanded", "false");
+      icon.className = icon.className.replace(
+        icon.dataset.iconOpen,
+        icon.dataset.iconClosed
+      )
       filterButton.className = filterButton.className.replace(
         filterButton.dataset.selectedClass,
         filterButton.dataset.unselectedClass,
       );
+
+      filterButton.setAttribute("aria-expanded", "false");
       this.categoriesOpen = false;
     } else {
+      icon.className = icon.className.replace(
+        icon.dataset.iconClosed,
+        icon.dataset.iconOpen
+      )
       filterButton.className = filterButton.className.replace(
         filterButton.dataset.unselectedClass,
         filterButton.dataset.selectedClass,
