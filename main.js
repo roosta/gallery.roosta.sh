@@ -49,6 +49,7 @@ const state = {
     target.classList.toggle("hidden");
     if (this.categoriesOpen) {
       clearFilter && this.setFilter();
+      filterButton.setAttribute("aria-expanded", "false");
       filterButton.className = filterButton.className.replace(
         filterButton.dataset.selectedClass,
         filterButton.dataset.unselectedClass,
@@ -59,6 +60,8 @@ const state = {
         filterButton.dataset.unselectedClass,
         filterButton.dataset.selectedClass,
       )
+
+      filterButton.setAttribute("aria-expanded", "true");
       this.categoriesOpen = true;
     }
   },

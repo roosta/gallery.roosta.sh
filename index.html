@@ -63,8 +63,10 @@
               selected-class="opacity-100 hover:opacity-75 dark:border-white border-black dark:text-white text-black"
               unselected-class="dark:border-dim-dark border-dim-light dark:text-dim-dark text-dim-light opacity-75 hover:opacity-100"}}
               <button
+                id="filter-button"
                 data-selected-class="{{selected-class}}"
-                aria-label="filter button"
+                aria-label="filter menu"
+                aria-haspopup="true"
                 data-unselected-class="{{unselected-class}}"
                 class="filter-button focus-visible:outline-hidden focus-visible:font-bold focus-visible:text-black dark:focus-visible:text-white focus-visible:border-b-2 flex cursor-pointer justify-between border-b border-dotted pb-1 text-sm {{unselected-class}}"
               >
@@ -75,7 +77,10 @@
                 <i class="fa-solid fa-chevron-down text-4"></i>
               </button>
             {{/let}}
-            <div class="filter-container flex hidden flex-wrap gap-2 p-1">
+            <div
+              role="menu"
+              aria-labelledby="filter-button"
+              class="filter-container flex hidden flex-wrap gap-2 p-1">
               {{#each categories}}
                 {{>filter-tag
                   category=this
