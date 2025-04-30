@@ -1,4 +1,4 @@
-FROM node:20.18 AS build-deps
+FROM node:latest AS build-deps
 WORKDIR /usr/src/app
 COPY . ./
 RUN npm ci
