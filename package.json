@@ -21,7 +21,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "colorthief": "^2.6.0",
     "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.2",
+    "eslint-config-prettier": "^10.1.5",
     "globals": "^16.0.0",
     "image-size": "^2.0.2",
     "prettier": "^3.5.3",
