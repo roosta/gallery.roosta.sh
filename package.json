@@ -20,7 +20,7 @@
     "@eslint/js": "^9.30.0",
     "@tailwindcss/vite": "^4.1.11",
     "colorthief": "^2.6.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.3.0",
     "image-size": "^2.0.2",
