@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "animate-css-grid": "^1.5.1",
     "lodash": "^4.17.21",
     "tailwindcss": "^4.1.12"
