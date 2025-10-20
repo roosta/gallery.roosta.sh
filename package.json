@@ -18,7 +18,7 @@
     "@babel/core": "^7.28.4",
     "@babel/eslint-parser": "^7.28.4",
     "@eslint/js": "^9.36.0",
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.15",
     "colorthief": "^2.6.0",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
