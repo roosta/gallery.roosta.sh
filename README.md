@@ -7,11 +7,11 @@ Personal gallery for various works I've done over the years, some new, some old.
 
 1. Install dependencies:
     ```sh
-    npm install
+    pnpm install
     ```
 2. Running the development server:
     ```sh
-    npm run dev
+    pnpm run dev
     ```
 Runs a live reload Vite server, see `stdout` for port, point your browser to localhost.
 
@@ -28,13 +28,13 @@ Runs a live reload Vite server, see `stdout` for port, point your browser to loc
 To build for production:
 
 ```shell
-npm run build
+pnpm run build
 ```
 
 If you want to serve the dist output you can run:
 
 ```shell
-npm run preview
+pnpm run preview
 ```
 
 > NOTE: ./dist folder needs to be built for the preview server to work

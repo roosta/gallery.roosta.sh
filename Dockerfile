@@ -1,8 +1,8 @@
 FROM node:latest AS build-deps
 WORKDIR /usr/src/app
 COPY . ./
-RUN npm ci
-RUN npm run build
+RUN pnpm install
+RUN pnpm run build
 
 FROM nginx:latest
 COPY --from=build-deps /usr/src/app/dist /usr/share/nginx/html
