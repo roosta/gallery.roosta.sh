@@ -1,4 +1,8 @@
-FROM node:latest AS build-deps
+FROM node:20-slim AS build-deps
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
 WORKDIR /usr/src/app
 COPY . ./
 RUN pnpm install
