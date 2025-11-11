@@ -17,7 +17,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/eslint-parser": "^7.28.5",
-    "@eslint/js": "^9.38.0",
+    "@eslint/js": "^9.39.1",
     "@tailwindcss/vite": "^4.1.17",
     "colorthief": "^2.6.0",
     "eslint": "^9.38.0",
