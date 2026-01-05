@@ -22,7 +22,7 @@
     "colorthief": "^2.6.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "globals": "^16.5.0",
+    "globals": "^17.0.0",
     "image-size": "^2.0.2",
     "prettier": "^3.7.4",
     "prettier-plugin-packagejson": "^2.5.20",
