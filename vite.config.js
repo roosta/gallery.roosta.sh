@@ -6,7 +6,7 @@ import uniq from "lodash/uniq";
 import shuffle from "lodash/shuffle";
 import sortBy from "lodash/sortBy";
 import flatten from "lodash/flatten";
-import ColorThief from "colorthief";
+import { getPalette } from "colorthief";
 import { imageSizeFromFile } from 'image-size/fromFile'
 import tinycolor from "tinycolor2";
 
@@ -75,13 +75,13 @@ const AssetProcessor = {
     const n = item.colors || 5;
 
     try {
-      const palette = await ColorThief.getPalette(item.file, n);
+      const palette = await getPalette(item.file, { colorCount: n });
 
       if (!palette) {
         return { ...item, palette: null };
       }
 
-      const colors = palette.map(([r, g, b]) => tinycolor({r, g, b}));
+      const colors = palette.map(color => tinycolor(color.hex()));
       const sorted = sortBy(colors, color => color.getBrightness());
 
       return {
