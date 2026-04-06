@@ -11,7 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
     "animate-css-grid": "^1.5.1",
-    "lodash": "^4.17.23",
+    "lodash": "^4.18.1",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
