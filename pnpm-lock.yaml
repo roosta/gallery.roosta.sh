@@ -34,8 +34,8 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2(vite@8.1.0(esbuild@0.27.2)(jiti@2.7.0))
       colorthief:
-        specifier: ^3.3.1
-        version: 3.3.1(sharp@0.33.5)
+        specifier: ^3.4.0
+        version: 3.4.0(sharp@0.33.5)
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.7.0)
@@ -773,8 +773,8 @@ packages:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
 
-  colorthief@3.3.1:
-    resolution: {integrity: sha512-a3qzYXy51h6p3725pV8rnJwUBGTtvYQge2pVhKJwL+vETUD5pCi6VKmQyu51pBHdUbu/BPEXbwFLS0GnxXNhGA==}
+  colorthief@3.4.0:
+    resolution: {integrity: sha512-mwXc0OHLsb1on2JtVD2go31GTyHwBLtkRruggz6H/bY2vI1mL8v8Mvam9qIWiI4khnsbQXoBs8M+EofnlcQitQ==}
     hasBin: true
     peerDependencies:
       sharp: '>=0.33.0'
@@ -1340,9 +1340,6 @@ packages:
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
-
-  tailwindcss@4.3.1:
-    resolution: {integrity: sha512-hk+TB1m+K8CYNrP6rjQaq/Y+4Zylwpa87mLYBKCunwnnQ9p+fHb7kmSfGqyEJoxF/O6CDyABWVFEafNSYKll+Q==}
 
   tailwindcss@4.3.2:
     resolution: {integrity: sha512-WtctNNSH8A9jlMIqxzuYumOHU5uGZyRv0Q5svQl+oEPy5w84YpBxdb7MdqyiSPQge5jTJ6zFQLq0PFygdccSBA==}
@@ -2044,7 +2041,7 @@ snapshots:
       color-string: 1.9.1
     optional: true
 
-  colorthief@3.3.1(sharp@0.33.5):
+  colorthief@3.4.0(sharp@0.33.5):
     optionalDependencies:
       sharp: 0.33.5
 
@@ -2553,8 +2550,6 @@ snapshots:
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
-
-  tailwindcss@4.3.1: {}
 
   tailwindcss@4.3.2: {}
 
