@@ -34,8 +34,8 @@ importers:
         specifier: ^4.3.3
         version: 4.3.3(vite@8.1.5(esbuild@0.27.2)(jiti@2.7.0))
       colorthief:
-        specifier: ^3.4.0
-        version: 3.4.0(sharp@0.33.5)
+        specifier: ^3.5.0
+        version: 3.5.0(sharp@0.33.5)
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.7.0)
@@ -795,8 +795,8 @@ packages:
     resolution: {integrity: sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==}
     engines: {node: '>=12.5.0'}
 
-  colorthief@3.4.0:
-    resolution: {integrity: sha512-mwXc0OHLsb1on2JtVD2go31GTyHwBLtkRruggz6H/bY2vI1mL8v8Mvam9qIWiI4khnsbQXoBs8M+EofnlcQitQ==}
+  colorthief@3.5.0:
+    resolution: {integrity: sha512-wV/6Rnkqdx07CAuv8O3WYKBU/j5QdSXbYUfGp26seMIqze5Q40C9ovBSZB9PeVV6XkGe3VWb4zUEtQCYzCfyEA==}
     hasBin: true
     peerDependencies:
       sharp: '>=0.33.0'
@@ -2141,7 +2141,7 @@ snapshots:
       color-string: 1.9.1
     optional: true
 
-  colorthief@3.4.0(sharp@0.33.5):
+  colorthief@3.5.0(sharp@0.33.5):
     optionalDependencies:
       sharp: 0.33.5
 
