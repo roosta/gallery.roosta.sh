@@ -16,3 +16,9 @@ updates:
       semver-patch-days: 3
       include:
         - "*"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
